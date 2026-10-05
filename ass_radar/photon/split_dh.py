@@ -1,3 +1,11 @@
+"""Split-Diffie-Hellman flow and fragment reassembly for Photon transport rewriting.
+
+This module sits between the packet parser and the encryption layer. It rewrites
+public DH values discovered in packet payloads, tracks fragmented Photon commands,
+and derives the AES keys needed to translate encrypted traffic without breaking the
+underlying transport semantics.
+"""
+
 from __future__ import annotations
 
 import hashlib
@@ -27,6 +35,8 @@ MAX_PENDING_FRAGMENT_PACKET_BYTES = MAX_PENDING_FRAGMENT_BYTES
 
 @dataclass(frozen=True)
 class SplitDhProcessResult:
+    """Result of evaluating one packet in the split-DH rewriting session."""
+
     payload: bytes
     rewritten: bool
     event: dict[str, Any] | None = None
@@ -37,12 +47,14 @@ class SplitDhProcessResult:
 
     @property
     def output_payloads(self) -> tuple[bytes, ...]:
+        """Return the final payload(s) to emit for this packet processing pass."""
         if self.delayed:
             return ()
         return (self.payload, *self.extra_payloads)
 
     @property
     def events(self) -> tuple[dict[str, Any], ...]:
+        """Return the diagnostics/events generated while rewriting this packet."""
         if self.event is None:
             return self.additional_events
         return (self.event, *self.additional_events)
@@ -105,6 +117,13 @@ class _FragmentSegment:
 
 
 class SplitDhSession:
+    """Manage a proxy-side DH handshake and packet rewrite session.
+
+    The session generates private keys for the proxy, watches for peer public-value
+    exchanges, derives the resulting shared secrets, and then uses those secrets to
+    translate ciphertext between the client and server streams.
+    """
+
     def __init__(self, *, proxy_client_side_private: int | None = None, proxy_server_side_private: int | None = None, on_key_sync: Callable[[KeySyncExtraction], None] | None = None, on_decrypted_payload: Callable[[bytes, int, str], None] | None = None) -> None:
         if not proxy_client_side_private:
             self.proxy_client_side_private = _random_private_value()
@@ -130,9 +149,11 @@ class SplitDhSession:
         self._finalize_result: bool | None = None
 
     def process_packets(self, *, direction: str, payload: bytes) -> SplitDhProcessResult:
+        """Alias for processing a single packet while preserving the external API."""
         return self.process_packet(direction=direction, payload=payload)
 
     def finalize(self) -> bool:
+        """Close the session and mark any incomplete fragment segments as abandoned."""
         if self._finalize_result is not None:
             return self._finalize_result
         result = not self._fragment_segments
@@ -143,6 +164,7 @@ class SplitDhSession:
         return result
 
     def process_packet(self, *, direction: str, payload: bytes) -> SplitDhProcessResult:
+        """Process one packet in the direction-aware split-DH stream."""
         if self._finalize_result is not None:
             return SplitDhProcessResult(payload=payload, rewritten=False)
         self._fragment_stream_losses.clear()
@@ -161,6 +183,8 @@ class SplitDhSession:
         observed_public = payload[target.candidate_slice]
         replacement_public = self._replacement_public_value(expected_message_type)
         rewrite = rewrite_public_value(payload, replacement_public, expected_message_type=expected_message_type)
+        # The proxy needs to derive a key for each direction independently, using the
+        # observed peer public value and the local proxy-side private exponent.
         if expected_message_type == 6:
             self.observed_client_public = observed_public
             self.client_side_aes_key = derive_aes_key(shared_secret_from_public(observed_public, self.proxy_client_side_private))
@@ -191,6 +215,7 @@ class SplitDhSession:
         )
 
     def _process_encrypted_packet(self, *, direction: str, payload: bytes) -> SplitDhProcessResult | None:
+        """Translate encrypted Photon messages once both sides have negotiated keys."""
         targets = find_encrypted_message_targets(payload)
         if not targets:
             return None
@@ -228,6 +253,7 @@ class SplitDhSession:
         )
 
     def _process_fragment_packet(self, *, direction: str, payload: bytes) -> SplitDhProcessResult | None:
+        """Buffer fragmented Photon payloads until enough commands have arrived."""
         parsed = _fragment_commands(payload)
         if not parsed.fragment_command_seen:
             return None
@@ -364,9 +390,10 @@ class SplitDhSession:
         )
 
     def _retire_fragment_segments_for_capacity(self, total_length: int) -> bool:
+        """Evict older fragment segments until the session can accept a new assembly."""
         if self._fragment_segments:
             if len(self._fragment_segments) >= MAX_PENDING_FRAGMENT_SEGMENTS or self._pending_fragment_bytes + total_length > MAX_PENDING_FRAGMENT_BYTES:
-                # evict oldest segments until capacity
+                # Drop the oldest incomplete work first so newer packets can still be processed.
                 while self._fragment_segments:
                     oldest_key = next(iter(self._fragment_segments))
                     self._retire_fragment_segment(oldest_key, reason='assembly_capacity_eviction')
@@ -380,6 +407,7 @@ class SplitDhSession:
         return len(self._fragment_segments) < MAX_PENDING_FRAGMENT_SEGMENTS and self._pending_fragment_bytes + total_length <= MAX_PENDING_FRAGMENT_BYTES
 
     def _retain_fragment_packet(self, *, key: tuple[str, int, int], segment: _FragmentSegment, payload: bytes, commands: tuple[_FragmentCommand, ...]) -> bool:
+        """Keep a copy of a raw packet for later reassembly and retransmit diagnostics."""
         if payload in segment.packet_payloads:
             return True
         packet_length = len(payload)
@@ -387,7 +415,7 @@ class SplitDhSession:
             return False
         if self._fragment_segments:
             if self._pending_fragment_packet_count + 1 > MAX_PENDING_FRAGMENT_PACKET_COUNT or self._pending_fragment_packet_bytes + packet_length > MAX_PENDING_FRAGMENT_PACKET_BYTES:
-                # evict oldest other segments
+                # If the global retained-packet budget is full, discard older segments to keep the session alive.
                 while self._fragment_segments:
                     try:
                         oldest_other_key = next(c for c in self._fragment_segments if c != key)
@@ -412,6 +440,7 @@ class SplitDhSession:
         return True
 
     def _retire_fragment_segment(self, key: tuple[str, int, int], *, reason: str | None = None) -> _FragmentSegment | None:
+        """Remove a fragment segment from active tracking and account for any retained packet data."""
         segment = self._fragment_segments.pop(key, None)
         if segment is None:
             return None
@@ -423,12 +452,14 @@ class SplitDhSession:
         return segment
 
     def _discard_fragment_direction(self, direction: str, *, reason: str) -> None:
+        """Drop all fragment assemblies associated with one traffic direction."""
         normalized_direction = str(direction)
         for key in tuple(self._fragment_segments):
             if key[0] == normalized_direction:
                 self._retire_fragment_segment(key, reason=reason)
 
     def _attach_fragment_stream_loss(self, *, direction: str, result: SplitDhProcessResult) -> SplitDhProcessResult:
+        """Add a stream-loss diagnostic when fragments were rejected or retired mid-flight."""
         losses = tuple(self._fragment_stream_losses)
         self._fragment_stream_losses.clear()
         if not losses:
@@ -455,6 +486,7 @@ class SplitDhSession:
         )
 
     def _translation_keys(self, direction: str) -> tuple[bytes | None, bytes | None]:
+        """Return the AES keys needed to translate traffic in the given direction."""
         if direction == 'client_to_upstream':
             return (self.client_side_aes_key, self.server_side_aes_key)
         if direction == 'upstream_to_client':
@@ -462,6 +494,7 @@ class SplitDhSession:
         return (None, None)
 
     def _replacement_public_value(self, message_type: int) -> bytes:
+        """Select the proxy public value that should replace the observed peer value."""
         if message_type == 6:
             return self.public_for_server
         if message_type == 7:
@@ -470,6 +503,7 @@ class SplitDhSession:
 
 
 def _expected_message_type_for_direction(direction: str) -> int | None:
+    """Map each relay direction to the public-value message type we expect to see."""
     if direction == 'client_to_upstream':
         return 6
     if direction == 'upstream_to_client':
@@ -478,10 +512,12 @@ def _expected_message_type_for_direction(direction: str) -> int | None:
 
 
 def _random_private_value() -> int:
+    """Generate a valid private DH exponent inside the protocol's allowed range."""
     return secrets.randbelow(MODP_768_PRIME - 3) + 2
 
 
 def _fragment_commands(payload: bytes) -> _FragmentParse:
+    """Parse fragment-related Photon commands from a raw packet for reassembly."""
     if len(payload) < 12:
         return _FragmentParse(commands=(), fragment_command_seen=False, malformed=False)
     commands: list[_FragmentCommand] = []
@@ -523,6 +559,7 @@ def _fragment_commands(payload: bytes) -> _FragmentParse:
 
 
 def _fragment_command_error(fragment: _FragmentCommand) -> str | None:
+    """Validate one fragment command and return a compact error reason if malformed."""
     if not 1 <= fragment.fragment_count <= MAX_FRAGMENT_COUNT:
         return 'fragment_count'
     if fragment.fragment_number >= fragment.fragment_count:
@@ -537,6 +574,7 @@ def _fragment_command_error(fragment: _FragmentCommand) -> str | None:
 
 
 def _fragment_segment_has_gap(segment: _FragmentSegment) -> bool:
+    """Check whether the assembled fragment offsets leave a gap in the message."""
     cursor = 0
     for offset in segment.fragment_offsets:
         if offset != cursor:
@@ -546,6 +584,7 @@ def _fragment_segment_has_gap(segment: _FragmentSegment) -> bool:
 
 
 def _fragment_rejected_result(*, direction: str, payload: bytes, reason: str) -> SplitDhProcessResult:
+    """Create a consistent diagnostic result when fragment assembly fails."""
     return SplitDhProcessResult(
         payload=payload,
         rewritten=False,
@@ -559,4 +598,5 @@ def _fragment_rejected_result(*, direction: str, payload: bytes, reason: str) ->
 
 
 def _sha256(payload: bytes) -> str:
+    """Return a compact SHA-256 fingerprint for logging and diagnostics."""
     return f'sha256:{hashlib.sha256(payload).hexdigest()}'
