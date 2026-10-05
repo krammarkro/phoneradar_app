@@ -89,6 +89,7 @@ class WindowsUdpRedirector:
 
         try:
             async with pydivert.Divert(self.filter) as diverter:
+                print(f"WinDivert active; filter: {self.filter}", flush=True)
                 if self._ready is not None and not self._ready.done():
                     self._ready.set_result(None)
                 async for packet in diverter:
@@ -100,18 +101,11 @@ class WindowsUdpRedirector:
                         upstream_source_ports=self._relay.upstream_source_ports,
                     )
                     await diverter.send_async(packet)
-                    if action == "client_redirected":
-                        print(
-                            f"redirected local UDP {packet.src_addr}:{packet.src_port} "
-                            f"to relay {packet.dst_addr}:{packet.dst_port}",
-                            flush=True,
-                        )
-                    elif action == "reply_rewritten":
-                        print(
-                            f"rewrote relay reply as {packet.src_addr}:{packet.src_port} "
-                            f"to {packet.dst_addr}:{packet.dst_port}",
-                            flush=True,
-                        )
+                    print(
+                        f"WinDivert {action}: {packet.src_addr}:{packet.src_port} "
+                        f"-> {packet.dst_addr}:{packet.dst_port} ({len(packet.raw)} bytes)",
+                        flush=True,
+                    )
         except BaseException as error:
             if self._ready is not None and not self._ready.done():
                 self._ready.set_exception(error)

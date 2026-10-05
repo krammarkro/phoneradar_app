@@ -66,6 +66,7 @@ class UdpRelay(asyncio.DatagramProtocol):
 
     def datagram_received(self, data: bytes, addr: ClientAddress) -> None:
         address = addr
+        print(f"relay received {len(data)} bytes from {address}", flush=True)
         session = self._sessions.get(address)
         if session is not None:
             self._touch_session(session)
@@ -124,6 +125,7 @@ class UdpRelay(asyncio.DatagramProtocol):
     def _send_to_upstream(self, session: _UdpSession, payload: bytes) -> None:
         try:
             outputs = session.processor.process_packets(direction="client_to_upstream", payload=payload)
+            print(f"relay forwarding {len(outputs)} packet(s) upstream for {session.client_address}", flush=True)
             for output in outputs:
                 session.upstream_transport.sendto(output)
         except Exception as error:
@@ -135,8 +137,10 @@ class UdpRelay(asyncio.DatagramProtocol):
         if session is None:
             return
         self._touch_session(session)
+        print(f"relay received {len(payload)} bytes from upstream for {address}", flush=True)
         try:
             outputs = session.processor.process_packets(direction="upstream_to_client", payload=payload)
+            print(f"relay forwarding {len(outputs)} packet(s) to {address}", flush=True)
             if self._listener is not None:
                 for output in outputs:
                     self._listener.sendto(output, address)
