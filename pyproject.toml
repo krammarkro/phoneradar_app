@@ -7,6 +7,7 @@ name = "ass-radar"
 version = "0.3.3"
 description = "Albion-style radar event capture, relay processing, and Photon packet support."
 readme = "README.md"
+dependencies = ["pycryptodome>=3.19"]
 requires-python = ">=3.10"
 authors = [
   { name = "ass_radar contributors" },

@@ -1,3 +1,21 @@
+Metadata-Version: 2.4
+Name: ass-radar
+Version: 0.3.3
+Summary: Albion-style radar event capture, relay processing, and Photon packet support.
+Author: ass_radar contributors
+License: MIT
+Keywords: albion,radar,photon,relay,capture
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
 # ass_radar
 
 ass_radar is a Python package for working with Albion-style Radar event capture, relay processing, and Photon packet parsing.
