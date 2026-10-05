@@ -57,6 +57,15 @@ python -m ass_radar.relay.udp_proxy --upstream-host <game-server-host>
 
 The relay forwards to UDP port 5056 by default and runs both traffic directions through a per-client Photon processor. Override the listen or upstream ports with `--listen-port` or `--upstream-port` when needed. The upstream host must be supplied because the server address is not fixed by this package.
 
+For transparent redirection of local Windows traffic (without changing the game client target), install the optional packet-diversion dependency and run the terminal as Administrator:
+
+```powershell
+python -m pip install -e ".[transparent-windows]"
+python -m ass_radar.relay.udp_proxy --upstream-host 193.169.238.186 --transparent
+```
+
+Transparent mode intercepts local IPv4 UDP traffic to the selected upstream address and port. It requires Administrator privileges and WinDivert support; stop the relay with Ctrl+C to release the packet filter.
+
 ## Type checking
 
 The package includes a `py.typed` marker so type checkers can treat it as a typed library. The project is configured for Python 3.11+ and can be checked with `mypy` or `pyright`.

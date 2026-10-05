@@ -25,6 +25,9 @@ classifiers = [
   "Topic :: Software Development :: Libraries",
 ]
 
+[project.optional-dependencies]
+transparent-windows = ["pydivert>=4.0,<5; sys_platform == 'win32'"]
+
 [tool.setuptools]
 include-package-data = true
 
