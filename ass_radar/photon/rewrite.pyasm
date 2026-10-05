@@ -1,0 +1,1147 @@
+rewrite.pyc (Python 3.11)
+[Code]
+    File Name: rewrite.py
+    Object Name: <module>
+    Qualified Name: <module>
+    Arg Count: 0
+    Pos Only Arg Count: 0
+    KW Only Arg Count: 0
+    Stack Size: 5
+    Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+    [Names]
+        '__future__'
+        'annotations'
+        'hashlib'
+        'dataclasses'
+        'dataclass'
+        'ass_radar.photon.dh'
+        'MODP_768_BYTE_LENGTH'
+        'validate_public_value'
+        'CMD_SEND_RELIABLE'
+        'CMD_SEND_UNRELIABLE'
+        'PublicValueTarget'
+        'PublicValueRewrite'
+        'find_public_value_target'
+        'rewrite_public_value'
+        '_Command'
+        '_Message'
+        '_iter_commands'
+        '_message_from_command'
+        '_handshake_shape'
+        '_sha256'
+    [Locals+Names]
+    [Constants]
+        0
+        (
+            'annotations'
+        )
+        None
+        (
+            'dataclass'
+        )
+        (
+            'MODP_768_BYTE_LENGTH'
+            'validate_public_value'
+        )
+        6
+        7
+        True
+        (
+            'frozen'
+        )
+        [Code]
+            File Name: rewrite.py
+            Object Name: PublicValueTarget
+            Qualified Name: PublicValueTarget
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+                'property'
+                'candidate_slice'
+            [Locals+Names]
+            [Constants]
+                'PublicValueTarget'
+                'str'
+                'role'
+                'int'
+                'message_type'
+                'candidate_offset'
+                'candidate_length'
+                'command_index'
+                'command_offset'
+                'command_length'
+                'return'
+                'slice'
+                [Code]
+                    File Name: rewrite.py
+                    Object Name: candidate_slice
+                    Qualified Name: PublicValueTarget.candidate_slice
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 5
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'slice'
+                        'candidate_offset'
+                        'candidate_length'
+                    [Locals+Names]
+                        'self'
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_GLOBAL                     1: NULL + slice
+                        14      LOAD_FAST                       0: self
+                        16      LOAD_ATTR                       1: candidate_offset
+                        26      LOAD_FAST                       0: self
+                        28      LOAD_ATTR                       1: candidate_offset
+                        38      LOAD_FAST                       0: self
+                        40      LOAD_ATTR                       2: candidate_length
+                        50      BINARY_OP                       0 (+)
+                        54      PRECALL                         2
+                        58      CALL                            2
+                        68      RETURN_VALUE                    
+                    [Exception Table]
+                None
+                (
+                    'return'
+                    'slice'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'PublicValueTarget'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'str'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'role'
+                18      STORE_SUBSCR                    
+                22      LOAD_CONST                      3: 'int'
+                24      LOAD_NAME                       3: __annotations__
+                26      LOAD_CONST                      4: 'message_type'
+                28      STORE_SUBSCR                    
+                32      LOAD_CONST                      3: 'int'
+                34      LOAD_NAME                       3: __annotations__
+                36      LOAD_CONST                      5: 'candidate_offset'
+                38      STORE_SUBSCR                    
+                42      LOAD_CONST                      3: 'int'
+                44      LOAD_NAME                       3: __annotations__
+                46      LOAD_CONST                      6: 'candidate_length'
+                48      STORE_SUBSCR                    
+                52      LOAD_CONST                      3: 'int'
+                54      LOAD_NAME                       3: __annotations__
+                56      LOAD_CONST                      7: 'command_index'
+                58      STORE_SUBSCR                    
+                62      LOAD_CONST                      3: 'int'
+                64      LOAD_NAME                       3: __annotations__
+                66      LOAD_CONST                      8: 'command_offset'
+                68      STORE_SUBSCR                    
+                72      LOAD_CONST                      3: 'int'
+                74      LOAD_NAME                       3: __annotations__
+                76      LOAD_CONST                      9: 'command_length'
+                78      STORE_SUBSCR                    
+                82      LOAD_NAME                       4: property
+                84      LOAD_CONST                      14: ('return', 'slice')
+                86      LOAD_CONST                      12: <CODE> candidate_slice
+                88      MAKE_FUNCTION                   4
+                90      PRECALL                         0
+                94      CALL                            0
+                104     STORE_NAME                      5: candidate_slice
+                106     LOAD_CONST                      13: None
+                108     RETURN_VALUE                    
+            [Exception Table]
+        'PublicValueTarget'
+        [Code]
+            File Name: rewrite.py
+            Object Name: PublicValueRewrite
+            Qualified Name: PublicValueRewrite
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+            [Locals+Names]
+            [Constants]
+                'PublicValueRewrite'
+                'bytes'
+                'payload'
+                'PublicValueTarget'
+                'target'
+                'str'
+                'original_payload_sha256'
+                'rewritten_payload_sha256'
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'PublicValueRewrite'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'bytes'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'payload'
+                18      STORE_SUBSCR                    
+                22      LOAD_CONST                      3: 'PublicValueTarget'
+                24      LOAD_NAME                       3: __annotations__
+                26      LOAD_CONST                      4: 'target'
+                28      STORE_SUBSCR                    
+                32      LOAD_CONST                      5: 'str'
+                34      LOAD_NAME                       3: __annotations__
+                36      LOAD_CONST                      6: 'original_payload_sha256'
+                38      STORE_SUBSCR                    
+                42      LOAD_CONST                      5: 'str'
+                44      LOAD_NAME                       3: __annotations__
+                46      LOAD_CONST                      7: 'rewritten_payload_sha256'
+                48      STORE_SUBSCR                    
+                52      LOAD_CONST                      8: None
+                54      RETURN_VALUE                    
+            [Exception Table]
+        'PublicValueRewrite'
+        (
+            'expected_message_type'
+        )
+        'payload'
+        'bytes'
+        'expected_message_type'
+        'int | None'
+        'return'
+        'PublicValueTarget | None'
+        [Code]
+            File Name: rewrite.py
+            Object Name: find_public_value_target
+            Qualified Name: find_public_value_target
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 1
+            Stack Size: 10
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '_iter_commands'
+                '_message_from_command'
+                'message_type'
+                '_handshake_shape'
+                'payload_offset'
+                'MODP_768_BYTE_LENGTH'
+                'len'
+                'payload_length'
+                'validate_public_value'
+                'valid'
+                'PublicValueTarget'
+                'command_index'
+                'command_offset'
+                'command_length'
+            [Locals+Names]
+                'payload'
+                'expected_message_type'
+                'command'
+                'message'
+                'message_type'
+                'shape'
+                'role'
+                'prefix_length'
+                'candidate_offset'
+                'candidate_end'
+                'candidate'
+            [Constants]
+                None
+                (
+                    'role'
+                    'message_type'
+                    'candidate_offset'
+                    'candidate_length'
+                    'command_index'
+                    'command_offset'
+                    'command_length'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + _iter_commands
+                14      LOAD_FAST                       0: payload
+                16      PRECALL                         1
+                20      CALL                            1
+                30      GET_ITER                        
+                32      FOR_ITER                        193 (to 420)
+                34      STORE_FAST                      2: command
+                36      LOAD_GLOBAL                     3: NULL + _message_from_command
+                48      LOAD_FAST                       2: command
+                50      LOAD_FAST                       0: payload
+                52      PRECALL                         2
+                56      CALL                            2
+                66      STORE_FAST                      3: message
+                68      LOAD_FAST                       3: message
+                70      POP_JUMP_FORWARD_IF_NOT_NONE    1 (to 74)
+                72      JUMP_BACKWARD                   21 (to 32)
+                74      LOAD_FAST                       3: message
+                76      LOAD_ATTR                       2: message_type
+                86      STORE_FAST                      4: message_type
+                88      LOAD_FAST                       1: expected_message_type
+                90      POP_JUMP_FORWARD_IF_NONE        7 (to 106)
+                92      LOAD_FAST                       4: message_type
+                94      LOAD_FAST                       1: expected_message_type
+                96      COMPARE_OP                      3 (!=)
+                102     POP_JUMP_FORWARD_IF_FALSE       1 (to 106)
+                104     JUMP_BACKWARD                   37 (to 32)
+                106     LOAD_GLOBAL                     7: NULL + _handshake_shape
+                118     LOAD_FAST                       4: message_type
+                120     PRECALL                         1
+                124     CALL                            1
+                134     STORE_FAST                      5: shape
+                136     LOAD_FAST                       5: shape
+                138     POP_JUMP_FORWARD_IF_NOT_NONE    1 (to 142)
+                140     JUMP_BACKWARD                   55 (to 32)
+                142     LOAD_FAST                       5: shape
+                144     UNPACK_SEQUENCE                 2
+                148     STORE_FAST                      6: role
+                150     STORE_FAST                      7: prefix_length
+                152     LOAD_FAST                       3: message
+                154     LOAD_ATTR                       4: payload_offset
+                164     LOAD_FAST                       7: prefix_length
+                166     BINARY_OP                       0 (+)
+                170     STORE_FAST                      8: candidate_offset
+                172     LOAD_FAST                       8: candidate_offset
+                174     LOAD_GLOBAL                     10: MODP_768_BYTE_LENGTH
+                186     BINARY_OP                       0 (+)
+                190     STORE_FAST                      9: candidate_end
+                192     LOAD_FAST                       9: candidate_end
+                194     LOAD_GLOBAL                     13: NULL + len
+                206     LOAD_FAST                       0: payload
+                208     PRECALL                         1
+                212     CALL                            1
+                222     COMPARE_OP                      4 (>)
+                228     POP_JUMP_FORWARD_IF_TRUE        19 (to 268)
+                230     LOAD_FAST                       3: message
+                232     LOAD_ATTR                       7: payload_length
+                242     LOAD_FAST                       7: prefix_length
+                244     LOAD_GLOBAL                     10: MODP_768_BYTE_LENGTH
+                256     BINARY_OP                       0 (+)
+                260     COMPARE_OP                      0 (<)
+                266     POP_JUMP_FORWARD_IF_FALSE       1 (to 270)
+                268     JUMP_BACKWARD                   119 (to 32)
+                270     LOAD_FAST                       0: payload
+                272     LOAD_FAST                       8: candidate_offset
+                274     LOAD_FAST                       9: candidate_end
+                276     BUILD_SLICE                     2
+                278     BINARY_SUBSCR                   
+                288     STORE_FAST                      10: candidate
+                290     LOAD_GLOBAL                     17: NULL + validate_public_value
+                302     LOAD_FAST                       10: candidate
+                304     PRECALL                         1
+                308     CALL                            1
+                318     LOAD_ATTR                       9: valid
+                328     POP_JUMP_FORWARD_IF_TRUE        1 (to 332)
+                330     JUMP_BACKWARD                   150 (to 32)
+                332     LOAD_GLOBAL                     21: NULL + PublicValueTarget
+                344     LOAD_FAST                       6: role
+                346     LOAD_FAST                       4: message_type
+                348     LOAD_FAST                       8: candidate_offset
+                350     LOAD_GLOBAL                     10: MODP_768_BYTE_LENGTH
+                362     LOAD_FAST                       2: command
+                364     LOAD_ATTR                       11: command_index
+                374     LOAD_FAST                       2: command
+                376     LOAD_ATTR                       12: command_offset
+                386     LOAD_FAST                       2: command
+                388     LOAD_ATTR                       13: command_length
+                398     KW_NAMES                        1: ('role', 'message_type', 'candidate_offset', 'candidate_length', 'command_index', 'command_offset', 'command_length')
+                400     PRECALL                         7
+                404     CALL                            7
+                414     SWAP                            2
+                416     POP_TOP                         
+                418     RETURN_VALUE                    
+                420     LOAD_CONST                      0: None
+                422     RETURN_VALUE                    
+            [Exception Table]
+        'replacement_public_value'
+        [Code]
+            File Name: rewrite.py
+            Object Name: rewrite_public_value
+            Qualified Name: rewrite_public_value
+            Arg Count: 2
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 1
+            Stack Size: 8
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'len'
+                'MODP_768_BYTE_LENGTH'
+                'ValueError'
+                'validate_public_value'
+                'valid'
+                'reason'
+                'find_public_value_target'
+                'bytearray'
+                'candidate_slice'
+                'bytes'
+                'PublicValueRewrite'
+                '_sha256'
+            [Locals+Names]
+                'payload'
+                'replacement_public_value'
+                'expected_message_type'
+                'validation'
+                'target'
+                'rewritten'
+                'rewritten_payload'
+            [Constants]
+                None
+                'expected 96-byte DH public value, got '
+                ' bytes'
+                'invalid replacement DH public value: '
+                (
+                    'expected_message_type'
+                )
+                'no handshake public value found for expected messageType '
+                'no handshake public value found'
+                (
+                    'payload'
+                    'target'
+                    'original_payload_sha256'
+                    'rewritten_payload_sha256'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + len
+                14      LOAD_FAST                       1: replacement_public_value
+                16      PRECALL                         1
+                20      CALL                            1
+                30      LOAD_GLOBAL                     2: MODP_768_BYTE_LENGTH
+                42      COMPARE_OP                      3 (!=)
+                48      POP_JUMP_FORWARD_IF_FALSE       32 (to 114)
+                50      LOAD_GLOBAL                     5: NULL + ValueError
+                62      LOAD_CONST                      1: 'expected 96-byte DH public value, got '
+                64      LOAD_GLOBAL                     1: NULL + len
+                76      LOAD_FAST                       1: replacement_public_value
+                78      PRECALL                         1
+                82      CALL                            1
+                92      FORMAT_VALUE                    0 (FVC_NONE)
+                94      LOAD_CONST                      2: ' bytes'
+                96      BUILD_STRING                    3
+                98      PRECALL                         1
+                102     CALL                            1
+                112     RAISE_VARARGS                   1
+                114     LOAD_GLOBAL                     7: NULL + validate_public_value
+                126     LOAD_FAST                       1: replacement_public_value
+                128     PRECALL                         1
+                132     CALL                            1
+                142     STORE_FAST                      3: validation
+                144     LOAD_FAST                       3: validation
+                146     LOAD_ATTR                       4: valid
+                156     POP_JUMP_FORWARD_IF_TRUE        23 (to 204)
+                158     LOAD_GLOBAL                     5: NULL + ValueError
+                170     LOAD_CONST                      3: 'invalid replacement DH public value: '
+                172     LOAD_FAST                       3: validation
+                174     LOAD_ATTR                       5: reason
+                184     FORMAT_VALUE                    0 (FVC_NONE)
+                186     BUILD_STRING                    2
+                188     PRECALL                         1
+                192     CALL                            1
+                202     RAISE_VARARGS                   1
+                204     LOAD_GLOBAL                     13: NULL + find_public_value_target
+                216     LOAD_FAST                       0: payload
+                218     LOAD_FAST                       2: expected_message_type
+                220     KW_NAMES                        4: ('expected_message_type',)
+                222     PRECALL                         2
+                226     CALL                            2
+                236     STORE_FAST                      4: target
+                238     LOAD_FAST                       4: target
+                240     POP_JUMP_FORWARD_IF_NOT_NONE    20 (to 282)
+                242     LOAD_FAST                       2: expected_message_type
+                244     POP_JUMP_FORWARD_IF_NONE        18 (to 282)
+                246     LOAD_GLOBAL                     5: NULL + ValueError
+                258     LOAD_CONST                      5: 'no handshake public value found for expected messageType '
+                260     LOAD_FAST                       2: expected_message_type
+                262     FORMAT_VALUE                    0 (FVC_NONE)
+                264     BUILD_STRING                    2
+                266     PRECALL                         1
+                270     CALL                            1
+                280     RAISE_VARARGS                   1
+                282     LOAD_FAST                       4: target
+                284     POP_JUMP_FORWARD_IF_NOT_NONE    15 (to 316)
+                286     LOAD_GLOBAL                     5: NULL + ValueError
+                298     LOAD_CONST                      6: 'no handshake public value found'
+                300     PRECALL                         1
+                304     CALL                            1
+                314     RAISE_VARARGS                   1
+                316     LOAD_GLOBAL                     15: NULL + bytearray
+                328     LOAD_FAST                       0: payload
+                330     PRECALL                         1
+                334     CALL                            1
+                344     STORE_FAST                      5: rewritten
+                346     LOAD_FAST                       1: replacement_public_value
+                348     LOAD_FAST                       5: rewritten
+                350     LOAD_FAST                       4: target
+                352     LOAD_ATTR                       8: candidate_slice
+                362     STORE_SUBSCR                    
+                366     LOAD_GLOBAL                     19: NULL + bytes
+                378     LOAD_FAST                       5: rewritten
+                380     PRECALL                         1
+                384     CALL                            1
+                394     STORE_FAST                      6: rewritten_payload
+                396     LOAD_GLOBAL                     21: NULL + PublicValueRewrite
+                408     LOAD_FAST                       6: rewritten_payload
+                410     LOAD_FAST                       4: target
+                412     LOAD_GLOBAL                     23: NULL + _sha256
+                424     LOAD_FAST                       0: payload
+                426     PRECALL                         1
+                430     CALL                            1
+                440     LOAD_GLOBAL                     23: NULL + _sha256
+                452     LOAD_FAST                       6: rewritten_payload
+                454     PRECALL                         1
+                458     CALL                            1
+                468     KW_NAMES                        7: ('payload', 'target', 'original_payload_sha256', 'rewritten_payload_sha256')
+                470     PRECALL                         4
+                474     CALL                            4
+                484     RETURN_VALUE                    
+            [Exception Table]
+        [Code]
+            File Name: rewrite.py
+            Object Name: _Command
+            Qualified Name: _Command
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+            [Locals+Names]
+            [Constants]
+                '_Command'
+                'int'
+                'command_index'
+                'command_offset'
+                'command_type'
+                'command_channel_id'
+                'command_flags'
+                'command_length'
+                'command_sequence'
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: '_Command'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'int'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'command_index'
+                18      STORE_SUBSCR                    
+                22      LOAD_CONST                      1: 'int'
+                24      LOAD_NAME                       3: __annotations__
+                26      LOAD_CONST                      3: 'command_offset'
+                28      STORE_SUBSCR                    
+                32      LOAD_CONST                      1: 'int'
+                34      LOAD_NAME                       3: __annotations__
+                36      LOAD_CONST                      4: 'command_type'
+                38      STORE_SUBSCR                    
+                42      LOAD_CONST                      1: 'int'
+                44      LOAD_NAME                       3: __annotations__
+                46      LOAD_CONST                      5: 'command_channel_id'
+                48      STORE_SUBSCR                    
+                52      LOAD_CONST                      1: 'int'
+                54      LOAD_NAME                       3: __annotations__
+                56      LOAD_CONST                      6: 'command_flags'
+                58      STORE_SUBSCR                    
+                62      LOAD_CONST                      1: 'int'
+                64      LOAD_NAME                       3: __annotations__
+                66      LOAD_CONST                      7: 'command_length'
+                68      STORE_SUBSCR                    
+                72      LOAD_CONST                      1: 'int'
+                74      LOAD_NAME                       3: __annotations__
+                76      LOAD_CONST                      8: 'command_sequence'
+                78      STORE_SUBSCR                    
+                82      LOAD_CONST                      9: None
+                84      RETURN_VALUE                    
+            [Exception Table]
+        '_Command'
+        [Code]
+            File Name: rewrite.py
+            Object Name: _Message
+            Qualified Name: _Message
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+            [Locals+Names]
+            [Constants]
+                '_Message'
+                'int'
+                'message_type'
+                'payload_offset'
+                'payload_length'
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: '_Message'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'int'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'message_type'
+                18      STORE_SUBSCR                    
+                22      LOAD_CONST                      1: 'int'
+                24      LOAD_NAME                       3: __annotations__
+                26      LOAD_CONST                      3: 'payload_offset'
+                28      STORE_SUBSCR                    
+                32      LOAD_CONST                      1: 'int'
+                34      LOAD_NAME                       3: __annotations__
+                36      LOAD_CONST                      4: 'payload_length'
+                38      STORE_SUBSCR                    
+                42      LOAD_CONST                      5: None
+                44      RETURN_VALUE                    
+            [Exception Table]
+        '_Message'
+        'list[_Command]'
+        [Code]
+            File Name: rewrite.py
+            Object Name: _iter_commands
+            Qualified Name: _iter_commands
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 17
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'len'
+                'range'
+                'int'
+                'from_bytes'
+                'append'
+                '_Command'
+            [Locals+Names]
+                'payload'
+                'commands'
+                'command_count'
+                'offset'
+                'command_index'
+                'command_length'
+            [Constants]
+                None
+                12
+                3
+                4
+                8
+                'big'
+                1
+                2
+                (
+                    'command_index'
+                    'command_offset'
+                    'command_type'
+                    'command_channel_id'
+                    'command_flags'
+                    'command_length'
+                    'command_sequence'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + len
+                14      LOAD_FAST                       0: payload
+                16      PRECALL                         1
+                20      CALL                            1
+                30      LOAD_CONST                      1: 12
+                32      COMPARE_OP                      0 (<)
+                38      POP_JUMP_FORWARD_IF_FALSE       2 (to 44)
+                40      BUILD_LIST                      0
+                42      RETURN_VALUE                    
+                44      BUILD_LIST                      0
+                46      STORE_FAST                      1: commands
+                48      LOAD_FAST                       0: payload
+                50      LOAD_CONST                      2: 3
+                52      BINARY_SUBSCR                   
+                62      STORE_FAST                      2: command_count
+                64      LOAD_CONST                      1: 12
+                66      STORE_FAST                      3: offset
+                68      LOAD_GLOBAL                     3: NULL + range
+                80      LOAD_FAST                       2: command_count
+                82      PRECALL                         1
+                86      CALL                            1
+                96      GET_ITER                        
+                98      FOR_ITER                        245 (to 590)
+                100     STORE_FAST                      4: command_index
+                102     LOAD_FAST                       3: offset
+                104     LOAD_CONST                      1: 12
+                106     BINARY_OP                       0 (+)
+                110     LOAD_GLOBAL                     1: NULL + len
+                122     LOAD_FAST                       0: payload
+                124     PRECALL                         1
+                128     CALL                            1
+                138     COMPARE_OP                      4 (>)
+                144     POP_JUMP_FORWARD_IF_FALSE       2 (to 150)
+                146     POP_TOP                         
+                148     JUMP_FORWARD                    220 (to 590)
+                150     LOAD_GLOBAL                     4: int
+                162     LOAD_METHOD                     3: from_bytes
+                184     LOAD_FAST                       0: payload
+                186     LOAD_FAST                       3: offset
+                188     LOAD_CONST                      3: 4
+                190     BINARY_OP                       0 (+)
+                194     LOAD_FAST                       3: offset
+                196     LOAD_CONST                      4: 8
+                198     BINARY_OP                       0 (+)
+                202     BUILD_SLICE                     2
+                204     BINARY_SUBSCR                   
+                214     LOAD_CONST                      5: 'big'
+                216     PRECALL                         2
+                220     CALL                            2
+                230     STORE_FAST                      5: command_length
+                232     LOAD_FAST                       5: command_length
+                234     LOAD_CONST                      1: 12
+                236     COMPARE_OP                      0 (<)
+                242     POP_JUMP_FORWARD_IF_TRUE        22 (to 288)
+                244     LOAD_FAST                       3: offset
+                246     LOAD_FAST                       5: command_length
+                248     BINARY_OP                       0 (+)
+                252     LOAD_GLOBAL                     1: NULL + len
+                264     LOAD_FAST                       0: payload
+                266     PRECALL                         1
+                270     CALL                            1
+                280     COMPARE_OP                      4 (>)
+                286     POP_JUMP_FORWARD_IF_FALSE       2 (to 292)
+                288     POP_TOP                         
+                290     JUMP_FORWARD                    149 (to 590)
+                292     LOAD_FAST                       1: commands
+                294     LOAD_METHOD                     4: append
+                316     LOAD_GLOBAL                     11: NULL + _Command
+                328     LOAD_FAST                       4: command_index
+                330     LOAD_FAST                       3: offset
+                332     LOAD_GLOBAL                     5: NULL + int
+                344     LOAD_FAST                       0: payload
+                346     LOAD_FAST                       3: offset
+                348     BINARY_SUBSCR                   
+                358     PRECALL                         1
+                362     CALL                            1
+                372     LOAD_GLOBAL                     5: NULL + int
+                384     LOAD_FAST                       0: payload
+                386     LOAD_FAST                       3: offset
+                388     LOAD_CONST                      6: 1
+                390     BINARY_OP                       0 (+)
+                394     BINARY_SUBSCR                   
+                404     PRECALL                         1
+                408     CALL                            1
+                418     LOAD_GLOBAL                     5: NULL + int
+                430     LOAD_FAST                       0: payload
+                432     LOAD_FAST                       3: offset
+                434     LOAD_CONST                      7: 2
+                436     BINARY_OP                       0 (+)
+                440     BINARY_SUBSCR                   
+                450     PRECALL                         1
+                454     CALL                            1
+                464     LOAD_FAST                       5: command_length
+                466     LOAD_GLOBAL                     4: int
+                478     LOAD_METHOD                     3: from_bytes
+                500     LOAD_FAST                       0: payload
+                502     LOAD_FAST                       3: offset
+                504     LOAD_CONST                      4: 8
+                506     BINARY_OP                       0 (+)
+                510     LOAD_FAST                       3: offset
+                512     LOAD_CONST                      1: 12
+                514     BINARY_OP                       0 (+)
+                518     BUILD_SLICE                     2
+                520     BINARY_SUBSCR                   
+                530     LOAD_CONST                      5: 'big'
+                532     PRECALL                         2
+                536     CALL                            2
+                546     KW_NAMES                        8: ('command_index', 'command_offset', 'command_type', 'command_channel_id', 'command_flags', 'command_length', 'command_sequence')
+                548     PRECALL                         7
+                552     CALL                            7
+                562     PRECALL                         1
+                566     CALL                            1
+                576     POP_TOP                         
+                578     LOAD_FAST                       3: offset
+                580     LOAD_FAST                       5: command_length
+                582     BINARY_OP                       13 (+=)
+                586     STORE_FAST                      3: offset
+                588     JUMP_BACKWARD                   246 (to 98)
+                590     LOAD_FAST                       1: commands
+                592     RETURN_VALUE                    
+            [Exception Table]
+        'command'
+        '_Message | None'
+        [Code]
+            File Name: rewrite.py
+            Object Name: _message_from_command
+            Qualified Name: _message_from_command
+            Arg Count: 2
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 7
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'command_offset'
+                'command_length'
+                'command_type'
+                'CMD_SEND_UNRELIABLE'
+                'CMD_SEND_RELIABLE'
+                'len'
+                '_Message'
+                'int'
+            [Locals+Names]
+                'command'
+                'payload'
+                'command_payload_offset'
+                'reliable_offset'
+                'reliable_length'
+            [Constants]
+                None
+                12
+                4
+                2
+                1
+                (
+                    'message_type'
+                    'payload_offset'
+                    'payload_length'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_FAST                       0: command
+                4       LOAD_ATTR                       0: command_offset
+                14      LOAD_CONST                      1: 12
+                16      BINARY_OP                       0 (+)
+                20      STORE_FAST                      2: command_payload_offset
+                22      LOAD_FAST                       2: command_payload_offset
+                24      STORE_FAST                      3: reliable_offset
+                26      LOAD_FAST                       0: command
+                28      LOAD_ATTR                       1: command_length
+                38      LOAD_CONST                      1: 12
+                40      BINARY_OP                       10 (-)
+                44      STORE_FAST                      4: reliable_length
+                46      LOAD_FAST                       0: command
+                48      LOAD_ATTR                       2: command_type
+                58      LOAD_GLOBAL                     6: CMD_SEND_UNRELIABLE
+                70      COMPARE_OP                      2 (==)
+                76      POP_JUMP_FORWARD_IF_FALSE       19 (to 116)
+                78      LOAD_FAST                       4: reliable_length
+                80      LOAD_CONST                      2: 4
+                82      COMPARE_OP                      0 (<)
+                88      POP_JUMP_FORWARD_IF_FALSE       2 (to 94)
+                90      LOAD_CONST                      0: None
+                92      RETURN_VALUE                    
+                94      LOAD_FAST                       3: reliable_offset
+                96      LOAD_CONST                      2: 4
+                98      BINARY_OP                       13 (+=)
+                102     STORE_FAST                      3: reliable_offset
+                104     LOAD_FAST                       4: reliable_length
+                106     LOAD_CONST                      2: 4
+                108     BINARY_OP                       23 (-=)
+                112     STORE_FAST                      4: reliable_length
+                114     JUMP_FORWARD                    18 (to 152)
+                116     LOAD_FAST                       0: command
+                118     LOAD_ATTR                       2: command_type
+                128     LOAD_GLOBAL                     8: CMD_SEND_RELIABLE
+                140     COMPARE_OP                      3 (!=)
+                146     POP_JUMP_FORWARD_IF_FALSE       2 (to 152)
+                148     LOAD_CONST                      0: None
+                150     RETURN_VALUE                    
+                152     LOAD_FAST                       4: reliable_length
+                154     LOAD_CONST                      3: 2
+                156     COMPARE_OP                      0 (<)
+                162     POP_JUMP_FORWARD_IF_TRUE        22 (to 208)
+                164     LOAD_FAST                       3: reliable_offset
+                166     LOAD_FAST                       4: reliable_length
+                168     BINARY_OP                       0 (+)
+                172     LOAD_GLOBAL                     11: NULL + len
+                184     LOAD_FAST                       1: payload
+                186     PRECALL                         1
+                190     CALL                            1
+                200     COMPARE_OP                      4 (>)
+                206     POP_JUMP_FORWARD_IF_FALSE       2 (to 212)
+                208     LOAD_CONST                      0: None
+                210     RETURN_VALUE                    
+                212     LOAD_GLOBAL                     13: NULL + _Message
+                224     LOAD_GLOBAL                     15: NULL + int
+                236     LOAD_FAST                       1: payload
+                238     LOAD_FAST                       3: reliable_offset
+                240     LOAD_CONST                      4: 1
+                242     BINARY_OP                       0 (+)
+                246     BINARY_SUBSCR                   
+                256     PRECALL                         1
+                260     CALL                            1
+                270     LOAD_FAST                       3: reliable_offset
+                272     LOAD_CONST                      3: 2
+                274     BINARY_OP                       0 (+)
+                278     LOAD_FAST                       4: reliable_length
+                280     LOAD_CONST                      3: 2
+                282     BINARY_OP                       10 (-)
+                286     KW_NAMES                        5: ('message_type', 'payload_offset', 'payload_length')
+                288     PRECALL                         3
+                292     CALL                            3
+                302     RETURN_VALUE                    
+            [Exception Table]
+        'message_type'
+        'int'
+        'tuple[str, int] | None'
+        [Code]
+            File Name: rewrite.py
+            Object Name: _handshake_shape
+            Qualified Name: _handshake_shape
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 2
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+            [Locals+Names]
+                'message_type'
+            [Constants]
+                None
+                6
+                (
+                    'client_public_value'
+                    5
+                )
+                7
+                (
+                    'server_public_value'
+                    8
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_FAST                       0: message_type
+                4       LOAD_CONST                      1: 6
+                6       COMPARE_OP                      2 (==)
+                12      POP_JUMP_FORWARD_IF_FALSE       2 (to 18)
+                14      LOAD_CONST                      2: ('client_public_value', 5)
+                16      RETURN_VALUE                    
+                18      LOAD_FAST                       0: message_type
+                20      LOAD_CONST                      3: 7
+                22      COMPARE_OP                      2 (==)
+                28      POP_JUMP_FORWARD_IF_FALSE       2 (to 34)
+                30      LOAD_CONST                      4: ('server_public_value', 8)
+                32      RETURN_VALUE                    
+                34      LOAD_CONST                      0: None
+                36      RETURN_VALUE                    
+            [Exception Table]
+        'str'
+        [Code]
+            File Name: rewrite.py
+            Object Name: _sha256
+            Qualified Name: _sha256
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'hashlib'
+                'sha256'
+                'hexdigest'
+            [Locals+Names]
+                'payload'
+            [Constants]
+                None
+                'sha256:'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_CONST                      1: 'sha256:'
+                4       LOAD_GLOBAL                     1: NULL + hashlib
+                16      LOAD_ATTR                       1: sha256
+                26      LOAD_FAST                       0: payload
+                28      PRECALL                         1
+                32      CALL                            1
+                42      LOAD_METHOD                     2: hexdigest
+                64      PRECALL                         0
+                68      CALL                            0
+                78      FORMAT_VALUE                    0 (FVC_NONE)
+                80      BUILD_STRING                    2
+                82      RETURN_VALUE                    
+            [Exception Table]
+        (
+            'payload'
+            'bytes'
+            'expected_message_type'
+            'int | None'
+            'return'
+            'PublicValueTarget | None'
+        )
+        (
+            'payload'
+            'bytes'
+            'replacement_public_value'
+            'bytes'
+            'expected_message_type'
+            'int | None'
+            'return'
+            'PublicValueRewrite'
+        )
+        (
+            'payload'
+            'bytes'
+            'return'
+            'list[_Command]'
+        )
+        (
+            'command'
+            '_Command'
+            'payload'
+            'bytes'
+            'return'
+            '_Message | None'
+        )
+        (
+            'message_type'
+            'int'
+            'return'
+            'tuple[str, int] | None'
+        )
+        (
+            'payload'
+            'bytes'
+            'return'
+            'str'
+        )
+    [Disassembly]
+        0       RESUME                          0
+        2       LOAD_CONST                      0: 0
+        4       LOAD_CONST                      1: ('annotations',)
+        6       IMPORT_NAME                     0: __future__
+        8       IMPORT_FROM                     1: annotations
+        10      STORE_NAME                      1: annotations
+        12      POP_TOP                         
+        14      LOAD_CONST                      0: 0
+        16      LOAD_CONST                      2: None
+        18      IMPORT_NAME                     2: hashlib
+        20      STORE_NAME                      2: hashlib
+        22      LOAD_CONST                      0: 0
+        24      LOAD_CONST                      3: ('dataclass',)
+        26      IMPORT_NAME                     3: dataclasses
+        28      IMPORT_FROM                     4: dataclass
+        30      STORE_NAME                      4: dataclass
+        32      POP_TOP                         
+        34      LOAD_CONST                      0: 0
+        36      LOAD_CONST                      4: ('MODP_768_BYTE_LENGTH', 'validate_public_value')
+        38      IMPORT_NAME                     5: ass_radar.photon.dh
+        40      IMPORT_FROM                     6: MODP_768_BYTE_LENGTH
+        42      STORE_NAME                      6: MODP_768_BYTE_LENGTH
+        44      IMPORT_FROM                     7: validate_public_value
+        46      STORE_NAME                      7: validate_public_value
+        48      POP_TOP                         
+        50      LOAD_CONST                      5: 6
+        52      STORE_NAME                      8: CMD_SEND_RELIABLE
+        54      LOAD_CONST                      6: 7
+        56      STORE_NAME                      9: CMD_SEND_UNRELIABLE
+        58      PUSH_NULL                       
+        60      LOAD_NAME                       4: dataclass
+        62      LOAD_CONST                      7: True
+        64      KW_NAMES                        8: ('frozen',)
+        66      PRECALL                         1
+        70      CALL                            1
+        80      PUSH_NULL                       
+        82      LOAD_BUILD_CLASS                
+        84      LOAD_CONST                      9: <CODE> PublicValueTarget
+        86      MAKE_FUNCTION                   0
+        88      LOAD_CONST                      10: 'PublicValueTarget'
+        90      PRECALL                         2
+        94      CALL                            2
+        104     PRECALL                         0
+        108     CALL                            0
+        118     STORE_NAME                      10: PublicValueTarget
+        120     PUSH_NULL                       
+        122     LOAD_NAME                       4: dataclass
+        124     LOAD_CONST                      7: True
+        126     KW_NAMES                        8: ('frozen',)
+        128     PRECALL                         1
+        132     CALL                            1
+        142     PUSH_NULL                       
+        144     LOAD_BUILD_CLASS                
+        146     LOAD_CONST                      11: <CODE> PublicValueRewrite
+        148     MAKE_FUNCTION                   0
+        150     LOAD_CONST                      12: 'PublicValueRewrite'
+        152     PRECALL                         2
+        156     CALL                            2
+        166     PRECALL                         0
+        170     CALL                            0
+        180     STORE_NAME                      11: PublicValueRewrite
+        182     LOAD_CONST                      2: None
+        184     LOAD_CONST                      13: ('expected_message_type',)
+        186     BUILD_CONST_KEY_MAP             1
+        188     LOAD_CONST                      38: ('payload', 'bytes', 'expected_message_type', 'int | None', 'return', 'PublicValueTarget | None')
+        190     LOAD_CONST                      20: <CODE> find_public_value_target
+        192     MAKE_FUNCTION                   6
+        194     STORE_NAME                      12: find_public_value_target
+        196     LOAD_CONST                      2: None
+        198     LOAD_CONST                      13: ('expected_message_type',)
+        200     BUILD_CONST_KEY_MAP             1
+        202     LOAD_CONST                      39: ('payload', 'bytes', 'replacement_public_value', 'bytes', 'expected_message_type', 'int | None', 'return', 'PublicValueRewrite')
+        204     LOAD_CONST                      22: <CODE> rewrite_public_value
+        206     MAKE_FUNCTION                   6
+        208     STORE_NAME                      13: rewrite_public_value
+        210     PUSH_NULL                       
+        212     LOAD_NAME                       4: dataclass
+        214     LOAD_CONST                      7: True
+        216     KW_NAMES                        8: ('frozen',)
+        218     PRECALL                         1
+        222     CALL                            1
+        232     PUSH_NULL                       
+        234     LOAD_BUILD_CLASS                
+        236     LOAD_CONST                      23: <CODE> _Command
+        238     MAKE_FUNCTION                   0
+        240     LOAD_CONST                      24: '_Command'
+        242     PRECALL                         2
+        246     CALL                            2
+        256     PRECALL                         0
+        260     CALL                            0
+        270     STORE_NAME                      14: _Command
+        272     PUSH_NULL                       
+        274     LOAD_NAME                       4: dataclass
+        276     LOAD_CONST                      7: True
+        278     KW_NAMES                        8: ('frozen',)
+        280     PRECALL                         1
+        284     CALL                            1
+        294     PUSH_NULL                       
+        296     LOAD_BUILD_CLASS                
+        298     LOAD_CONST                      25: <CODE> _Message
+        300     MAKE_FUNCTION                   0
+        302     LOAD_CONST                      26: '_Message'
+        304     PRECALL                         2
+        308     CALL                            2
+        318     PRECALL                         0
+        322     CALL                            0
+        332     STORE_NAME                      15: _Message
+        334     LOAD_CONST                      40: ('payload', 'bytes', 'return', 'list[_Command]')
+        336     LOAD_CONST                      28: <CODE> _iter_commands
+        338     MAKE_FUNCTION                   4
+        340     STORE_NAME                      16: _iter_commands
+        342     LOAD_CONST                      41: ('command', '_Command', 'payload', 'bytes', 'return', '_Message | None')
+        344     LOAD_CONST                      31: <CODE> _message_from_command
+        346     MAKE_FUNCTION                   4
+        348     STORE_NAME                      17: _message_from_command
+        350     LOAD_CONST                      42: ('message_type', 'int', 'return', 'tuple[str, int] | None')
+        352     LOAD_CONST                      35: <CODE> _handshake_shape
+        354     MAKE_FUNCTION                   4
+        356     STORE_NAME                      18: _handshake_shape
+        358     LOAD_CONST                      43: ('payload', 'bytes', 'return', 'str')
+        360     LOAD_CONST                      37: <CODE> _sha256
+        362     MAKE_FUNCTION                   4
+        364     STORE_NAME                      19: _sha256
+        366     LOAD_CONST                      2: None
+        368     RETURN_VALUE                    
+    [Exception Table]

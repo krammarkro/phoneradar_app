@@ -1,0 +1,23 @@
+__init__.pyc (Python 3.11)
+[Code]
+    File Name: __init__.py
+    Object Name: <module>
+    Qualified Name: <module>
+    Arg Count: 0
+    Pos Only Arg Count: 0
+    KW Only Arg Count: 0
+    Stack Size: 1
+    Flags: 0x00000000
+    [Names]
+        '__doc__'
+    [Locals+Names]
+    [Constants]
+        'Production relay support.'
+        None
+    [Disassembly]
+        0       RESUME                          0
+        2       LOAD_CONST                      0: 'Production relay support.'
+        4       STORE_NAME                      0: __doc__
+        6       LOAD_CONST                      1: None
+        8       RETURN_VALUE                    
+    [Exception Table]

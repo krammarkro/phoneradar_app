@@ -1,0 +1,282 @@
+player_positions.pyc (Python 3.11)
+[Code]
+    File Name: player_positions.py
+    Object Name: <module>
+    Qualified Name: <module>
+    Arg Count: 0
+    Pos Only Arg Count: 0
+    KW Only Arg Count: 0
+    Stack Size: 4
+    Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+    [Names]
+        '__future__'
+        'annotations'
+        'math'
+        'MAX_ABSOLUTE_PLAYER_POSITION'
+        'frozenset'
+        'TRUSTED_PLAYER_POSITION_SOURCES'
+        'TRUSTED_PLAYER_SPAWN_POSITION_SOURCES'
+        'is_trusted_player_position_source'
+        'is_trusted_player_spawn_position_source'
+        'is_plausible_player_position'
+    [Locals+Names]
+    [Constants]
+        0
+        (
+            'annotations'
+        )
+        None
+        100000
+        frozenset({
+            'vps_relay_xor'
+            'local_relay_xor'
+            'vps_relay_decrypted'
+            'local_relay_decrypted'
+        })
+        'vps_relay_xor'
+        'local_relay_xor'
+        'value'
+        'object'
+        'return'
+        'bool'
+        [Code]
+            File Name: player_positions.py
+            Object Name: is_trusted_player_position_source
+            Qualified Name: is_trusted_player_position_source
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'isinstance'
+                'str'
+                'TRUSTED_PLAYER_POSITION_SOURCES'
+            [Locals+Names]
+                'value'
+            [Constants]
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + isinstance
+                14      LOAD_FAST                       0: value
+                16      LOAD_GLOBAL                     2: str
+                28      PRECALL                         2
+                32      CALL                            2
+                42      JUMP_IF_FALSE_OR_POP            8 (to 16)
+                44      LOAD_FAST                       0: value
+                46      LOAD_GLOBAL                     4: TRUSTED_PLAYER_POSITION_SOURCES
+                58      CONTAINS_OP                     0 (in)
+                60      RETURN_VALUE                    
+            [Exception Table]
+        [Code]
+            File Name: player_positions.py
+            Object Name: is_trusted_player_spawn_position_source
+            Qualified Name: is_trusted_player_spawn_position_source
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'isinstance'
+                'str'
+                'TRUSTED_PLAYER_SPAWN_POSITION_SOURCES'
+            [Locals+Names]
+                'value'
+            [Constants]
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + isinstance
+                14      LOAD_FAST                       0: value
+                16      LOAD_GLOBAL                     2: str
+                28      PRECALL                         2
+                32      CALL                            2
+                42      JUMP_IF_FALSE_OR_POP            8 (to 16)
+                44      LOAD_FAST                       0: value
+                46      LOAD_GLOBAL                     4: TRUSTED_PLAYER_SPAWN_POSITION_SOURCES
+                58      CONTAINS_OP                     0 (in)
+                60      RETURN_VALUE                    
+            [Exception Table]
+        'x'
+        'y'
+        [Code]
+            File Name: player_positions.py
+            Object Name: is_plausible_player_position
+            Qualified Name: is_plausible_player_position
+            Arg Count: 2
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 5
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'isinstance'
+                'bool'
+                'int'
+                'float'
+                'OverflowError'
+                'TypeError'
+                'ValueError'
+                'math'
+                'isfinite'
+                'abs'
+                'MAX_ABSOLUTE_PLAYER_POSITION'
+            [Locals+Names]
+                'x'
+                'y'
+                'x_value'
+                'y_value'
+            [Constants]
+                None
+                False
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + isinstance
+                14      LOAD_FAST                       0: x
+                16      LOAD_GLOBAL                     2: bool
+                28      PRECALL                         2
+                32      CALL                            2
+                42      POP_JUMP_FORWARD_IF_TRUE        21 (to 86)
+                44      LOAD_GLOBAL                     1: NULL + isinstance
+                56      LOAD_FAST                       1: y
+                58      LOAD_GLOBAL                     2: bool
+                70      PRECALL                         2
+                74      CALL                            2
+                84      POP_JUMP_FORWARD_IF_FALSE       2 (to 90)
+                86      LOAD_CONST                      1: False
+                88      RETURN_VALUE                    
+                90      LOAD_GLOBAL                     1: NULL + isinstance
+                102     LOAD_FAST                       0: x
+                104     LOAD_GLOBAL                     4: int
+                116     LOAD_GLOBAL                     6: float
+                128     BINARY_OP                       7 (|)
+                132     PRECALL                         2
+                136     CALL                            2
+                146     POP_JUMP_FORWARD_IF_FALSE       29 (to 206)
+                148     LOAD_GLOBAL                     1: NULL + isinstance
+                160     LOAD_FAST                       1: y
+                162     LOAD_GLOBAL                     4: int
+                174     LOAD_GLOBAL                     6: float
+                186     BINARY_OP                       7 (|)
+                190     PRECALL                         2
+                194     CALL                            2
+                204     POP_JUMP_FORWARD_IF_TRUE        2 (to 210)
+                206     LOAD_CONST                      1: False
+                208     RETURN_VALUE                    
+                210     NOP                             
+                212     LOAD_GLOBAL                     7: NULL + float
+                224     LOAD_FAST                       0: x
+                226     PRECALL                         1
+                230     CALL                            1
+                240     STORE_FAST                      2: x_value
+                242     LOAD_GLOBAL                     7: NULL + float
+                254     LOAD_FAST                       1: y
+                256     PRECALL                         1
+                260     CALL                            1
+                270     STORE_FAST                      3: y_value
+                272     JUMP_FORWARD                    30 (to 334)
+                274     PUSH_EXC_INFO                   
+                276     LOAD_GLOBAL                     8: OverflowError
+                288     LOAD_GLOBAL                     10: TypeError
+                300     LOAD_GLOBAL                     12: ValueError
+                312     BUILD_TUPLE                     3
+                314     CHECK_EXC_MATCH                 
+                316     POP_JUMP_FORWARD_IF_FALSE       4 (to 326)
+                318     POP_TOP                         
+                320     POP_EXCEPT                      
+                322     LOAD_CONST                      1: False
+                324     RETURN_VALUE                    
+                326     RERAISE                         0
+                328     COPY                            3
+                330     POP_EXCEPT                      
+                332     RERAISE                         1
+                334     LOAD_GLOBAL                     15: NULL + math
+                346     LOAD_ATTR                       8: isfinite
+                356     LOAD_FAST                       2: x_value
+                358     PRECALL                         1
+                362     CALL                            1
+                372     JUMP_IF_FALSE_OR_POP            67 (to 134)
+                374     LOAD_GLOBAL                     15: NULL + math
+                386     LOAD_ATTR                       8: isfinite
+                396     LOAD_FAST                       3: y_value
+                398     PRECALL                         1
+                402     CALL                            1
+                412     JUMP_IF_FALSE_OR_POP            47 (to 94)
+                414     LOAD_GLOBAL                     19: NULL + abs
+                426     LOAD_FAST                       2: x_value
+                428     PRECALL                         1
+                432     CALL                            1
+                442     LOAD_GLOBAL                     20: MAX_ABSOLUTE_PLAYER_POSITION
+                454     COMPARE_OP                      1 (<=)
+                460     JUMP_IF_FALSE_OR_POP            23 (to 46)
+                462     LOAD_GLOBAL                     19: NULL + abs
+                474     LOAD_FAST                       3: y_value
+                476     PRECALL                         1
+                480     CALL                            1
+                490     LOAD_GLOBAL                     20: MAX_ABSOLUTE_PLAYER_POSITION
+                502     COMPARE_OP                      1 (<=)
+                508     RETURN_VALUE                    
+            [Exception Table]
+                212 to 272 -> 274 [0] 
+                274 to 320 -> 328 [1] lasti
+                326 to 328 -> 328 [1] lasti
+        (
+            'value'
+            'object'
+            'return'
+            'bool'
+        )
+        (
+            'x'
+            'object'
+            'y'
+            'object'
+            'return'
+            'bool'
+        )
+    [Disassembly]
+        0       RESUME                          0
+        2       LOAD_CONST                      0: 0
+        4       LOAD_CONST                      1: ('annotations',)
+        6       IMPORT_NAME                     0: __future__
+        8       IMPORT_FROM                     1: annotations
+        10      STORE_NAME                      1: annotations
+        12      POP_TOP                         
+        14      LOAD_CONST                      0: 0
+        16      LOAD_CONST                      2: None
+        18      IMPORT_NAME                     2: math
+        20      STORE_NAME                      2: math
+        22      LOAD_CONST                      3: 100000
+        24      STORE_NAME                      3: MAX_ABSOLUTE_PLAYER_POSITION
+        26      PUSH_NULL                       
+        28      LOAD_NAME                       4: frozenset
+        30      BUILD_SET                       0
+        32      LOAD_CONST                      4: frozenset({'vps_relay_xor', 'local_relay_xor', 'vps_relay_decrypted', 'local_relay_decrypted'})
+        34      SET_UPDATE                      1
+        36      PRECALL                         1
+        40      CALL                            1
+        50      STORE_NAME                      5: TRUSTED_PLAYER_POSITION_SOURCES
+        52      PUSH_NULL                       
+        54      LOAD_NAME                       4: frozenset
+        56      LOAD_CONST                      5: 'vps_relay_xor'
+        58      LOAD_CONST                      6: 'local_relay_xor'
+        60      BUILD_SET                       2
+        62      PRECALL                         1
+        66      CALL                            1
+        76      STORE_NAME                      6: TRUSTED_PLAYER_SPAWN_POSITION_SOURCES
+        78      LOAD_CONST                      16: ('value', 'object', 'return', 'bool')
+        80      LOAD_CONST                      11: <CODE> is_trusted_player_position_source
+        82      MAKE_FUNCTION                   4
+        84      STORE_NAME                      7: is_trusted_player_position_source
+        86      LOAD_CONST                      16: ('value', 'object', 'return', 'bool')
+        88      LOAD_CONST                      12: <CODE> is_trusted_player_spawn_position_source
+        90      MAKE_FUNCTION                   4
+        92      STORE_NAME                      8: is_trusted_player_spawn_position_source
+        94      LOAD_CONST                      17: ('x', 'object', 'y', 'object', 'return', 'bool')
+        96      LOAD_CONST                      15: <CODE> is_plausible_player_position
+        98      MAKE_FUNCTION                   4
+        100     STORE_NAME                      9: is_plausible_player_position
+        102     LOAD_CONST                      2: None
+        104     RETURN_VALUE                    
+    [Exception Table]

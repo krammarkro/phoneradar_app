@@ -1,0 +1,3380 @@
+encrypted.pyc (Python 3.11)
+[Code]
+    File Name: encrypted.py
+    Object Name: <module>
+    Qualified Name: <module>
+    Arg Count: 0
+    Pos Only Arg Count: 0
+    KW Only Arg Count: 0
+    Stack Size: 5
+    Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+    [Names]
+        '__future__'
+        'annotations'
+        'hashlib'
+        'dataclasses'
+        'dataclass'
+        'typing'
+        'Any'
+        'Callable'
+        'Crypto.Cipher'
+        'AES'
+        'ass_radar.photon.keysync'
+        'is_key_sync_event_code'
+        'ass_radar.photon.deserializer'
+        'deserialize_event_live'
+        'deserialize_request_live'
+        'deserialize_response_live'
+        'ass_radar.photon.packet'
+        'ENCRYPTED_MESSAGE_TYPES'
+        'ass_radar.photon.types'
+        'ByteArray'
+        'CMD_SEND_RELIABLE'
+        'CMD_SEND_UNRELIABLE'
+        'AES_BLOCK_SIZE'
+        'EncryptedMessageTarget'
+        'EncryptedTranslationResult'
+        'ReliablePayloadTranslationResult'
+        'KeySyncExtraction'
+        'translate_encrypted_messages'
+        'translate_encrypted_reliable_payload'
+        'find_encrypted_message_targets'
+        'probe_decrypted_payload'
+        'extract_key_sync_codes'
+        '_Command'
+        '_Message'
+        '_probe_direct_payload'
+        '_probe_inner_message'
+        '_probe_event'
+        '_extract_key_sync_from_event'
+        '_probe_request'
+        '_probe_response'
+        '_iter_commands'
+        '_message_from_command'
+        '_parameter_keys'
+        '_byte_array_lengths'
+        '_change_cluster_summary'
+        '_map_id_kind'
+        '_raw_bytes'
+        '_int_or_none'
+        '_event_base'
+        '_require_aes_key'
+        '_aes_cbc_zero_iv_decrypt'
+        '_aes_cbc_zero_iv_encrypt'
+        '_sha256'
+    [Locals+Names]
+    [Constants]
+        0
+        (
+            'annotations'
+        )
+        None
+        (
+            'dataclass'
+        )
+        (
+            'Any'
+            'Callable'
+        )
+        (
+            'AES'
+        )
+        (
+            'is_key_sync_event_code'
+        )
+        (
+            'deserialize_event_live'
+            'deserialize_request_live'
+            'deserialize_response_live'
+        )
+        (
+            'ENCRYPTED_MESSAGE_TYPES'
+        )
+        (
+            'ByteArray'
+        )
+        6
+        7
+        16
+        True
+        (
+            'frozen'
+        )
+        [Code]
+            File Name: encrypted.py
+            Object Name: EncryptedMessageTarget
+            Qualified Name: EncryptedMessageTarget
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+                'property'
+                'encrypted_payload_slice'
+            [Locals+Names]
+            [Constants]
+                'EncryptedMessageTarget'
+                'int'
+                'message_type'
+                'encrypted_payload_offset'
+                'encrypted_payload_length'
+                'command_index'
+                'command_offset'
+                'command_length'
+                'return'
+                'slice'
+                [Code]
+                    File Name: encrypted.py
+                    Object Name: encrypted_payload_slice
+                    Qualified Name: EncryptedMessageTarget.encrypted_payload_slice
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 5
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'slice'
+                        'encrypted_payload_offset'
+                        'encrypted_payload_length'
+                    [Locals+Names]
+                        'self'
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_GLOBAL                     1: NULL + slice
+                        14      LOAD_FAST                       0: self
+                        16      LOAD_ATTR                       1: encrypted_payload_offset
+                        26      LOAD_FAST                       0: self
+                        28      LOAD_ATTR                       1: encrypted_payload_offset
+                        38      LOAD_FAST                       0: self
+                        40      LOAD_ATTR                       2: encrypted_payload_length
+                        50      BINARY_OP                       0 (+)
+                        54      PRECALL                         2
+                        58      CALL                            2
+                        68      RETURN_VALUE                    
+                    [Exception Table]
+                None
+                (
+                    'return'
+                    'slice'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'EncryptedMessageTarget'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'int'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'message_type'
+                18      STORE_SUBSCR                    
+                22      LOAD_CONST                      1: 'int'
+                24      LOAD_NAME                       3: __annotations__
+                26      LOAD_CONST                      3: 'encrypted_payload_offset'
+                28      STORE_SUBSCR                    
+                32      LOAD_CONST                      1: 'int'
+                34      LOAD_NAME                       3: __annotations__
+                36      LOAD_CONST                      4: 'encrypted_payload_length'
+                38      STORE_SUBSCR                    
+                42      LOAD_CONST                      1: 'int'
+                44      LOAD_NAME                       3: __annotations__
+                46      LOAD_CONST                      5: 'command_index'
+                48      STORE_SUBSCR                    
+                52      LOAD_CONST                      1: 'int'
+                54      LOAD_NAME                       3: __annotations__
+                56      LOAD_CONST                      6: 'command_offset'
+                58      STORE_SUBSCR                    
+                62      LOAD_CONST                      1: 'int'
+                64      LOAD_NAME                       3: __annotations__
+                66      LOAD_CONST                      7: 'command_length'
+                68      STORE_SUBSCR                    
+                72      LOAD_NAME                       4: property
+                74      LOAD_CONST                      12: ('return', 'slice')
+                76      LOAD_CONST                      10: <CODE> encrypted_payload_slice
+                78      MAKE_FUNCTION                   4
+                80      PRECALL                         0
+                84      CALL                            0
+                94      STORE_NAME                      5: encrypted_payload_slice
+                96      LOAD_CONST                      11: None
+                98      RETURN_VALUE                    
+            [Exception Table]
+        'EncryptedMessageTarget'
+        [Code]
+            File Name: encrypted.py
+            Object Name: EncryptedTranslationResult
+            Qualified Name: EncryptedTranslationResult
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+            [Locals+Names]
+            [Constants]
+                'EncryptedTranslationResult'
+                'bytes'
+                'payload'
+                'bool'
+                'translated'
+                'list[dict[str, Any]]'
+                'events'
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'EncryptedTranslationResult'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'bytes'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'payload'
+                18      STORE_SUBSCR                    
+                22      LOAD_CONST                      3: 'bool'
+                24      LOAD_NAME                       3: __annotations__
+                26      LOAD_CONST                      4: 'translated'
+                28      STORE_SUBSCR                    
+                32      LOAD_CONST                      5: 'list[dict[str, Any]]'
+                34      LOAD_NAME                       3: __annotations__
+                36      LOAD_CONST                      6: 'events'
+                38      STORE_SUBSCR                    
+                42      LOAD_CONST                      7: None
+                44      RETURN_VALUE                    
+            [Exception Table]
+        'EncryptedTranslationResult'
+        [Code]
+            File Name: encrypted.py
+            Object Name: ReliablePayloadTranslationResult
+            Qualified Name: ReliablePayloadTranslationResult
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+            [Locals+Names]
+            [Constants]
+                'ReliablePayloadTranslationResult'
+                'bytes'
+                'payload'
+                'bool'
+                'translated'
+                'list[dict[str, Any]]'
+                'events'
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'ReliablePayloadTranslationResult'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'bytes'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'payload'
+                18      STORE_SUBSCR                    
+                22      LOAD_CONST                      3: 'bool'
+                24      LOAD_NAME                       3: __annotations__
+                26      LOAD_CONST                      4: 'translated'
+                28      STORE_SUBSCR                    
+                32      LOAD_CONST                      5: 'list[dict[str, Any]]'
+                34      LOAD_NAME                       3: __annotations__
+                36      LOAD_CONST                      6: 'events'
+                38      STORE_SUBSCR                    
+                42      LOAD_CONST                      7: None
+                44      RETURN_VALUE                    
+            [Exception Table]
+        'ReliablePayloadTranslationResult'
+        [Code]
+            File Name: encrypted.py
+            Object Name: KeySyncExtraction
+            Qualified Name: KeySyncExtraction
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+            [Locals+Names]
+            [Constants]
+                'KeySyncExtraction'
+                'bytes'
+                'xor_code'
+                'dict[str, Any]'
+                'safe_summary'
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'KeySyncExtraction'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'bytes'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'xor_code'
+                18      STORE_SUBSCR                    
+                22      LOAD_CONST                      3: 'dict[str, Any]'
+                24      LOAD_NAME                       3: __annotations__
+                26      LOAD_CONST                      4: 'safe_summary'
+                28      STORE_SUBSCR                    
+                32      LOAD_CONST                      5: None
+                34      RETURN_VALUE                    
+            [Exception Table]
+        'KeySyncExtraction'
+        (
+            'on_key_sync'
+            'on_decrypted_payload'
+        )
+        'payload'
+        'bytes'
+        'source_key'
+        'target_key'
+        'direction'
+        'str'
+        'on_key_sync'
+        'Callable[[KeySyncExtraction], None] | None'
+        'on_decrypted_payload'
+        'Callable[[bytes, int, str], None] | None'
+        'return'
+        [Code]
+            File Name: encrypted.py
+            Object Name: translate_encrypted_messages
+            Qualified Name: translate_encrypted_messages
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 5
+            Stack Size: 10
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '_require_aes_key'
+                'bytearray'
+                'find_encrypted_message_targets'
+                'encrypted_payload_slice'
+                '_event_base'
+                'len'
+                'AES_BLOCK_SIZE'
+                'append'
+                '_aes_cbc_zero_iv_decrypt'
+                '_aes_cbc_zero_iv_encrypt'
+                'message_type'
+                'extract_key_sync_codes'
+                '_sha256'
+                'probe_decrypted_payload'
+                'EncryptedTranslationResult'
+                'bytes'
+            [Locals+Names]
+                'payload'
+                'source_key'
+                'target_key'
+                'direction'
+                'on_key_sync'
+                'on_decrypted_payload'
+                'rewritten'
+                'translated'
+                'events'
+                'target'
+                'ciphertext'
+                'base_event'
+                'plaintext'
+                'translated_ciphertext'
+                'key_sync_extractions'
+                'extraction'
+                'event'
+            [Constants]
+                None
+                'source_key'
+                (
+                    'name'
+                )
+                'target_key'
+                False
+                (
+                    'direction'
+                    'target'
+                    'ciphertext'
+                )
+                0
+                'status'
+                'not_block_aligned'
+                (
+                    'outer_message_type'
+                )
+                True
+                'translated'
+                (
+                    'status'
+                    'translatedCiphertextSha256'
+                    'decryptedPayloadSha256'
+                    'decryptedProbe'
+                    'sourceAesKeySha256'
+                    'targetAesKeySha256'
+                )
+                [Code]
+                    File Name: encrypted.py
+                    Object Name: <listcomp>
+                    Qualified Name: translate_encrypted_messages.<locals>.<listcomp>
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 3
+                    Flags: 0x01000013 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'safe_summary'
+                    [Locals+Names]
+                        '.0'
+                        'extraction'
+                    [Constants]
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       BUILD_LIST                      0
+                        4       LOAD_FAST                       0: .0
+                        6       FOR_ITER                        9 (to 26)
+                        8       STORE_FAST                      1: extraction
+                        10      LOAD_FAST                       1: extraction
+                        12      LOAD_ATTR                       0: safe_summary
+                        22      LIST_APPEND                     2
+                        24      JUMP_BACKWARD                   10 (to 6)
+                        26      RETURN_VALUE                    
+                    [Exception Table]
+                'keySyncExtractions'
+                (
+                    'payload'
+                    'translated'
+                    'events'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + _require_aes_key
+                14      LOAD_FAST                       1: source_key
+                16      LOAD_CONST                      1: 'source_key'
+                18      KW_NAMES                        2: ('name',)
+                20      PRECALL                         2
+                24      CALL                            2
+                34      POP_TOP                         
+                36      LOAD_GLOBAL                     1: NULL + _require_aes_key
+                48      LOAD_FAST                       2: target_key
+                50      LOAD_CONST                      3: 'target_key'
+                52      KW_NAMES                        2: ('name',)
+                54      PRECALL                         2
+                58      CALL                            2
+                68      POP_TOP                         
+                70      LOAD_GLOBAL                     3: NULL + bytearray
+                82      LOAD_FAST                       0: payload
+                84      PRECALL                         1
+                88      CALL                            1
+                98      STORE_FAST                      6: rewritten
+                100     LOAD_CONST                      4: False
+                102     STORE_FAST                      7: translated
+                104     BUILD_LIST                      0
+                106     STORE_FAST                      8: events
+                108     LOAD_GLOBAL                     5: NULL + find_encrypted_message_targets
+                120     LOAD_FAST                       0: payload
+                122     PRECALL                         1
+                126     CALL                            1
+                136     GET_ITER                        
+                138     FOR_ITER                        335 (to 812)
+                142     STORE_FAST                      9: target
+                144     LOAD_FAST                       0: payload
+                146     LOAD_FAST                       9: target
+                148     LOAD_ATTR                       3: encrypted_payload_slice
+                158     BINARY_SUBSCR                   
+                168     STORE_FAST                      10: ciphertext
+                170     LOAD_GLOBAL                     9: NULL + _event_base
+                182     LOAD_FAST                       3: direction
+                184     LOAD_FAST                       9: target
+                186     LOAD_FAST                       10: ciphertext
+                188     KW_NAMES                        5: ('direction', 'target', 'ciphertext')
+                190     PRECALL                         3
+                194     CALL                            3
+                204     STORE_FAST                      11: base_event
+                206     LOAD_GLOBAL                     11: NULL + len
+                218     LOAD_FAST                       10: ciphertext
+                220     PRECALL                         1
+                224     CALL                            1
+                234     LOAD_CONST                      6: 0
+                236     COMPARE_OP                      2 (==)
+                242     POP_JUMP_FORWARD_IF_TRUE        27 (to 298)
+                244     LOAD_GLOBAL                     11: NULL + len
+                256     LOAD_FAST                       10: ciphertext
+                258     PRECALL                         1
+                262     CALL                            1
+                272     LOAD_GLOBAL                     12: AES_BLOCK_SIZE
+                284     BINARY_OP                       6 (%)
+                288     LOAD_CONST                      6: 0
+                290     COMPARE_OP                      3 (!=)
+                296     POP_JUMP_FORWARD_IF_FALSE       28 (to 354)
+                298     LOAD_FAST                       8: events
+                300     LOAD_METHOD                     7: append
+                322     BUILD_MAP                       0
+                324     LOAD_FAST                       11: base_event
+                326     DICT_UPDATE                     1
+                328     LOAD_CONST                      7: 'status'
+                330     LOAD_CONST                      8: 'not_block_aligned'
+                332     BUILD_MAP                       1
+                334     DICT_UPDATE                     1
+                336     PRECALL                         1
+                340     CALL                            1
+                350     POP_TOP                         
+                352     JUMP_BACKWARD                   108 (to 138)
+                354     LOAD_GLOBAL                     17: NULL + _aes_cbc_zero_iv_decrypt
+                366     LOAD_FAST                       1: source_key
+                368     LOAD_FAST                       10: ciphertext
+                370     PRECALL                         2
+                374     CALL                            2
+                384     STORE_FAST                      12: plaintext
+                386     LOAD_GLOBAL                     19: NULL + _aes_cbc_zero_iv_encrypt
+                398     LOAD_FAST                       2: target_key
+                400     LOAD_FAST                       12: plaintext
+                402     PRECALL                         2
+                406     CALL                            2
+                416     STORE_FAST                      13: translated_ciphertext
+                418     LOAD_FAST                       5: on_decrypted_payload
+                420     POP_JUMP_FORWARD_IF_NONE        18 (to 458)
+                422     PUSH_NULL                       
+                424     LOAD_FAST                       5: on_decrypted_payload
+                426     LOAD_FAST                       12: plaintext
+                428     LOAD_FAST                       9: target
+                430     LOAD_ATTR                       10: message_type
+                440     LOAD_FAST                       3: direction
+                442     PRECALL                         3
+                446     CALL                            3
+                456     POP_TOP                         
+                458     LOAD_GLOBAL                     23: NULL + extract_key_sync_codes
+                470     LOAD_FAST                       12: plaintext
+                472     LOAD_FAST                       9: target
+                474     LOAD_ATTR                       10: message_type
+                484     KW_NAMES                        9: ('outer_message_type',)
+                486     PRECALL                         2
+                490     CALL                            2
+                500     STORE_FAST                      14: key_sync_extractions
+                502     LOAD_FAST                       4: on_key_sync
+                504     POP_JUMP_FORWARD_IF_NONE        16 (to 538)
+                506     LOAD_FAST                       14: key_sync_extractions
+                508     GET_ITER                        
+                510     FOR_ITER                        13 (to 538)
+                512     STORE_FAST                      15: extraction
+                514     PUSH_NULL                       
+                516     LOAD_FAST                       4: on_key_sync
+                518     LOAD_FAST                       15: extraction
+                520     PRECALL                         1
+                524     CALL                            1
+                534     POP_TOP                         
+                536     JUMP_BACKWARD                   14 (to 510)
+                538     LOAD_FAST                       13: translated_ciphertext
+                540     LOAD_FAST                       6: rewritten
+                542     LOAD_FAST                       9: target
+                544     LOAD_ATTR                       3: encrypted_payload_slice
+                554     STORE_SUBSCR                    
+                558     LOAD_CONST                      10: True
+                560     STORE_FAST                      7: translated
+                562     BUILD_MAP                       0
+                564     LOAD_FAST                       11: base_event
+                566     DICT_UPDATE                     1
+                568     LOAD_CONST                      11: 'translated'
+                570     LOAD_GLOBAL                     25: NULL + _sha256
+                582     LOAD_FAST                       13: translated_ciphertext
+                584     PRECALL                         1
+                588     CALL                            1
+                598     LOAD_GLOBAL                     25: NULL + _sha256
+                610     LOAD_FAST                       12: plaintext
+                612     PRECALL                         1
+                616     CALL                            1
+                626     LOAD_GLOBAL                     27: NULL + probe_decrypted_payload
+                638     LOAD_FAST                       12: plaintext
+                640     LOAD_FAST                       9: target
+                642     LOAD_ATTR                       10: message_type
+                652     KW_NAMES                        9: ('outer_message_type',)
+                654     PRECALL                         2
+                658     CALL                            2
+                668     LOAD_GLOBAL                     25: NULL + _sha256
+                680     LOAD_FAST                       1: source_key
+                682     PRECALL                         1
+                686     CALL                            1
+                696     LOAD_GLOBAL                     25: NULL + _sha256
+                708     LOAD_FAST                       2: target_key
+                710     PRECALL                         1
+                714     CALL                            1
+                724     LOAD_CONST                      12: ('status', 'translatedCiphertextSha256', 'decryptedPayloadSha256', 'decryptedProbe', 'sourceAesKeySha256', 'targetAesKeySha256')
+                726     BUILD_CONST_KEY_MAP             6
+                728     DICT_UPDATE                     1
+                730     STORE_FAST                      16: event
+                732     LOAD_FAST                       14: key_sync_extractions
+                734     POP_JUMP_FORWARD_IF_FALSE       15 (to 766)
+                736     LOAD_CONST                      13: <CODE> <listcomp>
+                738     MAKE_FUNCTION                   0
+                740     LOAD_FAST                       14: key_sync_extractions
+                742     GET_ITER                        
+                744     PRECALL                         0
+                748     CALL                            0
+                758     LOAD_FAST                       16: event
+                760     LOAD_CONST                      14: 'keySyncExtractions'
+                762     STORE_SUBSCR                    
+                766     LOAD_FAST                       8: events
+                768     LOAD_METHOD                     7: append
+                790     LOAD_FAST                       16: event
+                792     PRECALL                         1
+                796     CALL                            1
+                806     POP_TOP                         
+                808     JUMP_BACKWARD                   337 (to 138)
+                812     LOAD_GLOBAL                     29: NULL + EncryptedTranslationResult
+                824     LOAD_GLOBAL                     31: NULL + bytes
+                836     LOAD_FAST                       6: rewritten
+                838     PRECALL                         1
+                842     CALL                            1
+                852     LOAD_FAST                       7: translated
+                854     LOAD_FAST                       8: events
+                856     KW_NAMES                        15: ('payload', 'translated', 'events')
+                858     PRECALL                         3
+                862     CALL                            3
+                872     RETURN_VALUE                    
+            [Exception Table]
+        (
+            'event_context'
+            'on_key_sync'
+            'on_decrypted_payload'
+        )
+        'event_context'
+        'dict[str, Any] | None'
+        [Code]
+            File Name: encrypted.py
+            Object Name: translate_encrypted_reliable_payload
+            Qualified Name: translate_encrypted_reliable_payload
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 6
+            Stack Size: 9
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '_require_aes_key'
+                'len'
+                'ReliablePayloadTranslationResult'
+                'int'
+                'ENCRYPTED_MESSAGE_TYPES'
+                'str'
+                '_sha256'
+                'update'
+                'AES_BLOCK_SIZE'
+                '_aes_cbc_zero_iv_decrypt'
+                '_aes_cbc_zero_iv_encrypt'
+                'extract_key_sync_codes'
+                'probe_decrypted_payload'
+            [Locals+Names]
+                'payload'
+                'source_key'
+                'target_key'
+                'direction'
+                'event_context'
+                'on_key_sync'
+                'on_decrypted_payload'
+                'message_type'
+                'ciphertext'
+                'base_event'
+                'plaintext'
+                'translated_ciphertext'
+                'key_sync_extractions'
+                'extraction'
+                'event'
+            [Constants]
+                None
+                'source_key'
+                (
+                    'name'
+                )
+                'target_key'
+                2
+                False
+                (
+                    'payload'
+                    'translated'
+                    'events'
+                )
+                1
+                'encrypted_translate'
+                (
+                    'eventType'
+                    'direction'
+                    'messageType'
+                    'encryptedPayloadOffset'
+                    'encryptedPayloadLength'
+                    'ciphertextSha256'
+                )
+                0
+                'status'
+                'not_block_aligned'
+                (
+                    'outer_message_type'
+                )
+                'translated'
+                (
+                    'status'
+                    'translatedCiphertextSha256'
+                    'decryptedPayloadSha256'
+                    'decryptedProbe'
+                    'sourceAesKeySha256'
+                    'targetAesKeySha256'
+                )
+                [Code]
+                    File Name: encrypted.py
+                    Object Name: <listcomp>
+                    Qualified Name: translate_encrypted_reliable_payload.<locals>.<listcomp>
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 3
+                    Flags: 0x01000013 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'safe_summary'
+                    [Locals+Names]
+                        '.0'
+                        'extraction'
+                    [Constants]
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       BUILD_LIST                      0
+                        4       LOAD_FAST                       0: .0
+                        6       FOR_ITER                        9 (to 26)
+                        8       STORE_FAST                      1: extraction
+                        10      LOAD_FAST                       1: extraction
+                        12      LOAD_ATTR                       0: safe_summary
+                        22      LIST_APPEND                     2
+                        24      JUMP_BACKWARD                   10 (to 6)
+                        26      RETURN_VALUE                    
+                    [Exception Table]
+                'keySyncExtractions'
+                True
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + _require_aes_key
+                14      LOAD_FAST                       1: source_key
+                16      LOAD_CONST                      1: 'source_key'
+                18      KW_NAMES                        2: ('name',)
+                20      PRECALL                         2
+                24      CALL                            2
+                34      POP_TOP                         
+                36      LOAD_GLOBAL                     1: NULL + _require_aes_key
+                48      LOAD_FAST                       2: target_key
+                50      LOAD_CONST                      3: 'target_key'
+                52      KW_NAMES                        2: ('name',)
+                54      PRECALL                         2
+                58      CALL                            2
+                68      POP_TOP                         
+                70      LOAD_GLOBAL                     3: NULL + len
+                82      LOAD_FAST                       0: payload
+                84      PRECALL                         1
+                88      CALL                            1
+                98      LOAD_CONST                      4: 2
+                100     COMPARE_OP                      0 (<)
+                106     POP_JUMP_FORWARD_IF_FALSE       18 (to 144)
+                108     LOAD_GLOBAL                     5: NULL + ReliablePayloadTranslationResult
+                120     LOAD_FAST                       0: payload
+                122     LOAD_CONST                      5: False
+                124     BUILD_LIST                      0
+                126     KW_NAMES                        6: ('payload', 'translated', 'events')
+                128     PRECALL                         3
+                132     CALL                            3
+                142     RETURN_VALUE                    
+                144     LOAD_GLOBAL                     7: NULL + int
+                156     LOAD_FAST                       0: payload
+                158     LOAD_CONST                      7: 1
+                160     BINARY_SUBSCR                   
+                170     PRECALL                         1
+                174     CALL                            1
+                184     STORE_FAST                      7: message_type
+                186     LOAD_FAST                       7: message_type
+                188     LOAD_GLOBAL                     8: ENCRYPTED_MESSAGE_TYPES
+                200     CONTAINS_OP                     1 (not in)
+                202     POP_JUMP_FORWARD_IF_FALSE       18 (to 240)
+                204     LOAD_GLOBAL                     5: NULL + ReliablePayloadTranslationResult
+                216     LOAD_FAST                       0: payload
+                218     LOAD_CONST                      5: False
+                220     BUILD_LIST                      0
+                222     KW_NAMES                        6: ('payload', 'translated', 'events')
+                224     PRECALL                         3
+                228     CALL                            3
+                238     RETURN_VALUE                    
+                240     LOAD_FAST                       0: payload
+                242     LOAD_CONST                      4: 2
+                244     LOAD_CONST                      0: None
+                246     BUILD_SLICE                     2
+                248     BINARY_SUBSCR                   
+                258     STORE_FAST                      8: ciphertext
+                260     LOAD_CONST                      8: 'encrypted_translate'
+                262     LOAD_GLOBAL                     11: NULL + str
+                274     LOAD_FAST                       3: direction
+                276     PRECALL                         1
+                280     CALL                            1
+                290     LOAD_FAST                       7: message_type
+                292     LOAD_CONST                      4: 2
+                294     LOAD_GLOBAL                     3: NULL + len
+                306     LOAD_FAST                       8: ciphertext
+                308     PRECALL                         1
+                312     CALL                            1
+                322     LOAD_GLOBAL                     13: NULL + _sha256
+                334     LOAD_FAST                       8: ciphertext
+                336     PRECALL                         1
+                340     CALL                            1
+                350     LOAD_CONST                      9: ('eventType', 'direction', 'messageType', 'encryptedPayloadOffset', 'encryptedPayloadLength', 'ciphertextSha256')
+                352     BUILD_CONST_KEY_MAP             6
+                354     STORE_FAST                      9: base_event
+                356     LOAD_FAST                       4: event_context
+                358     POP_JUMP_FORWARD_IF_FALSE       21 (to 402)
+                360     LOAD_FAST                       9: base_event
+                362     LOAD_METHOD                     7: update
+                384     LOAD_FAST                       4: event_context
+                386     PRECALL                         1
+                390     CALL                            1
+                400     POP_TOP                         
+                402     LOAD_GLOBAL                     3: NULL + len
+                414     LOAD_FAST                       8: ciphertext
+                416     PRECALL                         1
+                420     CALL                            1
+                430     LOAD_CONST                      10: 0
+                432     COMPARE_OP                      2 (==)
+                438     POP_JUMP_FORWARD_IF_TRUE        27 (to 494)
+                440     LOAD_GLOBAL                     3: NULL + len
+                452     LOAD_FAST                       8: ciphertext
+                454     PRECALL                         1
+                458     CALL                            1
+                468     LOAD_GLOBAL                     16: AES_BLOCK_SIZE
+                480     BINARY_OP                       6 (%)
+                484     LOAD_CONST                      10: 0
+                486     COMPARE_OP                      3 (!=)
+                492     POP_JUMP_FORWARD_IF_FALSE       25 (to 544)
+                494     LOAD_GLOBAL                     5: NULL + ReliablePayloadTranslationResult
+                506     LOAD_FAST                       0: payload
+                508     LOAD_CONST                      5: False
+                510     BUILD_MAP                       0
+                512     LOAD_FAST                       9: base_event
+                514     DICT_UPDATE                     1
+                516     LOAD_CONST                      11: 'status'
+                518     LOAD_CONST                      12: 'not_block_aligned'
+                520     BUILD_MAP                       1
+                522     DICT_UPDATE                     1
+                524     BUILD_LIST                      1
+                526     KW_NAMES                        6: ('payload', 'translated', 'events')
+                528     PRECALL                         3
+                532     CALL                            3
+                542     RETURN_VALUE                    
+                544     LOAD_GLOBAL                     19: NULL + _aes_cbc_zero_iv_decrypt
+                556     LOAD_FAST                       1: source_key
+                558     LOAD_FAST                       8: ciphertext
+                560     PRECALL                         2
+                564     CALL                            2
+                574     STORE_FAST                      10: plaintext
+                576     LOAD_GLOBAL                     21: NULL + _aes_cbc_zero_iv_encrypt
+                588     LOAD_FAST                       2: target_key
+                590     LOAD_FAST                       10: plaintext
+                592     PRECALL                         2
+                596     CALL                            2
+                606     STORE_FAST                      11: translated_ciphertext
+                608     LOAD_FAST                       6: on_decrypted_payload
+                610     POP_JUMP_FORWARD_IF_NONE        13 (to 638)
+                612     PUSH_NULL                       
+                614     LOAD_FAST                       6: on_decrypted_payload
+                616     LOAD_FAST                       10: plaintext
+                618     LOAD_FAST                       7: message_type
+                620     LOAD_FAST                       3: direction
+                622     PRECALL                         3
+                626     CALL                            3
+                636     POP_TOP                         
+                638     LOAD_GLOBAL                     23: NULL + extract_key_sync_codes
+                650     LOAD_FAST                       10: plaintext
+                652     LOAD_FAST                       7: message_type
+                654     KW_NAMES                        13: ('outer_message_type',)
+                656     PRECALL                         2
+                660     CALL                            2
+                670     STORE_FAST                      12: key_sync_extractions
+                672     LOAD_FAST                       5: on_key_sync
+                674     POP_JUMP_FORWARD_IF_NONE        16 (to 708)
+                676     LOAD_FAST                       12: key_sync_extractions
+                678     GET_ITER                        
+                680     FOR_ITER                        13 (to 708)
+                682     STORE_FAST                      13: extraction
+                684     PUSH_NULL                       
+                686     LOAD_FAST                       5: on_key_sync
+                688     LOAD_FAST                       13: extraction
+                690     PRECALL                         1
+                694     CALL                            1
+                704     POP_TOP                         
+                706     JUMP_BACKWARD                   14 (to 680)
+                708     BUILD_MAP                       0
+                710     LOAD_FAST                       9: base_event
+                712     DICT_UPDATE                     1
+                714     LOAD_CONST                      14: 'translated'
+                716     LOAD_GLOBAL                     13: NULL + _sha256
+                728     LOAD_FAST                       11: translated_ciphertext
+                730     PRECALL                         1
+                734     CALL                            1
+                744     LOAD_GLOBAL                     13: NULL + _sha256
+                756     LOAD_FAST                       10: plaintext
+                758     PRECALL                         1
+                762     CALL                            1
+                772     LOAD_GLOBAL                     25: NULL + probe_decrypted_payload
+                784     LOAD_FAST                       10: plaintext
+                786     LOAD_FAST                       7: message_type
+                788     KW_NAMES                        13: ('outer_message_type',)
+                790     PRECALL                         2
+                794     CALL                            2
+                804     LOAD_GLOBAL                     13: NULL + _sha256
+                816     LOAD_FAST                       1: source_key
+                818     PRECALL                         1
+                822     CALL                            1
+                832     LOAD_GLOBAL                     13: NULL + _sha256
+                844     LOAD_FAST                       2: target_key
+                846     PRECALL                         1
+                850     CALL                            1
+                860     LOAD_CONST                      15: ('status', 'translatedCiphertextSha256', 'decryptedPayloadSha256', 'decryptedProbe', 'sourceAesKeySha256', 'targetAesKeySha256')
+                862     BUILD_CONST_KEY_MAP             6
+                864     DICT_UPDATE                     1
+                866     STORE_FAST                      14: event
+                868     LOAD_FAST                       12: key_sync_extractions
+                870     POP_JUMP_FORWARD_IF_FALSE       15 (to 902)
+                872     LOAD_CONST                      16: <CODE> <listcomp>
+                874     MAKE_FUNCTION                   0
+                876     LOAD_FAST                       12: key_sync_extractions
+                878     GET_ITER                        
+                880     PRECALL                         0
+                884     CALL                            0
+                894     LOAD_FAST                       14: event
+                896     LOAD_CONST                      17: 'keySyncExtractions'
+                898     STORE_SUBSCR                    
+                902     LOAD_GLOBAL                     5: NULL + ReliablePayloadTranslationResult
+                914     LOAD_FAST                       0: payload
+                916     LOAD_CONST                      0: None
+                918     LOAD_CONST                      4: 2
+                920     BUILD_SLICE                     2
+                922     BINARY_SUBSCR                   
+                932     LOAD_FAST                       11: translated_ciphertext
+                934     BINARY_OP                       0 (+)
+                938     LOAD_CONST                      18: True
+                940     LOAD_FAST                       14: event
+                942     BUILD_LIST                      1
+                944     KW_NAMES                        6: ('payload', 'translated', 'events')
+                946     PRECALL                         3
+                950     CALL                            3
+                960     RETURN_VALUE                    
+            [Exception Table]
+        'list[EncryptedMessageTarget]'
+        [Code]
+            File Name: encrypted.py
+            Object Name: find_encrypted_message_targets
+            Qualified Name: find_encrypted_message_targets
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 11
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '_iter_commands'
+                '_message_from_command'
+                'message_type'
+                'ENCRYPTED_MESSAGE_TYPES'
+                'append'
+                'EncryptedMessageTarget'
+                'payload_offset'
+                'payload_length'
+                'command_index'
+                'command_offset'
+                'command_length'
+            [Locals+Names]
+                'payload'
+                'targets'
+                'command'
+                'message'
+            [Constants]
+                None
+                (
+                    'message_type'
+                    'encrypted_payload_offset'
+                    'encrypted_payload_length'
+                    'command_index'
+                    'command_offset'
+                    'command_length'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       BUILD_LIST                      0
+                4       STORE_FAST                      1: targets
+                6       LOAD_GLOBAL                     1: NULL + _iter_commands
+                18      LOAD_FAST                       0: payload
+                20      PRECALL                         1
+                24      CALL                            1
+                34      GET_ITER                        
+                36      FOR_ITER                        105 (to 248)
+                38      STORE_FAST                      2: command
+                40      LOAD_GLOBAL                     3: NULL + _message_from_command
+                52      LOAD_FAST                       2: command
+                54      LOAD_FAST                       0: payload
+                56      PRECALL                         2
+                60      CALL                            2
+                70      STORE_FAST                      3: message
+                72      LOAD_FAST                       3: message
+                74      POP_JUMP_FORWARD_IF_NONE        14 (to 104)
+                76      LOAD_FAST                       3: message
+                78      LOAD_ATTR                       2: message_type
+                88      LOAD_GLOBAL                     6: ENCRYPTED_MESSAGE_TYPES
+                100     CONTAINS_OP                     1 (not in)
+                102     POP_JUMP_FORWARD_IF_FALSE       1 (to 106)
+                104     JUMP_BACKWARD                   35 (to 36)
+                106     LOAD_FAST                       1: targets
+                108     LOAD_METHOD                     4: append
+                130     LOAD_GLOBAL                     11: NULL + EncryptedMessageTarget
+                142     LOAD_FAST                       3: message
+                144     LOAD_ATTR                       2: message_type
+                154     LOAD_FAST                       3: message
+                156     LOAD_ATTR                       6: payload_offset
+                166     LOAD_FAST                       3: message
+                168     LOAD_ATTR                       7: payload_length
+                178     LOAD_FAST                       2: command
+                180     LOAD_ATTR                       8: command_index
+                190     LOAD_FAST                       2: command
+                192     LOAD_ATTR                       9: command_offset
+                202     LOAD_FAST                       2: command
+                204     LOAD_ATTR                       10: command_length
+                214     KW_NAMES                        1: ('message_type', 'encrypted_payload_offset', 'encrypted_payload_length', 'command_index', 'command_offset', 'command_length')
+                216     PRECALL                         6
+                220     CALL                            6
+                230     PRECALL                         1
+                234     CALL                            1
+                244     POP_TOP                         
+                246     JUMP_BACKWARD                   106 (to 36)
+                248     LOAD_FAST                       1: targets
+                250     RETURN_VALUE                    
+            [Exception Table]
+        'outer_message_type'
+        'int'
+        'dict[str, Any]'
+        [Code]
+            File Name: encrypted.py
+            Object Name: probe_decrypted_payload
+            Qualified Name: probe_decrypted_payload
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 1
+            Stack Size: 7
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'extend'
+                '_probe_direct_payload'
+                '_probe_inner_message'
+                'any'
+                'int'
+                'len'
+            [Locals+Names]
+                'payload'
+                'outer_message_type'
+                'candidates'
+                'key_sync_observed'
+            [Constants]
+                None
+                [Code]
+                    File Name: encrypted.py
+                    Object Name: <genexpr>
+                    Qualified Name: probe_decrypted_payload.<locals>.<genexpr>
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 6
+                    Flags: 0x01000033 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED | CO_GENERATOR | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'get'
+                        'is_key_sync_event_code'
+                    [Locals+Names]
+                        '.0'
+                        'item'
+                    [Constants]
+                        'kind'
+                        'event'
+                        'realEventCode'
+                        None
+                    [Disassembly]
+                        0       RETURN_GENERATOR                
+                        2       POP_TOP                         
+                        4       RESUME                          0
+                        6       LOAD_FAST                       0: .0
+                        8       FOR_ITER                        63 (to 136)
+                        10      STORE_FAST                      1: item
+                        12      LOAD_FAST                       1: item
+                        14      LOAD_METHOD                     0: get
+                        36      LOAD_CONST                      0: 'kind'
+                        38      PRECALL                         1
+                        42      CALL                            1
+                        52      LOAD_CONST                      1: 'event'
+                        54      COMPARE_OP                      2 (==)
+                        60      JUMP_IF_FALSE_OR_POP            33 (to 66)
+                        62      LOAD_GLOBAL                     3: NULL + is_key_sync_event_code
+                        74      LOAD_FAST                       1: item
+                        76      LOAD_METHOD                     0: get
+                        98      LOAD_CONST                      2: 'realEventCode'
+                        100     PRECALL                         1
+                        104     CALL                            1
+                        114     PRECALL                         1
+                        118     CALL                            1
+                        128     YIELD_VALUE                     
+                        130     RESUME                          1
+                        132     POP_TOP                         
+                        134     JUMP_BACKWARD                   64 (to 8)
+                        136     LOAD_CONST                      3: None
+                        138     RETURN_VALUE                    
+                    [Exception Table]
+                8
+                (
+                    'outerMessageType'
+                    'payloadLength'
+                    'candidateCount'
+                    'keySyncCandidateObserved'
+                    'candidates'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       BUILD_LIST                      0
+                4       STORE_FAST                      2: candidates
+                6       LOAD_FAST                       2: candidates
+                8       LOAD_METHOD                     0: extend
+                30      LOAD_GLOBAL                     3: NULL + _probe_direct_payload
+                42      LOAD_FAST                       0: payload
+                44      PRECALL                         1
+                48      CALL                            1
+                58      PRECALL                         1
+                62      CALL                            1
+                72      POP_TOP                         
+                74      LOAD_FAST                       0: payload
+                76      POP_JUMP_FORWARD_IF_FALSE       34 (to 146)
+                78      LOAD_FAST                       2: candidates
+                80      LOAD_METHOD                     0: extend
+                102     LOAD_GLOBAL                     5: NULL + _probe_inner_message
+                114     LOAD_FAST                       0: payload
+                116     PRECALL                         1
+                120     CALL                            1
+                130     PRECALL                         1
+                134     CALL                            1
+                144     POP_TOP                         
+                146     LOAD_GLOBAL                     7: NULL + any
+                158     LOAD_CONST                      1: <CODE> <genexpr>
+                160     MAKE_FUNCTION                   0
+                162     LOAD_FAST                       2: candidates
+                164     GET_ITER                        
+                166     PRECALL                         0
+                170     CALL                            0
+                180     PRECALL                         1
+                184     CALL                            1
+                194     STORE_FAST                      3: key_sync_observed
+                196     LOAD_GLOBAL                     9: NULL + int
+                208     LOAD_FAST                       1: outer_message_type
+                210     PRECALL                         1
+                214     CALL                            1
+                224     LOAD_GLOBAL                     11: NULL + len
+                236     LOAD_FAST                       0: payload
+                238     PRECALL                         1
+                242     CALL                            1
+                252     LOAD_GLOBAL                     11: NULL + len
+                264     LOAD_FAST                       2: candidates
+                266     PRECALL                         1
+                270     CALL                            1
+                280     LOAD_FAST                       3: key_sync_observed
+                282     LOAD_FAST                       2: candidates
+                284     LOAD_CONST                      0: None
+                286     LOAD_CONST                      2: 8
+                288     BUILD_SLICE                     2
+                290     BINARY_SUBSCR                   
+                300     LOAD_CONST                      3: ('outerMessageType', 'payloadLength', 'candidateCount', 'keySyncCandidateObserved', 'candidates')
+                302     BUILD_CONST_KEY_MAP             5
+                304     RETURN_VALUE                    
+            [Exception Table]
+        'list[KeySyncExtraction]'
+        [Code]
+            File Name: encrypted.py
+            Object Name: extract_key_sync_codes
+            Qualified Name: extract_key_sync_codes
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 1
+            Stack Size: 8
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'extend'
+                '_extract_key_sync_from_event'
+            [Locals+Names]
+                'payload'
+                'outer_message_type'
+                'extracted'
+            [Constants]
+                None
+                'direct_event'
+                (
+                    'outer_message_type'
+                )
+                0
+                4
+                'inner_event'
+                1
+            [Disassembly]
+                0       RESUME                          0
+                2       BUILD_LIST                      0
+                4       STORE_FAST                      2: extracted
+                6       LOAD_FAST                       2: extracted
+                8       LOAD_METHOD                     0: extend
+                30      LOAD_GLOBAL                     3: NULL + _extract_key_sync_from_event
+                42      LOAD_CONST                      1: 'direct_event'
+                44      LOAD_FAST                       0: payload
+                46      LOAD_FAST                       1: outer_message_type
+                48      KW_NAMES                        2: ('outer_message_type',)
+                50      PRECALL                         3
+                54      CALL                            3
+                64      PRECALL                         1
+                68      CALL                            1
+                78      POP_TOP                         
+                80      LOAD_FAST                       0: payload
+                82      POP_JUMP_FORWARD_IF_FALSE       57 (to 198)
+                84      LOAD_FAST                       0: payload
+                86      LOAD_CONST                      3: 0
+                88      BINARY_SUBSCR                   
+                98      LOAD_CONST                      4: 4
+                100     COMPARE_OP                      2 (==)
+                106     POP_JUMP_FORWARD_IF_FALSE       45 (to 198)
+                108     LOAD_FAST                       2: extracted
+                110     LOAD_METHOD                     0: extend
+                132     LOAD_GLOBAL                     3: NULL + _extract_key_sync_from_event
+                144     LOAD_CONST                      5: 'inner_event'
+                146     LOAD_FAST                       0: payload
+                148     LOAD_CONST                      6: 1
+                150     LOAD_CONST                      0: None
+                152     BUILD_SLICE                     2
+                154     BINARY_SUBSCR                   
+                164     LOAD_FAST                       1: outer_message_type
+                166     KW_NAMES                        2: ('outer_message_type',)
+                168     PRECALL                         3
+                172     CALL                            3
+                182     PRECALL                         1
+                186     CALL                            1
+                196     POP_TOP                         
+                198     LOAD_FAST                       2: extracted
+                200     RETURN_VALUE                    
+            [Exception Table]
+        [Code]
+            File Name: encrypted.py
+            Object Name: _Command
+            Qualified Name: _Command
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+            [Locals+Names]
+            [Constants]
+                '_Command'
+                'int'
+                'command_index'
+                'command_offset'
+                'command_type'
+                'command_channel_id'
+                'command_flags'
+                'command_length'
+                'command_sequence'
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: '_Command'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'int'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'command_index'
+                18      STORE_SUBSCR                    
+                22      LOAD_CONST                      1: 'int'
+                24      LOAD_NAME                       3: __annotations__
+                26      LOAD_CONST                      3: 'command_offset'
+                28      STORE_SUBSCR                    
+                32      LOAD_CONST                      1: 'int'
+                34      LOAD_NAME                       3: __annotations__
+                36      LOAD_CONST                      4: 'command_type'
+                38      STORE_SUBSCR                    
+                42      LOAD_CONST                      1: 'int'
+                44      LOAD_NAME                       3: __annotations__
+                46      LOAD_CONST                      5: 'command_channel_id'
+                48      STORE_SUBSCR                    
+                52      LOAD_CONST                      1: 'int'
+                54      LOAD_NAME                       3: __annotations__
+                56      LOAD_CONST                      6: 'command_flags'
+                58      STORE_SUBSCR                    
+                62      LOAD_CONST                      1: 'int'
+                64      LOAD_NAME                       3: __annotations__
+                66      LOAD_CONST                      7: 'command_length'
+                68      STORE_SUBSCR                    
+                72      LOAD_CONST                      1: 'int'
+                74      LOAD_NAME                       3: __annotations__
+                76      LOAD_CONST                      8: 'command_sequence'
+                78      STORE_SUBSCR                    
+                82      LOAD_CONST                      9: None
+                84      RETURN_VALUE                    
+            [Exception Table]
+        '_Command'
+        [Code]
+            File Name: encrypted.py
+            Object Name: _Message
+            Qualified Name: _Message
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+            [Locals+Names]
+            [Constants]
+                '_Message'
+                'int'
+                'message_type'
+                'payload_offset'
+                'payload_length'
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: '_Message'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'int'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'message_type'
+                18      STORE_SUBSCR                    
+                22      LOAD_CONST                      1: 'int'
+                24      LOAD_NAME                       3: __annotations__
+                26      LOAD_CONST                      3: 'payload_offset'
+                28      STORE_SUBSCR                    
+                32      LOAD_CONST                      1: 'int'
+                34      LOAD_NAME                       3: __annotations__
+                36      LOAD_CONST                      4: 'payload_length'
+                38      STORE_SUBSCR                    
+                42      LOAD_CONST                      5: None
+                44      RETURN_VALUE                    
+            [Exception Table]
+        '_Message'
+        'list[dict[str, Any]]'
+        [Code]
+            File Name: encrypted.py
+            Object Name: _probe_direct_payload
+            Qualified Name: _probe_direct_payload
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 5
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '_probe_event'
+                '_probe_request'
+                '_probe_response'
+            [Locals+Names]
+                'payload'
+            [Constants]
+                None
+                'direct_event'
+                'direct_request'
+                'direct_response'
+            [Disassembly]
+                0       RESUME                          0
+                2       BUILD_LIST                      0
+                4       LOAD_GLOBAL                     1: NULL + _probe_event
+                16      LOAD_CONST                      1: 'direct_event'
+                18      LOAD_FAST                       0: payload
+                20      PRECALL                         2
+                24      CALL                            2
+                34      LIST_EXTEND                     1
+                36      LOAD_GLOBAL                     3: NULL + _probe_request
+                48      LOAD_CONST                      2: 'direct_request'
+                50      LOAD_FAST                       0: payload
+                52      PRECALL                         2
+                56      CALL                            2
+                66      LIST_EXTEND                     1
+                68      LOAD_GLOBAL                     5: NULL + _probe_response
+                80      LOAD_CONST                      3: 'direct_response'
+                82      LOAD_FAST                       0: payload
+                84      PRECALL                         2
+                88      CALL                            2
+                98      LIST_EXTEND                     1
+                100     RETURN_VALUE                    
+            [Exception Table]
+        [Code]
+            File Name: encrypted.py
+            Object Name: _probe_inner_message
+            Qualified Name: _probe_inner_message
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '_probe_request'
+                '_probe_response'
+                '_probe_event'
+            [Locals+Names]
+                'payload'
+                'inner_type'
+                'inner_payload'
+            [Constants]
+                None
+                0
+                1
+                2
+                'inner_request'
+                frozenset({
+                    3
+                    7
+                })
+                'inner_response'
+                4
+                'inner_event'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_FAST                       0: payload
+                4       LOAD_CONST                      1: 0
+                6       BINARY_SUBSCR                   
+                16      STORE_FAST                      1: inner_type
+                18      LOAD_FAST                       0: payload
+                20      LOAD_CONST                      2: 1
+                22      LOAD_CONST                      0: None
+                24      BUILD_SLICE                     2
+                26      BINARY_SUBSCR                   
+                36      STORE_FAST                      2: inner_payload
+                38      LOAD_FAST                       1: inner_type
+                40      LOAD_CONST                      3: 2
+                42      COMPARE_OP                      2 (==)
+                48      POP_JUMP_FORWARD_IF_FALSE       16 (to 82)
+                50      LOAD_GLOBAL                     1: NULL + _probe_request
+                62      LOAD_CONST                      4: 'inner_request'
+                64      LOAD_FAST                       2: inner_payload
+                66      PRECALL                         2
+                70      CALL                            2
+                80      RETURN_VALUE                    
+                82      LOAD_FAST                       1: inner_type
+                84      LOAD_CONST                      5: frozenset({3, 7})
+                86      CONTAINS_OP                     0 (in)
+                88      POP_JUMP_FORWARD_IF_FALSE       16 (to 122)
+                90      LOAD_GLOBAL                     3: NULL + _probe_response
+                102     LOAD_CONST                      6: 'inner_response'
+                104     LOAD_FAST                       2: inner_payload
+                106     PRECALL                         2
+                110     CALL                            2
+                120     RETURN_VALUE                    
+                122     LOAD_FAST                       1: inner_type
+                124     LOAD_CONST                      7: 4
+                126     COMPARE_OP                      2 (==)
+                132     POP_JUMP_FORWARD_IF_FALSE       16 (to 166)
+                134     LOAD_GLOBAL                     5: NULL + _probe_event
+                146     LOAD_CONST                      8: 'inner_event'
+                148     LOAD_FAST                       2: inner_payload
+                150     PRECALL                         2
+                154     CALL                            2
+                164     RETURN_VALUE                    
+                166     BUILD_LIST                      0
+                168     RETURN_VALUE                    
+            [Exception Table]
+        'shape'
+        [Code]
+            File Name: encrypted.py
+            Object Name: _probe_event
+            Qualified Name: _probe_event
+            Arg Count: 2
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 8
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'deserialize_event_live'
+                'Exception'
+                'int'
+                'code'
+                '_int_or_none'
+                'parameters'
+                'get'
+                '_parameter_keys'
+                '_byte_array_lengths'
+            [Locals+Names]
+                'shape'
+                'payload'
+                'event'
+            [Constants]
+                None
+                'event'
+                252
+                (
+                    'shape'
+                    'kind'
+                    'eventCode'
+                    'realEventCode'
+                    'parameterKeys'
+                    'byteArrayParameterLengths'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       NOP                             
+                4       LOAD_GLOBAL                     1: NULL + deserialize_event_live
+                16      LOAD_FAST                       1: payload
+                18      PRECALL                         1
+                22      CALL                            1
+                32      STORE_FAST                      2: event
+                34      JUMP_FORWARD                    18 (to 72)
+                36      PUSH_EXC_INFO                   
+                38      LOAD_GLOBAL                     2: Exception
+                50      CHECK_EXC_MATCH                 
+                52      POP_JUMP_FORWARD_IF_FALSE       5 (to 64)
+                54      POP_TOP                         
+                56      BUILD_LIST                      0
+                58      SWAP                            2
+                60      POP_EXCEPT                      
+                62      RETURN_VALUE                    
+                64      RERAISE                         0
+                66      COPY                            3
+                68      POP_EXCEPT                      
+                70      RERAISE                         1
+                72      LOAD_FAST                       0: shape
+                74      LOAD_CONST                      1: 'event'
+                76      LOAD_GLOBAL                     5: NULL + int
+                88      LOAD_FAST                       2: event
+                90      LOAD_ATTR                       3: code
+                100     PRECALL                         1
+                104     CALL                            1
+                114     LOAD_GLOBAL                     9: NULL + _int_or_none
+                126     LOAD_FAST                       2: event
+                128     LOAD_ATTR                       5: parameters
+                138     LOAD_METHOD                     6: get
+                160     LOAD_CONST                      2: 252
+                162     PRECALL                         1
+                166     CALL                            1
+                176     PRECALL                         1
+                180     CALL                            1
+                190     LOAD_GLOBAL                     15: NULL + _parameter_keys
+                202     LOAD_FAST                       2: event
+                204     LOAD_ATTR                       5: parameters
+                214     PRECALL                         1
+                218     CALL                            1
+                228     LOAD_GLOBAL                     17: NULL + _byte_array_lengths
+                240     LOAD_FAST                       2: event
+                242     LOAD_ATTR                       5: parameters
+                252     PRECALL                         1
+                256     CALL                            1
+                266     LOAD_CONST                      3: ('shape', 'kind', 'eventCode', 'realEventCode', 'parameterKeys', 'byteArrayParameterLengths')
+                268     BUILD_CONST_KEY_MAP             6
+                270     BUILD_LIST                      1
+                272     RETURN_VALUE                    
+            [Exception Table]
+                4 to 34 -> 36 [0] 
+                36 to 60 -> 66 [1] lasti
+                64 to 66 -> 66 [1] lasti
+        [Code]
+            File Name: encrypted.py
+            Object Name: _extract_key_sync_from_event
+            Qualified Name: _extract_key_sync_from_event
+            Arg Count: 2
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 1
+            Stack Size: 15
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'deserialize_event_live'
+                'Exception'
+                '_int_or_none'
+                'parameters'
+                'get'
+                'int'
+                'code'
+                'is_key_sync_event_code'
+                '_raw_bytes'
+                'len'
+                'KeySyncExtraction'
+                '_parameter_keys'
+                '_byte_array_lengths'
+                '_sha256'
+            [Locals+Names]
+                'shape'
+                'payload'
+                'outer_message_type'
+                'event'
+                'real_event_code'
+                'routed_event_code'
+                'xor_code'
+            [Constants]
+                None
+                252
+                0
+                8
+                'event'
+                (
+                    'shape'
+                    'kind'
+                    'outerMessageType'
+                    'eventCode'
+                    'realEventCode'
+                    'parameterKeys'
+                    'byteArrayParameterLengths'
+                    'xorCodeParameterKey'
+                    'xorCodeLength'
+                    'xorCodeSha256'
+                )
+                (
+                    'xor_code'
+                    'safe_summary'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       NOP                             
+                4       LOAD_GLOBAL                     1: NULL + deserialize_event_live
+                16      LOAD_FAST                       1: payload
+                18      PRECALL                         1
+                22      CALL                            1
+                32      STORE_FAST                      3: event
+                34      JUMP_FORWARD                    18 (to 72)
+                36      PUSH_EXC_INFO                   
+                38      LOAD_GLOBAL                     2: Exception
+                50      CHECK_EXC_MATCH                 
+                52      POP_JUMP_FORWARD_IF_FALSE       5 (to 64)
+                54      POP_TOP                         
+                56      BUILD_LIST                      0
+                58      SWAP                            2
+                60      POP_EXCEPT                      
+                62      RETURN_VALUE                    
+                64      RERAISE                         0
+                66      COPY                            3
+                68      POP_EXCEPT                      
+                70      RERAISE                         1
+                72      LOAD_GLOBAL                     5: NULL + _int_or_none
+                84      LOAD_FAST                       3: event
+                86      LOAD_ATTR                       3: parameters
+                96      LOAD_METHOD                     4: get
+                118     LOAD_CONST                      1: 252
+                120     PRECALL                         1
+                124     CALL                            1
+                134     PRECALL                         1
+                138     CALL                            1
+                148     STORE_FAST                      4: real_event_code
+                150     LOAD_FAST                       4: real_event_code
+                152     POP_JUMP_FORWARD_IF_NONE        2 (to 158)
+                154     LOAD_FAST                       4: real_event_code
+                156     JUMP_FORWARD                    19 (to 196)
+                158     LOAD_GLOBAL                     11: NULL + int
+                170     LOAD_FAST                       3: event
+                172     LOAD_ATTR                       6: code
+                182     PRECALL                         1
+                186     CALL                            1
+                196     STORE_FAST                      5: routed_event_code
+                198     LOAD_GLOBAL                     15: NULL + is_key_sync_event_code
+                210     LOAD_FAST                       5: routed_event_code
+                212     PRECALL                         1
+                216     CALL                            1
+                226     POP_JUMP_FORWARD_IF_TRUE        2 (to 232)
+                228     BUILD_LIST                      0
+                230     RETURN_VALUE                    
+                232     LOAD_GLOBAL                     17: NULL + _raw_bytes
+                244     LOAD_FAST                       3: event
+                246     LOAD_ATTR                       3: parameters
+                256     LOAD_METHOD                     4: get
+                278     LOAD_CONST                      2: 0
+                280     PRECALL                         1
+                284     CALL                            1
+                294     PRECALL                         1
+                298     CALL                            1
+                308     STORE_FAST                      6: xor_code
+                310     LOAD_GLOBAL                     19: NULL + len
+                322     LOAD_FAST                       6: xor_code
+                324     PRECALL                         1
+                328     CALL                            1
+                338     LOAD_CONST                      3: 8
+                340     COMPARE_OP                      3 (!=)
+                346     POP_JUMP_FORWARD_IF_FALSE       2 (to 352)
+                348     BUILD_LIST                      0
+                350     RETURN_VALUE                    
+                352     LOAD_GLOBAL                     21: NULL + KeySyncExtraction
+                364     LOAD_FAST                       6: xor_code
+                366     LOAD_FAST                       0: shape
+                368     LOAD_CONST                      4: 'event'
+                370     LOAD_GLOBAL                     11: NULL + int
+                382     LOAD_FAST                       2: outer_message_type
+                384     PRECALL                         1
+                388     CALL                            1
+                398     LOAD_GLOBAL                     11: NULL + int
+                410     LOAD_FAST                       3: event
+                412     LOAD_ATTR                       6: code
+                422     PRECALL                         1
+                426     CALL                            1
+                436     LOAD_FAST                       5: routed_event_code
+                438     LOAD_GLOBAL                     23: NULL + _parameter_keys
+                450     LOAD_FAST                       3: event
+                452     LOAD_ATTR                       3: parameters
+                462     PRECALL                         1
+                466     CALL                            1
+                476     LOAD_GLOBAL                     25: NULL + _byte_array_lengths
+                488     LOAD_FAST                       3: event
+                490     LOAD_ATTR                       3: parameters
+                500     PRECALL                         1
+                504     CALL                            1
+                514     LOAD_CONST                      2: 0
+                516     LOAD_GLOBAL                     19: NULL + len
+                528     LOAD_FAST                       6: xor_code
+                530     PRECALL                         1
+                534     CALL                            1
+                544     LOAD_GLOBAL                     27: NULL + _sha256
+                556     LOAD_FAST                       6: xor_code
+                558     PRECALL                         1
+                562     CALL                            1
+                572     LOAD_CONST                      5: ('shape', 'kind', 'outerMessageType', 'eventCode', 'realEventCode', 'parameterKeys', 'byteArrayParameterLengths', 'xorCodeParameterKey', 'xorCodeLength', 'xorCodeSha256')
+                574     BUILD_CONST_KEY_MAP             10
+                576     KW_NAMES                        6: ('xor_code', 'safe_summary')
+                578     PRECALL                         2
+                582     CALL                            2
+                592     BUILD_LIST                      1
+                594     RETURN_VALUE                    
+            [Exception Table]
+                4 to 34 -> 36 [0] 
+                36 to 60 -> 66 [1] lasti
+                64 to 66 -> 66 [1] lasti
+        [Code]
+            File Name: encrypted.py
+            Object Name: _probe_request
+            Qualified Name: _probe_request
+            Arg Count: 2
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 8
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'deserialize_request_live'
+                'Exception'
+                'int'
+                'operation_code'
+                '_int_or_none'
+                'parameters'
+                'get'
+                '_parameter_keys'
+                '_byte_array_lengths'
+            [Locals+Names]
+                'shape'
+                'payload'
+                'request'
+            [Constants]
+                None
+                'request'
+                253
+                (
+                    'shape'
+                    'kind'
+                    'operationCode'
+                    'realOperationCode'
+                    'parameterKeys'
+                    'byteArrayParameterLengths'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       NOP                             
+                4       LOAD_GLOBAL                     1: NULL + deserialize_request_live
+                16      LOAD_FAST                       1: payload
+                18      PRECALL                         1
+                22      CALL                            1
+                32      STORE_FAST                      2: request
+                34      JUMP_FORWARD                    18 (to 72)
+                36      PUSH_EXC_INFO                   
+                38      LOAD_GLOBAL                     2: Exception
+                50      CHECK_EXC_MATCH                 
+                52      POP_JUMP_FORWARD_IF_FALSE       5 (to 64)
+                54      POP_TOP                         
+                56      BUILD_LIST                      0
+                58      SWAP                            2
+                60      POP_EXCEPT                      
+                62      RETURN_VALUE                    
+                64      RERAISE                         0
+                66      COPY                            3
+                68      POP_EXCEPT                      
+                70      RERAISE                         1
+                72      LOAD_FAST                       0: shape
+                74      LOAD_CONST                      1: 'request'
+                76      LOAD_GLOBAL                     5: NULL + int
+                88      LOAD_FAST                       2: request
+                90      LOAD_ATTR                       3: operation_code
+                100     PRECALL                         1
+                104     CALL                            1
+                114     LOAD_GLOBAL                     9: NULL + _int_or_none
+                126     LOAD_FAST                       2: request
+                128     LOAD_ATTR                       5: parameters
+                138     LOAD_METHOD                     6: get
+                160     LOAD_CONST                      2: 253
+                162     PRECALL                         1
+                166     CALL                            1
+                176     PRECALL                         1
+                180     CALL                            1
+                190     LOAD_GLOBAL                     15: NULL + _parameter_keys
+                202     LOAD_FAST                       2: request
+                204     LOAD_ATTR                       5: parameters
+                214     PRECALL                         1
+                218     CALL                            1
+                228     LOAD_GLOBAL                     17: NULL + _byte_array_lengths
+                240     LOAD_FAST                       2: request
+                242     LOAD_ATTR                       5: parameters
+                252     PRECALL                         1
+                256     CALL                            1
+                266     LOAD_CONST                      3: ('shape', 'kind', 'operationCode', 'realOperationCode', 'parameterKeys', 'byteArrayParameterLengths')
+                268     BUILD_CONST_KEY_MAP             6
+                270     BUILD_LIST                      1
+                272     RETURN_VALUE                    
+            [Exception Table]
+                4 to 34 -> 36 [0] 
+                36 to 60 -> 66 [1] lasti
+                64 to 66 -> 66 [1] lasti
+        [Code]
+            File Name: encrypted.py
+            Object Name: _probe_response
+            Qualified Name: _probe_response
+            Arg Count: 2
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 9
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'deserialize_response_live'
+                'Exception'
+                '_int_or_none'
+                'parameters'
+                'get'
+                'int'
+                'operation_code'
+                'return_code'
+                '_parameter_keys'
+                '_byte_array_lengths'
+                '_change_cluster_summary'
+            [Locals+Names]
+                'shape'
+                'payload'
+                'response'
+                'routed_code'
+                'candidate'
+                'change_cluster'
+            [Constants]
+                None
+                253
+                'response'
+                (
+                    'shape'
+                    'kind'
+                    'operationCode'
+                    'realOperationCode'
+                    'returnCode'
+                    'parameterKeys'
+                    'byteArrayParameterLengths'
+                )
+                'changeCluster'
+            [Disassembly]
+                0       RESUME                          0
+                2       NOP                             
+                4       LOAD_GLOBAL                     1: NULL + deserialize_response_live
+                16      LOAD_FAST                       1: payload
+                18      PRECALL                         1
+                22      CALL                            1
+                32      STORE_FAST                      2: response
+                34      JUMP_FORWARD                    18 (to 72)
+                36      PUSH_EXC_INFO                   
+                38      LOAD_GLOBAL                     2: Exception
+                50      CHECK_EXC_MATCH                 
+                52      POP_JUMP_FORWARD_IF_FALSE       5 (to 64)
+                54      POP_TOP                         
+                56      BUILD_LIST                      0
+                58      SWAP                            2
+                60      POP_EXCEPT                      
+                62      RETURN_VALUE                    
+                64      RERAISE                         0
+                66      COPY                            3
+                68      POP_EXCEPT                      
+                70      RERAISE                         1
+                72      LOAD_GLOBAL                     5: NULL + _int_or_none
+                84      LOAD_FAST                       2: response
+                86      LOAD_ATTR                       3: parameters
+                96      LOAD_METHOD                     4: get
+                118     LOAD_CONST                      1: 253
+                120     PRECALL                         1
+                124     CALL                            1
+                134     PRECALL                         1
+                138     CALL                            1
+                148     STORE_FAST                      3: routed_code
+                150     LOAD_FAST                       0: shape
+                152     LOAD_CONST                      2: 'response'
+                154     LOAD_GLOBAL                     11: NULL + int
+                166     LOAD_FAST                       2: response
+                168     LOAD_ATTR                       6: operation_code
+                178     PRECALL                         1
+                182     CALL                            1
+                192     LOAD_FAST                       3: routed_code
+                194     LOAD_GLOBAL                     11: NULL + int
+                206     LOAD_FAST                       2: response
+                208     LOAD_ATTR                       7: return_code
+                218     PRECALL                         1
+                222     CALL                            1
+                232     LOAD_GLOBAL                     17: NULL + _parameter_keys
+                244     LOAD_FAST                       2: response
+                246     LOAD_ATTR                       3: parameters
+                256     PRECALL                         1
+                260     CALL                            1
+                270     LOAD_GLOBAL                     19: NULL + _byte_array_lengths
+                282     LOAD_FAST                       2: response
+                284     LOAD_ATTR                       3: parameters
+                294     PRECALL                         1
+                298     CALL                            1
+                308     LOAD_CONST                      3: ('shape', 'kind', 'operationCode', 'realOperationCode', 'returnCode', 'parameterKeys', 'byteArrayParameterLengths')
+                310     BUILD_CONST_KEY_MAP             7
+                312     STORE_FAST                      4: candidate
+                314     LOAD_GLOBAL                     21: NULL + _change_cluster_summary
+                326     LOAD_FAST                       2: response
+                328     PRECALL                         1
+                332     CALL                            1
+                342     STORE_FAST                      5: change_cluster
+                344     LOAD_FAST                       5: change_cluster
+                346     POP_JUMP_FORWARD_IF_FALSE       5 (to 358)
+                348     LOAD_FAST                       5: change_cluster
+                350     LOAD_FAST                       4: candidate
+                352     LOAD_CONST                      4: 'changeCluster'
+                354     STORE_SUBSCR                    
+                358     LOAD_FAST                       4: candidate
+                360     BUILD_LIST                      1
+                362     RETURN_VALUE                    
+            [Exception Table]
+                4 to 34 -> 36 [0] 
+                36 to 60 -> 66 [1] lasti
+                64 to 66 -> 66 [1] lasti
+        'list[_Command]'
+        [Code]
+            File Name: encrypted.py
+            Object Name: _iter_commands
+            Qualified Name: _iter_commands
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 17
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'len'
+                'range'
+                'int'
+                'from_bytes'
+                'append'
+                '_Command'
+            [Locals+Names]
+                'payload'
+                'commands'
+                'command_count'
+                'offset'
+                'command_index'
+                'command_length'
+            [Constants]
+                None
+                12
+                3
+                4
+                8
+                'big'
+                1
+                2
+                (
+                    'command_index'
+                    'command_offset'
+                    'command_type'
+                    'command_channel_id'
+                    'command_flags'
+                    'command_length'
+                    'command_sequence'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + len
+                14      LOAD_FAST                       0: payload
+                16      PRECALL                         1
+                20      CALL                            1
+                30      LOAD_CONST                      1: 12
+                32      COMPARE_OP                      0 (<)
+                38      POP_JUMP_FORWARD_IF_FALSE       2 (to 44)
+                40      BUILD_LIST                      0
+                42      RETURN_VALUE                    
+                44      BUILD_LIST                      0
+                46      STORE_FAST                      1: commands
+                48      LOAD_FAST                       0: payload
+                50      LOAD_CONST                      2: 3
+                52      BINARY_SUBSCR                   
+                62      STORE_FAST                      2: command_count
+                64      LOAD_CONST                      1: 12
+                66      STORE_FAST                      3: offset
+                68      LOAD_GLOBAL                     3: NULL + range
+                80      LOAD_FAST                       2: command_count
+                82      PRECALL                         1
+                86      CALL                            1
+                96      GET_ITER                        
+                98      FOR_ITER                        245 (to 590)
+                100     STORE_FAST                      4: command_index
+                102     LOAD_FAST                       3: offset
+                104     LOAD_CONST                      1: 12
+                106     BINARY_OP                       0 (+)
+                110     LOAD_GLOBAL                     1: NULL + len
+                122     LOAD_FAST                       0: payload
+                124     PRECALL                         1
+                128     CALL                            1
+                138     COMPARE_OP                      4 (>)
+                144     POP_JUMP_FORWARD_IF_FALSE       2 (to 150)
+                146     POP_TOP                         
+                148     JUMP_FORWARD                    220 (to 590)
+                150     LOAD_GLOBAL                     4: int
+                162     LOAD_METHOD                     3: from_bytes
+                184     LOAD_FAST                       0: payload
+                186     LOAD_FAST                       3: offset
+                188     LOAD_CONST                      3: 4
+                190     BINARY_OP                       0 (+)
+                194     LOAD_FAST                       3: offset
+                196     LOAD_CONST                      4: 8
+                198     BINARY_OP                       0 (+)
+                202     BUILD_SLICE                     2
+                204     BINARY_SUBSCR                   
+                214     LOAD_CONST                      5: 'big'
+                216     PRECALL                         2
+                220     CALL                            2
+                230     STORE_FAST                      5: command_length
+                232     LOAD_FAST                       5: command_length
+                234     LOAD_CONST                      1: 12
+                236     COMPARE_OP                      0 (<)
+                242     POP_JUMP_FORWARD_IF_TRUE        22 (to 288)
+                244     LOAD_FAST                       3: offset
+                246     LOAD_FAST                       5: command_length
+                248     BINARY_OP                       0 (+)
+                252     LOAD_GLOBAL                     1: NULL + len
+                264     LOAD_FAST                       0: payload
+                266     PRECALL                         1
+                270     CALL                            1
+                280     COMPARE_OP                      4 (>)
+                286     POP_JUMP_FORWARD_IF_FALSE       2 (to 292)
+                288     POP_TOP                         
+                290     JUMP_FORWARD                    149 (to 590)
+                292     LOAD_FAST                       1: commands
+                294     LOAD_METHOD                     4: append
+                316     LOAD_GLOBAL                     11: NULL + _Command
+                328     LOAD_FAST                       4: command_index
+                330     LOAD_FAST                       3: offset
+                332     LOAD_GLOBAL                     5: NULL + int
+                344     LOAD_FAST                       0: payload
+                346     LOAD_FAST                       3: offset
+                348     BINARY_SUBSCR                   
+                358     PRECALL                         1
+                362     CALL                            1
+                372     LOAD_GLOBAL                     5: NULL + int
+                384     LOAD_FAST                       0: payload
+                386     LOAD_FAST                       3: offset
+                388     LOAD_CONST                      6: 1
+                390     BINARY_OP                       0 (+)
+                394     BINARY_SUBSCR                   
+                404     PRECALL                         1
+                408     CALL                            1
+                418     LOAD_GLOBAL                     5: NULL + int
+                430     LOAD_FAST                       0: payload
+                432     LOAD_FAST                       3: offset
+                434     LOAD_CONST                      7: 2
+                436     BINARY_OP                       0 (+)
+                440     BINARY_SUBSCR                   
+                450     PRECALL                         1
+                454     CALL                            1
+                464     LOAD_FAST                       5: command_length
+                466     LOAD_GLOBAL                     4: int
+                478     LOAD_METHOD                     3: from_bytes
+                500     LOAD_FAST                       0: payload
+                502     LOAD_FAST                       3: offset
+                504     LOAD_CONST                      4: 8
+                506     BINARY_OP                       0 (+)
+                510     LOAD_FAST                       3: offset
+                512     LOAD_CONST                      1: 12
+                514     BINARY_OP                       0 (+)
+                518     BUILD_SLICE                     2
+                520     BINARY_SUBSCR                   
+                530     LOAD_CONST                      5: 'big'
+                532     PRECALL                         2
+                536     CALL                            2
+                546     KW_NAMES                        8: ('command_index', 'command_offset', 'command_type', 'command_channel_id', 'command_flags', 'command_length', 'command_sequence')
+                548     PRECALL                         7
+                552     CALL                            7
+                562     PRECALL                         1
+                566     CALL                            1
+                576     POP_TOP                         
+                578     LOAD_FAST                       3: offset
+                580     LOAD_FAST                       5: command_length
+                582     BINARY_OP                       13 (+=)
+                586     STORE_FAST                      3: offset
+                588     JUMP_BACKWARD                   246 (to 98)
+                590     LOAD_FAST                       1: commands
+                592     RETURN_VALUE                    
+            [Exception Table]
+        'command'
+        '_Message | None'
+        [Code]
+            File Name: encrypted.py
+            Object Name: _message_from_command
+            Qualified Name: _message_from_command
+            Arg Count: 2
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 7
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'command_offset'
+                'command_length'
+                'command_type'
+                'CMD_SEND_UNRELIABLE'
+                'CMD_SEND_RELIABLE'
+                'len'
+                '_Message'
+                'int'
+            [Locals+Names]
+                'command'
+                'payload'
+                'reliable_offset'
+                'reliable_length'
+            [Constants]
+                None
+                12
+                4
+                2
+                1
+                (
+                    'message_type'
+                    'payload_offset'
+                    'payload_length'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_FAST                       0: command
+                4       LOAD_ATTR                       0: command_offset
+                14      LOAD_CONST                      1: 12
+                16      BINARY_OP                       0 (+)
+                20      STORE_FAST                      2: reliable_offset
+                22      LOAD_FAST                       0: command
+                24      LOAD_ATTR                       1: command_length
+                34      LOAD_CONST                      1: 12
+                36      BINARY_OP                       10 (-)
+                40      STORE_FAST                      3: reliable_length
+                42      LOAD_FAST                       0: command
+                44      LOAD_ATTR                       2: command_type
+                54      LOAD_GLOBAL                     6: CMD_SEND_UNRELIABLE
+                66      COMPARE_OP                      2 (==)
+                72      POP_JUMP_FORWARD_IF_FALSE       19 (to 112)
+                74      LOAD_FAST                       3: reliable_length
+                76      LOAD_CONST                      2: 4
+                78      COMPARE_OP                      0 (<)
+                84      POP_JUMP_FORWARD_IF_FALSE       2 (to 90)
+                86      LOAD_CONST                      0: None
+                88      RETURN_VALUE                    
+                90      LOAD_FAST                       2: reliable_offset
+                92      LOAD_CONST                      2: 4
+                94      BINARY_OP                       13 (+=)
+                98      STORE_FAST                      2: reliable_offset
+                100     LOAD_FAST                       3: reliable_length
+                102     LOAD_CONST                      2: 4
+                104     BINARY_OP                       23 (-=)
+                108     STORE_FAST                      3: reliable_length
+                110     JUMP_FORWARD                    18 (to 148)
+                112     LOAD_FAST                       0: command
+                114     LOAD_ATTR                       2: command_type
+                124     LOAD_GLOBAL                     8: CMD_SEND_RELIABLE
+                136     COMPARE_OP                      3 (!=)
+                142     POP_JUMP_FORWARD_IF_FALSE       2 (to 148)
+                144     LOAD_CONST                      0: None
+                146     RETURN_VALUE                    
+                148     LOAD_FAST                       3: reliable_length
+                150     LOAD_CONST                      3: 2
+                152     COMPARE_OP                      0 (<)
+                158     POP_JUMP_FORWARD_IF_TRUE        22 (to 204)
+                160     LOAD_FAST                       2: reliable_offset
+                162     LOAD_FAST                       3: reliable_length
+                164     BINARY_OP                       0 (+)
+                168     LOAD_GLOBAL                     11: NULL + len
+                180     LOAD_FAST                       1: payload
+                182     PRECALL                         1
+                186     CALL                            1
+                196     COMPARE_OP                      4 (>)
+                202     POP_JUMP_FORWARD_IF_FALSE       2 (to 208)
+                204     LOAD_CONST                      0: None
+                206     RETURN_VALUE                    
+                208     LOAD_GLOBAL                     13: NULL + _Message
+                220     LOAD_GLOBAL                     15: NULL + int
+                232     LOAD_FAST                       1: payload
+                234     LOAD_FAST                       2: reliable_offset
+                236     LOAD_CONST                      4: 1
+                238     BINARY_OP                       0 (+)
+                242     BINARY_SUBSCR                   
+                252     PRECALL                         1
+                256     CALL                            1
+                266     LOAD_FAST                       2: reliable_offset
+                268     LOAD_CONST                      3: 2
+                270     BINARY_OP                       0 (+)
+                274     LOAD_FAST                       3: reliable_length
+                276     LOAD_CONST                      3: 2
+                278     BINARY_OP                       10 (-)
+                282     KW_NAMES                        5: ('message_type', 'payload_offset', 'payload_length')
+                284     PRECALL                         3
+                288     CALL                            3
+                298     RETURN_VALUE                    
+            [Exception Table]
+        'parameters'
+        'dict[int, Any]'
+        'list[int]'
+        [Code]
+            File Name: encrypted.py
+            Object Name: _parameter_keys
+            Qualified Name: _parameter_keys
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 5
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'sorted'
+                'keys'
+            [Locals+Names]
+                'parameters'
+            [Constants]
+                None
+                [Code]
+                    File Name: encrypted.py
+                    Object Name: <genexpr>
+                    Qualified Name: _parameter_keys.<locals>.<genexpr>
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 4
+                    Flags: 0x01000033 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED | CO_GENERATOR | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'int'
+                    [Locals+Names]
+                        '.0'
+                        'key'
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       RETURN_GENERATOR                
+                        2       POP_TOP                         
+                        4       RESUME                          0
+                        6       LOAD_FAST                       0: .0
+                        8       FOR_ITER                        19 (to 48)
+                        10      STORE_FAST                      1: key
+                        12      LOAD_GLOBAL                     1: NULL + int
+                        24      LOAD_FAST                       1: key
+                        26      PRECALL                         1
+                        30      CALL                            1
+                        40      YIELD_VALUE                     
+                        42      RESUME                          1
+                        44      POP_TOP                         
+                        46      JUMP_BACKWARD                   20 (to 8)
+                        48      LOAD_CONST                      0: None
+                        50      RETURN_VALUE                    
+                    [Exception Table]
+                32
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + sorted
+                14      LOAD_CONST                      1: <CODE> <genexpr>
+                16      MAKE_FUNCTION                   0
+                18      LOAD_FAST                       0: parameters
+                20      LOAD_METHOD                     1: keys
+                42      PRECALL                         0
+                46      CALL                            0
+                56      GET_ITER                        
+                58      PRECALL                         0
+                62      CALL                            0
+                72      PRECALL                         1
+                76      CALL                            1
+                86      LOAD_CONST                      0: None
+                88      LOAD_CONST                      2: 32
+                90      BUILD_SLICE                     2
+                92      BINARY_SUBSCR                   
+                102     RETURN_VALUE                    
+            [Exception Table]
+        'dict[str, int]'
+        [Code]
+            File Name: encrypted.py
+            Object Name: _byte_array_lengths
+            Qualified Name: _byte_array_lengths
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 8
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'items'
+                'isinstance'
+                'bytes'
+                'bytearray'
+                'ByteArray'
+                'len'
+                'str'
+                'int'
+                'dict'
+                'sorted'
+            [Locals+Names]
+                'parameters'
+                'lengths'
+                'key'
+                'value'
+            [Constants]
+                None
+                [Code]
+                    File Name: encrypted.py
+                    Object Name: <lambda>
+                    Qualified Name: _byte_array_lengths.<locals>.<lambda>
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 4
+                    Flags: 0x01000013 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'int'
+                    [Locals+Names]
+                        'item'
+                    [Constants]
+                        None
+                        0
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_GLOBAL                     1: NULL + int
+                        14      LOAD_FAST                       0: item
+                        16      LOAD_CONST                      1: 0
+                        18      BINARY_SUBSCR                   
+                        28      PRECALL                         1
+                        32      CALL                            1
+                        42      RETURN_VALUE                    
+                    [Exception Table]
+                (
+                    'key'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       BUILD_MAP                       0
+                4       STORE_FAST                      1: lengths
+                6       LOAD_FAST                       0: parameters
+                8       LOAD_METHOD                     0: items
+                30      PRECALL                         0
+                34      CALL                            0
+                44      GET_ITER                        
+                46      FOR_ITER                        83 (to 214)
+                48      UNPACK_SEQUENCE                 2
+                52      STORE_FAST                      2: key
+                54      STORE_FAST                      3: value
+                56      LOAD_GLOBAL                     3: NULL + isinstance
+                68      LOAD_FAST                       3: value
+                70      LOAD_GLOBAL                     4: bytes
+                82      LOAD_GLOBAL                     6: bytearray
+                94      LOAD_GLOBAL                     8: ByteArray
+                106     BUILD_TUPLE                     3
+                108     PRECALL                         2
+                112     CALL                            2
+                122     POP_JUMP_FORWARD_IF_FALSE       44 (to 212)
+                124     LOAD_GLOBAL                     11: NULL + len
+                136     LOAD_FAST                       3: value
+                138     PRECALL                         1
+                142     CALL                            1
+                152     LOAD_FAST                       1: lengths
+                154     LOAD_GLOBAL                     13: NULL + str
+                166     LOAD_GLOBAL                     15: NULL + int
+                178     LOAD_FAST                       2: key
+                180     PRECALL                         1
+                184     CALL                            1
+                194     PRECALL                         1
+                198     CALL                            1
+                208     STORE_SUBSCR                    
+                212     JUMP_BACKWARD                   84 (to 46)
+                214     LOAD_GLOBAL                     17: NULL + dict
+                226     LOAD_GLOBAL                     19: NULL + sorted
+                238     LOAD_FAST                       1: lengths
+                240     LOAD_METHOD                     0: items
+                262     PRECALL                         0
+                266     CALL                            0
+                276     LOAD_CONST                      1: <CODE> <lambda>
+                278     MAKE_FUNCTION                   0
+                280     KW_NAMES                        2: ('key',)
+                282     PRECALL                         2
+                286     CALL                            2
+                296     PRECALL                         1
+                300     CALL                            1
+                310     RETURN_VALUE                    
+            [Exception Table]
+        'response'
+        'Any'
+        [Code]
+            File Name: encrypted.py
+            Object Name: _change_cluster_summary
+            Qualified Name: _change_cluster_summary
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 5
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '_int_or_none'
+                'parameters'
+                'get'
+                'int'
+                'operation_code'
+                '_raw_bytes'
+                'isinstance'
+                'str'
+                'len'
+                '_map_id_kind'
+                '_sha256'
+            [Locals+Names]
+                'response'
+                'routed_code'
+                'map_id'
+                'parameter_three'
+                'summary'
+            [Constants]
+                None
+                253
+                41
+                0
+                3
+                'mapIdLength'
+                'mapIdKind'
+                'parameter3Length'
+                'parameter3Sha256'
+                -1
+                'parameter3LastByte'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + _int_or_none
+                14      LOAD_FAST                       0: response
+                16      LOAD_ATTR                       1: parameters
+                26      LOAD_METHOD                     2: get
+                48      LOAD_CONST                      1: 253
+                50      PRECALL                         1
+                54      CALL                            1
+                64      PRECALL                         1
+                68      CALL                            1
+                78      STORE_FAST                      1: routed_code
+                80      LOAD_FAST                       1: routed_code
+                82      POP_JUMP_FORWARD_IF_NONE        2 (to 88)
+                84      LOAD_FAST                       1: routed_code
+                86      JUMP_FORWARD                    19 (to 126)
+                88      LOAD_GLOBAL                     7: NULL + int
+                100     LOAD_FAST                       0: response
+                102     LOAD_ATTR                       4: operation_code
+                112     PRECALL                         1
+                116     CALL                            1
+                126     LOAD_CONST                      2: 41
+                128     COMPARE_OP                      3 (!=)
+                134     POP_JUMP_FORWARD_IF_FALSE       2 (to 140)
+                136     BUILD_MAP                       0
+                138     RETURN_VALUE                    
+                140     LOAD_FAST                       0: response
+                142     LOAD_ATTR                       1: parameters
+                152     LOAD_METHOD                     2: get
+                174     LOAD_CONST                      3: 0
+                176     PRECALL                         1
+                180     CALL                            1
+                190     STORE_FAST                      2: map_id
+                192     LOAD_GLOBAL                     11: NULL + _raw_bytes
+                204     LOAD_FAST                       0: response
+                206     LOAD_ATTR                       1: parameters
+                216     LOAD_METHOD                     2: get
+                238     LOAD_CONST                      4: 3
+                240     PRECALL                         1
+                244     CALL                            1
+                254     PRECALL                         1
+                258     CALL                            1
+                268     STORE_FAST                      3: parameter_three
+                270     BUILD_MAP                       0
+                272     STORE_FAST                      4: summary
+                274     LOAD_GLOBAL                     13: NULL + isinstance
+                286     LOAD_FAST                       2: map_id
+                288     LOAD_GLOBAL                     14: str
+                300     PRECALL                         2
+                304     CALL                            2
+                314     POP_JUMP_FORWARD_IF_FALSE       36 (to 388)
+                316     LOAD_GLOBAL                     17: NULL + len
+                328     LOAD_FAST                       2: map_id
+                330     PRECALL                         1
+                334     CALL                            1
+                344     LOAD_FAST                       4: summary
+                346     LOAD_CONST                      5: 'mapIdLength'
+                348     STORE_SUBSCR                    
+                352     LOAD_GLOBAL                     19: NULL + _map_id_kind
+                364     LOAD_FAST                       2: map_id
+                366     PRECALL                         1
+                370     CALL                            1
+                380     LOAD_FAST                       4: summary
+                382     LOAD_CONST                      6: 'mapIdKind'
+                384     STORE_SUBSCR                    
+                388     LOAD_FAST                       3: parameter_three
+                390     POP_JUMP_FORWARD_IF_FALSE       60 (to 512)
+                392     LOAD_GLOBAL                     17: NULL + len
+                404     LOAD_FAST                       3: parameter_three
+                406     PRECALL                         1
+                410     CALL                            1
+                420     LOAD_FAST                       4: summary
+                422     LOAD_CONST                      7: 'parameter3Length'
+                424     STORE_SUBSCR                    
+                428     LOAD_GLOBAL                     21: NULL + _sha256
+                440     LOAD_FAST                       3: parameter_three
+                442     PRECALL                         1
+                446     CALL                            1
+                456     LOAD_FAST                       4: summary
+                458     LOAD_CONST                      8: 'parameter3Sha256'
+                460     STORE_SUBSCR                    
+                464     LOAD_GLOBAL                     7: NULL + int
+                476     LOAD_FAST                       3: parameter_three
+                478     LOAD_CONST                      9: -1
+                480     BINARY_SUBSCR                   
+                490     PRECALL                         1
+                494     CALL                            1
+                504     LOAD_FAST                       4: summary
+                506     LOAD_CONST                      10: 'parameter3LastByte'
+                508     STORE_SUBSCR                    
+                512     LOAD_FAST                       4: summary
+                514     RETURN_VALUE                    
+            [Exception Table]
+        'value'
+        [Code]
+            File Name: encrypted.py
+            Object Name: _map_id_kind
+            Qualified Name: _map_id_kind
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'strip'
+                'upper'
+                'startswith'
+            [Locals+Names]
+                'value'
+                'normalized'
+            [Constants]
+                None
+                '@RANDOMDUNGEON@'
+                'random_dungeon'
+                '@MISTS@'
+                'mists'
+                'TNL-'
+                'tunnel'
+                'regular'
+                'empty'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_FAST                       0: value
+                4       LOAD_METHOD                     0: strip
+                26      PRECALL                         0
+                30      CALL                            0
+                40      LOAD_METHOD                     1: upper
+                62      PRECALL                         0
+                66      CALL                            0
+                76      STORE_FAST                      1: normalized
+                78      LOAD_FAST                       1: normalized
+                80      LOAD_METHOD                     2: startswith
+                102     LOAD_CONST                      1: '@RANDOMDUNGEON@'
+                104     PRECALL                         1
+                108     CALL                            1
+                118     POP_JUMP_FORWARD_IF_FALSE       2 (to 124)
+                120     LOAD_CONST                      2: 'random_dungeon'
+                122     RETURN_VALUE                    
+                124     LOAD_FAST                       1: normalized
+                126     LOAD_METHOD                     2: startswith
+                148     LOAD_CONST                      3: '@MISTS@'
+                150     PRECALL                         1
+                154     CALL                            1
+                164     POP_JUMP_FORWARD_IF_FALSE       2 (to 170)
+                166     LOAD_CONST                      4: 'mists'
+                168     RETURN_VALUE                    
+                170     LOAD_FAST                       1: normalized
+                172     LOAD_METHOD                     2: startswith
+                194     LOAD_CONST                      5: 'TNL-'
+                196     PRECALL                         1
+                200     CALL                            1
+                210     POP_JUMP_FORWARD_IF_FALSE       2 (to 216)
+                212     LOAD_CONST                      6: 'tunnel'
+                214     RETURN_VALUE                    
+                216     LOAD_FAST                       1: normalized
+                218     POP_JUMP_FORWARD_IF_FALSE       2 (to 224)
+                220     LOAD_CONST                      7: 'regular'
+                222     RETURN_VALUE                    
+                224     LOAD_CONST                      8: 'empty'
+                226     RETURN_VALUE                    
+            [Exception Table]
+        'object'
+        [Code]
+            File Name: encrypted.py
+            Object Name: _raw_bytes
+            Qualified Name: _raw_bytes
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 6
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'isinstance'
+                'bytes'
+                'bytearray'
+                'ByteArray'
+            [Locals+Names]
+                'value'
+            [Constants]
+                None
+                b''
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + isinstance
+                14      LOAD_FAST                       0: value
+                16      LOAD_GLOBAL                     2: bytes
+                28      LOAD_GLOBAL                     4: bytearray
+                40      LOAD_GLOBAL                     6: ByteArray
+                52      BUILD_TUPLE                     3
+                54      PRECALL                         2
+                58      CALL                            2
+                68      POP_JUMP_FORWARD_IF_FALSE       15 (to 100)
+                70      LOAD_GLOBAL                     3: NULL + bytes
+                82      LOAD_FAST                       0: value
+                84      PRECALL                         1
+                88      CALL                            1
+                98      RETURN_VALUE                    
+                100     LOAD_CONST                      1: b''
+                102     RETURN_VALUE                    
+            [Exception Table]
+        'int | None'
+        [Code]
+            File Name: encrypted.py
+            Object Name: _int_or_none
+            Qualified Name: _int_or_none
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'int'
+                'TypeError'
+                'ValueError'
+            [Locals+Names]
+                'value'
+            [Constants]
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       NOP                             
+                4       LOAD_GLOBAL                     1: NULL + int
+                16      LOAD_FAST                       0: value
+                18      PRECALL                         1
+                22      CALL                            1
+                32      RETURN_VALUE                    
+                34      PUSH_EXC_INFO                   
+                36      LOAD_GLOBAL                     2: TypeError
+                48      LOAD_GLOBAL                     4: ValueError
+                60      BUILD_TUPLE                     2
+                62      CHECK_EXC_MATCH                 
+                64      POP_JUMP_FORWARD_IF_FALSE       4 (to 74)
+                66      POP_TOP                         
+                68      POP_EXCEPT                      
+                70      LOAD_CONST                      0: None
+                72      RETURN_VALUE                    
+                74      RERAISE                         0
+                76      COPY                            3
+                78      POP_EXCEPT                      
+                80      RERAISE                         1
+            [Exception Table]
+                4 to 32 -> 34 [0] 
+                34 to 68 -> 76 [1] lasti
+                74 to 76 -> 76 [1] lasti
+        'target'
+        'ciphertext'
+        [Code]
+            File Name: encrypted.py
+            Object Name: _event_base
+            Qualified Name: _event_base
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 3
+            Stack Size: 11
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'str'
+                'message_type'
+                'encrypted_payload_offset'
+                'encrypted_payload_length'
+                'command_index'
+                'command_offset'
+                'command_length'
+                '_sha256'
+            [Locals+Names]
+                'direction'
+                'target'
+                'ciphertext'
+            [Constants]
+                None
+                'encrypted_translate'
+                (
+                    'eventType'
+                    'direction'
+                    'messageType'
+                    'encryptedPayloadOffset'
+                    'encryptedPayloadLength'
+                    'commandIndex'
+                    'commandOffset'
+                    'commandLength'
+                    'ciphertextSha256'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_CONST                      1: 'encrypted_translate'
+                4       LOAD_GLOBAL                     1: NULL + str
+                16      LOAD_FAST                       0: direction
+                18      PRECALL                         1
+                22      CALL                            1
+                32      LOAD_FAST                       1: target
+                34      LOAD_ATTR                       1: message_type
+                44      LOAD_FAST                       1: target
+                46      LOAD_ATTR                       2: encrypted_payload_offset
+                56      LOAD_FAST                       1: target
+                58      LOAD_ATTR                       3: encrypted_payload_length
+                68      LOAD_FAST                       1: target
+                70      LOAD_ATTR                       4: command_index
+                80      LOAD_FAST                       1: target
+                82      LOAD_ATTR                       5: command_offset
+                92      LOAD_FAST                       1: target
+                94      LOAD_ATTR                       6: command_length
+                104     LOAD_GLOBAL                     15: NULL + _sha256
+                116     LOAD_FAST                       2: ciphertext
+                118     PRECALL                         1
+                122     CALL                            1
+                132     LOAD_CONST                      2: ('eventType', 'direction', 'messageType', 'encryptedPayloadOffset', 'encryptedPayloadLength', 'commandIndex', 'commandOffset', 'commandLength', 'ciphertextSha256')
+                134     BUILD_CONST_KEY_MAP             9
+                136     RETURN_VALUE                    
+            [Exception Table]
+        'key'
+        'name'
+        'None'
+        [Code]
+            File Name: encrypted.py
+            Object Name: _require_aes_key
+            Qualified Name: _require_aes_key
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 1
+            Stack Size: 4
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'len'
+                'ValueError'
+            [Locals+Names]
+                'key'
+                'name'
+            [Constants]
+                None
+                32
+                ' must be a 32-byte AES-256 key'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + len
+                14      LOAD_FAST                       0: key
+                16      PRECALL                         1
+                20      CALL                            1
+                30      LOAD_CONST                      1: 32
+                32      COMPARE_OP                      3 (!=)
+                38      POP_JUMP_FORWARD_IF_FALSE       18 (to 76)
+                40      LOAD_GLOBAL                     3: NULL + ValueError
+                52      LOAD_FAST                       1: name
+                54      FORMAT_VALUE                    0 (FVC_NONE)
+                56      LOAD_CONST                      2: ' must be a 32-byte AES-256 key'
+                58      BUILD_STRING                    2
+                60      PRECALL                         1
+                64      CALL                            1
+                74      RAISE_VARARGS                   1
+                76      LOAD_CONST                      0: None
+                78      RETURN_VALUE                    
+            [Exception Table]
+        [Code]
+            File Name: encrypted.py
+            Object Name: _aes_cbc_zero_iv_decrypt
+            Qualified Name: _aes_cbc_zero_iv_decrypt
+            Arg Count: 2
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 7
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'AES'
+                'new'
+                'MODE_CBC'
+                'bytes'
+                'AES_BLOCK_SIZE'
+                'decrypt'
+            [Locals+Names]
+                'key'
+                'ciphertext'
+            [Constants]
+                None
+                (
+                    'iv'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + AES
+                14      LOAD_ATTR                       1: new
+                24      LOAD_FAST                       0: key
+                26      LOAD_GLOBAL                     0: AES
+                38      LOAD_ATTR                       2: MODE_CBC
+                48      LOAD_GLOBAL                     7: NULL + bytes
+                60      LOAD_GLOBAL                     8: AES_BLOCK_SIZE
+                72      PRECALL                         1
+                76      CALL                            1
+                86      KW_NAMES                        1: ('iv',)
+                88      PRECALL                         3
+                92      CALL                            3
+                102     LOAD_METHOD                     5: decrypt
+                124     LOAD_FAST                       1: ciphertext
+                126     PRECALL                         1
+                130     CALL                            1
+                140     RETURN_VALUE                    
+            [Exception Table]
+        'plaintext'
+        [Code]
+            File Name: encrypted.py
+            Object Name: _aes_cbc_zero_iv_encrypt
+            Qualified Name: _aes_cbc_zero_iv_encrypt
+            Arg Count: 2
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 7
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'AES'
+                'new'
+                'MODE_CBC'
+                'bytes'
+                'AES_BLOCK_SIZE'
+                'encrypt'
+            [Locals+Names]
+                'key'
+                'plaintext'
+            [Constants]
+                None
+                (
+                    'iv'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + AES
+                14      LOAD_ATTR                       1: new
+                24      LOAD_FAST                       0: key
+                26      LOAD_GLOBAL                     0: AES
+                38      LOAD_ATTR                       2: MODE_CBC
+                48      LOAD_GLOBAL                     7: NULL + bytes
+                60      LOAD_GLOBAL                     8: AES_BLOCK_SIZE
+                72      PRECALL                         1
+                76      CALL                            1
+                86      KW_NAMES                        1: ('iv',)
+                88      PRECALL                         3
+                92      CALL                            3
+                102     LOAD_METHOD                     5: encrypt
+                124     LOAD_FAST                       1: plaintext
+                126     PRECALL                         1
+                130     CALL                            1
+                140     RETURN_VALUE                    
+            [Exception Table]
+        [Code]
+            File Name: encrypted.py
+            Object Name: _sha256
+            Qualified Name: _sha256
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'hashlib'
+                'sha256'
+                'hexdigest'
+            [Locals+Names]
+                'payload'
+            [Constants]
+                None
+                'sha256:'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_CONST                      1: 'sha256:'
+                4       LOAD_GLOBAL                     1: NULL + hashlib
+                16      LOAD_ATTR                       1: sha256
+                26      LOAD_FAST                       0: payload
+                28      PRECALL                         1
+                32      CALL                            1
+                42      LOAD_METHOD                     2: hexdigest
+                64      PRECALL                         0
+                68      CALL                            0
+                78      FORMAT_VALUE                    0 (FVC_NONE)
+                80      BUILD_STRING                    2
+                82      RETURN_VALUE                    
+            [Exception Table]
+        (
+            'payload'
+            'bytes'
+            'source_key'
+            'bytes'
+            'target_key'
+            'bytes'
+            'direction'
+            'str'
+            'on_key_sync'
+            'Callable[[KeySyncExtraction], None] | None'
+            'on_decrypted_payload'
+            'Callable[[bytes, int, str], None] | None'
+            'return'
+            'EncryptedTranslationResult'
+        )
+        (
+            'payload'
+            'bytes'
+            'source_key'
+            'bytes'
+            'target_key'
+            'bytes'
+            'direction'
+            'str'
+            'event_context'
+            'dict[str, Any] | None'
+            'on_key_sync'
+            'Callable[[KeySyncExtraction], None] | None'
+            'on_decrypted_payload'
+            'Callable[[bytes, int, str], None] | None'
+            'return'
+            'ReliablePayloadTranslationResult'
+        )
+        (
+            'payload'
+            'bytes'
+            'return'
+            'list[EncryptedMessageTarget]'
+        )
+        (
+            'payload'
+            'bytes'
+            'outer_message_type'
+            'int'
+            'return'
+            'dict[str, Any]'
+        )
+        (
+            'payload'
+            'bytes'
+            'outer_message_type'
+            'int'
+            'return'
+            'list[KeySyncExtraction]'
+        )
+        (
+            'payload'
+            'bytes'
+            'return'
+            'list[dict[str, Any]]'
+        )
+        (
+            'shape'
+            'str'
+            'payload'
+            'bytes'
+            'return'
+            'list[dict[str, Any]]'
+        )
+        (
+            'shape'
+            'str'
+            'payload'
+            'bytes'
+            'outer_message_type'
+            'int'
+            'return'
+            'list[KeySyncExtraction]'
+        )
+        (
+            'payload'
+            'bytes'
+            'return'
+            'list[_Command]'
+        )
+        (
+            'command'
+            '_Command'
+            'payload'
+            'bytes'
+            'return'
+            '_Message | None'
+        )
+        (
+            'parameters'
+            'dict[int, Any]'
+            'return'
+            'list[int]'
+        )
+        (
+            'parameters'
+            'dict[int, Any]'
+            'return'
+            'dict[str, int]'
+        )
+        (
+            'response'
+            'Any'
+            'return'
+            'dict[str, Any]'
+        )
+        (
+            'value'
+            'str'
+            'return'
+            'str'
+        )
+        (
+            'value'
+            'object'
+            'return'
+            'bytes'
+        )
+        (
+            'value'
+            'object'
+            'return'
+            'int | None'
+        )
+        (
+            'direction'
+            'str'
+            'target'
+            'EncryptedMessageTarget'
+            'ciphertext'
+            'bytes'
+            'return'
+            'dict[str, Any]'
+        )
+        (
+            'key'
+            'bytes'
+            'name'
+            'str'
+            'return'
+            'None'
+        )
+        (
+            'key'
+            'bytes'
+            'ciphertext'
+            'bytes'
+            'return'
+            'bytes'
+        )
+        (
+            'key'
+            'bytes'
+            'plaintext'
+            'bytes'
+            'return'
+            'bytes'
+        )
+        (
+            'payload'
+            'bytes'
+            'return'
+            'str'
+        )
+    [Disassembly]
+        0       RESUME                          0
+        2       LOAD_CONST                      0: 0
+        4       LOAD_CONST                      1: ('annotations',)
+        6       IMPORT_NAME                     0: __future__
+        8       IMPORT_FROM                     1: annotations
+        10      STORE_NAME                      1: annotations
+        12      POP_TOP                         
+        14      LOAD_CONST                      0: 0
+        16      LOAD_CONST                      2: None
+        18      IMPORT_NAME                     2: hashlib
+        20      STORE_NAME                      2: hashlib
+        22      LOAD_CONST                      0: 0
+        24      LOAD_CONST                      3: ('dataclass',)
+        26      IMPORT_NAME                     3: dataclasses
+        28      IMPORT_FROM                     4: dataclass
+        30      STORE_NAME                      4: dataclass
+        32      POP_TOP                         
+        34      LOAD_CONST                      0: 0
+        36      LOAD_CONST                      4: ('Any', 'Callable')
+        38      IMPORT_NAME                     5: typing
+        40      IMPORT_FROM                     6: Any
+        42      STORE_NAME                      6: Any
+        44      IMPORT_FROM                     7: Callable
+        46      STORE_NAME                      7: Callable
+        48      POP_TOP                         
+        50      LOAD_CONST                      0: 0
+        52      LOAD_CONST                      5: ('AES',)
+        54      IMPORT_NAME                     8: Crypto.Cipher
+        56      IMPORT_FROM                     9: AES
+        58      STORE_NAME                      9: AES
+        60      POP_TOP                         
+        62      LOAD_CONST                      0: 0
+        64      LOAD_CONST                      6: ('is_key_sync_event_code',)
+        66      IMPORT_NAME                     10: ass_radar.photon.keysync
+        68      IMPORT_FROM                     11: is_key_sync_event_code
+        70      STORE_NAME                      11: is_key_sync_event_code
+        72      POP_TOP                         
+        74      LOAD_CONST                      0: 0
+        76      LOAD_CONST                      7: ('deserialize_event_live', 'deserialize_request_live', 'deserialize_response_live')
+        78      IMPORT_NAME                     12: ass_radar.photon.deserializer
+        80      IMPORT_FROM                     13: deserialize_event_live
+        82      STORE_NAME                      13: deserialize_event_live
+        84      IMPORT_FROM                     14: deserialize_request_live
+        86      STORE_NAME                      14: deserialize_request_live
+        88      IMPORT_FROM                     15: deserialize_response_live
+        90      STORE_NAME                      15: deserialize_response_live
+        92      POP_TOP                         
+        94      LOAD_CONST                      0: 0
+        96      LOAD_CONST                      8: ('ENCRYPTED_MESSAGE_TYPES',)
+        98      IMPORT_NAME                     16: ass_radar.photon.packet
+        100     IMPORT_FROM                     17: ENCRYPTED_MESSAGE_TYPES
+        102     STORE_NAME                      17: ENCRYPTED_MESSAGE_TYPES
+        104     POP_TOP                         
+        106     LOAD_CONST                      0: 0
+        108     LOAD_CONST                      9: ('ByteArray',)
+        110     IMPORT_NAME                     18: ass_radar.photon.types
+        112     IMPORT_FROM                     19: ByteArray
+        114     STORE_NAME                      19: ByteArray
+        116     POP_TOP                         
+        118     LOAD_CONST                      10: 6
+        120     STORE_NAME                      20: CMD_SEND_RELIABLE
+        122     LOAD_CONST                      11: 7
+        124     STORE_NAME                      21: CMD_SEND_UNRELIABLE
+        126     LOAD_CONST                      12: 16
+        128     STORE_NAME                      22: AES_BLOCK_SIZE
+        130     PUSH_NULL                       
+        132     LOAD_NAME                       4: dataclass
+        134     LOAD_CONST                      13: True
+        136     KW_NAMES                        14: ('frozen',)
+        138     PRECALL                         1
+        142     CALL                            1
+        152     PUSH_NULL                       
+        154     LOAD_BUILD_CLASS                
+        156     LOAD_CONST                      15: <CODE> EncryptedMessageTarget
+        158     MAKE_FUNCTION                   0
+        160     LOAD_CONST                      16: 'EncryptedMessageTarget'
+        162     PRECALL                         2
+        166     CALL                            2
+        176     PRECALL                         0
+        180     CALL                            0
+        190     STORE_NAME                      23: EncryptedMessageTarget
+        192     PUSH_NULL                       
+        194     LOAD_NAME                       4: dataclass
+        196     LOAD_CONST                      13: True
+        198     KW_NAMES                        14: ('frozen',)
+        200     PRECALL                         1
+        204     CALL                            1
+        214     PUSH_NULL                       
+        216     LOAD_BUILD_CLASS                
+        218     LOAD_CONST                      17: <CODE> EncryptedTranslationResult
+        220     MAKE_FUNCTION                   0
+        222     LOAD_CONST                      18: 'EncryptedTranslationResult'
+        224     PRECALL                         2
+        228     CALL                            2
+        238     PRECALL                         0
+        242     CALL                            0
+        252     STORE_NAME                      24: EncryptedTranslationResult
+        254     PUSH_NULL                       
+        256     LOAD_NAME                       4: dataclass
+        258     LOAD_CONST                      13: True
+        260     KW_NAMES                        14: ('frozen',)
+        262     PRECALL                         1
+        266     CALL                            1
+        276     PUSH_NULL                       
+        278     LOAD_BUILD_CLASS                
+        280     LOAD_CONST                      19: <CODE> ReliablePayloadTranslationResult
+        282     MAKE_FUNCTION                   0
+        284     LOAD_CONST                      20: 'ReliablePayloadTranslationResult'
+        286     PRECALL                         2
+        290     CALL                            2
+        300     PRECALL                         0
+        304     CALL                            0
+        314     STORE_NAME                      25: ReliablePayloadTranslationResult
+        316     PUSH_NULL                       
+        318     LOAD_NAME                       4: dataclass
+        320     LOAD_CONST                      13: True
+        322     KW_NAMES                        14: ('frozen',)
+        324     PRECALL                         1
+        328     CALL                            1
+        338     PUSH_NULL                       
+        340     LOAD_BUILD_CLASS                
+        342     LOAD_CONST                      21: <CODE> KeySyncExtraction
+        344     MAKE_FUNCTION                   0
+        346     LOAD_CONST                      22: 'KeySyncExtraction'
+        348     PRECALL                         2
+        352     CALL                            2
+        362     PRECALL                         0
+        366     CALL                            0
+        376     STORE_NAME                      26: KeySyncExtraction
+        378     LOAD_CONST                      2: None
+        380     LOAD_CONST                      2: None
+        382     LOAD_CONST                      23: ('on_key_sync', 'on_decrypted_payload')
+        384     BUILD_CONST_KEY_MAP             2
+        386     LOAD_CONST                      91: ('payload', 'bytes', 'source_key', 'bytes', 'target_key', 'bytes', 'direction', 'str', 'on_key_sync', 'Callable[[KeySyncExtraction], None] | None', 'on_decrypted_payload', 'Callable[[bytes, int, str], None] | None', 'return', 'EncryptedTranslationResult')
+        388     LOAD_CONST                      35: <CODE> translate_encrypted_messages
+        390     MAKE_FUNCTION                   6
+        392     STORE_NAME                      27: translate_encrypted_messages
+        394     LOAD_CONST                      2: None
+        396     LOAD_CONST                      2: None
+        398     LOAD_CONST                      2: None
+        400     LOAD_CONST                      36: ('event_context', 'on_key_sync', 'on_decrypted_payload')
+        402     BUILD_CONST_KEY_MAP             3
+        404     LOAD_CONST                      92: ('payload', 'bytes', 'source_key', 'bytes', 'target_key', 'bytes', 'direction', 'str', 'event_context', 'dict[str, Any] | None', 'on_key_sync', 'Callable[[KeySyncExtraction], None] | None', 'on_decrypted_payload', 'Callable[[bytes, int, str], None] | None', 'return', 'ReliablePayloadTranslationResult')
+        406     LOAD_CONST                      39: <CODE> translate_encrypted_reliable_payload
+        408     MAKE_FUNCTION                   6
+        410     STORE_NAME                      28: translate_encrypted_reliable_payload
+        412     LOAD_CONST                      93: ('payload', 'bytes', 'return', 'list[EncryptedMessageTarget]')
+        414     LOAD_CONST                      41: <CODE> find_encrypted_message_targets
+        416     MAKE_FUNCTION                   4
+        418     STORE_NAME                      29: find_encrypted_message_targets
+        420     LOAD_CONST                      94: ('payload', 'bytes', 'outer_message_type', 'int', 'return', 'dict[str, Any]')
+        422     LOAD_CONST                      45: <CODE> probe_decrypted_payload
+        424     MAKE_FUNCTION                   4
+        426     STORE_NAME                      30: probe_decrypted_payload
+        428     LOAD_CONST                      95: ('payload', 'bytes', 'outer_message_type', 'int', 'return', 'list[KeySyncExtraction]')
+        430     LOAD_CONST                      47: <CODE> extract_key_sync_codes
+        432     MAKE_FUNCTION                   4
+        434     STORE_NAME                      31: extract_key_sync_codes
+        436     PUSH_NULL                       
+        438     LOAD_NAME                       4: dataclass
+        440     LOAD_CONST                      13: True
+        442     KW_NAMES                        14: ('frozen',)
+        444     PRECALL                         1
+        448     CALL                            1
+        458     PUSH_NULL                       
+        460     LOAD_BUILD_CLASS                
+        462     LOAD_CONST                      48: <CODE> _Command
+        464     MAKE_FUNCTION                   0
+        466     LOAD_CONST                      49: '_Command'
+        468     PRECALL                         2
+        472     CALL                            2
+        482     PRECALL                         0
+        486     CALL                            0
+        496     STORE_NAME                      32: _Command
+        498     PUSH_NULL                       
+        500     LOAD_NAME                       4: dataclass
+        502     LOAD_CONST                      13: True
+        504     KW_NAMES                        14: ('frozen',)
+        506     PRECALL                         1
+        510     CALL                            1
+        520     PUSH_NULL                       
+        522     LOAD_BUILD_CLASS                
+        524     LOAD_CONST                      50: <CODE> _Message
+        526     MAKE_FUNCTION                   0
+        528     LOAD_CONST                      51: '_Message'
+        530     PRECALL                         2
+        534     CALL                            2
+        544     PRECALL                         0
+        548     CALL                            0
+        558     STORE_NAME                      33: _Message
+        560     LOAD_CONST                      96: ('payload', 'bytes', 'return', 'list[dict[str, Any]]')
+        562     LOAD_CONST                      53: <CODE> _probe_direct_payload
+        564     MAKE_FUNCTION                   4
+        566     STORE_NAME                      34: _probe_direct_payload
+        568     LOAD_CONST                      96: ('payload', 'bytes', 'return', 'list[dict[str, Any]]')
+        570     LOAD_CONST                      54: <CODE> _probe_inner_message
+        572     MAKE_FUNCTION                   4
+        574     STORE_NAME                      35: _probe_inner_message
+        576     LOAD_CONST                      97: ('shape', 'str', 'payload', 'bytes', 'return', 'list[dict[str, Any]]')
+        578     LOAD_CONST                      56: <CODE> _probe_event
+        580     MAKE_FUNCTION                   4
+        582     STORE_NAME                      36: _probe_event
+        584     LOAD_CONST                      98: ('shape', 'str', 'payload', 'bytes', 'outer_message_type', 'int', 'return', 'list[KeySyncExtraction]')
+        586     LOAD_CONST                      57: <CODE> _extract_key_sync_from_event
+        588     MAKE_FUNCTION                   4
+        590     STORE_NAME                      37: _extract_key_sync_from_event
+        592     LOAD_CONST                      97: ('shape', 'str', 'payload', 'bytes', 'return', 'list[dict[str, Any]]')
+        594     LOAD_CONST                      58: <CODE> _probe_request
+        596     MAKE_FUNCTION                   4
+        598     STORE_NAME                      38: _probe_request
+        600     LOAD_CONST                      97: ('shape', 'str', 'payload', 'bytes', 'return', 'list[dict[str, Any]]')
+        602     LOAD_CONST                      59: <CODE> _probe_response
+        604     MAKE_FUNCTION                   4
+        606     STORE_NAME                      39: _probe_response
+        608     LOAD_CONST                      99: ('payload', 'bytes', 'return', 'list[_Command]')
+        610     LOAD_CONST                      61: <CODE> _iter_commands
+        612     MAKE_FUNCTION                   4
+        614     STORE_NAME                      40: _iter_commands
+        616     LOAD_CONST                      100: ('command', '_Command', 'payload', 'bytes', 'return', '_Message | None')
+        618     LOAD_CONST                      64: <CODE> _message_from_command
+        620     MAKE_FUNCTION                   4
+        622     STORE_NAME                      41: _message_from_command
+        624     LOAD_CONST                      101: ('parameters', 'dict[int, Any]', 'return', 'list[int]')
+        626     LOAD_CONST                      68: <CODE> _parameter_keys
+        628     MAKE_FUNCTION                   4
+        630     STORE_NAME                      42: _parameter_keys
+        632     LOAD_CONST                      102: ('parameters', 'dict[int, Any]', 'return', 'dict[str, int]')
+        634     LOAD_CONST                      70: <CODE> _byte_array_lengths
+        636     MAKE_FUNCTION                   4
+        638     STORE_NAME                      43: _byte_array_lengths
+        640     LOAD_CONST                      103: ('response', 'Any', 'return', 'dict[str, Any]')
+        642     LOAD_CONST                      73: <CODE> _change_cluster_summary
+        644     MAKE_FUNCTION                   4
+        646     STORE_NAME                      44: _change_cluster_summary
+        648     LOAD_CONST                      104: ('value', 'str', 'return', 'str')
+        650     LOAD_CONST                      75: <CODE> _map_id_kind
+        652     MAKE_FUNCTION                   4
+        654     STORE_NAME                      45: _map_id_kind
+        656     LOAD_CONST                      105: ('value', 'object', 'return', 'bytes')
+        658     LOAD_CONST                      77: <CODE> _raw_bytes
+        660     MAKE_FUNCTION                   4
+        662     STORE_NAME                      46: _raw_bytes
+        664     LOAD_CONST                      106: ('value', 'object', 'return', 'int | None')
+        666     LOAD_CONST                      79: <CODE> _int_or_none
+        668     MAKE_FUNCTION                   4
+        670     STORE_NAME                      47: _int_or_none
+        672     LOAD_CONST                      107: ('direction', 'str', 'target', 'EncryptedMessageTarget', 'ciphertext', 'bytes', 'return', 'dict[str, Any]')
+        674     LOAD_CONST                      82: <CODE> _event_base
+        676     MAKE_FUNCTION                   4
+        678     STORE_NAME                      48: _event_base
+        680     LOAD_CONST                      108: ('key', 'bytes', 'name', 'str', 'return', 'None')
+        682     LOAD_CONST                      86: <CODE> _require_aes_key
+        684     MAKE_FUNCTION                   4
+        686     STORE_NAME                      49: _require_aes_key
+        688     LOAD_CONST                      109: ('key', 'bytes', 'ciphertext', 'bytes', 'return', 'bytes')
+        690     LOAD_CONST                      87: <CODE> _aes_cbc_zero_iv_decrypt
+        692     MAKE_FUNCTION                   4
+        694     STORE_NAME                      50: _aes_cbc_zero_iv_decrypt
+        696     LOAD_CONST                      110: ('key', 'bytes', 'plaintext', 'bytes', 'return', 'bytes')
+        698     LOAD_CONST                      89: <CODE> _aes_cbc_zero_iv_encrypt
+        700     MAKE_FUNCTION                   4
+        702     STORE_NAME                      51: _aes_cbc_zero_iv_encrypt
+        704     LOAD_CONST                      111: ('payload', 'bytes', 'return', 'str')
+        706     LOAD_CONST                      90: <CODE> _sha256
+        708     MAKE_FUNCTION                   4
+        710     STORE_NAME                      52: _sha256
+        712     LOAD_CONST                      2: None
+        714     RETURN_VALUE                    
+    [Exception Table]

@@ -1,0 +1,1034 @@
+events.pyc (Python 3.11)
+[Code]
+    File Name: events.py
+    Object Name: <module>
+    Qualified Name: <module>
+    Arg Count: 0
+    Pos Only Arg Count: 0
+    KW Only Arg Count: 0
+    Stack Size: 6
+    Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+    [Names]
+        '__future__'
+        'annotations'
+        'dataclasses'
+        'dataclass'
+        'field'
+        'enum'
+        'Enum'
+        'threading'
+        'RLock'
+        'typing'
+        'TYPE_CHECKING'
+        'Any'
+        'Callable'
+        'ass_radar.event_path_stats'
+        'EventPathSnapshot'
+        'EventPathStats'
+        'EventCallback'
+        'str'
+        'RuntimeSource'
+        'RadarEvent'
+        'Subscription'
+        'RadarEventBus'
+    [Locals+Names]
+    [Constants]
+        0
+        (
+            'annotations'
+        )
+        (
+            'dataclass'
+            'field'
+        )
+        (
+            'Enum'
+        )
+        (
+            'RLock'
+        )
+        (
+            'TYPE_CHECKING'
+            'Any'
+            'Callable'
+        )
+        (
+            'EventPathSnapshot'
+            'EventPathStats'
+        )
+        'RadarEvent'
+        None
+        [Code]
+            File Name: events.py
+            Object Name: RuntimeSource
+            Qualified Name: RuntimeSource
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                'CAPTURE'
+                'RELAY'
+                'REPLAY'
+                'UNKNOWN'
+                'classmethod'
+                'normalize'
+            [Locals+Names]
+            [Constants]
+                'RuntimeSource'
+                'capture'
+                'relay'
+                'replay'
+                'unknown'
+                'value'
+                'object'
+                'return'
+                "'RuntimeSource'"
+                [Code]
+                    File Name: events.py
+                    Object Name: normalize
+                    Qualified Name: RuntimeSource.normalize
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 4
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'TypeError'
+                        'ValueError'
+                        'UNKNOWN'
+                    [Locals+Names]
+                        'cls'
+                        'value'
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       NOP                             
+                        4       PUSH_NULL                       
+                        6       LOAD_FAST                       0: cls
+                        8       LOAD_FAST                       1: value
+                        10      PRECALL                         1
+                        14      CALL                            1
+                        24      RETURN_VALUE                    
+                        26      PUSH_EXC_INFO                   
+                        28      LOAD_GLOBAL                     0: TypeError
+                        40      LOAD_GLOBAL                     2: ValueError
+                        52      BUILD_TUPLE                     2
+                        54      CHECK_EXC_MATCH                 
+                        56      POP_JUMP_FORWARD_IF_FALSE       10 (to 78)
+                        58      POP_TOP                         
+                        60      LOAD_FAST                       0: cls
+                        62      LOAD_ATTR                       2: UNKNOWN
+                        72      SWAP                            2
+                        74      POP_EXCEPT                      
+                        76      RETURN_VALUE                    
+                        78      RERAISE                         0
+                        80      COPY                            3
+                        82      POP_EXCEPT                      
+                        84      RERAISE                         1
+                    [Exception Table]
+                        4 to 24 -> 26 [0] 
+                        26 to 74 -> 80 [1] lasti
+                        78 to 80 -> 80 [1] lasti
+                None
+                (
+                    'value'
+                    'object'
+                    'return'
+                    "'RuntimeSource'"
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'RuntimeSource'
+                8       STORE_NAME                      2: __qualname__
+                10      LOAD_CONST                      1: 'capture'
+                12      STORE_NAME                      3: CAPTURE
+                14      LOAD_CONST                      2: 'relay'
+                16      STORE_NAME                      4: RELAY
+                18      LOAD_CONST                      3: 'replay'
+                20      STORE_NAME                      5: REPLAY
+                22      LOAD_CONST                      4: 'unknown'
+                24      STORE_NAME                      6: UNKNOWN
+                26      LOAD_NAME                       7: classmethod
+                28      LOAD_CONST                      11: ('value', 'object', 'return', "'RuntimeSource'")
+                30      LOAD_CONST                      9: <CODE> normalize
+                32      MAKE_FUNCTION                   4
+                34      PRECALL                         0
+                38      CALL                            0
+                48      STORE_NAME                      8: normalize
+                50      LOAD_CONST                      10: None
+                52      RETURN_VALUE                    
+            [Exception Table]
+        'RuntimeSource'
+        True
+        (
+            'frozen'
+        )
+        [Code]
+            File Name: events.py
+            Object Name: RadarEvent
+            Qualified Name: RadarEvent
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+                'field'
+                'dict'
+                'parameters'
+                'source'
+                'raw'
+                'metadata'
+                'RuntimeSource'
+                'UNKNOWN'
+                'runtime_source'
+                '__post_init__'
+            [Locals+Names]
+            [Constants]
+                'RadarEvent'
+                'str'
+                'kind'
+                'int'
+                'code'
+                (
+                    'default_factory'
+                )
+                'dict[int | str, Any]'
+                'parameters'
+                'unknown'
+                'source'
+                None
+                'bytes | None'
+                'raw'
+                'dict[str, Any]'
+                'metadata'
+                'RuntimeSource'
+                'runtime_source'
+                'return'
+                'None'
+                [Code]
+                    File Name: events.py
+                    Object Name: __post_init__
+                    Qualified Name: RadarEvent.__post_init__
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 7
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'object'
+                        '__setattr__'
+                        'RuntimeSource'
+                        'normalize'
+                        'runtime_source'
+                    [Locals+Names]
+                        'self'
+                    [Constants]
+                        None
+                        'runtime_source'
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_GLOBAL                     0: object
+                        14      LOAD_METHOD                     1: __setattr__
+                        36      LOAD_FAST                       0: self
+                        38      LOAD_CONST                      1: 'runtime_source'
+                        40      LOAD_GLOBAL                     4: RuntimeSource
+                        52      LOAD_METHOD                     3: normalize
+                        74      LOAD_FAST                       0: self
+                        76      LOAD_ATTR                       4: runtime_source
+                        86      PRECALL                         1
+                        90      CALL                            1
+                        100     PRECALL                         3
+                        104     CALL                            3
+                        114     POP_TOP                         
+                        116     LOAD_CONST                      0: None
+                        118     RETURN_VALUE                    
+                    [Exception Table]
+                (
+                    'return'
+                    'None'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'RadarEvent'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'str'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'kind'
+                18      STORE_SUBSCR                    
+                22      LOAD_CONST                      3: 'int'
+                24      LOAD_NAME                       3: __annotations__
+                26      LOAD_CONST                      4: 'code'
+                28      STORE_SUBSCR                    
+                32      PUSH_NULL                       
+                34      LOAD_NAME                       4: field
+                36      LOAD_NAME                       5: dict
+                38      KW_NAMES                        5: ('default_factory',)
+                40      PRECALL                         1
+                44      CALL                            1
+                54      STORE_NAME                      6: parameters
+                56      LOAD_CONST                      6: 'dict[int | str, Any]'
+                58      LOAD_NAME                       3: __annotations__
+                60      LOAD_CONST                      7: 'parameters'
+                62      STORE_SUBSCR                    
+                66      LOAD_CONST                      8: 'unknown'
+                68      STORE_NAME                      7: source
+                70      LOAD_CONST                      1: 'str'
+                72      LOAD_NAME                       3: __annotations__
+                74      LOAD_CONST                      9: 'source'
+                76      STORE_SUBSCR                    
+                80      LOAD_CONST                      10: None
+                82      STORE_NAME                      8: raw
+                84      LOAD_CONST                      11: 'bytes | None'
+                86      LOAD_NAME                       3: __annotations__
+                88      LOAD_CONST                      12: 'raw'
+                90      STORE_SUBSCR                    
+                94      PUSH_NULL                       
+                96      LOAD_NAME                       4: field
+                98      LOAD_NAME                       5: dict
+                100     KW_NAMES                        5: ('default_factory',)
+                102     PRECALL                         1
+                106     CALL                            1
+                116     STORE_NAME                      9: metadata
+                118     LOAD_CONST                      13: 'dict[str, Any]'
+                120     LOAD_NAME                       3: __annotations__
+                122     LOAD_CONST                      14: 'metadata'
+                124     STORE_SUBSCR                    
+                128     LOAD_NAME                       10: RuntimeSource
+                130     LOAD_ATTR                       11: UNKNOWN
+                140     STORE_NAME                      12: runtime_source
+                142     LOAD_CONST                      15: 'RuntimeSource'
+                144     LOAD_NAME                       3: __annotations__
+                146     LOAD_CONST                      16: 'runtime_source'
+                148     STORE_SUBSCR                    
+                152     LOAD_CONST                      20: ('return', 'None')
+                154     LOAD_CONST                      19: <CODE> __post_init__
+                156     MAKE_FUNCTION                   4
+                158     STORE_NAME                      13: __post_init__
+                160     LOAD_CONST                      10: None
+                162     RETURN_VALUE                    
+            [Exception Table]
+        [Code]
+            File Name: events.py
+            Object Name: Subscription
+            Qualified Name: Subscription
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 2
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__init__'
+                'unsubscribe'
+            [Locals+Names]
+            [Constants]
+                'Subscription'
+                'bus'
+                "'RadarEventBus'"
+                'callback'
+                'EventCallback'
+                'return'
+                'None'
+                [Code]
+                    File Name: events.py
+                    Object Name: __init__
+                    Qualified Name: Subscription.__init__
+                    Arg Count: 3
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 2
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        '_bus'
+                        '_callback'
+                        '_active'
+                    [Locals+Names]
+                        'self'
+                        'bus'
+                        'callback'
+                    [Constants]
+                        None
+                        True
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_FAST                       1: bus
+                        4       LOAD_FAST                       0: self
+                        6       STORE_ATTR                      0: _bus
+                        16      LOAD_FAST                       2: callback
+                        18      LOAD_FAST                       0: self
+                        20      STORE_ATTR                      1: _callback
+                        30      LOAD_CONST                      1: True
+                        32      LOAD_FAST                       0: self
+                        34      STORE_ATTR                      2: _active
+                        44      LOAD_CONST                      0: None
+                        46      RETURN_VALUE                    
+                    [Exception Table]
+                [Code]
+                    File Name: events.py
+                    Object Name: unsubscribe
+                    Qualified Name: Subscription.unsubscribe
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 3
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        '_active'
+                        '_bus'
+                        'unsubscribe'
+                        '_callback'
+                    [Locals+Names]
+                        'self'
+                    [Constants]
+                        None
+                        False
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: _active
+                        14      POP_JUMP_FORWARD_IF_TRUE        2 (to 20)
+                        16      LOAD_CONST                      0: None
+                        18      RETURN_VALUE                    
+                        20      LOAD_FAST                       0: self
+                        22      LOAD_ATTR                       1: _bus
+                        32      LOAD_METHOD                     2: unsubscribe
+                        54      LOAD_FAST                       0: self
+                        56      LOAD_ATTR                       3: _callback
+                        66      PRECALL                         1
+                        70      CALL                            1
+                        80      POP_TOP                         
+                        82      LOAD_CONST                      1: False
+                        84      LOAD_FAST                       0: self
+                        86      STORE_ATTR                      0: _active
+                        96      LOAD_CONST                      0: None
+                        98      RETURN_VALUE                    
+                    [Exception Table]
+                None
+                (
+                    'bus'
+                    "'RadarEventBus'"
+                    'callback'
+                    'EventCallback'
+                    'return'
+                    'None'
+                )
+                (
+                    'return'
+                    'None'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'Subscription'
+                8       STORE_NAME                      2: __qualname__
+                10      LOAD_CONST                      10: ('bus', "'RadarEventBus'", 'callback', 'EventCallback', 'return', 'None')
+                12      LOAD_CONST                      7: <CODE> __init__
+                14      MAKE_FUNCTION                   4
+                16      STORE_NAME                      3: __init__
+                18      LOAD_CONST                      11: ('return', 'None')
+                20      LOAD_CONST                      8: <CODE> unsubscribe
+                22      MAKE_FUNCTION                   4
+                24      STORE_NAME                      4: unsubscribe
+                26      LOAD_CONST                      9: None
+                28      RETURN_VALUE                    
+            [Exception Table]
+        'Subscription'
+        [Code]
+            File Name: events.py
+            Object Name: RadarEventBus
+            Qualified Name: RadarEventBus
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__init__'
+                'property'
+                'event_path_stats'
+                'event_path_snapshot'
+                'reset_event_path_source'
+                'subscribe'
+                'unsubscribe'
+                'publish'
+            [Locals+Names]
+            [Constants]
+                'RadarEventBus'
+                None
+                (
+                    'clock_ms'
+                )
+                'clock_ms'
+                'Callable[[], int] | None'
+                'return'
+                'None'
+                [Code]
+                    File Name: events.py
+                    Object Name: __init__
+                    Qualified Name: RadarEventBus.__init__
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 1
+                    Stack Size: 3
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'ass_radar.event_path_stats'
+                        'EventPathStats'
+                        'RLock'
+                        '_lock'
+                        '_subscribers'
+                        '_event_path_stats'
+                    [Locals+Names]
+                        'self'
+                        'clock_ms'
+                        'EventPathStats'
+                    [Constants]
+                        None
+                        0
+                        (
+                            'EventPathStats'
+                        )
+                        (
+                            'clock_ms'
+                        )
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_CONST                      1: 0
+                        4       LOAD_CONST                      2: ('EventPathStats',)
+                        6       IMPORT_NAME                     0: ass_radar.event_path_stats
+                        8       IMPORT_FROM                     1: EventPathStats
+                        10      STORE_FAST                      2: EventPathStats
+                        12      POP_TOP                         
+                        14      LOAD_GLOBAL                     5: NULL + RLock
+                        26      PRECALL                         0
+                        30      CALL                            0
+                        40      LOAD_FAST                       0: self
+                        42      STORE_ATTR                      3: _lock
+                        52      BUILD_LIST                      0
+                        54      LOAD_FAST                       0: self
+                        56      STORE_ATTR                      4: _subscribers
+                        66      PUSH_NULL                       
+                        68      LOAD_FAST                       2: EventPathStats
+                        70      LOAD_FAST                       1: clock_ms
+                        72      KW_NAMES                        3: ('clock_ms',)
+                        74      PRECALL                         1
+                        78      CALL                            1
+                        88      LOAD_FAST                       0: self
+                        90      STORE_ATTR                      5: _event_path_stats
+                        100     LOAD_CONST                      0: None
+                        102     RETURN_VALUE                    
+                    [Exception Table]
+                "'EventPathStats'"
+                [Code]
+                    File Name: events.py
+                    Object Name: event_path_stats
+                    Qualified Name: RadarEventBus.event_path_stats
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 1
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        '_event_path_stats'
+                    [Locals+Names]
+                        'self'
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: _event_path_stats
+                        14      RETURN_VALUE                    
+                    [Exception Table]
+                "'EventPathSnapshot'"
+                [Code]
+                    File Name: events.py
+                    Object Name: event_path_snapshot
+                    Qualified Name: RadarEventBus.event_path_snapshot
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 2
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        '_event_path_stats'
+                        'snapshot'
+                    [Locals+Names]
+                        'self'
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: _event_path_stats
+                        14      LOAD_METHOD                     1: snapshot
+                        36      PRECALL                         0
+                        40      CALL                            0
+                        50      RETURN_VALUE                    
+                    [Exception Table]
+                'source'
+                'RuntimeSource | str'
+                'int'
+                [Code]
+                    File Name: events.py
+                    Object Name: reset_event_path_source
+                    Qualified Name: RadarEventBus.reset_event_path_source
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 3
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        '_event_path_stats'
+                        'reset_source'
+                    [Locals+Names]
+                        'self'
+                        'source'
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: _event_path_stats
+                        14      LOAD_METHOD                     1: reset_source
+                        36      LOAD_FAST                       1: source
+                        38      PRECALL                         1
+                        42      CALL                            1
+                        52      RETURN_VALUE                    
+                    [Exception Table]
+                'callback'
+                'EventCallback'
+                'Subscription'
+                [Code]
+                    File Name: events.py
+                    Object Name: subscribe
+                    Qualified Name: RadarEventBus.subscribe
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 6
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        '_lock'
+                        '_subscribers'
+                        'append'
+                        'Subscription'
+                    [Locals+Names]
+                        'self'
+                        'callback'
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: _lock
+                        14      BEFORE_WITH                     
+                        16      POP_TOP                         
+                        18      LOAD_FAST                       0: self
+                        20      LOAD_ATTR                       1: _subscribers
+                        30      LOAD_METHOD                     2: append
+                        52      LOAD_FAST                       1: callback
+                        54      PRECALL                         1
+                        58      CALL                            1
+                        68      POP_TOP                         
+                        70      LOAD_CONST                      0: None
+                        72      LOAD_CONST                      0: None
+                        74      LOAD_CONST                      0: None
+                        76      PRECALL                         2
+                        80      CALL                            2
+                        90      POP_TOP                         
+                        92      JUMP_FORWARD                    11 (to 116)
+                        94      PUSH_EXC_INFO                   
+                        96      WITH_EXCEPT_START               
+                        98      POP_JUMP_FORWARD_IF_TRUE        4 (to 108)
+                        100     RERAISE                         2
+                        102     COPY                            3
+                        104     POP_EXCEPT                      
+                        106     RERAISE                         1
+                        108     POP_TOP                         
+                        110     POP_EXCEPT                      
+                        112     POP_TOP                         
+                        114     POP_TOP                         
+                        116     LOAD_GLOBAL                     7: NULL + Subscription
+                        128     LOAD_FAST                       0: self
+                        130     LOAD_FAST                       1: callback
+                        132     PRECALL                         2
+                        136     CALL                            2
+                        146     RETURN_VALUE                    
+                    [Exception Table]
+                        16 to 70 -> 94 [1] lasti
+                        94 to 102 -> 102 [3] lasti
+                        108 to 110 -> 102 [3] lasti
+                [Code]
+                    File Name: events.py
+                    Object Name: unsubscribe
+                    Qualified Name: RadarEventBus.unsubscribe
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 6
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        '_lock'
+                        '_subscribers'
+                    [Locals+Names]
+                        'self'
+                        'callback'
+                    [Constants]
+                        None
+                        [Code]
+                            File Name: events.py
+                            Object Name: <listcomp>
+                            Qualified Name: RadarEventBus.unsubscribe.<locals>.<listcomp>
+                            Arg Count: 1
+                            Pos Only Arg Count: 0
+                            KW Only Arg Count: 0
+                            Stack Size: 4
+                            Flags: 0x01000013 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED | CO_FUTURE_ANNOTATIONS)
+                            [Names]
+                            [Locals+Names]
+                                '.0'
+                                'item'
+                                'callback'
+                            [Constants]
+                            [Disassembly]
+                                0       COPY_FREE_VARS                  1
+                                2       RESUME                          0
+                                4       BUILD_LIST                      0
+                                6       LOAD_FAST                       0: .0
+                                8       FOR_ITER                        8 (to 26)
+                                10      STORE_FAST                      1: item
+                                12      LOAD_FAST                       1: item
+                                14      LOAD_DEREF                      2: callback
+                                16      IS_OP                           1 (is not)
+                                18      POP_JUMP_BACKWARD_IF_FALSE      6 (to 8)
+                                20      LOAD_FAST                       1: item
+                                22      LIST_APPEND                     2
+                                24      JUMP_BACKWARD                   9 (to 8)
+                                26      RETURN_VALUE                    
+                            [Exception Table]
+                    [Disassembly]
+                        0       MAKE_CELL                       1: callback
+                        2       RESUME                          0
+                        4       LOAD_FAST                       0: self
+                        6       LOAD_ATTR                       0: _lock
+                        16      BEFORE_WITH                     
+                        18      POP_TOP                         
+                        20      LOAD_CLOSURE                    1: callback
+                        22      BUILD_TUPLE                     1
+                        24      LOAD_CONST                      1: <CODE> <listcomp>
+                        26      MAKE_FUNCTION                   8
+                        28      LOAD_FAST                       0: self
+                        30      LOAD_ATTR                       1: _subscribers
+                        40      GET_ITER                        
+                        42      PRECALL                         0
+                        46      CALL                            0
+                        56      LOAD_FAST                       0: self
+                        58      STORE_ATTR                      1: _subscribers
+                        68      LOAD_CONST                      0: None
+                        70      LOAD_CONST                      0: None
+                        72      LOAD_CONST                      0: None
+                        74      PRECALL                         2
+                        78      CALL                            2
+                        88      POP_TOP                         
+                        90      LOAD_CONST                      0: None
+                        92      RETURN_VALUE                    
+                        94      PUSH_EXC_INFO                   
+                        96      WITH_EXCEPT_START               
+                        98      POP_JUMP_FORWARD_IF_TRUE        4 (to 108)
+                        100     RERAISE                         2
+                        102     COPY                            3
+                        104     POP_EXCEPT                      
+                        106     RERAISE                         1
+                        108     POP_TOP                         
+                        110     POP_EXCEPT                      
+                        112     POP_TOP                         
+                        114     POP_TOP                         
+                        116     LOAD_CONST                      0: None
+                        118     RETURN_VALUE                    
+                    [Exception Table]
+                        18 to 68 -> 94 [1] lasti
+                        94 to 102 -> 102 [3] lasti
+                        108 to 110 -> 102 [3] lasti
+                'event'
+                'RadarEvent'
+                [Code]
+                    File Name: events.py
+                    Object Name: publish
+                    Qualified Name: RadarEventBus.publish
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 6
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        '_event_path_stats'
+                        'record_published'
+                        '_lock'
+                        'list'
+                        '_subscribers'
+                    [Locals+Names]
+                        'self'
+                        'event'
+                        'subscribers'
+                        'callback'
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: _event_path_stats
+                        14      LOAD_METHOD                     1: record_published
+                        36      LOAD_FAST                       1: event
+                        38      PRECALL                         1
+                        42      CALL                            1
+                        52      POP_TOP                         
+                        54      LOAD_FAST                       0: self
+                        56      LOAD_ATTR                       2: _lock
+                        66      BEFORE_WITH                     
+                        68      POP_TOP                         
+                        70      LOAD_GLOBAL                     7: NULL + list
+                        82      LOAD_FAST                       0: self
+                        84      LOAD_ATTR                       4: _subscribers
+                        94      PRECALL                         1
+                        98      CALL                            1
+                        108     STORE_FAST                      2: subscribers
+                        110     LOAD_CONST                      0: None
+                        112     LOAD_CONST                      0: None
+                        114     LOAD_CONST                      0: None
+                        116     PRECALL                         2
+                        120     CALL                            2
+                        130     POP_TOP                         
+                        132     JUMP_FORWARD                    11 (to 156)
+                        134     PUSH_EXC_INFO                   
+                        136     WITH_EXCEPT_START               
+                        138     POP_JUMP_FORWARD_IF_TRUE        4 (to 148)
+                        140     RERAISE                         2
+                        142     COPY                            3
+                        144     POP_EXCEPT                      
+                        146     RERAISE                         1
+                        148     POP_TOP                         
+                        150     POP_EXCEPT                      
+                        152     POP_TOP                         
+                        154     POP_TOP                         
+                        156     LOAD_FAST                       2: subscribers
+                        158     GET_ITER                        
+                        160     FOR_ITER                        13 (to 188)
+                        162     STORE_FAST                      3: callback
+                        164     PUSH_NULL                       
+                        166     LOAD_FAST                       3: callback
+                        168     LOAD_FAST                       1: event
+                        170     PRECALL                         1
+                        174     CALL                            1
+                        184     POP_TOP                         
+                        186     JUMP_BACKWARD                   14 (to 160)
+                        188     LOAD_CONST                      0: None
+                        190     RETURN_VALUE                    
+                    [Exception Table]
+                        68 to 110 -> 134 [1] lasti
+                        134 to 142 -> 142 [3] lasti
+                        148 to 150 -> 142 [3] lasti
+                (
+                    'clock_ms'
+                    'Callable[[], int] | None'
+                    'return'
+                    'None'
+                )
+                (
+                    'return'
+                    "'EventPathStats'"
+                )
+                (
+                    'return'
+                    "'EventPathSnapshot'"
+                )
+                (
+                    'source'
+                    'RuntimeSource | str'
+                    'return'
+                    'int'
+                )
+                (
+                    'callback'
+                    'EventCallback'
+                    'return'
+                    'Subscription'
+                )
+                (
+                    'callback'
+                    'EventCallback'
+                    'return'
+                    'None'
+                )
+                (
+                    'event'
+                    'RadarEvent'
+                    'return'
+                    'None'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'RadarEventBus'
+                8       STORE_NAME                      2: __qualname__
+                10      LOAD_CONST                      1: None
+                12      LOAD_CONST                      2: ('clock_ms',)
+                14      BUILD_CONST_KEY_MAP             1
+                16      LOAD_CONST                      24: ('clock_ms', 'Callable[[], int] | None', 'return', 'None')
+                18      LOAD_CONST                      7: <CODE> __init__
+                20      MAKE_FUNCTION                   6
+                22      STORE_NAME                      3: __init__
+                24      LOAD_NAME                       4: property
+                26      LOAD_CONST                      25: ('return', "'EventPathStats'")
+                28      LOAD_CONST                      9: <CODE> event_path_stats
+                30      MAKE_FUNCTION                   4
+                32      PRECALL                         0
+                36      CALL                            0
+                46      STORE_NAME                      5: event_path_stats
+                48      LOAD_CONST                      26: ('return', "'EventPathSnapshot'")
+                50      LOAD_CONST                      11: <CODE> event_path_snapshot
+                52      MAKE_FUNCTION                   4
+                54      STORE_NAME                      6: event_path_snapshot
+                56      LOAD_CONST                      27: ('source', 'RuntimeSource | str', 'return', 'int')
+                58      LOAD_CONST                      15: <CODE> reset_event_path_source
+                60      MAKE_FUNCTION                   4
+                62      STORE_NAME                      7: reset_event_path_source
+                64      LOAD_CONST                      28: ('callback', 'EventCallback', 'return', 'Subscription')
+                66      LOAD_CONST                      19: <CODE> subscribe
+                68      MAKE_FUNCTION                   4
+                70      STORE_NAME                      8: subscribe
+                72      LOAD_CONST                      29: ('callback', 'EventCallback', 'return', 'None')
+                74      LOAD_CONST                      20: <CODE> unsubscribe
+                76      MAKE_FUNCTION                   4
+                78      STORE_NAME                      9: unsubscribe
+                80      LOAD_CONST                      30: ('event', 'RadarEvent', 'return', 'None')
+                82      LOAD_CONST                      23: <CODE> publish
+                84      MAKE_FUNCTION                   4
+                86      STORE_NAME                      10: publish
+                88      LOAD_CONST                      1: None
+                90      RETURN_VALUE                    
+            [Exception Table]
+        'RadarEventBus'
+    [Disassembly]
+        0       RESUME                          0
+        2       LOAD_CONST                      0: 0
+        4       LOAD_CONST                      1: ('annotations',)
+        6       IMPORT_NAME                     0: __future__
+        8       IMPORT_FROM                     1: annotations
+        10      STORE_NAME                      1: annotations
+        12      POP_TOP                         
+        14      LOAD_CONST                      0: 0
+        16      LOAD_CONST                      2: ('dataclass', 'field')
+        18      IMPORT_NAME                     2: dataclasses
+        20      IMPORT_FROM                     3: dataclass
+        22      STORE_NAME                      3: dataclass
+        24      IMPORT_FROM                     4: field
+        26      STORE_NAME                      4: field
+        28      POP_TOP                         
+        30      LOAD_CONST                      0: 0
+        32      LOAD_CONST                      3: ('Enum',)
+        34      IMPORT_NAME                     5: enum
+        36      IMPORT_FROM                     6: Enum
+        38      STORE_NAME                      6: Enum
+        40      POP_TOP                         
+        42      LOAD_CONST                      0: 0
+        44      LOAD_CONST                      4: ('RLock',)
+        46      IMPORT_NAME                     7: threading
+        48      IMPORT_FROM                     8: RLock
+        50      STORE_NAME                      8: RLock
+        52      POP_TOP                         
+        54      LOAD_CONST                      0: 0
+        56      LOAD_CONST                      5: ('TYPE_CHECKING', 'Any', 'Callable')
+        58      IMPORT_NAME                     9: typing
+        60      IMPORT_FROM                     10: TYPE_CHECKING
+        62      STORE_NAME                      10: TYPE_CHECKING
+        64      IMPORT_FROM                     11: Any
+        66      STORE_NAME                      11: Any
+        68      IMPORT_FROM                     12: Callable
+        70      STORE_NAME                      12: Callable
+        72      POP_TOP                         
+        74      LOAD_NAME                       10: TYPE_CHECKING
+        76      POP_JUMP_FORWARD_IF_FALSE       8 (to 94)
+        78      LOAD_CONST                      0: 0
+        80      LOAD_CONST                      6: ('EventPathSnapshot', 'EventPathStats')
+        82      IMPORT_NAME                     13: ass_radar.event_path_stats
+        84      IMPORT_FROM                     14: EventPathSnapshot
+        86      STORE_NAME                      14: EventPathSnapshot
+        88      IMPORT_FROM                     15: EventPathStats
+        90      STORE_NAME                      15: EventPathStats
+        92      POP_TOP                         
+        94      LOAD_NAME                       12: Callable
+        96      LOAD_CONST                      7: 'RadarEvent'
+        98      BUILD_LIST                      1
+        100     LOAD_CONST                      8: None
+        102     BUILD_TUPLE                     2
+        104     BINARY_SUBSCR                   
+        114     STORE_NAME                      16: EventCallback
+        116     PUSH_NULL                       
+        118     LOAD_BUILD_CLASS                
+        120     LOAD_CONST                      9: <CODE> RuntimeSource
+        122     MAKE_FUNCTION                   0
+        124     LOAD_CONST                      10: 'RuntimeSource'
+        126     LOAD_NAME                       17: str
+        128     LOAD_NAME                       6: Enum
+        130     PRECALL                         4
+        134     CALL                            4
+        144     STORE_NAME                      18: RuntimeSource
+        146     PUSH_NULL                       
+        148     LOAD_NAME                       3: dataclass
+        150     LOAD_CONST                      11: True
+        152     KW_NAMES                        12: ('frozen',)
+        154     PRECALL                         1
+        158     CALL                            1
+        168     PUSH_NULL                       
+        170     LOAD_BUILD_CLASS                
+        172     LOAD_CONST                      13: <CODE> RadarEvent
+        174     MAKE_FUNCTION                   0
+        176     LOAD_CONST                      7: 'RadarEvent'
+        178     PRECALL                         2
+        182     CALL                            2
+        192     PRECALL                         0
+        196     CALL                            0
+        206     STORE_NAME                      19: RadarEvent
+        208     PUSH_NULL                       
+        210     LOAD_BUILD_CLASS                
+        212     LOAD_CONST                      14: <CODE> Subscription
+        214     MAKE_FUNCTION                   0
+        216     LOAD_CONST                      15: 'Subscription'
+        218     PRECALL                         2
+        222     CALL                            2
+        232     STORE_NAME                      20: Subscription
+        234     PUSH_NULL                       
+        236     LOAD_BUILD_CLASS                
+        238     LOAD_CONST                      16: <CODE> RadarEventBus
+        240     MAKE_FUNCTION                   0
+        242     LOAD_CONST                      17: 'RadarEventBus'
+        244     PRECALL                         2
+        248     CALL                            2
+        258     STORE_NAME                      21: RadarEventBus
+        260     LOAD_CONST                      8: None
+        262     RETURN_VALUE                    
+    [Exception Table]

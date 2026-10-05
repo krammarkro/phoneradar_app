@@ -1,0 +1,2016 @@
+product_events.pyc (Python 3.11)
+[Code]
+    File Name: product_events.py
+    Object Name: <module>
+    Qualified Name: <module>
+    Arg Count: 0
+    Pos Only Arg Count: 0
+    KW Only Arg Count: 0
+    Stack Size: 33
+    Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+    [Names]
+        '__future__'
+        'annotations'
+        'collections.abc'
+        'Mapping'
+        'dataclasses'
+        'dataclass'
+        'types'
+        'MappingProxyType'
+        'typing'
+        'Final'
+        'Literal'
+        'TypeAlias'
+        'ass_radar.events'
+        'RadarEvent'
+        'ass_radar.photon.keysync'
+        'KEY_SYNC_EVENT_CODES'
+        'RadarEventKind'
+        '__annotations__'
+        'ProductEventSetName'
+        'EVENT_LEAVE'
+        'EVENT_MOVE'
+        'EVENT_HEALTH_UPDATE'
+        'EVENT_HEALTH_UPDATES'
+        'EVENT_NEW_CHARACTER'
+        'EVENT_NEW_SIMPLE_HARVESTABLE_OBJECT_LIST'
+        'EVENT_NEW_HARVESTABLE_OBJECT'
+        'EVENT_HARVESTABLE_CHANGE_STATE'
+        'EVENT_MOB_CHANGE_STATE'
+        'EVENT_HARVEST_FINISHED'
+        'EVENT_CHARACTER_EQUIPMENT_CHANGED'
+        'EVENT_REGENERATION_HEALTH_CHANGED'
+        'EVENT_NEW_MOB'
+        'EVENT_MOUNTED'
+        'EVENT_LOCAL_TREASURES_UPDATE'
+        'EVENT_NEW_RANDOM_DUNGEON_EXIT'
+        'EVENT_FISHING_FINISHED'
+        'EVENT_NEW_FISHING_ZONE_OBJECT'
+        'EVENT_CHANGE_FLAGGING_FINISHED'
+        'EVENT_NEW_LOOT_CHEST'
+        'EVENT_LOOT_CHEST_OPENED'
+        'EVENT_NEW_MISTS_IMMEDIATE_RETURN_EXIT'
+        'EVENT_MISTS_PLAYER_JOINED_INFO'
+        'EVENT_NEW_MISTS_STATIC_ENTRANCE'
+        'EVENT_NEW_MISTS_OPEN_WORLD_EXIT'
+        'EVENT_NEW_MISTS_WISP_SPAWN'
+        'EVENT_MISTS_ENTRANCE_DATA_CHANGED'
+        'EVENT_NEW_CAGED_OBJECT'
+        'EVENT_CAGED_OBJECT_STATE_UPDATED'
+        'EVENT_NEW_HUNT_TRACK'
+        'EVENT_HUNT_QUEST_MISSION_PROGRESS_UPDATE'
+        'EVENT_HELL_DUNGEONS_PLAYER_JOINED_INFO'
+        'OP_JOIN'
+        'OP_MOVE'
+        'OP_CHANGE_CLUSTER'
+        'OP_GET_CHARACTER_EQUIPMENT'
+        'OP_MISTS_USE_STATIC_ENTRANCE'
+        'EventRoute'
+        'RouteResolution'
+        'frozenset'
+        'RADAR_CORE_ROUTES'
+        'DUNGEON_INTEL_ROUTES'
+        'OPENRADAR_REGISTRY_ONLY_ROUTES'
+        'RELAY_ROUTES'
+        'EVIDENCE_ROUTES'
+        'POSITION_SENSITIVE_ROUTES'
+        'DIAGNOSTIC_ONLY_ROUTES'
+        'FIXTURE_SENSITIVE_ROUTES'
+        'PRODUCT_EVENT_SET_NAMES'
+        'PRODUCT_EVENT_SETS'
+        'resolve_event_route'
+        'resolve_radar_event_route'
+        'get_product_event_routes'
+        'event_parts_in_product_set'
+        'radar_event_in_product_set'
+        '_canonical_code'
+        'object'
+        '_MISSING'
+        'RuntimeError'
+        'isdisjoint'
+    [Locals+Names]
+    [Constants]
+        0
+        (
+            'annotations'
+        )
+        (
+            'Mapping'
+        )
+        (
+            'dataclass'
+        )
+        (
+            'MappingProxyType'
+        )
+        (
+            'Final'
+            'Literal'
+            'TypeAlias'
+        )
+        (
+            'RadarEvent'
+        )
+        (
+            'KEY_SYNC_EVENT_CODES'
+        )
+        (
+            'event'
+            'request'
+            'response'
+        )
+        'TypeAlias'
+        'RadarEventKind'
+        (
+            'radar-core'
+            'dungeon-intel'
+            'relay'
+            'evidence'
+        )
+        'ProductEventSetName'
+        1
+        3
+        6
+        7
+        29
+        39
+        40
+        46
+        47
+        61
+        90
+        91
+        123
+        211
+        285
+        325
+        358
+        361
+        365
+        393
+        395
+        520
+        521
+        522
+        523
+        525
+        531
+        532
+        533
+        558
+        560
+        620
+        2
+        22
+        41
+        143
+        473
+        True
+        (
+            'frozen'
+            'order'
+            'slots'
+        )
+        [Code]
+            File Name: product_events.py
+            Object Name: EventRoute
+            Qualified Name: EventRoute
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+                '__post_init__'
+            [Locals+Names]
+            [Constants]
+                'EventRoute'
+                'RadarEventKind'
+                'kind'
+                'int'
+                'code'
+                'return'
+                'None'
+                [Code]
+                    File Name: product_events.py
+                    Object Name: __post_init__
+                    Qualified Name: EventRoute.__post_init__
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 3
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'type'
+                        'kind'
+                        'str'
+                        'ValueError'
+                        'code'
+                        'int'
+                    [Locals+Names]
+                        'self'
+                    [Constants]
+                        None
+                        frozenset({
+                            'event'
+                            'request'
+                            'response'
+                        })
+                        'invalid_event_route'
+                        0
+                        65535
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_GLOBAL                     1: NULL + type
+                        14      LOAD_FAST                       0: self
+                        16      LOAD_ATTR                       1: kind
+                        26      PRECALL                         1
+                        30      CALL                            1
+                        40      LOAD_GLOBAL                     4: str
+                        52      IS_OP                           1 (is not)
+                        54      POP_JUMP_FORWARD_IF_TRUE        9 (to 74)
+                        56      LOAD_FAST                       0: self
+                        58      LOAD_ATTR                       1: kind
+                        68      LOAD_CONST                      1: frozenset({'event', 'request', 'response'})
+                        70      CONTAINS_OP                     1 (not in)
+                        72      POP_JUMP_FORWARD_IF_FALSE       15 (to 104)
+                        74      LOAD_GLOBAL                     7: NULL + ValueError
+                        86      LOAD_CONST                      2: 'invalid_event_route'
+                        88      PRECALL                         1
+                        92      CALL                            1
+                        102     RAISE_VARARGS                   1
+                        104     LOAD_GLOBAL                     1: NULL + type
+                        116     LOAD_FAST                       0: self
+                        118     LOAD_ATTR                       4: code
+                        128     PRECALL                         1
+                        132     CALL                            1
+                        142     LOAD_GLOBAL                     10: int
+                        154     IS_OP                           1 (is not)
+                        156     POP_JUMP_FORWARD_IF_TRUE        20 (to 198)
+                        158     LOAD_CONST                      3: 0
+                        160     LOAD_FAST                       0: self
+                        162     LOAD_ATTR                       4: code
+                        172     SWAP                            2
+                        174     COPY                            2
+                        176     COMPARE_OP                      1 (<=)
+                        182     POP_JUMP_FORWARD_IF_FALSE       6 (to 196)
+                        184     LOAD_CONST                      4: 65535
+                        186     COMPARE_OP                      1 (<=)
+                        192     POP_JUMP_FORWARD_IF_TRUE        17 (to 228)
+                        194     JUMP_FORWARD                    1 (to 198)
+                        196     POP_TOP                         
+                        198     LOAD_GLOBAL                     7: NULL + ValueError
+                        210     LOAD_CONST                      2: 'invalid_event_route'
+                        212     PRECALL                         1
+                        216     CALL                            1
+                        226     RAISE_VARARGS                   1
+                        228     LOAD_CONST                      0: None
+                        230     RETURN_VALUE                    
+                    [Exception Table]
+                None
+                (
+                    'return'
+                    'None'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'EventRoute'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'RadarEventKind'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'kind'
+                18      STORE_SUBSCR                    
+                22      LOAD_CONST                      3: 'int'
+                24      LOAD_NAME                       3: __annotations__
+                26      LOAD_CONST                      4: 'code'
+                28      STORE_SUBSCR                    
+                32      LOAD_CONST                      9: ('return', 'None')
+                34      LOAD_CONST                      7: <CODE> __post_init__
+                36      MAKE_FUNCTION                   4
+                38      STORE_NAME                      4: __post_init__
+                40      LOAD_CONST                      8: None
+                42      RETURN_VALUE                    
+            [Exception Table]
+        'EventRoute'
+        (
+            'frozen'
+            'slots'
+        )
+        [Code]
+            File Name: product_events.py
+            Object Name: RouteResolution
+            Qualified Name: RouteResolution
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+            [Locals+Names]
+            [Constants]
+                'RouteResolution'
+                'EventRoute'
+                'observed'
+                'routed'
+                'bool'
+                'from_parameter'
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'RouteResolution'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'EventRoute'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'observed'
+                18      STORE_SUBSCR                    
+                22      LOAD_CONST                      1: 'EventRoute'
+                24      LOAD_NAME                       3: __annotations__
+                26      LOAD_CONST                      3: 'routed'
+                28      STORE_SUBSCR                    
+                32      LOAD_CONST                      4: 'bool'
+                34      LOAD_NAME                       3: __annotations__
+                36      LOAD_CONST                      5: 'from_parameter'
+                38      STORE_SUBSCR                    
+                42      LOAD_CONST                      6: None
+                44      RETURN_VALUE                    
+            [Exception Table]
+        'RouteResolution'
+        'event'
+        'request'
+        'response'
+        'Final[frozenset[EventRoute]]'
+        'RADAR_CORE_ROUTES'
+        'DUNGEON_INTEL_ROUTES'
+        'OPENRADAR_REGISTRY_ONLY_ROUTES'
+        'RELAY_ROUTES'
+        11
+        59
+        323
+        391
+        518
+        519
+        529
+        530
+        556
+        598
+        600
+        21
+        35
+        137
+        'EVIDENCE_ROUTES'
+        'POSITION_SENSITIVE_ROUTES'
+        [Code]
+            File Name: product_events.py
+            Object Name: <genexpr>
+            Qualified Name: <genexpr>
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 5
+            Flags: 0x01000023 (CO_OPTIMIZED | CO_NEWLOCALS | CO_GENERATOR | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'EventRoute'
+            [Locals+Names]
+                '.0'
+                'code'
+            [Constants]
+                'event'
+                None
+            [Disassembly]
+                0       RETURN_GENERATOR                
+                2       POP_TOP                         
+                4       RESUME                          0
+                6       LOAD_FAST                       0: .0
+                8       FOR_ITER                        20 (to 50)
+                10      STORE_FAST                      1: code
+                12      LOAD_GLOBAL                     1: NULL + EventRoute
+                24      LOAD_CONST                      0: 'event'
+                26      LOAD_FAST                       1: code
+                28      PRECALL                         2
+                32      CALL                            2
+                42      YIELD_VALUE                     
+                44      RESUME                          1
+                46      POP_TOP                         
+                48      JUMP_BACKWARD                   21 (to 8)
+                50      LOAD_CONST                      1: None
+                52      RETURN_VALUE                    
+            [Exception Table]
+        'DIAGNOSTIC_ONLY_ROUTES'
+        'FIXTURE_SENSITIVE_ROUTES'
+        'Final[tuple[ProductEventSetName, ...]]'
+        'PRODUCT_EVENT_SET_NAMES'
+        'Final[Mapping[ProductEventSetName, frozenset[EventRoute]]]'
+        'PRODUCT_EVENT_SETS'
+        'kind'
+        'object'
+        'observed_code'
+        'parameters'
+        'return'
+        'RouteResolution | None'
+        [Code]
+            File Name: product_events.py
+            Object Name: resolve_event_route
+            Qualified Name: resolve_event_route
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 3
+            Stack Size: 8
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'type'
+                'str'
+                'int'
+                'isinstance'
+                'Mapping'
+                '_MISSING'
+                'items'
+                'Exception'
+                'EventRoute'
+                'RouteResolution'
+                '_canonical_code'
+                'append'
+                'len'
+                'set'
+            [Locals+Names]
+                'kind'
+                'observed_code'
+                'parameters'
+                'routed_number_key'
+                'routed_string_key'
+                'integer_value'
+                'string_value'
+                'key'
+                'value'
+                'observed'
+                'routed_codes'
+                'routed_code'
+            [Constants]
+                None
+                frozenset({
+                    'event'
+                    'request'
+                    'response'
+                })
+                0
+                65535
+                'event'
+                252
+                253
+                False
+                (
+                    'observed'
+                    'routed'
+                    'from_parameter'
+                )
+                1
+                True
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + type
+                14      LOAD_FAST                       0: kind
+                16      PRECALL                         1
+                20      CALL                            1
+                30      LOAD_GLOBAL                     2: str
+                42      IS_OP                           1 (is not)
+                44      POP_JUMP_FORWARD_IF_TRUE        4 (to 54)
+                46      LOAD_FAST                       0: kind
+                48      LOAD_CONST                      1: frozenset({'event', 'request', 'response'})
+                50      CONTAINS_OP                     1 (not in)
+                52      POP_JUMP_FORWARD_IF_FALSE       2 (to 58)
+                54      LOAD_CONST                      0: None
+                56      RETURN_VALUE                    
+                58      LOAD_GLOBAL                     1: NULL + type
+                70      LOAD_FAST                       1: observed_code
+                72      PRECALL                         1
+                76      CALL                            1
+                86      LOAD_GLOBAL                     4: int
+                98      IS_OP                           1 (is not)
+                100     POP_JUMP_FORWARD_IF_TRUE        15 (to 132)
+                102     LOAD_CONST                      2: 0
+                104     LOAD_FAST                       1: observed_code
+                106     SWAP                            2
+                108     COPY                            2
+                110     COMPARE_OP                      1 (<=)
+                116     POP_JUMP_FORWARD_IF_FALSE       6 (to 130)
+                118     LOAD_CONST                      3: 65535
+                120     COMPARE_OP                      1 (<=)
+                126     POP_JUMP_FORWARD_IF_TRUE        4 (to 136)
+                128     JUMP_FORWARD                    1 (to 132)
+                130     POP_TOP                         
+                132     LOAD_CONST                      0: None
+                134     RETURN_VALUE                    
+                136     LOAD_GLOBAL                     7: NULL + isinstance
+                148     LOAD_FAST                       2: parameters
+                150     LOAD_GLOBAL                     8: Mapping
+                162     PRECALL                         2
+                166     CALL                            2
+                176     POP_JUMP_FORWARD_IF_TRUE        2 (to 182)
+                178     LOAD_CONST                      0: None
+                180     RETURN_VALUE                    
+                182     LOAD_FAST                       0: kind
+                184     LOAD_CONST                      4: 'event'
+                186     COMPARE_OP                      2 (==)
+                192     POP_JUMP_FORWARD_IF_FALSE       2 (to 198)
+                194     LOAD_CONST                      5: 252
+                196     JUMP_FORWARD                    1 (to 200)
+                198     LOAD_CONST                      6: 253
+                200     STORE_FAST                      3: routed_number_key
+                202     LOAD_GLOBAL                     3: NULL + str
+                214     LOAD_FAST                       3: routed_number_key
+                216     PRECALL                         1
+                220     CALL                            1
+                230     STORE_FAST                      4: routed_string_key
+                232     LOAD_GLOBAL                     10: _MISSING
+                244     STORE_FAST                      5: integer_value
+                246     LOAD_GLOBAL                     10: _MISSING
+                258     STORE_FAST                      6: string_value
+                260     NOP                             
+                262     LOAD_FAST                       2: parameters
+                264     LOAD_METHOD                     6: items
+                286     PRECALL                         0
+                290     CALL                            0
+                300     GET_ITER                        
+                302     FOR_ITER                        66 (to 436)
+                304     UNPACK_SEQUENCE                 2
+                308     STORE_FAST                      7: key
+                310     STORE_FAST                      8: value
+                312     LOAD_GLOBAL                     1: NULL + type
+                324     LOAD_FAST                       7: key
+                326     PRECALL                         1
+                330     CALL                            1
+                340     LOAD_GLOBAL                     4: int
+                352     IS_OP                           0 (is)
+                354     POP_JUMP_FORWARD_IF_FALSE       9 (to 374)
+                356     LOAD_FAST                       7: key
+                358     LOAD_FAST                       3: routed_number_key
+                360     COMPARE_OP                      2 (==)
+                366     POP_JUMP_FORWARD_IF_FALSE       3 (to 374)
+                368     LOAD_FAST                       8: value
+                370     STORE_FAST                      5: integer_value
+                372     JUMP_BACKWARD                   36 (to 302)
+                374     LOAD_GLOBAL                     1: NULL + type
+                386     LOAD_FAST                       7: key
+                388     PRECALL                         1
+                392     CALL                            1
+                402     LOAD_GLOBAL                     2: str
+                414     IS_OP                           0 (is)
+                416     POP_JUMP_FORWARD_IF_FALSE       8 (to 434)
+                418     LOAD_FAST                       7: key
+                420     LOAD_FAST                       4: routed_string_key
+                422     COMPARE_OP                      2 (==)
+                428     POP_JUMP_FORWARD_IF_FALSE       2 (to 434)
+                430     LOAD_FAST                       8: value
+                432     STORE_FAST                      6: string_value
+                434     JUMP_BACKWARD                   67 (to 302)
+                436     JUMP_FORWARD                    17 (to 472)
+                438     PUSH_EXC_INFO                   
+                440     LOAD_GLOBAL                     14: Exception
+                452     CHECK_EXC_MATCH                 
+                454     POP_JUMP_FORWARD_IF_FALSE       4 (to 464)
+                456     POP_TOP                         
+                458     POP_EXCEPT                      
+                460     LOAD_CONST                      0: None
+                462     RETURN_VALUE                    
+                464     RERAISE                         0
+                466     COPY                            3
+                468     POP_EXCEPT                      
+                470     RERAISE                         1
+                472     LOAD_GLOBAL                     17: NULL + EventRoute
+                484     LOAD_FAST                       0: kind
+                486     LOAD_FAST                       1: observed_code
+                488     PRECALL                         2
+                492     CALL                            2
+                502     STORE_FAST                      9: observed
+                504     LOAD_FAST                       5: integer_value
+                506     LOAD_GLOBAL                     10: _MISSING
+                518     IS_OP                           0 (is)
+                520     POP_JUMP_FORWARD_IF_FALSE       27 (to 576)
+                522     LOAD_FAST                       6: string_value
+                524     LOAD_GLOBAL                     10: _MISSING
+                536     IS_OP                           0 (is)
+                538     POP_JUMP_FORWARD_IF_FALSE       18 (to 576)
+                540     LOAD_GLOBAL                     19: NULL + RouteResolution
+                552     LOAD_FAST                       9: observed
+                554     LOAD_FAST                       9: observed
+                556     LOAD_CONST                      7: False
+                558     KW_NAMES                        8: ('observed', 'routed', 'from_parameter')
+                560     PRECALL                         3
+                564     CALL                            3
+                574     RETURN_VALUE                    
+                576     BUILD_LIST                      0
+                578     STORE_FAST                      10: routed_codes
+                580     LOAD_FAST                       5: integer_value
+                582     LOAD_FAST                       6: string_value
+                584     BUILD_TUPLE                     2
+                586     GET_ITER                        
+                588     FOR_ITER                        53 (to 696)
+                590     STORE_FAST                      8: value
+                592     LOAD_FAST                       8: value
+                594     LOAD_GLOBAL                     10: _MISSING
+                606     IS_OP                           0 (is)
+                608     POP_JUMP_FORWARD_IF_FALSE       1 (to 612)
+                610     JUMP_BACKWARD                   12 (to 588)
+                612     LOAD_GLOBAL                     21: NULL + _canonical_code
+                624     LOAD_FAST                       8: value
+                626     PRECALL                         1
+                630     CALL                            1
+                640     STORE_FAST                      11: routed_code
+                642     LOAD_FAST                       11: routed_code
+                644     POP_JUMP_FORWARD_IF_NOT_NONE    3 (to 652)
+                646     POP_TOP                         
+                648     LOAD_CONST                      0: None
+                650     RETURN_VALUE                    
+                652     LOAD_FAST                       10: routed_codes
+                654     LOAD_METHOD                     11: append
+                676     LOAD_FAST                       11: routed_code
+                678     PRECALL                         1
+                682     CALL                            1
+                692     POP_TOP                         
+                694     JUMP_BACKWARD                   54 (to 588)
+                696     LOAD_GLOBAL                     25: NULL + len
+                708     LOAD_GLOBAL                     27: NULL + set
+                720     LOAD_FAST                       10: routed_codes
+                722     PRECALL                         1
+                726     CALL                            1
+                736     PRECALL                         1
+                740     CALL                            1
+                750     LOAD_CONST                      9: 1
+                752     COMPARE_OP                      3 (!=)
+                758     POP_JUMP_FORWARD_IF_FALSE       2 (to 764)
+                760     LOAD_CONST                      0: None
+                762     RETURN_VALUE                    
+                764     LOAD_GLOBAL                     19: NULL + RouteResolution
+                776     LOAD_FAST                       9: observed
+                778     LOAD_GLOBAL                     17: NULL + EventRoute
+                790     LOAD_FAST                       0: kind
+                792     LOAD_FAST                       10: routed_codes
+                794     LOAD_CONST                      2: 0
+                796     BINARY_SUBSCR                   
+                806     PRECALL                         2
+                810     CALL                            2
+                820     LOAD_CONST                      10: True
+                822     KW_NAMES                        8: ('observed', 'routed', 'from_parameter')
+                824     PRECALL                         3
+                828     CALL                            3
+                838     RETURN_VALUE                    
+            [Exception Table]
+                262 to 436 -> 438 [0] 
+                438 to 458 -> 466 [1] lasti
+                464 to 466 -> 466 [1] lasti
+        'RadarEvent'
+        [Code]
+            File Name: product_events.py
+            Object Name: resolve_radar_event_route
+            Qualified Name: resolve_radar_event_route
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 5
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'resolve_event_route'
+                'kind'
+                'code'
+                'parameters'
+                'Exception'
+            [Locals+Names]
+                'event'
+            [Constants]
+                None
+                (
+                    'kind'
+                    'observed_code'
+                    'parameters'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       NOP                             
+                4       LOAD_GLOBAL                     1: NULL + resolve_event_route
+                16      LOAD_FAST                       0: event
+                18      LOAD_ATTR                       1: kind
+                28      LOAD_FAST                       0: event
+                30      LOAD_ATTR                       2: code
+                40      LOAD_FAST                       0: event
+                42      LOAD_ATTR                       3: parameters
+                52      KW_NAMES                        1: ('kind', 'observed_code', 'parameters')
+                54      PRECALL                         3
+                58      CALL                            3
+                68      RETURN_VALUE                    
+                70      PUSH_EXC_INFO                   
+                72      LOAD_GLOBAL                     8: Exception
+                84      CHECK_EXC_MATCH                 
+                86      POP_JUMP_FORWARD_IF_FALSE       4 (to 96)
+                88      POP_TOP                         
+                90      POP_EXCEPT                      
+                92      LOAD_CONST                      0: None
+                94      RETURN_VALUE                    
+                96      RERAISE                         0
+                98      COPY                            3
+                100     POP_EXCEPT                      
+                102     RERAISE                         1
+            [Exception Table]
+                4 to 68 -> 70 [0] 
+                70 to 90 -> 98 [1] lasti
+                96 to 98 -> 98 [1] lasti
+        'name'
+        'frozenset[EventRoute]'
+        [Code]
+            File Name: product_events.py
+            Object Name: get_product_event_routes
+            Qualified Name: get_product_event_routes
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'type'
+                'str'
+                'ValueError'
+                'PRODUCT_EVENT_SETS'
+                'KeyError'
+                'TypeError'
+            [Locals+Names]
+                'name'
+            [Constants]
+                None
+                'invalid_product_event_set'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + type
+                14      LOAD_FAST                       0: name
+                16      PRECALL                         1
+                20      CALL                            1
+                30      LOAD_GLOBAL                     2: str
+                42      IS_OP                           1 (is not)
+                44      POP_JUMP_FORWARD_IF_FALSE       15 (to 76)
+                46      LOAD_GLOBAL                     5: NULL + ValueError
+                58      LOAD_CONST                      1: 'invalid_product_event_set'
+                60      PRECALL                         1
+                64      CALL                            1
+                74      RAISE_VARARGS                   1
+                76      NOP                             
+                78      LOAD_GLOBAL                     6: PRODUCT_EVENT_SETS
+                90      LOAD_FAST                       0: name
+                92      BINARY_SUBSCR                   
+                102     RETURN_VALUE                    
+                104     PUSH_EXC_INFO                   
+                106     LOAD_GLOBAL                     8: KeyError
+                118     LOAD_GLOBAL                     10: TypeError
+                130     BUILD_TUPLE                     2
+                132     CHECK_EXC_MATCH                 
+                134     POP_JUMP_FORWARD_IF_FALSE       17 (to 170)
+                136     POP_TOP                         
+                138     LOAD_GLOBAL                     5: NULL + ValueError
+                150     LOAD_CONST                      1: 'invalid_product_event_set'
+                152     PRECALL                         1
+                156     CALL                            1
+                166     LOAD_CONST                      0: None
+                168     RAISE_VARARGS                   2
+                170     RERAISE                         0
+                172     COPY                            3
+                174     POP_EXCEPT                      
+                176     RERAISE                         1
+            [Exception Table]
+                78 to 102 -> 104 [0] 
+                104 to 172 -> 172 [1] lasti
+        'event_set'
+        'bool'
+        [Code]
+            File Name: product_events.py
+            Object Name: event_parts_in_product_set
+            Qualified Name: event_parts_in_product_set
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 4
+            Stack Size: 5
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'resolve_event_route'
+                'get_product_event_routes'
+                'ValueError'
+                'routed'
+            [Locals+Names]
+                'kind'
+                'observed_code'
+                'parameters'
+                'event_set'
+                'resolution'
+                'routes'
+            [Constants]
+                None
+                (
+                    'kind'
+                    'observed_code'
+                    'parameters'
+                )
+                False
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + resolve_event_route
+                14      LOAD_FAST                       0: kind
+                16      LOAD_FAST                       1: observed_code
+                18      LOAD_FAST                       2: parameters
+                20      KW_NAMES                        1: ('kind', 'observed_code', 'parameters')
+                22      PRECALL                         3
+                26      CALL                            3
+                36      STORE_FAST                      4: resolution
+                38      LOAD_FAST                       4: resolution
+                40      POP_JUMP_FORWARD_IF_NOT_NONE    2 (to 46)
+                42      LOAD_CONST                      2: False
+                44      RETURN_VALUE                    
+                46      NOP                             
+                48      LOAD_GLOBAL                     3: NULL + get_product_event_routes
+                60      LOAD_FAST                       3: event_set
+                62      PRECALL                         1
+                66      CALL                            1
+                76      STORE_FAST                      5: routes
+                78      JUMP_FORWARD                    17 (to 114)
+                80      PUSH_EXC_INFO                   
+                82      LOAD_GLOBAL                     4: ValueError
+                94      CHECK_EXC_MATCH                 
+                96      POP_JUMP_FORWARD_IF_FALSE       4 (to 106)
+                98      POP_TOP                         
+                100     POP_EXCEPT                      
+                102     LOAD_CONST                      2: False
+                104     RETURN_VALUE                    
+                106     RERAISE                         0
+                108     COPY                            3
+                110     POP_EXCEPT                      
+                112     RERAISE                         1
+                114     LOAD_FAST                       4: resolution
+                116     LOAD_ATTR                       3: routed
+                126     LOAD_FAST                       5: routes
+                128     CONTAINS_OP                     0 (in)
+                130     RETURN_VALUE                    
+            [Exception Table]
+                48 to 78 -> 80 [0] 
+                80 to 100 -> 108 [1] lasti
+                106 to 108 -> 108 [1] lasti
+        [Code]
+            File Name: product_events.py
+            Object Name: radar_event_in_product_set
+            Qualified Name: radar_event_in_product_set
+            Arg Count: 2
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'resolve_radar_event_route'
+                'get_product_event_routes'
+                'ValueError'
+                'routed'
+            [Locals+Names]
+                'event'
+                'event_set'
+                'resolution'
+                'routes'
+            [Constants]
+                None
+                False
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + resolve_radar_event_route
+                14      LOAD_FAST                       0: event
+                16      PRECALL                         1
+                20      CALL                            1
+                30      STORE_FAST                      2: resolution
+                32      LOAD_FAST                       2: resolution
+                34      POP_JUMP_FORWARD_IF_NOT_NONE    2 (to 40)
+                36      LOAD_CONST                      1: False
+                38      RETURN_VALUE                    
+                40      NOP                             
+                42      LOAD_GLOBAL                     3: NULL + get_product_event_routes
+                54      LOAD_FAST                       1: event_set
+                56      PRECALL                         1
+                60      CALL                            1
+                70      STORE_FAST                      3: routes
+                72      JUMP_FORWARD                    17 (to 108)
+                74      PUSH_EXC_INFO                   
+                76      LOAD_GLOBAL                     4: ValueError
+                88      CHECK_EXC_MATCH                 
+                90      POP_JUMP_FORWARD_IF_FALSE       4 (to 100)
+                92      POP_TOP                         
+                94      POP_EXCEPT                      
+                96      LOAD_CONST                      1: False
+                98      RETURN_VALUE                    
+                100     RERAISE                         0
+                102     COPY                            3
+                104     POP_EXCEPT                      
+                106     RERAISE                         1
+                108     LOAD_FAST                       2: resolution
+                110     LOAD_ATTR                       3: routed
+                120     LOAD_FAST                       3: routes
+                122     CONTAINS_OP                     0 (in)
+                124     RETURN_VALUE                    
+            [Exception Table]
+                42 to 72 -> 74 [0] 
+                74 to 94 -> 102 [1] lasti
+                100 to 102 -> 102 [1] lasti
+        'value'
+        'int | None'
+        [Code]
+            File Name: product_events.py
+            Object Name: _canonical_code
+            Qualified Name: _canonical_code
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 6
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'type'
+                'int'
+                'str'
+                'len'
+                'any'
+            [Locals+Names]
+                'value'
+                'code'
+            [Constants]
+                None
+                0
+                65535
+                '0'
+                5
+                '123456789'
+                [Code]
+                    File Name: product_events.py
+                    Object Name: <genexpr>
+                    Qualified Name: _canonical_code.<locals>.<genexpr>
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 3
+                    Flags: 0x01000033 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED | CO_GENERATOR | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                    [Locals+Names]
+                        '.0'
+                        'character'
+                    [Constants]
+                        '0123456789'
+                        None
+                    [Disassembly]
+                        0       RETURN_GENERATOR                
+                        2       POP_TOP                         
+                        4       RESUME                          0
+                        6       LOAD_FAST                       0: .0
+                        8       FOR_ITER                        8 (to 26)
+                        10      STORE_FAST                      1: character
+                        12      LOAD_FAST                       1: character
+                        14      LOAD_CONST                      0: '0123456789'
+                        16      CONTAINS_OP                     1 (not in)
+                        18      YIELD_VALUE                     
+                        20      RESUME                          1
+                        22      POP_TOP                         
+                        24      JUMP_BACKWARD                   9 (to 8)
+                        26      LOAD_CONST                      1: None
+                        28      RETURN_VALUE                    
+                    [Exception Table]
+                1
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + type
+                14      LOAD_FAST                       0: value
+                16      PRECALL                         1
+                20      CALL                            1
+                30      LOAD_GLOBAL                     2: int
+                42      IS_OP                           0 (is)
+                44      POP_JUMP_FORWARD_IF_FALSE       20 (to 86)
+                46      LOAD_CONST                      1: 0
+                48      LOAD_FAST                       0: value
+                50      SWAP                            2
+                52      COPY                            2
+                54      COMPARE_OP                      1 (<=)
+                60      POP_JUMP_FORWARD_IF_FALSE       6 (to 74)
+                62      LOAD_CONST                      2: 65535
+                64      COMPARE_OP                      1 (<=)
+                70      POP_JUMP_FORWARD_IF_FALSE       5 (to 82)
+                72      JUMP_FORWARD                    2 (to 78)
+                74      POP_TOP                         
+                76      JUMP_FORWARD                    2 (to 82)
+                78      LOAD_FAST                       0: value
+                80      JUMP_FORWARD                    1 (to 84)
+                82      LOAD_CONST                      0: None
+                84      RETURN_VALUE                    
+                86      LOAD_GLOBAL                     1: NULL + type
+                98      LOAD_FAST                       0: value
+                100     PRECALL                         1
+                104     CALL                            1
+                114     LOAD_GLOBAL                     4: str
+                126     IS_OP                           1 (is not)
+                128     POP_JUMP_FORWARD_IF_FALSE       2 (to 134)
+                130     LOAD_CONST                      0: None
+                132     RETURN_VALUE                    
+                134     LOAD_FAST                       0: value
+                136     LOAD_CONST                      3: '0'
+                138     COMPARE_OP                      2 (==)
+                144     POP_JUMP_FORWARD_IF_FALSE       2 (to 150)
+                146     LOAD_CONST                      1: 0
+                148     RETURN_VALUE                    
+                150     LOAD_FAST                       0: value
+                152     POP_JUMP_FORWARD_IF_FALSE       62 (to 278)
+                154     LOAD_GLOBAL                     7: NULL + len
+                166     LOAD_FAST                       0: value
+                168     PRECALL                         1
+                172     CALL                            1
+                182     LOAD_CONST                      4: 5
+                184     COMPARE_OP                      4 (>)
+                190     POP_JUMP_FORWARD_IF_TRUE        43 (to 278)
+                192     LOAD_FAST                       0: value
+                194     LOAD_CONST                      1: 0
+                196     BINARY_SUBSCR                   
+                206     LOAD_CONST                      5: '123456789'
+                208     CONTAINS_OP                     1 (not in)
+                210     POP_JUMP_FORWARD_IF_TRUE        33 (to 278)
+                212     LOAD_GLOBAL                     9: NULL + any
+                224     LOAD_CONST                      6: <CODE> <genexpr>
+                226     MAKE_FUNCTION                   0
+                228     LOAD_FAST                       0: value
+                230     LOAD_CONST                      7: 1
+                232     LOAD_CONST                      0: None
+                234     BUILD_SLICE                     2
+                236     BINARY_SUBSCR                   
+                246     GET_ITER                        
+                248     PRECALL                         0
+                252     CALL                            0
+                262     PRECALL                         1
+                266     CALL                            1
+                276     POP_JUMP_FORWARD_IF_FALSE       2 (to 282)
+                278     LOAD_CONST                      0: None
+                280     RETURN_VALUE                    
+                282     LOAD_GLOBAL                     3: NULL + int
+                294     LOAD_FAST                       0: value
+                296     PRECALL                         1
+                300     CALL                            1
+                310     STORE_FAST                      1: code
+                312     LOAD_FAST                       1: code
+                314     LOAD_CONST                      2: 65535
+                316     COMPARE_OP                      1 (<=)
+                322     POP_JUMP_FORWARD_IF_FALSE       2 (to 328)
+                324     LOAD_FAST                       1: code
+                326     JUMP_FORWARD                    1 (to 330)
+                328     LOAD_CONST                      0: None
+                330     RETURN_VALUE                    
+            [Exception Table]
+        'invalid_product_event_policy'
+        None
+        (
+            'kind'
+            'object'
+            'observed_code'
+            'object'
+            'parameters'
+            'object'
+            'return'
+            'RouteResolution | None'
+        )
+        (
+            'event'
+            'RadarEvent'
+            'return'
+            'RouteResolution | None'
+        )
+        (
+            'name'
+            'object'
+            'return'
+            'frozenset[EventRoute]'
+        )
+        (
+            'kind'
+            'object'
+            'observed_code'
+            'object'
+            'parameters'
+            'object'
+            'event_set'
+            'object'
+            'return'
+            'bool'
+        )
+        (
+            'event'
+            'RadarEvent'
+            'event_set'
+            'object'
+            'return'
+            'bool'
+        )
+        (
+            'value'
+            'object'
+            'return'
+            'int | None'
+        )
+    [Disassembly]
+        0       RESUME                          0
+        2       SETUP_ANNOTATIONS               
+        4       LOAD_CONST                      0: 0
+        6       LOAD_CONST                      1: ('annotations',)
+        8       IMPORT_NAME                     0: __future__
+        10      IMPORT_FROM                     1: annotations
+        12      STORE_NAME                      1: annotations
+        14      POP_TOP                         
+        16      LOAD_CONST                      0: 0
+        18      LOAD_CONST                      2: ('Mapping',)
+        20      IMPORT_NAME                     2: collections.abc
+        22      IMPORT_FROM                     3: Mapping
+        24      STORE_NAME                      3: Mapping
+        26      POP_TOP                         
+        28      LOAD_CONST                      0: 0
+        30      LOAD_CONST                      3: ('dataclass',)
+        32      IMPORT_NAME                     4: dataclasses
+        34      IMPORT_FROM                     5: dataclass
+        36      STORE_NAME                      5: dataclass
+        38      POP_TOP                         
+        40      LOAD_CONST                      0: 0
+        42      LOAD_CONST                      4: ('MappingProxyType',)
+        44      IMPORT_NAME                     6: types
+        46      IMPORT_FROM                     7: MappingProxyType
+        48      STORE_NAME                      7: MappingProxyType
+        50      POP_TOP                         
+        52      LOAD_CONST                      0: 0
+        54      LOAD_CONST                      5: ('Final', 'Literal', 'TypeAlias')
+        56      IMPORT_NAME                     8: typing
+        58      IMPORT_FROM                     9: Final
+        60      STORE_NAME                      9: Final
+        62      IMPORT_FROM                     10: Literal
+        64      STORE_NAME                      10: Literal
+        66      IMPORT_FROM                     11: TypeAlias
+        68      STORE_NAME                      11: TypeAlias
+        70      POP_TOP                         
+        72      LOAD_CONST                      0: 0
+        74      LOAD_CONST                      6: ('RadarEvent',)
+        76      IMPORT_NAME                     12: ass_radar.events
+        78      IMPORT_FROM                     13: RadarEvent
+        80      STORE_NAME                      13: RadarEvent
+        82      POP_TOP                         
+        84      LOAD_CONST                      0: 0
+        86      LOAD_CONST                      7: ('KEY_SYNC_EVENT_CODES',)
+        88      IMPORT_NAME                     14: ass_radar.photon.keysync
+        90      IMPORT_FROM                     15: KEY_SYNC_EVENT_CODES
+        92      STORE_NAME                      15: KEY_SYNC_EVENT_CODES
+        94      POP_TOP                         
+        96      LOAD_NAME                       10: Literal
+        98      LOAD_CONST                      8: ('event', 'request', 'response')
+        100     BINARY_SUBSCR                   
+        110     STORE_NAME                      16: RadarEventKind
+        112     LOAD_CONST                      9: 'TypeAlias'
+        114     LOAD_NAME                       17: __annotations__
+        116     LOAD_CONST                      10: 'RadarEventKind'
+        118     STORE_SUBSCR                    
+        122     LOAD_NAME                       10: Literal
+        124     LOAD_CONST                      11: ('radar-core', 'dungeon-intel', 'relay', 'evidence')
+        126     BINARY_SUBSCR                   
+        136     STORE_NAME                      18: ProductEventSetName
+        138     LOAD_CONST                      9: 'TypeAlias'
+        140     LOAD_NAME                       17: __annotations__
+        142     LOAD_CONST                      12: 'ProductEventSetName'
+        144     STORE_SUBSCR                    
+        148     LOAD_CONST                      13: 1
+        150     STORE_NAME                      19: EVENT_LEAVE
+        152     LOAD_CONST                      14: 3
+        154     STORE_NAME                      20: EVENT_MOVE
+        156     LOAD_CONST                      15: 6
+        158     STORE_NAME                      21: EVENT_HEALTH_UPDATE
+        160     LOAD_CONST                      16: 7
+        162     STORE_NAME                      22: EVENT_HEALTH_UPDATES
+        164     LOAD_CONST                      17: 29
+        166     STORE_NAME                      23: EVENT_NEW_CHARACTER
+        168     LOAD_CONST                      18: 39
+        170     STORE_NAME                      24: EVENT_NEW_SIMPLE_HARVESTABLE_OBJECT_LIST
+        172     LOAD_CONST                      19: 40
+        174     STORE_NAME                      25: EVENT_NEW_HARVESTABLE_OBJECT
+        176     LOAD_CONST                      20: 46
+        178     STORE_NAME                      26: EVENT_HARVESTABLE_CHANGE_STATE
+        180     LOAD_CONST                      21: 47
+        182     STORE_NAME                      27: EVENT_MOB_CHANGE_STATE
+        184     LOAD_CONST                      22: 61
+        186     STORE_NAME                      28: EVENT_HARVEST_FINISHED
+        188     LOAD_CONST                      23: 90
+        190     STORE_NAME                      29: EVENT_CHARACTER_EQUIPMENT_CHANGED
+        192     LOAD_CONST                      24: 91
+        194     STORE_NAME                      30: EVENT_REGENERATION_HEALTH_CHANGED
+        196     LOAD_CONST                      25: 123
+        198     STORE_NAME                      31: EVENT_NEW_MOB
+        200     LOAD_CONST                      26: 211
+        202     STORE_NAME                      32: EVENT_MOUNTED
+        204     LOAD_CONST                      27: 285
+        206     STORE_NAME                      33: EVENT_LOCAL_TREASURES_UPDATE
+        208     LOAD_CONST                      28: 325
+        210     STORE_NAME                      34: EVENT_NEW_RANDOM_DUNGEON_EXIT
+        212     LOAD_CONST                      29: 358
+        214     STORE_NAME                      35: EVENT_FISHING_FINISHED
+        216     LOAD_CONST                      30: 361
+        218     STORE_NAME                      36: EVENT_NEW_FISHING_ZONE_OBJECT
+        220     LOAD_CONST                      31: 365
+        222     STORE_NAME                      37: EVENT_CHANGE_FLAGGING_FINISHED
+        224     LOAD_CONST                      32: 393
+        226     STORE_NAME                      38: EVENT_NEW_LOOT_CHEST
+        228     LOAD_CONST                      33: 395
+        230     STORE_NAME                      39: EVENT_LOOT_CHEST_OPENED
+        232     LOAD_CONST                      34: 520
+        234     STORE_NAME                      40: EVENT_NEW_MISTS_IMMEDIATE_RETURN_EXIT
+        236     LOAD_CONST                      35: 521
+        238     STORE_NAME                      41: EVENT_MISTS_PLAYER_JOINED_INFO
+        240     LOAD_CONST                      36: 522
+        242     STORE_NAME                      42: EVENT_NEW_MISTS_STATIC_ENTRANCE
+        244     LOAD_CONST                      37: 523
+        246     STORE_NAME                      43: EVENT_NEW_MISTS_OPEN_WORLD_EXIT
+        248     LOAD_CONST                      38: 525
+        250     STORE_NAME                      44: EVENT_NEW_MISTS_WISP_SPAWN
+        252     LOAD_CONST                      39: 531
+        254     STORE_NAME                      45: EVENT_MISTS_ENTRANCE_DATA_CHANGED
+        256     LOAD_CONST                      40: 532
+        258     STORE_NAME                      46: EVENT_NEW_CAGED_OBJECT
+        260     LOAD_CONST                      41: 533
+        262     STORE_NAME                      47: EVENT_CAGED_OBJECT_STATE_UPDATED
+        264     LOAD_CONST                      42: 558
+        266     STORE_NAME                      48: EVENT_NEW_HUNT_TRACK
+        268     LOAD_CONST                      43: 560
+        270     STORE_NAME                      49: EVENT_HUNT_QUEST_MISSION_PROGRESS_UPDATE
+        272     LOAD_CONST                      44: 620
+        274     STORE_NAME                      50: EVENT_HELL_DUNGEONS_PLAYER_JOINED_INFO
+        276     LOAD_CONST                      45: 2
+        278     STORE_NAME                      51: OP_JOIN
+        280     LOAD_CONST                      46: 22
+        282     STORE_NAME                      52: OP_MOVE
+        284     LOAD_CONST                      47: 41
+        286     STORE_NAME                      53: OP_CHANGE_CLUSTER
+        288     LOAD_CONST                      48: 143
+        290     STORE_NAME                      54: OP_GET_CHARACTER_EQUIPMENT
+        292     LOAD_CONST                      49: 473
+        294     STORE_NAME                      55: OP_MISTS_USE_STATIC_ENTRANCE
+        296     PUSH_NULL                       
+        298     LOAD_NAME                       5: dataclass
+        300     LOAD_CONST                      50: True
+        302     LOAD_CONST                      50: True
+        304     LOAD_CONST                      50: True
+        306     KW_NAMES                        51: ('frozen', 'order', 'slots')
+        308     PRECALL                         3
+        312     CALL                            3
+        322     PUSH_NULL                       
+        324     LOAD_BUILD_CLASS                
+        326     LOAD_CONST                      52: <CODE> EventRoute
+        328     MAKE_FUNCTION                   0
+        330     LOAD_CONST                      53: 'EventRoute'
+        332     PRECALL                         2
+        336     CALL                            2
+        346     PRECALL                         0
+        350     CALL                            0
+        360     STORE_NAME                      56: EventRoute
+        362     PUSH_NULL                       
+        364     LOAD_NAME                       5: dataclass
+        366     LOAD_CONST                      50: True
+        368     LOAD_CONST                      50: True
+        370     KW_NAMES                        54: ('frozen', 'slots')
+        372     PRECALL                         2
+        376     CALL                            2
+        386     PUSH_NULL                       
+        388     LOAD_BUILD_CLASS                
+        390     LOAD_CONST                      55: <CODE> RouteResolution
+        392     MAKE_FUNCTION                   0
+        394     LOAD_CONST                      56: 'RouteResolution'
+        396     PRECALL                         2
+        400     CALL                            2
+        410     PRECALL                         0
+        414     CALL                            0
+        424     STORE_NAME                      57: RouteResolution
+        426     PUSH_NULL                       
+        428     LOAD_NAME                       58: frozenset
+        430     PUSH_NULL                       
+        432     LOAD_NAME                       56: EventRoute
+        434     LOAD_CONST                      57: 'event'
+        436     LOAD_NAME                       19: EVENT_LEAVE
+        438     PRECALL                         2
+        442     CALL                            2
+        452     PUSH_NULL                       
+        454     LOAD_NAME                       56: EventRoute
+        456     LOAD_CONST                      57: 'event'
+        458     LOAD_NAME                       20: EVENT_MOVE
+        460     PRECALL                         2
+        464     CALL                            2
+        474     PUSH_NULL                       
+        476     LOAD_NAME                       56: EventRoute
+        478     LOAD_CONST                      57: 'event'
+        480     LOAD_NAME                       21: EVENT_HEALTH_UPDATE
+        482     PRECALL                         2
+        486     CALL                            2
+        496     PUSH_NULL                       
+        498     LOAD_NAME                       56: EventRoute
+        500     LOAD_CONST                      57: 'event'
+        502     LOAD_NAME                       22: EVENT_HEALTH_UPDATES
+        504     PRECALL                         2
+        508     CALL                            2
+        518     PUSH_NULL                       
+        520     LOAD_NAME                       56: EventRoute
+        522     LOAD_CONST                      57: 'event'
+        524     LOAD_NAME                       23: EVENT_NEW_CHARACTER
+        526     PRECALL                         2
+        530     CALL                            2
+        540     PUSH_NULL                       
+        542     LOAD_NAME                       56: EventRoute
+        544     LOAD_CONST                      57: 'event'
+        546     LOAD_NAME                       24: EVENT_NEW_SIMPLE_HARVESTABLE_OBJECT_LIST
+        548     PRECALL                         2
+        552     CALL                            2
+        562     PUSH_NULL                       
+        564     LOAD_NAME                       56: EventRoute
+        566     LOAD_CONST                      57: 'event'
+        568     LOAD_NAME                       25: EVENT_NEW_HARVESTABLE_OBJECT
+        570     PRECALL                         2
+        574     CALL                            2
+        584     PUSH_NULL                       
+        586     LOAD_NAME                       56: EventRoute
+        588     LOAD_CONST                      57: 'event'
+        590     LOAD_NAME                       26: EVENT_HARVESTABLE_CHANGE_STATE
+        592     PRECALL                         2
+        596     CALL                            2
+        606     PUSH_NULL                       
+        608     LOAD_NAME                       56: EventRoute
+        610     LOAD_CONST                      57: 'event'
+        612     LOAD_NAME                       27: EVENT_MOB_CHANGE_STATE
+        614     PRECALL                         2
+        618     CALL                            2
+        628     PUSH_NULL                       
+        630     LOAD_NAME                       56: EventRoute
+        632     LOAD_CONST                      57: 'event'
+        634     LOAD_NAME                       28: EVENT_HARVEST_FINISHED
+        636     PRECALL                         2
+        640     CALL                            2
+        650     PUSH_NULL                       
+        652     LOAD_NAME                       56: EventRoute
+        654     LOAD_CONST                      57: 'event'
+        656     LOAD_NAME                       29: EVENT_CHARACTER_EQUIPMENT_CHANGED
+        658     PRECALL                         2
+        662     CALL                            2
+        672     PUSH_NULL                       
+        674     LOAD_NAME                       56: EventRoute
+        676     LOAD_CONST                      57: 'event'
+        678     LOAD_NAME                       30: EVENT_REGENERATION_HEALTH_CHANGED
+        680     PRECALL                         2
+        684     CALL                            2
+        694     PUSH_NULL                       
+        696     LOAD_NAME                       56: EventRoute
+        698     LOAD_CONST                      57: 'event'
+        700     LOAD_NAME                       31: EVENT_NEW_MOB
+        702     PRECALL                         2
+        706     CALL                            2
+        716     PUSH_NULL                       
+        718     LOAD_NAME                       56: EventRoute
+        720     LOAD_CONST                      57: 'event'
+        722     LOAD_NAME                       32: EVENT_MOUNTED
+        724     PRECALL                         2
+        728     CALL                            2
+        738     PUSH_NULL                       
+        740     LOAD_NAME                       56: EventRoute
+        742     LOAD_CONST                      57: 'event'
+        744     LOAD_NAME                       34: EVENT_NEW_RANDOM_DUNGEON_EXIT
+        746     PRECALL                         2
+        750     CALL                            2
+        760     PUSH_NULL                       
+        762     LOAD_NAME                       56: EventRoute
+        764     LOAD_CONST                      57: 'event'
+        766     LOAD_NAME                       35: EVENT_FISHING_FINISHED
+        768     PRECALL                         2
+        772     CALL                            2
+        782     PUSH_NULL                       
+        784     LOAD_NAME                       56: EventRoute
+        786     LOAD_CONST                      57: 'event'
+        788     LOAD_NAME                       36: EVENT_NEW_FISHING_ZONE_OBJECT
+        790     PRECALL                         2
+        794     CALL                            2
+        804     PUSH_NULL                       
+        806     LOAD_NAME                       56: EventRoute
+        808     LOAD_CONST                      57: 'event'
+        810     LOAD_NAME                       37: EVENT_CHANGE_FLAGGING_FINISHED
+        812     PRECALL                         2
+        816     CALL                            2
+        826     PUSH_NULL                       
+        828     LOAD_NAME                       56: EventRoute
+        830     LOAD_CONST                      57: 'event'
+        832     LOAD_NAME                       38: EVENT_NEW_LOOT_CHEST
+        834     PRECALL                         2
+        838     CALL                            2
+        848     PUSH_NULL                       
+        850     LOAD_NAME                       56: EventRoute
+        852     LOAD_CONST                      57: 'event'
+        854     LOAD_NAME                       41: EVENT_MISTS_PLAYER_JOINED_INFO
+        856     PRECALL                         2
+        860     CALL                            2
+        870     PUSH_NULL                       
+        872     LOAD_NAME                       56: EventRoute
+        874     LOAD_CONST                      57: 'event'
+        876     LOAD_NAME                       46: EVENT_NEW_CAGED_OBJECT
+        878     PRECALL                         2
+        882     CALL                            2
+        892     PUSH_NULL                       
+        894     LOAD_NAME                       56: EventRoute
+        896     LOAD_CONST                      57: 'event'
+        898     LOAD_NAME                       47: EVENT_CAGED_OBJECT_STATE_UPDATED
+        900     PRECALL                         2
+        904     CALL                            2
+        914     PUSH_NULL                       
+        916     LOAD_NAME                       56: EventRoute
+        918     LOAD_CONST                      58: 'request'
+        920     LOAD_NAME                       52: OP_MOVE
+        922     PRECALL                         2
+        926     CALL                            2
+        936     PUSH_NULL                       
+        938     LOAD_NAME                       56: EventRoute
+        940     LOAD_CONST                      58: 'request'
+        942     LOAD_NAME                       54: OP_GET_CHARACTER_EQUIPMENT
+        944     PRECALL                         2
+        948     CALL                            2
+        958     PUSH_NULL                       
+        960     LOAD_NAME                       56: EventRoute
+        962     LOAD_CONST                      58: 'request'
+        964     LOAD_NAME                       55: OP_MISTS_USE_STATIC_ENTRANCE
+        966     PRECALL                         2
+        970     CALL                            2
+        980     PUSH_NULL                       
+        982     LOAD_NAME                       56: EventRoute
+        984     LOAD_CONST                      59: 'response'
+        986     LOAD_NAME                       51: OP_JOIN
+        988     PRECALL                         2
+        992     CALL                            2
+        1002    PUSH_NULL                       
+        1004    LOAD_NAME                       56: EventRoute
+        1006    LOAD_CONST                      59: 'response'
+        1008    LOAD_NAME                       53: OP_CHANGE_CLUSTER
+        1010    PRECALL                         2
+        1014    CALL                            2
+        1024    PUSH_NULL                       
+        1026    LOAD_NAME                       56: EventRoute
+        1028    LOAD_CONST                      59: 'response'
+        1030    LOAD_NAME                       54: OP_GET_CHARACTER_EQUIPMENT
+        1032    PRECALL                         2
+        1036    CALL                            2
+        1046    BUILD_SET                       28
+        1048    PRECALL                         1
+        1052    CALL                            1
+        1062    STORE_NAME                      59: RADAR_CORE_ROUTES
+        1064    LOAD_CONST                      60: 'Final[frozenset[EventRoute]]'
+        1066    LOAD_NAME                       17: __annotations__
+        1068    LOAD_CONST                      61: 'RADAR_CORE_ROUTES'
+        1070    STORE_SUBSCR                    
+        1074    PUSH_NULL                       
+        1076    LOAD_NAME                       58: frozenset
+        1078    PUSH_NULL                       
+        1080    LOAD_NAME                       56: EventRoute
+        1082    LOAD_CONST                      58: 'request'
+        1084    LOAD_NAME                       55: OP_MISTS_USE_STATIC_ENTRANCE
+        1086    PRECALL                         2
+        1090    CALL                            2
+        1100    PUSH_NULL                       
+        1102    LOAD_NAME                       56: EventRoute
+        1104    LOAD_CONST                      59: 'response'
+        1106    LOAD_NAME                       51: OP_JOIN
+        1108    PRECALL                         2
+        1112    CALL                            2
+        1122    PUSH_NULL                       
+        1124    LOAD_NAME                       56: EventRoute
+        1126    LOAD_CONST                      59: 'response'
+        1128    LOAD_NAME                       53: OP_CHANGE_CLUSTER
+        1130    PRECALL                         2
+        1134    CALL                            2
+        1144    PUSH_NULL                       
+        1146    LOAD_NAME                       56: EventRoute
+        1148    LOAD_CONST                      57: 'event'
+        1150    LOAD_NAME                       41: EVENT_MISTS_PLAYER_JOINED_INFO
+        1152    PRECALL                         2
+        1156    CALL                            2
+        1166    BUILD_SET                       4
+        1168    PRECALL                         1
+        1172    CALL                            1
+        1182    STORE_NAME                      60: DUNGEON_INTEL_ROUTES
+        1184    LOAD_CONST                      60: 'Final[frozenset[EventRoute]]'
+        1186    LOAD_NAME                       17: __annotations__
+        1188    LOAD_CONST                      62: 'DUNGEON_INTEL_ROUTES'
+        1190    STORE_SUBSCR                    
+        1194    PUSH_NULL                       
+        1196    LOAD_NAME                       58: frozenset
+        1198    PUSH_NULL                       
+        1200    LOAD_NAME                       56: EventRoute
+        1202    LOAD_CONST                      57: 'event'
+        1204    LOAD_NAME                       33: EVENT_LOCAL_TREASURES_UPDATE
+        1206    PRECALL                         2
+        1210    CALL                            2
+        1220    PUSH_NULL                       
+        1222    LOAD_NAME                       56: EventRoute
+        1224    LOAD_CONST                      57: 'event'
+        1226    LOAD_NAME                       39: EVENT_LOOT_CHEST_OPENED
+        1228    PRECALL                         2
+        1232    CALL                            2
+        1242    PUSH_NULL                       
+        1244    LOAD_NAME                       56: EventRoute
+        1246    LOAD_CONST                      57: 'event'
+        1248    LOAD_NAME                       40: EVENT_NEW_MISTS_IMMEDIATE_RETURN_EXIT
+        1250    PRECALL                         2
+        1254    CALL                            2
+        1264    PUSH_NULL                       
+        1266    LOAD_NAME                       56: EventRoute
+        1268    LOAD_CONST                      57: 'event'
+        1270    LOAD_NAME                       42: EVENT_NEW_MISTS_STATIC_ENTRANCE
+        1272    PRECALL                         2
+        1276    CALL                            2
+        1286    PUSH_NULL                       
+        1288    LOAD_NAME                       56: EventRoute
+        1290    LOAD_CONST                      57: 'event'
+        1292    LOAD_NAME                       43: EVENT_NEW_MISTS_OPEN_WORLD_EXIT
+        1294    PRECALL                         2
+        1298    CALL                            2
+        1308    PUSH_NULL                       
+        1310    LOAD_NAME                       56: EventRoute
+        1312    LOAD_CONST                      57: 'event'
+        1314    LOAD_NAME                       44: EVENT_NEW_MISTS_WISP_SPAWN
+        1316    PRECALL                         2
+        1320    CALL                            2
+        1330    PUSH_NULL                       
+        1332    LOAD_NAME                       56: EventRoute
+        1334    LOAD_CONST                      57: 'event'
+        1336    LOAD_NAME                       45: EVENT_MISTS_ENTRANCE_DATA_CHANGED
+        1338    PRECALL                         2
+        1342    CALL                            2
+        1352    PUSH_NULL                       
+        1354    LOAD_NAME                       56: EventRoute
+        1356    LOAD_CONST                      57: 'event'
+        1358    LOAD_NAME                       48: EVENT_NEW_HUNT_TRACK
+        1360    PRECALL                         2
+        1364    CALL                            2
+        1374    PUSH_NULL                       
+        1376    LOAD_NAME                       56: EventRoute
+        1378    LOAD_CONST                      57: 'event'
+        1380    LOAD_NAME                       49: EVENT_HUNT_QUEST_MISSION_PROGRESS_UPDATE
+        1382    PRECALL                         2
+        1386    CALL                            2
+        1396    PUSH_NULL                       
+        1398    LOAD_NAME                       56: EventRoute
+        1400    LOAD_CONST                      57: 'event'
+        1402    LOAD_NAME                       50: EVENT_HELL_DUNGEONS_PLAYER_JOINED_INFO
+        1404    PRECALL                         2
+        1408    CALL                            2
+        1418    BUILD_SET                       10
+        1420    PRECALL                         1
+        1424    CALL                            1
+        1434    STORE_NAME                      61: OPENRADAR_REGISTRY_ONLY_ROUTES
+        1436    LOAD_CONST                      60: 'Final[frozenset[EventRoute]]'
+        1438    LOAD_NAME                       17: __annotations__
+        1440    LOAD_CONST                      63: 'OPENRADAR_REGISTRY_ONLY_ROUTES'
+        1442    STORE_SUBSCR                    
+        1446    LOAD_NAME                       59: RADAR_CORE_ROUTES
+        1448    LOAD_NAME                       61: OPENRADAR_REGISTRY_ONLY_ROUTES
+        1450    BINARY_OP                       7 (|)
+        1454    STORE_NAME                      62: RELAY_ROUTES
+        1456    LOAD_CONST                      60: 'Final[frozenset[EventRoute]]'
+        1458    LOAD_NAME                       17: __annotations__
+        1460    LOAD_CONST                      64: 'RELAY_ROUTES'
+        1462    STORE_SUBSCR                    
+        1466    PUSH_NULL                       
+        1468    LOAD_NAME                       58: frozenset
+        1470    BUILD_SET                       0
+        1472    PUSH_NULL                       
+        1474    LOAD_NAME                       56: EventRoute
+        1476    LOAD_CONST                      57: 'event'
+        1478    LOAD_CONST                      13: 1
+        1480    PRECALL                         2
+        1484    CALL                            2
+        1494    SET_ADD                         1
+        1496    PUSH_NULL                       
+        1498    LOAD_NAME                       56: EventRoute
+        1500    LOAD_CONST                      57: 'event'
+        1502    LOAD_CONST                      14: 3
+        1504    PRECALL                         2
+        1508    CALL                            2
+        1518    SET_ADD                         1
+        1520    PUSH_NULL                       
+        1522    LOAD_NAME                       56: EventRoute
+        1524    LOAD_CONST                      57: 'event'
+        1526    LOAD_CONST                      15: 6
+        1528    PRECALL                         2
+        1532    CALL                            2
+        1542    SET_ADD                         1
+        1544    PUSH_NULL                       
+        1546    LOAD_NAME                       56: EventRoute
+        1548    LOAD_CONST                      57: 'event'
+        1550    LOAD_CONST                      65: 11
+        1552    PRECALL                         2
+        1556    CALL                            2
+        1566    SET_ADD                         1
+        1568    PUSH_NULL                       
+        1570    LOAD_NAME                       56: EventRoute
+        1572    LOAD_CONST                      57: 'event'
+        1574    LOAD_CONST                      17: 29
+        1576    PRECALL                         2
+        1580    CALL                            2
+        1590    SET_ADD                         1
+        1592    PUSH_NULL                       
+        1594    LOAD_NAME                       56: EventRoute
+        1596    LOAD_CONST                      57: 'event'
+        1598    LOAD_CONST                      18: 39
+        1600    PRECALL                         2
+        1604    CALL                            2
+        1614    SET_ADD                         1
+        1616    PUSH_NULL                       
+        1618    LOAD_NAME                       56: EventRoute
+        1620    LOAD_CONST                      57: 'event'
+        1622    LOAD_CONST                      19: 40
+        1624    PRECALL                         2
+        1628    CALL                            2
+        1638    SET_ADD                         1
+        1640    PUSH_NULL                       
+        1642    LOAD_NAME                       56: EventRoute
+        1644    LOAD_CONST                      57: 'event'
+        1646    LOAD_CONST                      20: 46
+        1648    PRECALL                         2
+        1652    CALL                            2
+        1662    SET_ADD                         1
+        1664    PUSH_NULL                       
+        1666    LOAD_NAME                       56: EventRoute
+        1668    LOAD_CONST                      57: 'event'
+        1670    LOAD_CONST                      66: 59
+        1672    PRECALL                         2
+        1676    CALL                            2
+        1686    SET_ADD                         1
+        1688    PUSH_NULL                       
+        1690    LOAD_NAME                       56: EventRoute
+        1692    LOAD_CONST                      57: 'event'
+        1694    LOAD_CONST                      22: 61
+        1696    PRECALL                         2
+        1700    CALL                            2
+        1710    SET_ADD                         1
+        1712    PUSH_NULL                       
+        1714    LOAD_NAME                       56: EventRoute
+        1716    LOAD_CONST                      57: 'event'
+        1718    LOAD_CONST                      23: 90
+        1720    PRECALL                         2
+        1724    CALL                            2
+        1734    SET_ADD                         1
+        1736    PUSH_NULL                       
+        1738    LOAD_NAME                       56: EventRoute
+        1740    LOAD_CONST                      57: 'event'
+        1742    LOAD_CONST                      25: 123
+        1744    PRECALL                         2
+        1748    CALL                            2
+        1758    SET_ADD                         1
+        1760    PUSH_NULL                       
+        1762    LOAD_NAME                       56: EventRoute
+        1764    LOAD_CONST                      57: 'event'
+        1766    LOAD_CONST                      27: 285
+        1768    PRECALL                         2
+        1772    CALL                            2
+        1782    SET_ADD                         1
+        1784    PUSH_NULL                       
+        1786    LOAD_NAME                       56: EventRoute
+        1788    LOAD_CONST                      57: 'event'
+        1790    LOAD_CONST                      67: 323
+        1792    PRECALL                         2
+        1796    CALL                            2
+        1806    SET_ADD                         1
+        1808    PUSH_NULL                       
+        1810    LOAD_NAME                       56: EventRoute
+        1812    LOAD_CONST                      57: 'event'
+        1814    LOAD_CONST                      28: 325
+        1816    PRECALL                         2
+        1820    CALL                            2
+        1830    SET_ADD                         1
+        1832    PUSH_NULL                       
+        1834    LOAD_NAME                       56: EventRoute
+        1836    LOAD_CONST                      57: 'event'
+        1838    LOAD_CONST                      68: 391
+        1840    PRECALL                         2
+        1844    CALL                            2
+        1854    SET_ADD                         1
+        1856    PUSH_NULL                       
+        1858    LOAD_NAME                       56: EventRoute
+        1860    LOAD_CONST                      57: 'event'
+        1862    LOAD_CONST                      32: 393
+        1864    PRECALL                         2
+        1868    CALL                            2
+        1878    SET_ADD                         1
+        1880    PUSH_NULL                       
+        1882    LOAD_NAME                       56: EventRoute
+        1884    LOAD_CONST                      57: 'event'
+        1886    LOAD_CONST                      69: 518
+        1888    PRECALL                         2
+        1892    CALL                            2
+        1902    SET_ADD                         1
+        1904    PUSH_NULL                       
+        1906    LOAD_NAME                       56: EventRoute
+        1908    LOAD_CONST                      57: 'event'
+        1910    LOAD_CONST                      70: 519
+        1912    PRECALL                         2
+        1916    CALL                            2
+        1926    SET_ADD                         1
+        1928    PUSH_NULL                       
+        1930    LOAD_NAME                       56: EventRoute
+        1932    LOAD_CONST                      57: 'event'
+        1934    LOAD_CONST                      34: 520
+        1936    PRECALL                         2
+        1940    CALL                            2
+        1950    SET_ADD                         1
+        1952    PUSH_NULL                       
+        1954    LOAD_NAME                       56: EventRoute
+        1956    LOAD_CONST                      57: 'event'
+        1958    LOAD_CONST                      35: 521
+        1960    PRECALL                         2
+        1964    CALL                            2
+        1974    SET_ADD                         1
+        1976    PUSH_NULL                       
+        1978    LOAD_NAME                       56: EventRoute
+        1980    LOAD_CONST                      57: 'event'
+        1982    LOAD_CONST                      71: 529
+        1984    PRECALL                         2
+        1988    CALL                            2
+        1998    SET_ADD                         1
+        2000    PUSH_NULL                       
+        2002    LOAD_NAME                       56: EventRoute
+        2004    LOAD_CONST                      57: 'event'
+        2006    LOAD_CONST                      72: 530
+        2008    PRECALL                         2
+        2012    CALL                            2
+        2022    SET_ADD                         1
+        2024    PUSH_NULL                       
+        2026    LOAD_NAME                       56: EventRoute
+        2028    LOAD_CONST                      57: 'event'
+        2030    LOAD_CONST                      39: 531
+        2032    PRECALL                         2
+        2036    CALL                            2
+        2046    SET_ADD                         1
+        2048    PUSH_NULL                       
+        2050    LOAD_NAME                       56: EventRoute
+        2052    LOAD_CONST                      57: 'event'
+        2054    LOAD_CONST                      40: 532
+        2056    PRECALL                         2
+        2060    CALL                            2
+        2070    SET_ADD                         1
+        2072    PUSH_NULL                       
+        2074    LOAD_NAME                       56: EventRoute
+        2076    LOAD_CONST                      57: 'event'
+        2078    LOAD_CONST                      73: 556
+        2080    PRECALL                         2
+        2084    CALL                            2
+        2094    SET_ADD                         1
+        2096    PUSH_NULL                       
+        2098    LOAD_NAME                       56: EventRoute
+        2100    LOAD_CONST                      57: 'event'
+        2102    LOAD_CONST                      42: 558
+        2104    PRECALL                         2
+        2108    CALL                            2
+        2118    SET_ADD                         1
+        2120    PUSH_NULL                       
+        2122    LOAD_NAME                       56: EventRoute
+        2124    LOAD_CONST                      57: 'event'
+        2126    LOAD_CONST                      74: 598
+        2128    PRECALL                         2
+        2132    CALL                            2
+        2142    SET_ADD                         1
+        2144    PUSH_NULL                       
+        2146    LOAD_NAME                       56: EventRoute
+        2148    LOAD_CONST                      57: 'event'
+        2150    LOAD_CONST                      75: 600
+        2152    PRECALL                         2
+        2156    CALL                            2
+        2166    SET_ADD                         1
+        2168    PUSH_NULL                       
+        2170    LOAD_NAME                       56: EventRoute
+        2172    LOAD_CONST                      58: 'request'
+        2174    LOAD_CONST                      76: 21
+        2176    PRECALL                         2
+        2180    CALL                            2
+        2190    SET_ADD                         1
+        2192    PUSH_NULL                       
+        2194    LOAD_NAME                       56: EventRoute
+        2196    LOAD_CONST                      58: 'request'
+        2198    LOAD_CONST                      46: 22
+        2200    PRECALL                         2
+        2204    CALL                            2
+        2214    SET_ADD                         1
+        2216    PUSH_NULL                       
+        2218    LOAD_NAME                       56: EventRoute
+        2220    LOAD_CONST                      59: 'response'
+        2222    LOAD_CONST                      45: 2
+        2224    PRECALL                         2
+        2228    CALL                            2
+        2238    SET_ADD                         1
+        2240    PUSH_NULL                       
+        2242    LOAD_NAME                       56: EventRoute
+        2244    LOAD_CONST                      59: 'response'
+        2246    LOAD_CONST                      77: 35
+        2248    PRECALL                         2
+        2252    CALL                            2
+        2262    SET_ADD                         1
+        2264    PUSH_NULL                       
+        2266    LOAD_NAME                       56: EventRoute
+        2268    LOAD_CONST                      59: 'response'
+        2270    LOAD_CONST                      47: 41
+        2272    PRECALL                         2
+        2276    CALL                            2
+        2286    SET_ADD                         1
+        2288    PUSH_NULL                       
+        2290    LOAD_NAME                       56: EventRoute
+        2292    LOAD_CONST                      59: 'response'
+        2294    LOAD_CONST                      78: 137
+        2296    PRECALL                         2
+        2300    CALL                            2
+        2310    SET_ADD                         1
+        2312    PRECALL                         1
+        2316    CALL                            1
+        2326    STORE_NAME                      63: EVIDENCE_ROUTES
+        2328    LOAD_CONST                      60: 'Final[frozenset[EventRoute]]'
+        2330    LOAD_NAME                       17: __annotations__
+        2332    LOAD_CONST                      79: 'EVIDENCE_ROUTES'
+        2334    STORE_SUBSCR                    
+        2338    PUSH_NULL                       
+        2340    LOAD_NAME                       58: frozenset
+        2342    PUSH_NULL                       
+        2344    LOAD_NAME                       56: EventRoute
+        2346    LOAD_CONST                      57: 'event'
+        2348    LOAD_NAME                       20: EVENT_MOVE
+        2350    PRECALL                         2
+        2354    CALL                            2
+        2364    BUILD_SET                       1
+        2366    PRECALL                         1
+        2370    CALL                            1
+        2380    STORE_NAME                      64: POSITION_SENSITIVE_ROUTES
+        2382    LOAD_CONST                      60: 'Final[frozenset[EventRoute]]'
+        2384    LOAD_NAME                       17: __annotations__
+        2386    LOAD_CONST                      80: 'POSITION_SENSITIVE_ROUTES'
+        2388    STORE_SUBSCR                    
+        2392    PUSH_NULL                       
+        2394    LOAD_NAME                       58: frozenset
+        2396    LOAD_CONST                      81: <CODE> <genexpr>
+        2398    MAKE_FUNCTION                   0
+        2400    LOAD_NAME                       15: KEY_SYNC_EVENT_CODES
+        2402    GET_ITER                        
+        2404    PRECALL                         0
+        2408    CALL                            0
+        2418    PRECALL                         1
+        2422    CALL                            1
+        2432    STORE_NAME                      65: DIAGNOSTIC_ONLY_ROUTES
+        2434    LOAD_CONST                      60: 'Final[frozenset[EventRoute]]'
+        2436    LOAD_NAME                       17: __annotations__
+        2438    LOAD_CONST                      82: 'DIAGNOSTIC_ONLY_ROUTES'
+        2440    STORE_SUBSCR                    
+        2444    PUSH_NULL                       
+        2446    LOAD_NAME                       58: frozenset
+        2448    PUSH_NULL                       
+        2450    LOAD_NAME                       56: EventRoute
+        2452    LOAD_CONST                      57: 'event'
+        2454    LOAD_CONST                      74: 598
+        2456    PRECALL                         2
+        2460    CALL                            2
+        2470    PUSH_NULL                       
+        2472    LOAD_NAME                       56: EventRoute
+        2474    LOAD_CONST                      57: 'event'
+        2476    LOAD_CONST                      75: 600
+        2478    PRECALL                         2
+        2482    CALL                            2
+        2492    BUILD_SET                       2
+        2494    PRECALL                         1
+        2498    CALL                            1
+        2508    STORE_NAME                      66: FIXTURE_SENSITIVE_ROUTES
+        2510    LOAD_CONST                      60: 'Final[frozenset[EventRoute]]'
+        2512    LOAD_NAME                       17: __annotations__
+        2514    LOAD_CONST                      83: 'FIXTURE_SENSITIVE_ROUTES'
+        2516    STORE_SUBSCR                    
+        2520    LOAD_CONST                      11: ('radar-core', 'dungeon-intel', 'relay', 'evidence')
+        2522    STORE_NAME                      67: PRODUCT_EVENT_SET_NAMES
+        2524    LOAD_CONST                      84: 'Final[tuple[ProductEventSetName, ...]]'
+        2526    LOAD_NAME                       17: __annotations__
+        2528    LOAD_CONST                      85: 'PRODUCT_EVENT_SET_NAMES'
+        2530    STORE_SUBSCR                    
+        2534    PUSH_NULL                       
+        2536    LOAD_NAME                       7: MappingProxyType
+        2538    LOAD_NAME                       59: RADAR_CORE_ROUTES
+        2540    LOAD_NAME                       60: DUNGEON_INTEL_ROUTES
+        2542    LOAD_NAME                       62: RELAY_ROUTES
+        2544    LOAD_NAME                       63: EVIDENCE_ROUTES
+        2546    LOAD_CONST                      11: ('radar-core', 'dungeon-intel', 'relay', 'evidence')
+        2548    BUILD_CONST_KEY_MAP             4
+        2550    PRECALL                         1
+        2554    CALL                            1
+        2564    STORE_NAME                      68: PRODUCT_EVENT_SETS
+        2566    LOAD_CONST                      86: 'Final[Mapping[ProductEventSetName, frozenset[EventRoute]]]'
+        2568    LOAD_NAME                       17: __annotations__
+        2570    LOAD_CONST                      87: 'PRODUCT_EVENT_SETS'
+        2572    STORE_SUBSCR                    
+        2576    LOAD_CONST                      109: ('kind', 'object', 'observed_code', 'object', 'parameters', 'object', 'return', 'RouteResolution | None')
+        2578    LOAD_CONST                      94: <CODE> resolve_event_route
+        2580    MAKE_FUNCTION                   4
+        2582    STORE_NAME                      69: resolve_event_route
+        2584    LOAD_CONST                      110: ('event', 'RadarEvent', 'return', 'RouteResolution | None')
+        2586    LOAD_CONST                      96: <CODE> resolve_radar_event_route
+        2588    MAKE_FUNCTION                   4
+        2590    STORE_NAME                      70: resolve_radar_event_route
+        2592    LOAD_CONST                      111: ('name', 'object', 'return', 'frozenset[EventRoute]')
+        2594    LOAD_CONST                      99: <CODE> get_product_event_routes
+        2596    MAKE_FUNCTION                   4
+        2598    STORE_NAME                      71: get_product_event_routes
+        2600    LOAD_CONST                      112: ('kind', 'object', 'observed_code', 'object', 'parameters', 'object', 'event_set', 'object', 'return', 'bool')
+        2602    LOAD_CONST                      102: <CODE> event_parts_in_product_set
+        2604    MAKE_FUNCTION                   4
+        2606    STORE_NAME                      72: event_parts_in_product_set
+        2608    LOAD_CONST                      113: ('event', 'RadarEvent', 'event_set', 'object', 'return', 'bool')
+        2610    LOAD_CONST                      103: <CODE> radar_event_in_product_set
+        2612    MAKE_FUNCTION                   4
+        2614    STORE_NAME                      73: radar_event_in_product_set
+        2616    LOAD_CONST                      114: ('value', 'object', 'return', 'int | None')
+        2618    LOAD_CONST                      106: <CODE> _canonical_code
+        2620    MAKE_FUNCTION                   4
+        2622    STORE_NAME                      74: _canonical_code
+        2624    PUSH_NULL                       
+        2626    LOAD_NAME                       75: object
+        2628    PRECALL                         0
+        2632    CALL                            0
+        2642    STORE_NAME                      76: _MISSING
+        2644    LOAD_NAME                       60: DUNGEON_INTEL_ROUTES
+        2646    LOAD_NAME                       59: RADAR_CORE_ROUTES
+        2648    COMPARE_OP                      1 (<=)
+        2654    POP_JUMP_FORWARD_IF_TRUE        11 (to 2678)
+        2656    PUSH_NULL                       
+        2658    LOAD_NAME                       77: RuntimeError
+        2660    LOAD_CONST                      107: 'invalid_product_event_policy'
+        2662    PRECALL                         1
+        2666    CALL                            1
+        2676    RAISE_VARARGS                   1
+        2678    LOAD_NAME                       59: RADAR_CORE_ROUTES
+        2680    LOAD_NAME                       62: RELAY_ROUTES
+        2682    COMPARE_OP                      1 (<=)
+        2688    POP_JUMP_FORWARD_IF_TRUE        11 (to 2712)
+        2690    PUSH_NULL                       
+        2692    LOAD_NAME                       77: RuntimeError
+        2694    LOAD_CONST                      107: 'invalid_product_event_policy'
+        2696    PRECALL                         1
+        2700    CALL                            1
+        2710    RAISE_VARARGS                   1
+        2712    LOAD_NAME                       61: OPENRADAR_REGISTRY_ONLY_ROUTES
+        2714    LOAD_METHOD                     78: isdisjoint
+        2736    LOAD_NAME                       59: RADAR_CORE_ROUTES
+        2738    PRECALL                         1
+        2742    CALL                            1
+        2752    POP_JUMP_FORWARD_IF_TRUE        11 (to 2776)
+        2754    PUSH_NULL                       
+        2756    LOAD_NAME                       77: RuntimeError
+        2758    LOAD_CONST                      107: 'invalid_product_event_policy'
+        2760    PRECALL                         1
+        2764    CALL                            1
+        2774    RAISE_VARARGS                   1
+        2776    LOAD_NAME                       65: DIAGNOSTIC_ONLY_ROUTES
+        2778    LOAD_NAME                       63: EVIDENCE_ROUTES
+        2780    COMPARE_OP                      1 (<=)
+        2786    POP_JUMP_FORWARD_IF_TRUE        11 (to 2810)
+        2788    PUSH_NULL                       
+        2790    LOAD_NAME                       77: RuntimeError
+        2792    LOAD_CONST                      107: 'invalid_product_event_policy'
+        2794    PRECALL                         1
+        2798    CALL                            1
+        2808    RAISE_VARARGS                   1
+        2810    LOAD_NAME                       65: DIAGNOSTIC_ONLY_ROUTES
+        2812    LOAD_METHOD                     78: isdisjoint
+        2834    LOAD_NAME                       62: RELAY_ROUTES
+        2836    PRECALL                         1
+        2840    CALL                            1
+        2850    POP_JUMP_FORWARD_IF_TRUE        11 (to 2874)
+        2852    PUSH_NULL                       
+        2854    LOAD_NAME                       77: RuntimeError
+        2856    LOAD_CONST                      107: 'invalid_product_event_policy'
+        2858    PRECALL                         1
+        2862    CALL                            1
+        2872    RAISE_VARARGS                   1
+        2874    LOAD_NAME                       65: DIAGNOSTIC_ONLY_ROUTES
+        2876    LOAD_NAME                       66: FIXTURE_SENSITIVE_ROUTES
+        2878    SWAP                            2
+        2880    COPY                            2
+        2882    COMPARE_OP                      1 (<=)
+        2888    POP_JUMP_FORWARD_IF_FALSE       6 (to 2902)
+        2890    LOAD_NAME                       63: EVIDENCE_ROUTES
+        2892    COMPARE_OP                      1 (<=)
+        2898    POP_JUMP_FORWARD_IF_TRUE        13 (to 2926)
+        2900    JUMP_FORWARD                    1 (to 2904)
+        2902    POP_TOP                         
+        2904    PUSH_NULL                       
+        2906    LOAD_NAME                       77: RuntimeError
+        2908    LOAD_CONST                      107: 'invalid_product_event_policy'
+        2910    PRECALL                         1
+        2914    CALL                            1
+        2924    RAISE_VARARGS                   1
+        2926    LOAD_CONST                      108: None
+        2928    RETURN_VALUE                    
+    [Exception Table]

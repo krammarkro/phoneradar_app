@@ -1,0 +1,366 @@
+events.pyc (Python 3.11)
+[Code]
+    File Name: events.py
+    Object Name: <module>
+    Qualified Name: <module>
+    Arg Count: 0
+    Pos Only Arg Count: 0
+    KW Only Arg Count: 0
+    Stack Size: 2
+    Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+    [Names]
+        '__future__'
+        'annotations'
+        'struct'
+        'ass_radar.photon.deserializer'
+        'is_finite_float'
+        'ass_radar.photon.types'
+        'ByteArray'
+        'EventData'
+        'OperationRequest'
+        'OperationResponse'
+        'EVENT_MOVE'
+        'post_process_event'
+        'post_process_request'
+        'post_process_response'
+        '_extract_move_positions'
+    [Locals+Names]
+    [Constants]
+        0
+        (
+            'annotations'
+        )
+        None
+        (
+            'is_finite_float'
+        )
+        (
+            'ByteArray'
+            'EventData'
+            'OperationRequest'
+            'OperationResponse'
+        )
+        3
+        'event'
+        'EventData | None'
+        'return'
+        'None'
+        [Code]
+            File Name: events.py
+            Object Name: post_process_event
+            Qualified Name: post_process_event
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'parameters'
+                'setdefault'
+                'code'
+                'EVENT_MOVE'
+                '_extract_move_positions'
+            [Locals+Names]
+                'event'
+            [Constants]
+                None
+                252
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_FAST                       0: event
+                4       POP_JUMP_FORWARD_IF_NOT_NONE    2 (to 10)
+                6       LOAD_CONST                      0: None
+                8       RETURN_VALUE                    
+                10      LOAD_FAST                       0: event
+                12      LOAD_ATTR                       0: parameters
+                22      LOAD_METHOD                     1: setdefault
+                44      LOAD_CONST                      1: 252
+                46      LOAD_FAST                       0: event
+                48      LOAD_ATTR                       2: code
+                58      PRECALL                         2
+                62      CALL                            2
+                72      POP_TOP                         
+                74      LOAD_FAST                       0: event
+                76      LOAD_ATTR                       2: code
+                86      LOAD_GLOBAL                     6: EVENT_MOVE
+                98      COMPARE_OP                      2 (==)
+                104     POP_JUMP_FORWARD_IF_FALSE       22 (to 150)
+                106     LOAD_GLOBAL                     9: NULL + _extract_move_positions
+                118     LOAD_FAST                       0: event
+                120     LOAD_ATTR                       0: parameters
+                130     PRECALL                         1
+                134     CALL                            1
+                144     POP_TOP                         
+                146     LOAD_CONST                      0: None
+                148     RETURN_VALUE                    
+                150     LOAD_CONST                      0: None
+                152     RETURN_VALUE                    
+            [Exception Table]
+        'request'
+        'OperationRequest | None'
+        [Code]
+            File Name: events.py
+            Object Name: post_process_request
+            Qualified Name: post_process_request
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'parameters'
+                'setdefault'
+                'operation_code'
+            [Locals+Names]
+                'request'
+            [Constants]
+                None
+                253
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_FAST                       0: request
+                4       POP_JUMP_FORWARD_IF_NOT_NONE    2 (to 10)
+                6       LOAD_CONST                      0: None
+                8       RETURN_VALUE                    
+                10      LOAD_FAST                       0: request
+                12      LOAD_ATTR                       0: parameters
+                22      LOAD_METHOD                     1: setdefault
+                44      LOAD_CONST                      1: 253
+                46      LOAD_FAST                       0: request
+                48      LOAD_ATTR                       2: operation_code
+                58      PRECALL                         2
+                62      CALL                            2
+                72      POP_TOP                         
+                74      LOAD_CONST                      0: None
+                76      RETURN_VALUE                    
+            [Exception Table]
+        'response'
+        'OperationResponse | None'
+        [Code]
+            File Name: events.py
+            Object Name: post_process_response
+            Qualified Name: post_process_response
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'parameters'
+                'setdefault'
+                'operation_code'
+            [Locals+Names]
+                'response'
+            [Constants]
+                None
+                253
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_FAST                       0: response
+                4       POP_JUMP_FORWARD_IF_NOT_NONE    2 (to 10)
+                6       LOAD_CONST                      0: None
+                8       RETURN_VALUE                    
+                10      LOAD_FAST                       0: response
+                12      LOAD_ATTR                       0: parameters
+                22      LOAD_METHOD                     1: setdefault
+                44      LOAD_CONST                      1: 253
+                46      LOAD_FAST                       0: response
+                48      LOAD_ATTR                       2: operation_code
+                58      PRECALL                         2
+                62      CALL                            2
+                72      POP_TOP                         
+                74      LOAD_CONST                      0: None
+                76      RETURN_VALUE                    
+            [Exception Table]
+        'parameters'
+        'dict[int, object]'
+        [Code]
+            File Name: events.py
+            Object Name: _extract_move_positions
+            Qualified Name: _extract_move_positions
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 8
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'get'
+                'isinstance'
+                'ByteArray'
+                'bytes'
+                'bytearray'
+                'len'
+                'struct'
+                'unpack'
+                'is_finite_float'
+            [Locals+Names]
+                'parameters'
+                'raw'
+                'x'
+                'y'
+            [Constants]
+                None
+                1
+                17
+                '<f'
+                9
+                13
+                0
+                4
+                5
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_FAST                       0: parameters
+                4       LOAD_METHOD                     0: get
+                26      LOAD_CONST                      1: 1
+                28      PRECALL                         1
+                32      CALL                            1
+                42      STORE_FAST                      1: raw
+                44      LOAD_GLOBAL                     3: NULL + isinstance
+                56      LOAD_FAST                       1: raw
+                58      LOAD_GLOBAL                     4: ByteArray
+                70      LOAD_GLOBAL                     6: bytes
+                82      LOAD_GLOBAL                     8: bytearray
+                94      BUILD_TUPLE                     3
+                96      PRECALL                         2
+                100     CALL                            2
+                110     POP_JUMP_FORWARD_IF_FALSE       19 (to 150)
+                112     LOAD_GLOBAL                     11: NULL + len
+                124     LOAD_FAST                       1: raw
+                126     PRECALL                         1
+                130     CALL                            1
+                140     LOAD_CONST                      2: 17
+                142     COMPARE_OP                      0 (<)
+                148     POP_JUMP_FORWARD_IF_FALSE       2 (to 154)
+                150     LOAD_CONST                      0: None
+                152     RETURN_VALUE                    
+                154     LOAD_GLOBAL                     13: NULL + struct
+                166     LOAD_ATTR                       7: unpack
+                176     LOAD_CONST                      3: '<f'
+                178     LOAD_GLOBAL                     7: NULL + bytes
+                190     LOAD_FAST                       1: raw
+                192     LOAD_CONST                      4: 9
+                194     LOAD_CONST                      5: 13
+                196     BUILD_SLICE                     2
+                198     BINARY_SUBSCR                   
+                208     PRECALL                         1
+                212     CALL                            1
+                222     PRECALL                         2
+                226     CALL                            2
+                236     LOAD_CONST                      6: 0
+                238     BINARY_SUBSCR                   
+                248     STORE_FAST                      2: x
+                250     LOAD_GLOBAL                     13: NULL + struct
+                262     LOAD_ATTR                       7: unpack
+                272     LOAD_CONST                      3: '<f'
+                274     LOAD_GLOBAL                     7: NULL + bytes
+                286     LOAD_FAST                       1: raw
+                288     LOAD_CONST                      5: 13
+                290     LOAD_CONST                      2: 17
+                292     BUILD_SLICE                     2
+                294     BINARY_SUBSCR                   
+                304     PRECALL                         1
+                308     CALL                            1
+                318     PRECALL                         2
+                322     CALL                            2
+                332     LOAD_CONST                      6: 0
+                334     BINARY_SUBSCR                   
+                344     STORE_FAST                      3: y
+                346     LOAD_GLOBAL                     17: NULL + is_finite_float
+                358     LOAD_FAST                       2: x
+                360     PRECALL                         1
+                364     CALL                            1
+                374     POP_JUMP_FORWARD_IF_FALSE       15 (to 406)
+                376     LOAD_GLOBAL                     17: NULL + is_finite_float
+                388     LOAD_FAST                       3: y
+                390     PRECALL                         1
+                394     CALL                            1
+                404     POP_JUMP_FORWARD_IF_TRUE        2 (to 410)
+                406     LOAD_CONST                      0: None
+                408     RETURN_VALUE                    
+                410     LOAD_FAST                       2: x
+                412     LOAD_FAST                       0: parameters
+                414     LOAD_CONST                      7: 4
+                416     STORE_SUBSCR                    
+                420     LOAD_FAST                       3: y
+                422     LOAD_FAST                       0: parameters
+                424     LOAD_CONST                      8: 5
+                426     STORE_SUBSCR                    
+                430     LOAD_CONST                      0: None
+                432     RETURN_VALUE                    
+            [Exception Table]
+        (
+            'event'
+            'EventData | None'
+            'return'
+            'None'
+        )
+        (
+            'request'
+            'OperationRequest | None'
+            'return'
+            'None'
+        )
+        (
+            'response'
+            'OperationResponse | None'
+            'return'
+            'None'
+        )
+        (
+            'parameters'
+            'dict[int, object]'
+            'return'
+            'None'
+        )
+    [Disassembly]
+        0       RESUME                          0
+        2       LOAD_CONST                      0: 0
+        4       LOAD_CONST                      1: ('annotations',)
+        6       IMPORT_NAME                     0: __future__
+        8       IMPORT_FROM                     1: annotations
+        10      STORE_NAME                      1: annotations
+        12      POP_TOP                         
+        14      LOAD_CONST                      0: 0
+        16      LOAD_CONST                      2: None
+        18      IMPORT_NAME                     2: struct
+        20      STORE_NAME                      2: struct
+        22      LOAD_CONST                      0: 0
+        24      LOAD_CONST                      3: ('is_finite_float',)
+        26      IMPORT_NAME                     3: ass_radar.photon.deserializer
+        28      IMPORT_FROM                     4: is_finite_float
+        30      STORE_NAME                      4: is_finite_float
+        32      POP_TOP                         
+        34      LOAD_CONST                      0: 0
+        36      LOAD_CONST                      4: ('ByteArray', 'EventData', 'OperationRequest', 'OperationResponse')
+        38      IMPORT_NAME                     5: ass_radar.photon.types
+        40      IMPORT_FROM                     6: ByteArray
+        42      STORE_NAME                      6: ByteArray
+        44      IMPORT_FROM                     7: EventData
+        46      STORE_NAME                      7: EventData
+        48      IMPORT_FROM                     8: OperationRequest
+        50      STORE_NAME                      8: OperationRequest
+        52      IMPORT_FROM                     9: OperationResponse
+        54      STORE_NAME                      9: OperationResponse
+        56      POP_TOP                         
+        58      LOAD_CONST                      5: 3
+        60      STORE_NAME                      10: EVENT_MOVE
+        62      LOAD_CONST                      20: ('event', 'EventData | None', 'return', 'None')
+        64      LOAD_CONST                      10: <CODE> post_process_event
+        66      MAKE_FUNCTION                   4
+        68      STORE_NAME                      11: post_process_event
+        70      LOAD_CONST                      21: ('request', 'OperationRequest | None', 'return', 'None')
+        72      LOAD_CONST                      13: <CODE> post_process_request
+        74      MAKE_FUNCTION                   4
+        76      STORE_NAME                      12: post_process_request
+        78      LOAD_CONST                      22: ('response', 'OperationResponse | None', 'return', 'None')
+        80      LOAD_CONST                      16: <CODE> post_process_response
+        82      MAKE_FUNCTION                   4
+        84      STORE_NAME                      13: post_process_response
+        86      LOAD_CONST                      23: ('parameters', 'dict[int, object]', 'return', 'None')
+        88      LOAD_CONST                      19: <CODE> _extract_move_positions
+        90      MAKE_FUNCTION                   4
+        92      STORE_NAME                      14: _extract_move_positions
+        94      LOAD_CONST                      2: None
+        96      RETURN_VALUE                    
+    [Exception Table]

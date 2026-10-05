@@ -1,0 +1,410 @@
+types.pyc (Python 3.11)
+[Code]
+    File Name: types.py
+    Object Name: <module>
+    Qualified Name: <module>
+    Arg Count: 0
+    Pos Only Arg Count: 0
+    KW Only Arg Count: 0
+    Stack Size: 5
+    Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+    [Names]
+        '__future__'
+        'annotations'
+        'dataclasses'
+        'dataclass'
+        'field'
+        'typing'
+        'Any'
+        'bytes'
+        'ByteArray'
+        'EventData'
+        'OperationRequest'
+        'OperationResponse'
+    [Locals+Names]
+    [Constants]
+        0
+        (
+            'annotations'
+        )
+        (
+            'dataclass'
+            'field'
+        )
+        (
+            'Any'
+        )
+        [Code]
+            File Name: types.py
+            Object Name: ByteArray
+            Qualified Name: ByteArray
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__new__'
+                'to_json_value'
+                '__classcell__'
+            [Locals+Names]
+                '__class__'
+            [Constants]
+                'ByteArray'
+                b''
+                'value'
+                'bytes | bytearray | list[int] | tuple[int, ...]'
+                'return'
+                "'ByteArray'"
+                [Code]
+                    File Name: types.py
+                    Object Name: __new__
+                    Qualified Name: ByteArray.__new__
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 6
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'super'
+                        '__new__'
+                        'bytes'
+                    [Locals+Names]
+                        'cls'
+                        'value'
+                        '__class__'
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       COPY_FREE_VARS                  1
+                        2       RESUME                          0
+                        4       LOAD_GLOBAL                     1: NULL + super
+                        16      PRECALL                         0
+                        20      CALL                            0
+                        30      LOAD_METHOD                     1: __new__
+                        52      LOAD_FAST                       0: cls
+                        54      LOAD_GLOBAL                     5: NULL + bytes
+                        66      LOAD_FAST                       1: value
+                        68      PRECALL                         1
+                        72      CALL                            1
+                        82      PRECALL                         2
+                        86      CALL                            2
+                        96      RETURN_VALUE                    
+                    [Exception Table]
+                'dict[str, Any]'
+                [Code]
+                    File Name: types.py
+                    Object Name: to_json_value
+                    Qualified Name: ByteArray.to_json_value
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 4
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'list'
+                    [Locals+Names]
+                        'self'
+                    [Constants]
+                        None
+                        'Buffer'
+                        (
+                            'type'
+                            'data'
+                        )
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_CONST                      1: 'Buffer'
+                        4       LOAD_GLOBAL                     1: NULL + list
+                        16      LOAD_FAST                       0: self
+                        18      PRECALL                         1
+                        22      CALL                            1
+                        32      LOAD_CONST                      2: ('type', 'data')
+                        34      BUILD_CONST_KEY_MAP             2
+                        36      RETURN_VALUE                    
+                    [Exception Table]
+                (
+                    b''
+                )
+                (
+                    'value'
+                    'bytes | bytearray | list[int] | tuple[int, ...]'
+                    'return'
+                    "'ByteArray'"
+                )
+                (
+                    'return'
+                    'dict[str, Any]'
+                )
+            [Disassembly]
+                0       MAKE_CELL                       0: __class__
+                2       RESUME                          0
+                4       LOAD_NAME                       0: __name__
+                6       STORE_NAME                      1: __module__
+                8       LOAD_CONST                      0: 'ByteArray'
+                10      STORE_NAME                      2: __qualname__
+                12      LOAD_CONST                      9: (b'',)
+                14      LOAD_CONST                      10: ('value', 'bytes | bytearray | list[int] | tuple[int, ...]', 'return', "'ByteArray'")
+                16      LOAD_CLOSURE                    0: __class__
+                18      BUILD_TUPLE                     1
+                20      LOAD_CONST                      6: <CODE> __new__
+                22      MAKE_FUNCTION                   13
+                24      STORE_NAME                      3: __new__
+                26      LOAD_CONST                      11: ('return', 'dict[str, Any]')
+                28      LOAD_CONST                      8: <CODE> to_json_value
+                30      MAKE_FUNCTION                   4
+                32      STORE_NAME                      4: to_json_value
+                34      LOAD_CLOSURE                    0: __class__
+                36      COPY                            1
+                38      STORE_NAME                      5: __classcell__
+                40      RETURN_VALUE                    
+            [Exception Table]
+        'ByteArray'
+        [Code]
+            File Name: types.py
+            Object Name: EventData
+            Qualified Name: EventData
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+                'field'
+                'dict'
+                'parameters'
+            [Locals+Names]
+            [Constants]
+                'EventData'
+                'int'
+                'code'
+                (
+                    'default_factory'
+                )
+                'dict[int, Any]'
+                'parameters'
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'EventData'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'int'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'code'
+                18      STORE_SUBSCR                    
+                22      PUSH_NULL                       
+                24      LOAD_NAME                       4: field
+                26      LOAD_NAME                       5: dict
+                28      KW_NAMES                        3: ('default_factory',)
+                30      PRECALL                         1
+                34      CALL                            1
+                44      STORE_NAME                      6: parameters
+                46      LOAD_CONST                      4: 'dict[int, Any]'
+                48      LOAD_NAME                       3: __annotations__
+                50      LOAD_CONST                      5: 'parameters'
+                52      STORE_SUBSCR                    
+                56      LOAD_CONST                      6: None
+                58      RETURN_VALUE                    
+            [Exception Table]
+        'EventData'
+        [Code]
+            File Name: types.py
+            Object Name: OperationRequest
+            Qualified Name: OperationRequest
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+                'field'
+                'dict'
+                'parameters'
+            [Locals+Names]
+            [Constants]
+                'OperationRequest'
+                'int'
+                'operation_code'
+                (
+                    'default_factory'
+                )
+                'dict[int, Any]'
+                'parameters'
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'OperationRequest'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'int'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'operation_code'
+                18      STORE_SUBSCR                    
+                22      PUSH_NULL                       
+                24      LOAD_NAME                       4: field
+                26      LOAD_NAME                       5: dict
+                28      KW_NAMES                        3: ('default_factory',)
+                30      PRECALL                         1
+                34      CALL                            1
+                44      STORE_NAME                      6: parameters
+                46      LOAD_CONST                      4: 'dict[int, Any]'
+                48      LOAD_NAME                       3: __annotations__
+                50      LOAD_CONST                      5: 'parameters'
+                52      STORE_SUBSCR                    
+                56      LOAD_CONST                      6: None
+                58      RETURN_VALUE                    
+            [Exception Table]
+        'OperationRequest'
+        [Code]
+            File Name: types.py
+            Object Name: OperationResponse
+            Qualified Name: OperationResponse
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+                'debug_message'
+                'field'
+                'dict'
+                'parameters'
+            [Locals+Names]
+            [Constants]
+                'OperationResponse'
+                'int'
+                'operation_code'
+                'return_code'
+                ''
+                'str'
+                'debug_message'
+                (
+                    'default_factory'
+                )
+                'dict[int, Any]'
+                'parameters'
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'OperationResponse'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'int'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'operation_code'
+                18      STORE_SUBSCR                    
+                22      LOAD_CONST                      1: 'int'
+                24      LOAD_NAME                       3: __annotations__
+                26      LOAD_CONST                      3: 'return_code'
+                28      STORE_SUBSCR                    
+                32      LOAD_CONST                      4: ''
+                34      STORE_NAME                      4: debug_message
+                36      LOAD_CONST                      5: 'str'
+                38      LOAD_NAME                       3: __annotations__
+                40      LOAD_CONST                      6: 'debug_message'
+                42      STORE_SUBSCR                    
+                46      PUSH_NULL                       
+                48      LOAD_NAME                       5: field
+                50      LOAD_NAME                       6: dict
+                52      KW_NAMES                        7: ('default_factory',)
+                54      PRECALL                         1
+                58      CALL                            1
+                68      STORE_NAME                      7: parameters
+                70      LOAD_CONST                      8: 'dict[int, Any]'
+                72      LOAD_NAME                       3: __annotations__
+                74      LOAD_CONST                      9: 'parameters'
+                76      STORE_SUBSCR                    
+                80      LOAD_CONST                      10: None
+                82      RETURN_VALUE                    
+            [Exception Table]
+        'OperationResponse'
+        None
+    [Disassembly]
+        0       RESUME                          0
+        2       LOAD_CONST                      0: 0
+        4       LOAD_CONST                      1: ('annotations',)
+        6       IMPORT_NAME                     0: __future__
+        8       IMPORT_FROM                     1: annotations
+        10      STORE_NAME                      1: annotations
+        12      POP_TOP                         
+        14      LOAD_CONST                      0: 0
+        16      LOAD_CONST                      2: ('dataclass', 'field')
+        18      IMPORT_NAME                     2: dataclasses
+        20      IMPORT_FROM                     3: dataclass
+        22      STORE_NAME                      3: dataclass
+        24      IMPORT_FROM                     4: field
+        26      STORE_NAME                      4: field
+        28      POP_TOP                         
+        30      LOAD_CONST                      0: 0
+        32      LOAD_CONST                      3: ('Any',)
+        34      IMPORT_NAME                     5: typing
+        36      IMPORT_FROM                     6: Any
+        38      STORE_NAME                      6: Any
+        40      POP_TOP                         
+        42      PUSH_NULL                       
+        44      LOAD_BUILD_CLASS                
+        46      LOAD_CONST                      4: <CODE> ByteArray
+        48      MAKE_FUNCTION                   0
+        50      LOAD_CONST                      5: 'ByteArray'
+        52      LOAD_NAME                       7: bytes
+        54      PRECALL                         3
+        58      CALL                            3
+        68      STORE_NAME                      8: ByteArray
+        70      LOAD_NAME                       3: dataclass
+        72      PUSH_NULL                       
+        74      LOAD_BUILD_CLASS                
+        76      LOAD_CONST                      6: <CODE> EventData
+        78      MAKE_FUNCTION                   0
+        80      LOAD_CONST                      7: 'EventData'
+        82      PRECALL                         2
+        86      CALL                            2
+        96      PRECALL                         0
+        100     CALL                            0
+        110     STORE_NAME                      9: EventData
+        112     LOAD_NAME                       3: dataclass
+        114     PUSH_NULL                       
+        116     LOAD_BUILD_CLASS                
+        118     LOAD_CONST                      8: <CODE> OperationRequest
+        120     MAKE_FUNCTION                   0
+        122     LOAD_CONST                      9: 'OperationRequest'
+        124     PRECALL                         2
+        128     CALL                            2
+        138     PRECALL                         0
+        142     CALL                            0
+        152     STORE_NAME                      10: OperationRequest
+        154     LOAD_NAME                       3: dataclass
+        156     PUSH_NULL                       
+        158     LOAD_BUILD_CLASS                
+        160     LOAD_CONST                      10: <CODE> OperationResponse
+        162     MAKE_FUNCTION                   0
+        164     LOAD_CONST                      11: 'OperationResponse'
+        166     PRECALL                         2
+        170     CALL                            2
+        180     PRECALL                         0
+        184     CALL                            0
+        194     STORE_NAME                      11: OperationResponse
+        196     LOAD_CONST                      12: None
+        198     RETURN_VALUE                    
+    [Exception Table]

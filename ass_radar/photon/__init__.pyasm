@@ -1,0 +1,52 @@
+__init__.pyc (Python 3.11)
+[Code]
+    File Name: __init__.py
+    Object Name: <module>
+    Qualified Name: <module>
+    Arg Count: 0
+    Pos Only Arg Count: 0
+    KW Only Arg Count: 0
+    Stack Size: 2
+    Flags: 0x00000000
+    [Names]
+        '__doc__'
+        'ass_radar.photon.types'
+        'ByteArray'
+        'EventData'
+        'OperationRequest'
+        'OperationResponse'
+        '__all__'
+    [Locals+Names]
+    [Constants]
+        'Photon Protocol18 parsing.'
+        0
+        (
+            'ByteArray'
+            'EventData'
+            'OperationRequest'
+            'OperationResponse'
+        )
+        None
+    [Disassembly]
+        0       RESUME                          0
+        2       LOAD_CONST                      0: 'Photon Protocol18 parsing.'
+        4       STORE_NAME                      0: __doc__
+        6       LOAD_CONST                      1: 0
+        8       LOAD_CONST                      2: ('ByteArray', 'EventData', 'OperationRequest', 'OperationResponse')
+        10      IMPORT_NAME                     1: ass_radar.photon.types
+        12      IMPORT_FROM                     2: ByteArray
+        14      STORE_NAME                      2: ByteArray
+        16      IMPORT_FROM                     3: EventData
+        18      STORE_NAME                      3: EventData
+        20      IMPORT_FROM                     4: OperationRequest
+        22      STORE_NAME                      4: OperationRequest
+        24      IMPORT_FROM                     5: OperationResponse
+        26      STORE_NAME                      5: OperationResponse
+        28      POP_TOP                         
+        30      BUILD_LIST                      0
+        32      LOAD_CONST                      2: ('ByteArray', 'EventData', 'OperationRequest', 'OperationResponse')
+        34      LIST_EXTEND                     1
+        36      STORE_NAME                      6: __all__
+        38      LOAD_CONST                      3: None
+        40      RETURN_VALUE                    
+    [Exception Table]

@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ass-radar"
+version = "0.3.3"
+description = "Albion-style radar event capture, relay processing, and Photon packet support."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "ass_radar contributors" },
+]
+license = { text = "MIT" }
+keywords = ["albion", "radar", "photon", "relay", "capture"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["ass_radar*"]
+
+[tool.pyright]
+include = ["ass_radar"]
+pythonVersion = "3.11"
+reportMissingImports = false
+
+[tool.mypy]
+python_version = "3.11"
+warn_unused_configs = true
+ignore_missing_imports = true

@@ -1,0 +1,2188 @@
+event_bridge.pyc (Python 3.11)
+[Code]
+    File Name: event_bridge.py
+    Object Name: <module>
+    Qualified Name: <module>
+    Arg Count: 0
+    Pos Only Arg Count: 0
+    KW Only Arg Count: 0
+    Stack Size: 4
+    Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+    [Names]
+        '__future__'
+        'annotations'
+        'json'
+        'struct'
+        'typing'
+        'Any'
+        'ass_radar.photon.deserializer'
+        'deserialize_event_live'
+        'to_jsonable'
+        'ass_radar.photon.types'
+        'ByteArray'
+        'EventData'
+        'ass_radar.player_positions'
+        'is_plausible_player_position'
+        'ass_radar.product_events'
+        'DIAGNOSTIC_ONLY_ROUTES'
+        'EVENT_MOVE'
+        'EVENT_NEW_CHARACTER'
+        'RouteResolution'
+        'resolve_event_route'
+        'XOR_POSITION_LENGTH'
+        'MOVE_POSITION_OFFSET'
+        'NEW_CHARACTER_POSITION_PARAMETER'
+        'DecryptedRadarEventBridge'
+        'build_radar_event_export_payload'
+        '_iter_event_candidates'
+        '_deserialize_event_or_none'
+        '_radar_event_payload'
+        '_with_routed_code'
+        '_raw_bytes'
+        '_strict_spawn_position_bytes'
+        '_int_or_none'
+        '_decode_xor_position'
+    [Locals+Names]
+    [Constants]
+        0
+        (
+            'annotations'
+        )
+        None
+        (
+            'Any'
+        )
+        (
+            'deserialize_event_live'
+            'to_jsonable'
+        )
+        (
+            'ByteArray'
+            'EventData'
+        )
+        (
+            'is_plausible_player_position'
+        )
+        (
+            'DIAGNOSTIC_ONLY_ROUTES'
+            'EVENT_MOVE'
+            'EVENT_NEW_CHARACTER'
+            'RouteResolution'
+            'resolve_event_route'
+        )
+        8
+        9
+        16
+        [Code]
+            File Name: event_bridge.py
+            Object Name: DecryptedRadarEventBridge
+            Qualified Name: DecryptedRadarEventBridge
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 5
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__init__'
+                'drain_diagnostics'
+                'handle_decrypted_payload'
+                'handle_plain_event'
+                '_handle_event'
+                '_decode_spawn_position'
+                '_decode_move_position'
+                '_emit'
+            [Locals+Names]
+            [Constants]
+                'DecryptedRadarEventBridge'
+                'return'
+                'None'
+                [Code]
+                    File Name: event_bridge.py
+                    Object Name: __init__
+                    Qualified Name: DecryptedRadarEventBridge.__init__
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 2
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        '_xor_code'
+                        '_diagnostics'
+                    [Locals+Names]
+                        'self'
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_CONST                      0: None
+                        4       LOAD_FAST                       0: self
+                        6       STORE_ATTR                      0: _xor_code
+                        16      BUILD_LIST                      0
+                        18      LOAD_FAST                       0: self
+                        20      STORE_ATTR                      1: _diagnostics
+                        30      LOAD_CONST                      0: None
+                        32      RETURN_VALUE                    
+                    [Exception Table]
+                'list[dict[str, Any]]'
+                [Code]
+                    File Name: event_bridge.py
+                    Object Name: drain_diagnostics
+                    Qualified Name: DecryptedRadarEventBridge.drain_diagnostics
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 3
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'list'
+                        '_diagnostics'
+                        'clear'
+                    [Locals+Names]
+                        'self'
+                        'diagnostics'
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_GLOBAL                     1: NULL + list
+                        14      LOAD_FAST                       0: self
+                        16      LOAD_ATTR                       1: _diagnostics
+                        26      PRECALL                         1
+                        30      CALL                            1
+                        40      STORE_FAST                      1: diagnostics
+                        42      LOAD_FAST                       0: self
+                        44      LOAD_ATTR                       1: _diagnostics
+                        54      LOAD_METHOD                     2: clear
+                        76      PRECALL                         0
+                        80      CALL                            0
+                        90      POP_TOP                         
+                        92      LOAD_FAST                       1: diagnostics
+                        94      RETURN_VALUE                    
+                    [Exception Table]
+                'payload'
+                'bytes'
+                'outer_message_type'
+                'int'
+                'direction'
+                'str'
+                [Code]
+                    File Name: event_bridge.py
+                    Object Name: handle_decrypted_payload
+                    Qualified Name: DecryptedRadarEventBridge.handle_decrypted_payload
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 2
+                    Stack Size: 10
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        '_iter_event_candidates'
+                        'resolve_event_route'
+                        'code'
+                        'parameters'
+                        'extend'
+                        '_handle_event'
+                    [Locals+Names]
+                        'self'
+                        'payload'
+                        'outer_message_type'
+                        'direction'
+                        'exported'
+                        'shape'
+                        'event'
+                        'resolution'
+                    [Constants]
+                        None
+                        'event'
+                        (
+                            'kind'
+                            'observed_code'
+                            'parameters'
+                        )
+                        (
+                            'resolution'
+                            'outer_message_type'
+                            'direction'
+                            'shape'
+                        )
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       BUILD_LIST                      0
+                        4       STORE_FAST                      4: exported
+                        6       LOAD_GLOBAL                     1: NULL + _iter_event_candidates
+                        18      LOAD_FAST                       1: payload
+                        20      PRECALL                         1
+                        24      CALL                            1
+                        34      GET_ITER                        
+                        36      FOR_ITER                        81 (to 200)
+                        38      UNPACK_SEQUENCE                 2
+                        42      STORE_FAST                      5: shape
+                        44      STORE_FAST                      6: event
+                        46      LOAD_GLOBAL                     3: NULL + resolve_event_route
+                        58      LOAD_CONST                      1: 'event'
+                        60      LOAD_FAST                       6: event
+                        62      LOAD_ATTR                       2: code
+                        72      LOAD_FAST                       6: event
+                        74      LOAD_ATTR                       3: parameters
+                        84      KW_NAMES                        2: ('kind', 'observed_code', 'parameters')
+                        86      PRECALL                         3
+                        90      CALL                            3
+                        100     STORE_FAST                      7: resolution
+                        102     LOAD_FAST                       7: resolution
+                        104     POP_JUMP_FORWARD_IF_NOT_NONE    1 (to 108)
+                        106     JUMP_BACKWARD                   36 (to 36)
+                        108     LOAD_FAST                       4: exported
+                        110     LOAD_METHOD                     4: extend
+                        132     LOAD_FAST                       0: self
+                        134     LOAD_METHOD                     5: _handle_event
+                        156     LOAD_FAST                       6: event
+                        158     LOAD_FAST                       7: resolution
+                        160     LOAD_FAST                       2: outer_message_type
+                        162     LOAD_FAST                       3: direction
+                        164     LOAD_FAST                       5: shape
+                        166     KW_NAMES                        3: ('resolution', 'outer_message_type', 'direction', 'shape')
+                        168     PRECALL                         5
+                        172     CALL                            5
+                        182     PRECALL                         1
+                        186     CALL                            1
+                        196     POP_TOP                         
+                        198     JUMP_BACKWARD                   82 (to 36)
+                        200     LOAD_FAST                       4: exported
+                        202     RETURN_VALUE                    
+                    [Exception Table]
+                None
+                (
+                    'resolution'
+                )
+                'event'
+                'EventData'
+                'resolution'
+                'RouteResolution | None'
+                [Code]
+                    File Name: event_bridge.py
+                    Object Name: handle_plain_event
+                    Qualified Name: DecryptedRadarEventBridge.handle_plain_event
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 3
+                    Stack Size: 7
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'resolve_event_route'
+                        'code'
+                        'parameters'
+                        '_handle_event'
+                    [Locals+Names]
+                        'self'
+                        'event'
+                        'outer_message_type'
+                        'direction'
+                        'resolution'
+                    [Constants]
+                        None
+                        'event'
+                        (
+                            'kind'
+                            'observed_code'
+                            'parameters'
+                        )
+                        'plain_event'
+                        (
+                            'resolution'
+                            'outer_message_type'
+                            'direction'
+                            'shape'
+                        )
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_FAST                       4: resolution
+                        4       POP_JUMP_FORWARD_IF_NOT_NONE    28 (to 62)
+                        6       LOAD_GLOBAL                     1: NULL + resolve_event_route
+                        18      LOAD_CONST                      1: 'event'
+                        20      LOAD_FAST                       1: event
+                        22      LOAD_ATTR                       1: code
+                        32      LOAD_FAST                       1: event
+                        34      LOAD_ATTR                       2: parameters
+                        44      KW_NAMES                        2: ('kind', 'observed_code', 'parameters')
+                        46      PRECALL                         3
+                        50      CALL                            3
+                        60      STORE_FAST                      4: resolution
+                        62      LOAD_FAST                       4: resolution
+                        64      POP_JUMP_FORWARD_IF_NOT_NONE    2 (to 70)
+                        66      BUILD_LIST                      0
+                        68      RETURN_VALUE                    
+                        70      LOAD_FAST                       0: self
+                        72      LOAD_METHOD                     3: _handle_event
+                        94      LOAD_FAST                       1: event
+                        96      LOAD_FAST                       4: resolution
+                        98      LOAD_FAST                       2: outer_message_type
+                        100     LOAD_FAST                       3: direction
+                        102     LOAD_CONST                      3: 'plain_event'
+                        104     KW_NAMES                        4: ('resolution', 'outer_message_type', 'direction', 'shape')
+                        106     PRECALL                         5
+                        110     CALL                            5
+                        120     RETURN_VALUE                    
+                    [Exception Table]
+                'RouteResolution'
+                'shape'
+                [Code]
+                    File Name: event_bridge.py
+                    Object Name: _handle_event
+                    Qualified Name: DecryptedRadarEventBridge._handle_event
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 4
+                    Stack Size: 13
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'routed'
+                        'code'
+                        'DIAGNOSTIC_ONLY_ROUTES'
+                        '_raw_bytes'
+                        'parameters'
+                        'get'
+                        'len'
+                        'XOR_POSITION_LENGTH'
+                        '_xor_code'
+                        '_emit'
+                        'EVENT_NEW_CHARACTER'
+                        '_decode_spawn_position'
+                        '_radar_event_payload'
+                        'to_jsonable'
+                        '_with_routed_code'
+                        'EVENT_MOVE'
+                        '_decode_move_position'
+                        '_int_or_none'
+                    [Locals+Names]
+                        'self'
+                        'event'
+                        'resolution'
+                        'outer_message_type'
+                        'direction'
+                        'shape'
+                        'routed_code'
+                        'xor_code'
+                        'spawn_position'
+                        'position_source'
+                        'decoded'
+                    [Constants]
+                        None
+                        0
+                        'key_sync_invalid'
+                        (
+                            'routed_code'
+                            'outer_message_type'
+                            'direction'
+                            'shape'
+                            'xor_code'
+                        )
+                        'key_sync_updated'
+                        (
+                            'outer_message_type'
+                            'direction'
+                            'shape'
+                        )
+                        'relay_xor'
+                        'relay_decrypted'
+                        (
+                            'event'
+                            'routed_code'
+                            'parameters'
+                            'position_source'
+                            'outer_message_type'
+                            'direction'
+                            'shape'
+                            'spawn_position'
+                        )
+                        'move_decoded'
+                        (
+                            'routed_code'
+                            'outer_message_type'
+                            'direction'
+                            'shape'
+                            'position_source'
+                            'entity_id_present'
+                        )
+                        1
+                        (
+                            '0'
+                            '4'
+                            '5'
+                            '252'
+                        )
+                        (
+                            'event'
+                            'routed_code'
+                            'parameters'
+                            'position_source'
+                            'outer_message_type'
+                            'direction'
+                            'shape'
+                        )
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_FAST                       2: resolution
+                        4       LOAD_ATTR                       0: routed
+                        14      LOAD_ATTR                       1: code
+                        24      STORE_FAST                      6: routed_code
+                        26      LOAD_FAST                       2: resolution
+                        28      LOAD_ATTR                       0: routed
+                        38      LOAD_GLOBAL                     4: DIAGNOSTIC_ONLY_ROUTES
+                        50      CONTAINS_OP                     0 (in)
+                        52      POP_JUMP_FORWARD_IF_FALSE       135 (to 324)
+                        54      LOAD_GLOBAL                     7: NULL + _raw_bytes
+                        66      LOAD_FAST                       1: event
+                        68      LOAD_ATTR                       4: parameters
+                        78      LOAD_METHOD                     5: get
+                        100     LOAD_CONST                      1: 0
+                        102     PRECALL                         1
+                        106     CALL                            1
+                        116     PRECALL                         1
+                        120     CALL                            1
+                        130     STORE_FAST                      7: xor_code
+                        132     LOAD_GLOBAL                     13: NULL + len
+                        144     LOAD_FAST                       7: xor_code
+                        146     PRECALL                         1
+                        150     CALL                            1
+                        160     LOAD_GLOBAL                     14: XOR_POSITION_LENGTH
+                        172     COMPARE_OP                      3 (!=)
+                        178     POP_JUMP_FORWARD_IF_FALSE       36 (to 252)
+                        180     LOAD_CONST                      0: None
+                        182     LOAD_FAST                       0: self
+                        184     STORE_ATTR                      8: _xor_code
+                        194     LOAD_FAST                       0: self
+                        196     LOAD_METHOD                     9: _emit
+                        218     LOAD_CONST                      2: 'key_sync_invalid'
+                        220     LOAD_FAST                       6: routed_code
+                        222     LOAD_FAST                       3: outer_message_type
+                        224     LOAD_FAST                       4: direction
+                        226     LOAD_FAST                       5: shape
+                        228     LOAD_FAST                       7: xor_code
+                        230     KW_NAMES                        3: ('routed_code', 'outer_message_type', 'direction', 'shape', 'xor_code')
+                        232     PRECALL                         6
+                        236     CALL                            6
+                        246     POP_TOP                         
+                        248     BUILD_LIST                      0
+                        250     RETURN_VALUE                    
+                        252     LOAD_FAST                       7: xor_code
+                        254     LOAD_FAST                       0: self
+                        256     STORE_ATTR                      8: _xor_code
+                        266     LOAD_FAST                       0: self
+                        268     LOAD_METHOD                     9: _emit
+                        290     LOAD_CONST                      4: 'key_sync_updated'
+                        292     LOAD_FAST                       6: routed_code
+                        294     LOAD_FAST                       3: outer_message_type
+                        296     LOAD_FAST                       4: direction
+                        298     LOAD_FAST                       5: shape
+                        300     LOAD_FAST                       7: xor_code
+                        302     KW_NAMES                        3: ('routed_code', 'outer_message_type', 'direction', 'shape', 'xor_code')
+                        304     PRECALL                         6
+                        308     CALL                            6
+                        318     POP_TOP                         
+                        320     BUILD_LIST                      0
+                        322     RETURN_VALUE                    
+                        324     LOAD_FAST                       6: routed_code
+                        326     LOAD_GLOBAL                     20: EVENT_NEW_CHARACTER
+                        338     COMPARE_OP                      2 (==)
+                        344     POP_JUMP_FORWARD_IF_FALSE       87 (to 520)
+                        346     LOAD_FAST                       0: self
+                        348     LOAD_METHOD                     11: _decode_spawn_position
+                        370     LOAD_FAST                       1: event
+                        372     LOAD_FAST                       3: outer_message_type
+                        374     LOAD_FAST                       4: direction
+                        376     LOAD_FAST                       5: shape
+                        378     KW_NAMES                        5: ('outer_message_type', 'direction', 'shape')
+                        380     PRECALL                         4
+                        384     CALL                            4
+                        394     STORE_FAST                      8: spawn_position
+                        396     LOAD_FAST                       8: spawn_position
+                        398     POP_JUMP_FORWARD_IF_NONE        2 (to 404)
+                        400     LOAD_CONST                      6: 'relay_xor'
+                        402     JUMP_FORWARD                    1 (to 406)
+                        404     LOAD_CONST                      7: 'relay_decrypted'
+                        406     STORE_FAST                      9: position_source
+                        408     LOAD_GLOBAL                     25: NULL + _radar_event_payload
+                        420     LOAD_FAST                       1: event
+                        422     LOAD_FAST                       6: routed_code
+                        424     LOAD_GLOBAL                     27: NULL + to_jsonable
+                        436     LOAD_GLOBAL                     29: NULL + _with_routed_code
+                        448     LOAD_FAST                       1: event
+                        450     LOAD_ATTR                       4: parameters
+                        460     LOAD_FAST                       6: routed_code
+                        462     PRECALL                         2
+                        466     CALL                            2
+                        476     PRECALL                         1
+                        480     CALL                            1
+                        490     LOAD_FAST                       9: position_source
+                        492     LOAD_FAST                       3: outer_message_type
+                        494     LOAD_FAST                       4: direction
+                        496     LOAD_FAST                       5: shape
+                        498     LOAD_FAST                       8: spawn_position
+                        500     KW_NAMES                        8: ('event', 'routed_code', 'parameters', 'position_source', 'outer_message_type', 'direction', 'shape', 'spawn_position')
+                        502     PRECALL                         8
+                        506     CALL                            8
+                        516     BUILD_LIST                      1
+                        518     RETURN_VALUE                    
+                        520     LOAD_FAST                       6: routed_code
+                        522     LOAD_GLOBAL                     30: EVENT_MOVE
+                        534     COMPARE_OP                      3 (!=)
+                        540     POP_JUMP_FORWARD_IF_FALSE       2 (to 546)
+                        542     BUILD_LIST                      0
+                        544     RETURN_VALUE                    
+                        546     LOAD_FAST                       0: self
+                        548     LOAD_METHOD                     16: _decode_move_position
+                        570     LOAD_FAST                       1: event
+                        572     LOAD_FAST                       3: outer_message_type
+                        574     LOAD_FAST                       4: direction
+                        576     LOAD_FAST                       5: shape
+                        578     KW_NAMES                        5: ('outer_message_type', 'direction', 'shape')
+                        580     PRECALL                         4
+                        584     CALL                            4
+                        594     STORE_FAST                      10: decoded
+                        596     LOAD_FAST                       10: decoded
+                        598     POP_JUMP_FORWARD_IF_NOT_NONE    2 (to 604)
+                        600     BUILD_LIST                      0
+                        602     RETURN_VALUE                    
+                        604     LOAD_FAST                       0: self
+                        606     LOAD_METHOD                     9: _emit
+                        628     LOAD_CONST                      9: 'move_decoded'
+                        630     LOAD_FAST                       6: routed_code
+                        632     LOAD_FAST                       3: outer_message_type
+                        634     LOAD_FAST                       4: direction
+                        636     LOAD_FAST                       5: shape
+                        638     LOAD_CONST                      6: 'relay_xor'
+                        640     LOAD_GLOBAL                     35: NULL + _int_or_none
+                        652     LOAD_FAST                       1: event
+                        654     LOAD_ATTR                       4: parameters
+                        664     LOAD_METHOD                     5: get
+                        686     LOAD_CONST                      1: 0
+                        688     PRECALL                         1
+                        692     CALL                            1
+                        702     PRECALL                         1
+                        706     CALL                            1
+                        716     LOAD_CONST                      0: None
+                        718     IS_OP                           1 (is not)
+                        720     KW_NAMES                        10: ('routed_code', 'outer_message_type', 'direction', 'shape', 'position_source', 'entity_id_present')
+                        722     PRECALL                         7
+                        726     CALL                            7
+                        736     POP_TOP                         
+                        738     LOAD_GLOBAL                     25: NULL + _radar_event_payload
+                        750     LOAD_FAST                       1: event
+                        752     LOAD_FAST                       6: routed_code
+                        754     LOAD_GLOBAL                     35: NULL + _int_or_none
+                        766     LOAD_FAST                       1: event
+                        768     LOAD_ATTR                       4: parameters
+                        778     LOAD_METHOD                     5: get
+                        800     LOAD_CONST                      1: 0
+                        802     PRECALL                         1
+                        806     CALL                            1
+                        816     PRECALL                         1
+                        820     CALL                            1
+                        830     LOAD_FAST                       10: decoded
+                        832     LOAD_CONST                      1: 0
+                        834     BINARY_SUBSCR                   
+                        844     LOAD_FAST                       10: decoded
+                        846     LOAD_CONST                      11: 1
+                        848     BINARY_SUBSCR                   
+                        858     LOAD_GLOBAL                     30: EVENT_MOVE
+                        870     LOAD_CONST                      12: ('0', '4', '5', '252')
+                        872     BUILD_CONST_KEY_MAP             4
+                        874     LOAD_CONST                      6: 'relay_xor'
+                        876     LOAD_FAST                       3: outer_message_type
+                        878     LOAD_FAST                       4: direction
+                        880     LOAD_FAST                       5: shape
+                        882     KW_NAMES                        13: ('event', 'routed_code', 'parameters', 'position_source', 'outer_message_type', 'direction', 'shape')
+                        884     PRECALL                         7
+                        888     CALL                            7
+                        898     BUILD_LIST                      1
+                        900     RETURN_VALUE                    
+                    [Exception Table]
+                'tuple[float, float] | None'
+                [Code]
+                    File Name: event_bridge.py
+                    Object Name: _decode_spawn_position
+                    Qualified Name: DecryptedRadarEventBridge._decode_spawn_position
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 3
+                    Stack Size: 9
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        '_int_or_none'
+                        'parameters'
+                        'get'
+                        '_strict_spawn_position_bytes'
+                        'NEW_CHARACTER_POSITION_PARAMETER'
+                        '_emit'
+                        'EVENT_NEW_CHARACTER'
+                        '_xor_code'
+                        '_decode_xor_position'
+                    [Locals+Names]
+                        'self'
+                        'event'
+                        'outer_message_type'
+                        'direction'
+                        'shape'
+                        'entity_id_present'
+                        'encrypted_position'
+                        'decoded'
+                    [Constants]
+                        None
+                        0
+                        'spawn_position_invalid'
+                        'relay_decrypted'
+                        (
+                            'routed_code'
+                            'outer_message_type'
+                            'direction'
+                            'shape'
+                            'position_source'
+                            'entity_id_present'
+                        )
+                        'spawn_position_missing_key'
+                        (
+                            'encrypted_position'
+                            'xor_code'
+                        )
+                        'spawn_position_implausible'
+                        'spawn_position_decoded'
+                        'relay_xor'
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_GLOBAL                     1: NULL + _int_or_none
+                        14      LOAD_FAST                       1: event
+                        16      LOAD_ATTR                       1: parameters
+                        26      LOAD_METHOD                     2: get
+                        48      LOAD_CONST                      1: 0
+                        50      PRECALL                         1
+                        54      CALL                            1
+                        64      PRECALL                         1
+                        68      CALL                            1
+                        78      LOAD_CONST                      0: None
+                        80      IS_OP                           1 (is not)
+                        82      STORE_FAST                      5: entity_id_present
+                        84      LOAD_GLOBAL                     7: NULL + _strict_spawn_position_bytes
+                        96      LOAD_FAST                       1: event
+                        98      LOAD_ATTR                       1: parameters
+                        108     LOAD_METHOD                     2: get
+                        130     LOAD_GLOBAL                     8: NEW_CHARACTER_POSITION_PARAMETER
+                        142     PRECALL                         1
+                        146     CALL                            1
+                        156     PRECALL                         1
+                        160     CALL                            1
+                        170     STORE_FAST                      6: encrypted_position
+                        172     LOAD_FAST                       6: encrypted_position
+                        174     POP_JUMP_FORWARD_IF_NOT_NONE    35 (to 246)
+                        176     LOAD_FAST                       0: self
+                        178     LOAD_METHOD                     5: _emit
+                        200     LOAD_CONST                      2: 'spawn_position_invalid'
+                        202     LOAD_GLOBAL                     12: EVENT_NEW_CHARACTER
+                        214     LOAD_FAST                       2: outer_message_type
+                        216     LOAD_FAST                       3: direction
+                        218     LOAD_FAST                       4: shape
+                        220     LOAD_CONST                      3: 'relay_decrypted'
+                        222     LOAD_FAST                       5: entity_id_present
+                        224     KW_NAMES                        4: ('routed_code', 'outer_message_type', 'direction', 'shape', 'position_source', 'entity_id_present')
+                        226     PRECALL                         7
+                        230     CALL                            7
+                        240     POP_TOP                         
+                        242     LOAD_CONST                      0: None
+                        244     RETURN_VALUE                    
+                        246     LOAD_FAST                       0: self
+                        248     LOAD_ATTR                       7: _xor_code
+                        258     POP_JUMP_FORWARD_IF_NOT_NONE    35 (to 330)
+                        260     LOAD_FAST                       0: self
+                        262     LOAD_METHOD                     5: _emit
+                        284     LOAD_CONST                      5: 'spawn_position_missing_key'
+                        286     LOAD_GLOBAL                     12: EVENT_NEW_CHARACTER
+                        298     LOAD_FAST                       2: outer_message_type
+                        300     LOAD_FAST                       3: direction
+                        302     LOAD_FAST                       4: shape
+                        304     LOAD_CONST                      3: 'relay_decrypted'
+                        306     LOAD_FAST                       5: entity_id_present
+                        308     KW_NAMES                        4: ('routed_code', 'outer_message_type', 'direction', 'shape', 'position_source', 'entity_id_present')
+                        310     PRECALL                         7
+                        314     CALL                            7
+                        324     POP_TOP                         
+                        326     LOAD_CONST                      0: None
+                        328     RETURN_VALUE                    
+                        330     LOAD_GLOBAL                     17: NULL + _decode_xor_position
+                        342     LOAD_FAST                       6: encrypted_position
+                        344     LOAD_FAST                       0: self
+                        346     LOAD_ATTR                       7: _xor_code
+                        356     KW_NAMES                        6: ('encrypted_position', 'xor_code')
+                        358     PRECALL                         2
+                        362     CALL                            2
+                        372     STORE_FAST                      7: decoded
+                        374     LOAD_FAST                       7: decoded
+                        376     POP_JUMP_FORWARD_IF_NOT_NONE    35 (to 448)
+                        378     LOAD_FAST                       0: self
+                        380     LOAD_METHOD                     5: _emit
+                        402     LOAD_CONST                      7: 'spawn_position_implausible'
+                        404     LOAD_GLOBAL                     12: EVENT_NEW_CHARACTER
+                        416     LOAD_FAST                       2: outer_message_type
+                        418     LOAD_FAST                       3: direction
+                        420     LOAD_FAST                       4: shape
+                        422     LOAD_CONST                      3: 'relay_decrypted'
+                        424     LOAD_FAST                       5: entity_id_present
+                        426     KW_NAMES                        4: ('routed_code', 'outer_message_type', 'direction', 'shape', 'position_source', 'entity_id_present')
+                        428     PRECALL                         7
+                        432     CALL                            7
+                        442     POP_TOP                         
+                        444     LOAD_CONST                      0: None
+                        446     RETURN_VALUE                    
+                        448     LOAD_FAST                       0: self
+                        450     LOAD_METHOD                     5: _emit
+                        472     LOAD_CONST                      8: 'spawn_position_decoded'
+                        474     LOAD_GLOBAL                     12: EVENT_NEW_CHARACTER
+                        486     LOAD_FAST                       2: outer_message_type
+                        488     LOAD_FAST                       3: direction
+                        490     LOAD_FAST                       4: shape
+                        492     LOAD_CONST                      9: 'relay_xor'
+                        494     LOAD_FAST                       5: entity_id_present
+                        496     KW_NAMES                        4: ('routed_code', 'outer_message_type', 'direction', 'shape', 'position_source', 'entity_id_present')
+                        498     PRECALL                         7
+                        502     CALL                            7
+                        512     POP_TOP                         
+                        514     LOAD_FAST                       7: decoded
+                        516     RETURN_VALUE                    
+                    [Exception Table]
+                [Code]
+                    File Name: event_bridge.py
+                    Object Name: _decode_move_position
+                    Qualified Name: DecryptedRadarEventBridge._decode_move_position
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 3
+                    Stack Size: 12
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        '_xor_code'
+                        '_emit'
+                        'EVENT_MOVE'
+                        '_int_or_none'
+                        'parameters'
+                        'get'
+                        '_raw_bytes'
+                        'MOVE_POSITION_OFFSET'
+                        'XOR_POSITION_LENGTH'
+                        'len'
+                        '_decode_xor_position'
+                    [Locals+Names]
+                        'self'
+                        'event'
+                        'outer_message_type'
+                        'direction'
+                        'shape'
+                        'raw'
+                        'end'
+                        'encrypted'
+                        'decoded'
+                    [Constants]
+                        None
+                        'move_missing_key'
+                        0
+                        (
+                            'routed_code'
+                            'outer_message_type'
+                            'direction'
+                            'shape'
+                            'entity_id_present'
+                        )
+                        1
+                        'move_payload_too_short'
+                        (
+                            'routed_code'
+                            'outer_message_type'
+                            'direction'
+                            'shape'
+                            'entity_id_present'
+                            'byte_array_length'
+                        )
+                        (
+                            'encrypted_position'
+                            'xor_code'
+                        )
+                        'move_implausible_position'
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: _xor_code
+                        14      POP_JUMP_FORWARD_IF_NOT_NONE    73 (to 162)
+                        16      LOAD_FAST                       0: self
+                        18      LOAD_METHOD                     1: _emit
+                        40      LOAD_CONST                      1: 'move_missing_key'
+                        42      LOAD_GLOBAL                     4: EVENT_MOVE
+                        54      LOAD_FAST                       2: outer_message_type
+                        56      LOAD_FAST                       3: direction
+                        58      LOAD_FAST                       4: shape
+                        60      LOAD_GLOBAL                     7: NULL + _int_or_none
+                        72      LOAD_FAST                       1: event
+                        74      LOAD_ATTR                       4: parameters
+                        84      LOAD_METHOD                     5: get
+                        106     LOAD_CONST                      2: 0
+                        108     PRECALL                         1
+                        112     CALL                            1
+                        122     PRECALL                         1
+                        126     CALL                            1
+                        136     LOAD_CONST                      0: None
+                        138     IS_OP                           1 (is not)
+                        140     KW_NAMES                        3: ('routed_code', 'outer_message_type', 'direction', 'shape', 'entity_id_present')
+                        142     PRECALL                         6
+                        146     CALL                            6
+                        156     POP_TOP                         
+                        158     LOAD_CONST                      0: None
+                        160     RETURN_VALUE                    
+                        162     LOAD_GLOBAL                     13: NULL + _raw_bytes
+                        174     LOAD_FAST                       1: event
+                        176     LOAD_ATTR                       4: parameters
+                        186     LOAD_METHOD                     5: get
+                        208     LOAD_CONST                      4: 1
+                        210     PRECALL                         1
+                        214     CALL                            1
+                        224     PRECALL                         1
+                        228     CALL                            1
+                        238     STORE_FAST                      5: raw
+                        240     LOAD_GLOBAL                     14: MOVE_POSITION_OFFSET
+                        252     LOAD_GLOBAL                     16: XOR_POSITION_LENGTH
+                        264     BINARY_OP                       0 (+)
+                        268     STORE_FAST                      6: end
+                        270     LOAD_GLOBAL                     19: NULL + len
+                        282     LOAD_FAST                       5: raw
+                        284     PRECALL                         1
+                        288     CALL                            1
+                        298     LOAD_FAST                       6: end
+                        300     COMPARE_OP                      0 (<)
+                        306     POP_JUMP_FORWARD_IF_FALSE       87 (to 482)
+                        308     LOAD_FAST                       0: self
+                        310     LOAD_METHOD                     1: _emit
+                        332     LOAD_CONST                      5: 'move_payload_too_short'
+                        334     LOAD_GLOBAL                     4: EVENT_MOVE
+                        346     LOAD_FAST                       2: outer_message_type
+                        348     LOAD_FAST                       3: direction
+                        350     LOAD_FAST                       4: shape
+                        352     LOAD_GLOBAL                     7: NULL + _int_or_none
+                        364     LOAD_FAST                       1: event
+                        366     LOAD_ATTR                       4: parameters
+                        376     LOAD_METHOD                     5: get
+                        398     LOAD_CONST                      2: 0
+                        400     PRECALL                         1
+                        404     CALL                            1
+                        414     PRECALL                         1
+                        418     CALL                            1
+                        428     LOAD_CONST                      0: None
+                        430     IS_OP                           1 (is not)
+                        432     LOAD_GLOBAL                     19: NULL + len
+                        444     LOAD_FAST                       5: raw
+                        446     PRECALL                         1
+                        450     CALL                            1
+                        460     KW_NAMES                        6: ('routed_code', 'outer_message_type', 'direction', 'shape', 'entity_id_present', 'byte_array_length')
+                        462     PRECALL                         7
+                        466     CALL                            7
+                        476     POP_TOP                         
+                        478     LOAD_CONST                      0: None
+                        480     RETURN_VALUE                    
+                        482     LOAD_FAST                       5: raw
+                        484     LOAD_GLOBAL                     14: MOVE_POSITION_OFFSET
+                        496     LOAD_FAST                       6: end
+                        498     BUILD_SLICE                     2
+                        500     BINARY_SUBSCR                   
+                        510     STORE_FAST                      7: encrypted
+                        512     LOAD_GLOBAL                     21: NULL + _decode_xor_position
+                        524     LOAD_FAST                       7: encrypted
+                        526     LOAD_FAST                       0: self
+                        528     LOAD_ATTR                       0: _xor_code
+                        538     KW_NAMES                        7: ('encrypted_position', 'xor_code')
+                        540     PRECALL                         2
+                        544     CALL                            2
+                        554     STORE_FAST                      8: decoded
+                        556     LOAD_FAST                       8: decoded
+                        558     POP_JUMP_FORWARD_IF_NOT_NONE    87 (to 734)
+                        560     LOAD_FAST                       0: self
+                        562     LOAD_METHOD                     1: _emit
+                        584     LOAD_CONST                      8: 'move_implausible_position'
+                        586     LOAD_GLOBAL                     4: EVENT_MOVE
+                        598     LOAD_FAST                       2: outer_message_type
+                        600     LOAD_FAST                       3: direction
+                        602     LOAD_FAST                       4: shape
+                        604     LOAD_GLOBAL                     7: NULL + _int_or_none
+                        616     LOAD_FAST                       1: event
+                        618     LOAD_ATTR                       4: parameters
+                        628     LOAD_METHOD                     5: get
+                        650     LOAD_CONST                      2: 0
+                        652     PRECALL                         1
+                        656     CALL                            1
+                        666     PRECALL                         1
+                        670     CALL                            1
+                        680     LOAD_CONST                      0: None
+                        682     IS_OP                           1 (is not)
+                        684     LOAD_GLOBAL                     19: NULL + len
+                        696     LOAD_FAST                       5: raw
+                        698     PRECALL                         1
+                        702     CALL                            1
+                        712     KW_NAMES                        6: ('routed_code', 'outer_message_type', 'direction', 'shape', 'entity_id_present', 'byte_array_length')
+                        714     PRECALL                         7
+                        718     CALL                            7
+                        728     POP_TOP                         
+                        730     LOAD_CONST                      0: None
+                        732     RETURN_VALUE                    
+                        734     LOAD_FAST                       8: decoded
+                        736     RETURN_VALUE                    
+                    [Exception Table]
+                (
+                    'position_source'
+                    'entity_id_present'
+                    'xor_code'
+                    'byte_array_length'
+                )
+                'status'
+                'routed_code'
+                'position_source'
+                'str | None'
+                'entity_id_present'
+                'bool | None'
+                'xor_code'
+                'bytes | None'
+                'byte_array_length'
+                'int | None'
+                [Code]
+                    File Name: event_bridge.py
+                    Object Name: _emit
+                    Qualified Name: DecryptedRadarEventBridge._emit
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 8
+                    Stack Size: 8
+                    Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'str'
+                        'int'
+                        'bool'
+                        'len'
+                        '_diagnostics'
+                        'append'
+                    [Locals+Names]
+                        'self'
+                        'status'
+                        'routed_code'
+                        'outer_message_type'
+                        'direction'
+                        'shape'
+                        'position_source'
+                        'entity_id_present'
+                        'xor_code'
+                        'byte_array_length'
+                        'item'
+                    [Constants]
+                        None
+                        'radar_bridge'
+                        (
+                            'eventType'
+                            'status'
+                            'direction'
+                            'outerMessageType'
+                            'shape'
+                            'routedCode'
+                        )
+                        'positionSource'
+                        'entityIdPresent'
+                        'byteArrayLength'
+                        'xorCodeLength'
+                    [Disassembly]
+                        0       RESUME                          0
+                        2       LOAD_CONST                      1: 'radar_bridge'
+                        4       LOAD_GLOBAL                     1: NULL + str
+                        16      LOAD_FAST                       1: status
+                        18      PRECALL                         1
+                        22      CALL                            1
+                        32      LOAD_GLOBAL                     1: NULL + str
+                        44      LOAD_FAST                       4: direction
+                        46      PRECALL                         1
+                        50      CALL                            1
+                        60      LOAD_GLOBAL                     3: NULL + int
+                        72      LOAD_FAST                       3: outer_message_type
+                        74      PRECALL                         1
+                        78      CALL                            1
+                        88      LOAD_GLOBAL                     1: NULL + str
+                        100     LOAD_FAST                       5: shape
+                        102     PRECALL                         1
+                        106     CALL                            1
+                        116     LOAD_GLOBAL                     3: NULL + int
+                        128     LOAD_FAST                       2: routed_code
+                        130     PRECALL                         1
+                        134     CALL                            1
+                        144     LOAD_CONST                      2: ('eventType', 'status', 'direction', 'outerMessageType', 'shape', 'routedCode')
+                        146     BUILD_CONST_KEY_MAP             6
+                        148     STORE_FAST                      10: item
+                        150     LOAD_FAST                       6: position_source
+                        152     POP_JUMP_FORWARD_IF_NONE        5 (to 164)
+                        154     LOAD_FAST                       6: position_source
+                        156     LOAD_FAST                       10: item
+                        158     LOAD_CONST                      3: 'positionSource'
+                        160     STORE_SUBSCR                    
+                        164     LOAD_FAST                       7: entity_id_present
+                        166     POP_JUMP_FORWARD_IF_NONE        18 (to 204)
+                        168     LOAD_GLOBAL                     5: NULL + bool
+                        180     LOAD_FAST                       7: entity_id_present
+                        182     PRECALL                         1
+                        186     CALL                            1
+                        196     LOAD_FAST                       10: item
+                        198     LOAD_CONST                      4: 'entityIdPresent'
+                        200     STORE_SUBSCR                    
+                        204     LOAD_FAST                       9: byte_array_length
+                        206     POP_JUMP_FORWARD_IF_NONE        18 (to 244)
+                        208     LOAD_GLOBAL                     3: NULL + int
+                        220     LOAD_FAST                       9: byte_array_length
+                        222     PRECALL                         1
+                        226     CALL                            1
+                        236     LOAD_FAST                       10: item
+                        238     LOAD_CONST                      5: 'byteArrayLength'
+                        240     STORE_SUBSCR                    
+                        244     LOAD_FAST                       8: xor_code
+                        246     POP_JUMP_FORWARD_IF_NONE        18 (to 284)
+                        248     LOAD_GLOBAL                     7: NULL + len
+                        260     LOAD_FAST                       8: xor_code
+                        262     PRECALL                         1
+                        266     CALL                            1
+                        276     LOAD_FAST                       10: item
+                        278     LOAD_CONST                      6: 'xorCodeLength'
+                        280     STORE_SUBSCR                    
+                        284     LOAD_FAST                       0: self
+                        286     LOAD_ATTR                       4: _diagnostics
+                        296     LOAD_METHOD                     5: append
+                        318     LOAD_FAST                       10: item
+                        320     PRECALL                         1
+                        324     CALL                            1
+                        334     POP_TOP                         
+                        336     LOAD_CONST                      0: None
+                        338     RETURN_VALUE                    
+                    [Exception Table]
+                (
+                    'return'
+                    'None'
+                )
+                (
+                    'return'
+                    'list[dict[str, Any]]'
+                )
+                (
+                    'payload'
+                    'bytes'
+                    'outer_message_type'
+                    'int'
+                    'direction'
+                    'str'
+                    'return'
+                    'list[dict[str, Any]]'
+                )
+                (
+                    'event'
+                    'EventData'
+                    'outer_message_type'
+                    'int'
+                    'direction'
+                    'str'
+                    'resolution'
+                    'RouteResolution | None'
+                    'return'
+                    'list[dict[str, Any]]'
+                )
+                (
+                    'event'
+                    'EventData'
+                    'resolution'
+                    'RouteResolution'
+                    'outer_message_type'
+                    'int'
+                    'direction'
+                    'str'
+                    'shape'
+                    'str'
+                    'return'
+                    'list[dict[str, Any]]'
+                )
+                (
+                    'event'
+                    'EventData'
+                    'outer_message_type'
+                    'int'
+                    'direction'
+                    'str'
+                    'shape'
+                    'str'
+                    'return'
+                    'tuple[float, float] | None'
+                )
+                (
+                    'status'
+                    'str'
+                    'routed_code'
+                    'int'
+                    'outer_message_type'
+                    'int'
+                    'direction'
+                    'str'
+                    'shape'
+                    'str'
+                    'position_source'
+                    'str | None'
+                    'entity_id_present'
+                    'bool | None'
+                    'xor_code'
+                    'bytes | None'
+                    'byte_array_length'
+                    'int | None'
+                    'return'
+                    'None'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'DecryptedRadarEventBridge'
+                8       STORE_NAME                      2: __qualname__
+                10      LOAD_CONST                      38: ('return', 'None')
+                12      LOAD_CONST                      3: <CODE> __init__
+                14      MAKE_FUNCTION                   4
+                16      STORE_NAME                      3: __init__
+                18      LOAD_CONST                      39: ('return', 'list[dict[str, Any]]')
+                20      LOAD_CONST                      5: <CODE> drain_diagnostics
+                22      MAKE_FUNCTION                   4
+                24      STORE_NAME                      4: drain_diagnostics
+                26      LOAD_CONST                      40: ('payload', 'bytes', 'outer_message_type', 'int', 'direction', 'str', 'return', 'list[dict[str, Any]]')
+                28      LOAD_CONST                      12: <CODE> handle_decrypted_payload
+                30      MAKE_FUNCTION                   4
+                32      STORE_NAME                      5: handle_decrypted_payload
+                34      LOAD_CONST                      13: None
+                36      LOAD_CONST                      14: ('resolution',)
+                38      BUILD_CONST_KEY_MAP             1
+                40      LOAD_CONST                      41: ('event', 'EventData', 'outer_message_type', 'int', 'direction', 'str', 'resolution', 'RouteResolution | None', 'return', 'list[dict[str, Any]]')
+                42      LOAD_CONST                      19: <CODE> handle_plain_event
+                44      MAKE_FUNCTION                   6
+                46      STORE_NAME                      6: handle_plain_event
+                48      LOAD_CONST                      42: ('event', 'EventData', 'resolution', 'RouteResolution', 'outer_message_type', 'int', 'direction', 'str', 'shape', 'str', 'return', 'list[dict[str, Any]]')
+                50      LOAD_CONST                      22: <CODE> _handle_event
+                52      MAKE_FUNCTION                   4
+                54      STORE_NAME                      7: _handle_event
+                56      LOAD_CONST                      43: ('event', 'EventData', 'outer_message_type', 'int', 'direction', 'str', 'shape', 'str', 'return', 'tuple[float, float] | None')
+                58      LOAD_CONST                      24: <CODE> _decode_spawn_position
+                60      MAKE_FUNCTION                   4
+                62      STORE_NAME                      8: _decode_spawn_position
+                64      LOAD_CONST                      43: ('event', 'EventData', 'outer_message_type', 'int', 'direction', 'str', 'shape', 'str', 'return', 'tuple[float, float] | None')
+                66      LOAD_CONST                      25: <CODE> _decode_move_position
+                68      MAKE_FUNCTION                   4
+                70      STORE_NAME                      9: _decode_move_position
+                72      LOAD_CONST                      13: None
+                74      LOAD_CONST                      13: None
+                76      LOAD_CONST                      13: None
+                78      LOAD_CONST                      13: None
+                80      LOAD_CONST                      26: ('position_source', 'entity_id_present', 'xor_code', 'byte_array_length')
+                82      BUILD_CONST_KEY_MAP             4
+                84      LOAD_CONST                      44: ('status', 'str', 'routed_code', 'int', 'outer_message_type', 'int', 'direction', 'str', 'shape', 'str', 'position_source', 'str | None', 'entity_id_present', 'bool | None', 'xor_code', 'bytes | None', 'byte_array_length', 'int | None', 'return', 'None')
+                86      LOAD_CONST                      37: <CODE> _emit
+                88      MAKE_FUNCTION                   6
+                90      STORE_NAME                      10: _emit
+                92      LOAD_CONST                      13: None
+                94      RETURN_VALUE                    
+            [Exception Table]
+        'DecryptedRadarEventBridge'
+        'event'
+        'dict[str, Any]'
+        'return'
+        'bytes'
+        [Code]
+            File Name: event_bridge.py
+            Object Name: build_radar_event_export_payload
+            Qualified Name: build_radar_event_export_payload
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 5
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'json'
+                'dumps'
+                'encode'
+            [Locals+Names]
+                'event'
+            [Constants]
+                None
+                True
+                (
+                    ','
+                    ':'
+                )
+                (
+                    'sort_keys'
+                    'separators'
+                )
+                '\n'
+                'utf-8'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + json
+                14      LOAD_ATTR                       1: dumps
+                24      LOAD_FAST                       0: event
+                26      LOAD_CONST                      1: True
+                28      LOAD_CONST                      2: (',', ':')
+                30      KW_NAMES                        3: ('sort_keys', 'separators')
+                32      PRECALL                         3
+                36      CALL                            3
+                46      LOAD_CONST                      4: '\n'
+                48      BINARY_OP                       0 (+)
+                52      LOAD_METHOD                     2: encode
+                74      LOAD_CONST                      5: 'utf-8'
+                76      PRECALL                         1
+                80      CALL                            1
+                90      RETURN_VALUE                    
+            [Exception Table]
+        'payload'
+        'list[tuple[str, EventData]]'
+        [Code]
+            File Name: event_bridge.py
+            Object Name: _iter_event_candidates
+            Qualified Name: _iter_event_candidates
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 5
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '_deserialize_event_or_none'
+                'append'
+            [Locals+Names]
+                'payload'
+                'candidates'
+                'direct'
+                'inner'
+            [Constants]
+                None
+                'direct_event'
+                0
+                4
+                1
+                'inner_event'
+            [Disassembly]
+                0       RESUME                          0
+                2       BUILD_LIST                      0
+                4       STORE_FAST                      1: candidates
+                6       LOAD_GLOBAL                     1: NULL + _deserialize_event_or_none
+                18      LOAD_FAST                       0: payload
+                20      PRECALL                         1
+                24      CALL                            1
+                34      STORE_FAST                      2: direct
+                36      LOAD_FAST                       2: direct
+                38      POP_JUMP_FORWARD_IF_NONE        23 (to 86)
+                40      LOAD_FAST                       1: candidates
+                42      LOAD_METHOD                     1: append
+                64      LOAD_CONST                      1: 'direct_event'
+                66      LOAD_FAST                       2: direct
+                68      BUILD_TUPLE                     2
+                70      PRECALL                         1
+                74      CALL                            1
+                84      POP_TOP                         
+                86      LOAD_FAST                       0: payload
+                88      POP_JUMP_FORWARD_IF_FALSE       60 (to 210)
+                90      LOAD_FAST                       0: payload
+                92      LOAD_CONST                      2: 0
+                94      BINARY_SUBSCR                   
+                104     LOAD_CONST                      3: 4
+                106     COMPARE_OP                      2 (==)
+                112     POP_JUMP_FORWARD_IF_FALSE       48 (to 210)
+                114     LOAD_GLOBAL                     1: NULL + _deserialize_event_or_none
+                126     LOAD_FAST                       0: payload
+                128     LOAD_CONST                      4: 1
+                130     LOAD_CONST                      0: None
+                132     BUILD_SLICE                     2
+                134     BINARY_SUBSCR                   
+                144     PRECALL                         1
+                148     CALL                            1
+                158     STORE_FAST                      3: inner
+                160     LOAD_FAST                       3: inner
+                162     POP_JUMP_FORWARD_IF_NONE        23 (to 210)
+                164     LOAD_FAST                       1: candidates
+                166     LOAD_METHOD                     1: append
+                188     LOAD_CONST                      5: 'inner_event'
+                190     LOAD_FAST                       3: inner
+                192     BUILD_TUPLE                     2
+                194     PRECALL                         1
+                198     CALL                            1
+                208     POP_TOP                         
+                210     LOAD_FAST                       1: candidates
+                212     RETURN_VALUE                    
+            [Exception Table]
+        'EventData | None'
+        [Code]
+            File Name: event_bridge.py
+            Object Name: _deserialize_event_or_none
+            Qualified Name: _deserialize_event_or_none
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'deserialize_event_live'
+                'Exception'
+            [Locals+Names]
+                'payload'
+            [Constants]
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       NOP                             
+                4       LOAD_GLOBAL                     1: NULL + deserialize_event_live
+                16      LOAD_FAST                       0: payload
+                18      PRECALL                         1
+                22      CALL                            1
+                32      RETURN_VALUE                    
+                34      PUSH_EXC_INFO                   
+                36      LOAD_GLOBAL                     2: Exception
+                48      CHECK_EXC_MATCH                 
+                50      POP_JUMP_FORWARD_IF_FALSE       4 (to 60)
+                52      POP_TOP                         
+                54      POP_EXCEPT                      
+                56      LOAD_CONST                      0: None
+                58      RETURN_VALUE                    
+                60      RERAISE                         0
+                62      COPY                            3
+                64      POP_EXCEPT                      
+                66      RERAISE                         1
+            [Exception Table]
+                4 to 32 -> 34 [0] 
+                34 to 54 -> 62 [1] lasti
+                60 to 62 -> 62 [1] lasti
+        (
+            'spawn_position'
+        )
+        'EventData'
+        'routed_code'
+        'int'
+        'parameters'
+        'position_source'
+        'str'
+        'outer_message_type'
+        'direction'
+        'shape'
+        'spawn_position'
+        'tuple[float, float] | None'
+        [Code]
+            File Name: event_bridge.py
+            Object Name: _radar_event_payload
+            Qualified Name: _radar_event_payload
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 8
+            Stack Size: 7
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'str'
+                'int'
+                'float'
+                'code'
+            [Locals+Names]
+                'event'
+                'routed_code'
+                'parameters'
+                'position_source'
+                'outer_message_type'
+                'direction'
+                'shape'
+                'spawn_position'
+                'metadata'
+                'x'
+                'y'
+            [Constants]
+                None
+                True
+                (
+                    'decrypted'
+                    'direction'
+                    'outer_message_type'
+                    'position_source'
+                    'routed_code'
+                    'shape'
+                )
+                (
+                    'x'
+                    'y'
+                )
+                'spawn_position'
+                'radar_event'
+                'event'
+                'relay'
+                (
+                    'type'
+                    'kind'
+                    'code'
+                    'parameters'
+                    'source'
+                    'metadata'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_CONST                      1: True
+                4       LOAD_GLOBAL                     1: NULL + str
+                16      LOAD_FAST                       5: direction
+                18      PRECALL                         1
+                22      CALL                            1
+                32      LOAD_GLOBAL                     3: NULL + int
+                44      LOAD_FAST                       4: outer_message_type
+                46      PRECALL                         1
+                50      CALL                            1
+                60      LOAD_FAST                       3: position_source
+                62      LOAD_GLOBAL                     3: NULL + int
+                74      LOAD_FAST                       1: routed_code
+                76      PRECALL                         1
+                80      CALL                            1
+                90      LOAD_FAST                       6: shape
+                92      LOAD_CONST                      2: ('decrypted', 'direction', 'outer_message_type', 'position_source', 'routed_code', 'shape')
+                94      BUILD_CONST_KEY_MAP             6
+                96      STORE_FAST                      8: metadata
+                98      LOAD_FAST                       7: spawn_position
+                100     POP_JUMP_FORWARD_IF_NONE        39 (to 180)
+                102     LOAD_FAST                       7: spawn_position
+                104     UNPACK_SEQUENCE                 2
+                108     STORE_FAST                      9: x
+                110     STORE_FAST                      10: y
+                112     LOAD_GLOBAL                     5: NULL + float
+                124     LOAD_FAST                       9: x
+                126     PRECALL                         1
+                130     CALL                            1
+                140     LOAD_GLOBAL                     5: NULL + float
+                152     LOAD_FAST                       10: y
+                154     PRECALL                         1
+                158     CALL                            1
+                168     LOAD_CONST                      3: ('x', 'y')
+                170     BUILD_CONST_KEY_MAP             2
+                172     LOAD_FAST                       8: metadata
+                174     LOAD_CONST                      4: 'spawn_position'
+                176     STORE_SUBSCR                    
+                180     LOAD_CONST                      5: 'radar_event'
+                182     LOAD_CONST                      6: 'event'
+                184     LOAD_GLOBAL                     3: NULL + int
+                196     LOAD_FAST                       0: event
+                198     LOAD_ATTR                       3: code
+                208     PRECALL                         1
+                212     CALL                            1
+                222     LOAD_FAST                       2: parameters
+                224     LOAD_CONST                      7: 'relay'
+                226     LOAD_FAST                       8: metadata
+                228     LOAD_CONST                      8: ('type', 'kind', 'code', 'parameters', 'source', 'metadata')
+                230     BUILD_CONST_KEY_MAP             6
+                232     RETURN_VALUE                    
+            [Exception Table]
+        'dict[int, Any]'
+        [Code]
+            File Name: event_bridge.py
+            Object Name: _with_routed_code
+            Qualified Name: _with_routed_code
+            Arg Count: 2
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'dict'
+                'int'
+            [Locals+Names]
+                'parameters'
+                'routed_code'
+                'copied'
+            [Constants]
+                None
+                252
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + dict
+                14      LOAD_FAST                       0: parameters
+                16      PRECALL                         1
+                20      CALL                            1
+                30      STORE_FAST                      2: copied
+                32      LOAD_GLOBAL                     3: NULL + int
+                44      LOAD_FAST                       1: routed_code
+                46      PRECALL                         1
+                50      CALL                            1
+                60      LOAD_FAST                       2: copied
+                62      LOAD_CONST                      1: 252
+                64      STORE_SUBSCR                    
+                68      LOAD_FAST                       2: copied
+                70      RETURN_VALUE                    
+            [Exception Table]
+        'value'
+        'Any'
+        [Code]
+            File Name: event_bridge.py
+            Object Name: _raw_bytes
+            Qualified Name: _raw_bytes
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 6
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'isinstance'
+                'ByteArray'
+                'bytes'
+                'bytearray'
+                'dict'
+                'get'
+                'list'
+                'TypeError'
+                'ValueError'
+            [Locals+Names]
+                'value'
+            [Constants]
+                None
+                'type'
+                'Buffer'
+                'data'
+                [Code]
+                    File Name: event_bridge.py
+                    Object Name: <genexpr>
+                    Qualified Name: _raw_bytes.<locals>.<genexpr>
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 4
+                    Flags: 0x01000033 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED | CO_GENERATOR | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'int'
+                    [Locals+Names]
+                        '.0'
+                        'item'
+                    [Constants]
+                        255
+                        None
+                    [Disassembly]
+                        0       RETURN_GENERATOR                
+                        2       POP_TOP                         
+                        4       RESUME                          0
+                        6       LOAD_FAST                       0: .0
+                        8       FOR_ITER                        22 (to 54)
+                        10      STORE_FAST                      1: item
+                        12      LOAD_GLOBAL                     1: NULL + int
+                        24      LOAD_FAST                       1: item
+                        26      PRECALL                         1
+                        30      CALL                            1
+                        40      LOAD_CONST                      0: 255
+                        42      BINARY_OP                       1 (&)
+                        46      YIELD_VALUE                     
+                        48      RESUME                          1
+                        50      POP_TOP                         
+                        52      JUMP_BACKWARD                   23 (to 8)
+                        54      LOAD_CONST                      1: None
+                        56      RETURN_VALUE                    
+                    [Exception Table]
+                b''
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + isinstance
+                14      LOAD_FAST                       0: value
+                16      LOAD_GLOBAL                     2: ByteArray
+                28      LOAD_GLOBAL                     4: bytes
+                40      LOAD_GLOBAL                     6: bytearray
+                52      BUILD_TUPLE                     3
+                54      PRECALL                         2
+                58      CALL                            2
+                68      POP_JUMP_FORWARD_IF_FALSE       15 (to 100)
+                70      LOAD_GLOBAL                     5: NULL + bytes
+                82      LOAD_FAST                       0: value
+                84      PRECALL                         1
+                88      CALL                            1
+                98      RETURN_VALUE                    
+                100     LOAD_GLOBAL                     1: NULL + isinstance
+                112     LOAD_FAST                       0: value
+                114     LOAD_GLOBAL                     8: dict
+                126     PRECALL                         2
+                130     CALL                            2
+                140     POP_JUMP_FORWARD_IF_FALSE       121 (to 384)
+                142     LOAD_FAST                       0: value
+                144     LOAD_METHOD                     5: get
+                166     LOAD_CONST                      1: 'type'
+                168     PRECALL                         1
+                172     CALL                            1
+                182     LOAD_CONST                      2: 'Buffer'
+                184     COMPARE_OP                      2 (==)
+                190     POP_JUMP_FORWARD_IF_FALSE       96 (to 384)
+                192     LOAD_GLOBAL                     1: NULL + isinstance
+                204     LOAD_FAST                       0: value
+                206     LOAD_METHOD                     5: get
+                228     LOAD_CONST                      3: 'data'
+                230     PRECALL                         1
+                234     CALL                            1
+                244     LOAD_GLOBAL                     12: list
+                256     PRECALL                         2
+                260     CALL                            2
+                270     POP_JUMP_FORWARD_IF_FALSE       56 (to 384)
+                272     NOP                             
+                274     LOAD_GLOBAL                     5: NULL + bytes
+                286     LOAD_CONST                      4: <CODE> <genexpr>
+                288     MAKE_FUNCTION                   0
+                290     LOAD_FAST                       0: value
+                292     LOAD_CONST                      3: 'data'
+                294     BINARY_SUBSCR                   
+                304     GET_ITER                        
+                306     PRECALL                         0
+                310     CALL                            0
+                320     PRECALL                         1
+                324     CALL                            1
+                334     RETURN_VALUE                    
+                336     PUSH_EXC_INFO                   
+                338     LOAD_GLOBAL                     14: TypeError
+                350     LOAD_GLOBAL                     16: ValueError
+                362     BUILD_TUPLE                     2
+                364     CHECK_EXC_MATCH                 
+                366     POP_JUMP_FORWARD_IF_FALSE       4 (to 376)
+                368     POP_TOP                         
+                370     POP_EXCEPT                      
+                372     LOAD_CONST                      5: b''
+                374     RETURN_VALUE                    
+                376     RERAISE                         0
+                378     COPY                            3
+                380     POP_EXCEPT                      
+                382     RERAISE                         1
+                384     LOAD_CONST                      5: b''
+                386     RETURN_VALUE                    
+            [Exception Table]
+                274 to 334 -> 336 [0] 
+                336 to 370 -> 378 [1] lasti
+                376 to 378 -> 378 [1] lasti
+        'bytes | None'
+        [Code]
+            File Name: event_bridge.py
+            Object Name: _strict_spawn_position_bytes
+            Qualified Name: _strict_spawn_position_bytes
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 6
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'isinstance'
+                'ByteArray'
+                'bytes'
+                'bytearray'
+                'dict'
+                'set'
+                'get'
+                'list'
+                'any'
+                'len'
+                'XOR_POSITION_LENGTH'
+            [Locals+Names]
+                'value'
+                'raw'
+                'data'
+            [Constants]
+                None
+                'type'
+                'data'
+                'Buffer'
+                [Code]
+                    File Name: event_bridge.py
+                    Object Name: <genexpr>
+                    Qualified Name: _strict_spawn_position_bytes.<locals>.<genexpr>
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 5
+                    Flags: 0x01000033 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED | CO_GENERATOR | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                        'isinstance'
+                        'bool'
+                        'int'
+                    [Locals+Names]
+                        '.0'
+                        'item'
+                    [Constants]
+                        0
+                        255
+                        None
+                    [Disassembly]
+                        0       RETURN_GENERATOR                
+                        2       POP_TOP                         
+                        4       RESUME                          0
+                        6       LOAD_FAST                       0: .0
+                        8       FOR_ITER                        64 (to 138)
+                        10      STORE_FAST                      1: item
+                        12      LOAD_GLOBAL                     1: NULL + isinstance
+                        24      LOAD_FAST                       1: item
+                        26      LOAD_GLOBAL                     2: bool
+                        38      PRECALL                         2
+                        42      CALL                            2
+                        52      JUMP_IF_TRUE_OR_POP             38 (to 76)
+                        54      LOAD_GLOBAL                     1: NULL + isinstance
+                        66      LOAD_FAST                       1: item
+                        68      LOAD_GLOBAL                     4: int
+                        80      PRECALL                         2
+                        84      CALL                            2
+                        94      UNARY_NOT                       
+                        96      JUMP_IF_TRUE_OR_POP             16 (to 32)
+                        98      LOAD_CONST                      0: 0
+                        100     LOAD_FAST                       1: item
+                        102     SWAP                            2
+                        104     COPY                            2
+                        106     COMPARE_OP                      1 (<=)
+                        112     JUMP_IF_FALSE_OR_POP            5 (to 10)
+                        114     LOAD_CONST                      1: 255
+                        116     COMPARE_OP                      1 (<=)
+                        122     JUMP_FORWARD                    2 (to 128)
+                        124     SWAP                            2
+                        126     POP_TOP                         
+                        128     UNARY_NOT                       
+                        130     YIELD_VALUE                     
+                        132     RESUME                          1
+                        134     POP_TOP                         
+                        136     JUMP_BACKWARD                   65 (to 8)
+                        138     LOAD_CONST                      2: None
+                        140     RETURN_VALUE                    
+                    [Exception Table]
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + isinstance
+                14      LOAD_FAST                       0: value
+                16      LOAD_GLOBAL                     2: ByteArray
+                28      LOAD_GLOBAL                     4: bytes
+                40      LOAD_GLOBAL                     6: bytearray
+                52      BUILD_TUPLE                     3
+                54      PRECALL                         2
+                58      CALL                            2
+                68      POP_JUMP_FORWARD_IF_FALSE       16 (to 102)
+                70      LOAD_GLOBAL                     5: NULL + bytes
+                82      LOAD_FAST                       0: value
+                84      PRECALL                         1
+                88      CALL                            1
+                98      STORE_FAST                      1: raw
+                100     JUMP_FORWARD                    160 (to 422)
+                102     LOAD_GLOBAL                     1: NULL + isinstance
+                114     LOAD_FAST                       0: value
+                116     LOAD_GLOBAL                     8: dict
+                128     PRECALL                         2
+                132     CALL                            2
+                142     POP_JUMP_FORWARD_IF_FALSE       137 (to 418)
+                144     LOAD_GLOBAL                     11: NULL + set
+                156     LOAD_FAST                       0: value
+                158     PRECALL                         1
+                162     CALL                            1
+                172     LOAD_CONST                      1: 'type'
+                174     LOAD_CONST                      2: 'data'
+                176     BUILD_SET                       2
+                178     COMPARE_OP                      2 (==)
+                184     POP_JUMP_FORWARD_IF_FALSE       116 (to 418)
+                186     LOAD_FAST                       0: value
+                188     LOAD_METHOD                     6: get
+                210     LOAD_CONST                      1: 'type'
+                212     PRECALL                         1
+                216     CALL                            1
+                226     LOAD_CONST                      3: 'Buffer'
+                228     COMPARE_OP                      2 (==)
+                234     POP_JUMP_FORWARD_IF_FALSE       91 (to 418)
+                236     LOAD_GLOBAL                     1: NULL + isinstance
+                248     LOAD_FAST                       0: value
+                250     LOAD_METHOD                     6: get
+                272     LOAD_CONST                      2: 'data'
+                274     PRECALL                         1
+                278     CALL                            1
+                288     LOAD_GLOBAL                     14: list
+                300     PRECALL                         2
+                304     CALL                            2
+                314     POP_JUMP_FORWARD_IF_FALSE       51 (to 418)
+                316     LOAD_FAST                       0: value
+                318     LOAD_CONST                      2: 'data'
+                320     BINARY_SUBSCR                   
+                330     STORE_FAST                      2: data
+                332     LOAD_GLOBAL                     17: NULL + any
+                344     LOAD_CONST                      4: <CODE> <genexpr>
+                346     MAKE_FUNCTION                   0
+                348     LOAD_FAST                       2: data
+                350     GET_ITER                        
+                352     PRECALL                         0
+                356     CALL                            0
+                366     PRECALL                         1
+                370     CALL                            1
+                380     POP_JUMP_FORWARD_IF_FALSE       2 (to 386)
+                382     LOAD_CONST                      0: None
+                384     RETURN_VALUE                    
+                386     LOAD_GLOBAL                     5: NULL + bytes
+                398     LOAD_FAST                       2: data
+                400     PRECALL                         1
+                404     CALL                            1
+                414     STORE_FAST                      1: raw
+                416     JUMP_FORWARD                    2 (to 422)
+                418     LOAD_CONST                      0: None
+                420     RETURN_VALUE                    
+                422     LOAD_GLOBAL                     19: NULL + len
+                434     LOAD_FAST                       1: raw
+                436     PRECALL                         1
+                440     CALL                            1
+                450     LOAD_GLOBAL                     20: XOR_POSITION_LENGTH
+                462     COMPARE_OP                      2 (==)
+                468     POP_JUMP_FORWARD_IF_FALSE       2 (to 474)
+                470     LOAD_FAST                       1: raw
+                472     JUMP_FORWARD                    1 (to 476)
+                474     LOAD_CONST                      0: None
+                476     RETURN_VALUE                    
+            [Exception Table]
+        'int | None'
+        [Code]
+            File Name: event_bridge.py
+            Object Name: _int_or_none
+            Qualified Name: _int_or_none
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'int'
+                'TypeError'
+                'ValueError'
+            [Locals+Names]
+                'value'
+            [Constants]
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       NOP                             
+                4       LOAD_GLOBAL                     1: NULL + int
+                16      LOAD_FAST                       0: value
+                18      PRECALL                         1
+                22      CALL                            1
+                32      RETURN_VALUE                    
+                34      PUSH_EXC_INFO                   
+                36      LOAD_GLOBAL                     2: TypeError
+                48      LOAD_GLOBAL                     4: ValueError
+                60      BUILD_TUPLE                     2
+                62      CHECK_EXC_MATCH                 
+                64      POP_JUMP_FORWARD_IF_FALSE       4 (to 74)
+                66      POP_TOP                         
+                68      POP_EXCEPT                      
+                70      LOAD_CONST                      0: None
+                72      RETURN_VALUE                    
+                74      RERAISE                         0
+                76      COPY                            3
+                78      POP_EXCEPT                      
+                80      RERAISE                         1
+            [Exception Table]
+                4 to 32 -> 34 [0] 
+                34 to 68 -> 76 [1] lasti
+                74 to 76 -> 76 [1] lasti
+        'encrypted_position'
+        'xor_code'
+        [Code]
+            File Name: event_bridge.py
+            Object Name: _decode_xor_position
+            Qualified Name: _decode_xor_position
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 2
+            Stack Size: 8
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'len'
+                'XOR_POSITION_LENGTH'
+                'bytes'
+                'zip'
+                'struct'
+                'unpack'
+                'is_plausible_player_position'
+                'float'
+            [Locals+Names]
+                'encrypted_position'
+                'xor_code'
+                'decoded'
+                'x'
+                'y'
+            [Constants]
+                None
+                [Code]
+                    File Name: event_bridge.py
+                    Object Name: <genexpr>
+                    Qualified Name: _decode_xor_position.<locals>.<genexpr>
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 3
+                    Flags: 0x01000033 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED | CO_GENERATOR | CO_FUTURE_ANNOTATIONS)
+                    [Names]
+                    [Locals+Names]
+                        '.0'
+                        'encrypted'
+                        'key'
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       RETURN_GENERATOR                
+                        2       POP_TOP                         
+                        4       RESUME                          0
+                        6       LOAD_FAST                       0: .0
+                        8       FOR_ITER                        12 (to 34)
+                        10      UNPACK_SEQUENCE                 2
+                        14      STORE_FAST                      1: encrypted
+                        16      STORE_FAST                      2: key
+                        18      LOAD_FAST                       1: encrypted
+                        20      LOAD_FAST                       2: key
+                        22      BINARY_OP                       12 (^)
+                        26      YIELD_VALUE                     
+                        28      RESUME                          1
+                        30      POP_TOP                         
+                        32      JUMP_BACKWARD                   13 (to 8)
+                        34      LOAD_CONST                      0: None
+                        36      RETURN_VALUE                    
+                    [Exception Table]
+                True
+                (
+                    'strict'
+                )
+                '<ff'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + len
+                14      LOAD_FAST                       0: encrypted_position
+                16      PRECALL                         1
+                20      CALL                            1
+                30      LOAD_GLOBAL                     2: XOR_POSITION_LENGTH
+                42      COMPARE_OP                      3 (!=)
+                48      POP_JUMP_FORWARD_IF_TRUE        24 (to 98)
+                50      LOAD_GLOBAL                     1: NULL + len
+                62      LOAD_FAST                       1: xor_code
+                64      PRECALL                         1
+                68      CALL                            1
+                78      LOAD_GLOBAL                     2: XOR_POSITION_LENGTH
+                90      COMPARE_OP                      3 (!=)
+                96      POP_JUMP_FORWARD_IF_FALSE       2 (to 102)
+                98      LOAD_CONST                      0: None
+                100     RETURN_VALUE                    
+                102     LOAD_GLOBAL                     5: NULL + bytes
+                114     LOAD_CONST                      1: <CODE> <genexpr>
+                116     MAKE_FUNCTION                   0
+                118     LOAD_GLOBAL                     7: NULL + zip
+                130     LOAD_FAST                       0: encrypted_position
+                132     LOAD_FAST                       1: xor_code
+                134     LOAD_CONST                      2: True
+                136     KW_NAMES                        3: ('strict',)
+                138     PRECALL                         3
+                142     CALL                            3
+                152     GET_ITER                        
+                154     PRECALL                         0
+                158     CALL                            0
+                168     PRECALL                         1
+                172     CALL                            1
+                182     STORE_FAST                      2: decoded
+                184     LOAD_GLOBAL                     9: NULL + struct
+                196     LOAD_ATTR                       5: unpack
+                206     LOAD_CONST                      4: '<ff'
+                208     LOAD_FAST                       2: decoded
+                210     PRECALL                         2
+                214     CALL                            2
+                224     UNPACK_SEQUENCE                 2
+                228     STORE_FAST                      3: x
+                230     STORE_FAST                      4: y
+                232     LOAD_GLOBAL                     13: NULL + is_plausible_player_position
+                244     LOAD_FAST                       3: x
+                246     LOAD_FAST                       4: y
+                248     PRECALL                         2
+                252     CALL                            2
+                262     POP_JUMP_FORWARD_IF_TRUE        2 (to 268)
+                264     LOAD_CONST                      0: None
+                266     RETURN_VALUE                    
+                268     LOAD_GLOBAL                     15: NULL + float
+                280     LOAD_FAST                       3: x
+                282     PRECALL                         1
+                286     CALL                            1
+                296     LOAD_GLOBAL                     15: NULL + float
+                308     LOAD_FAST                       4: y
+                310     PRECALL                         1
+                314     CALL                            1
+                324     BUILD_TUPLE                     2
+                326     RETURN_VALUE                    
+            [Exception Table]
+        (
+            'event'
+            'dict[str, Any]'
+            'return'
+            'bytes'
+        )
+        (
+            'payload'
+            'bytes'
+            'return'
+            'list[tuple[str, EventData]]'
+        )
+        (
+            'payload'
+            'bytes'
+            'return'
+            'EventData | None'
+        )
+        (
+            'event'
+            'EventData'
+            'routed_code'
+            'int'
+            'parameters'
+            'dict[str, Any]'
+            'position_source'
+            'str'
+            'outer_message_type'
+            'int'
+            'direction'
+            'str'
+            'shape'
+            'str'
+            'spawn_position'
+            'tuple[float, float] | None'
+            'return'
+            'dict[str, Any]'
+        )
+        (
+            'parameters'
+            'dict[int, Any]'
+            'routed_code'
+            'int'
+            'return'
+            'dict[int, Any]'
+        )
+        (
+            'value'
+            'Any'
+            'return'
+            'bytes'
+        )
+        (
+            'value'
+            'Any'
+            'return'
+            'bytes | None'
+        )
+        (
+            'value'
+            'Any'
+            'return'
+            'int | None'
+        )
+        (
+            'encrypted_position'
+            'bytes'
+            'xor_code'
+            'bytes'
+            'return'
+            'tuple[float, float] | None'
+        )
+    [Disassembly]
+        0       RESUME                          0
+        2       LOAD_CONST                      0: 0
+        4       LOAD_CONST                      1: ('annotations',)
+        6       IMPORT_NAME                     0: __future__
+        8       IMPORT_FROM                     1: annotations
+        10      STORE_NAME                      1: annotations
+        12      POP_TOP                         
+        14      LOAD_CONST                      0: 0
+        16      LOAD_CONST                      2: None
+        18      IMPORT_NAME                     2: json
+        20      STORE_NAME                      2: json
+        22      LOAD_CONST                      0: 0
+        24      LOAD_CONST                      2: None
+        26      IMPORT_NAME                     3: struct
+        28      STORE_NAME                      3: struct
+        30      LOAD_CONST                      0: 0
+        32      LOAD_CONST                      3: ('Any',)
+        34      IMPORT_NAME                     4: typing
+        36      IMPORT_FROM                     5: Any
+        38      STORE_NAME                      5: Any
+        40      POP_TOP                         
+        42      LOAD_CONST                      0: 0
+        44      LOAD_CONST                      4: ('deserialize_event_live', 'to_jsonable')
+        46      IMPORT_NAME                     6: ass_radar.photon.deserializer
+        48      IMPORT_FROM                     7: deserialize_event_live
+        50      STORE_NAME                      7: deserialize_event_live
+        52      IMPORT_FROM                     8: to_jsonable
+        54      STORE_NAME                      8: to_jsonable
+        56      POP_TOP                         
+        58      LOAD_CONST                      0: 0
+        60      LOAD_CONST                      5: ('ByteArray', 'EventData')
+        62      IMPORT_NAME                     9: ass_radar.photon.types
+        64      IMPORT_FROM                     10: ByteArray
+        66      STORE_NAME                      10: ByteArray
+        68      IMPORT_FROM                     11: EventData
+        70      STORE_NAME                      11: EventData
+        72      POP_TOP                         
+        74      LOAD_CONST                      0: 0
+        76      LOAD_CONST                      6: ('is_plausible_player_position',)
+        78      IMPORT_NAME                     12: ass_radar.player_positions
+        80      IMPORT_FROM                     13: is_plausible_player_position
+        82      STORE_NAME                      13: is_plausible_player_position
+        84      POP_TOP                         
+        86      LOAD_CONST                      0: 0
+        88      LOAD_CONST                      7: ('DIAGNOSTIC_ONLY_ROUTES', 'EVENT_MOVE', 'EVENT_NEW_CHARACTER', 'RouteResolution', 'resolve_event_route')
+        90      IMPORT_NAME                     14: ass_radar.product_events
+        92      IMPORT_FROM                     15: DIAGNOSTIC_ONLY_ROUTES
+        94      STORE_NAME                      15: DIAGNOSTIC_ONLY_ROUTES
+        96      IMPORT_FROM                     16: EVENT_MOVE
+        98      STORE_NAME                      16: EVENT_MOVE
+        100     IMPORT_FROM                     17: EVENT_NEW_CHARACTER
+        102     STORE_NAME                      17: EVENT_NEW_CHARACTER
+        104     IMPORT_FROM                     18: RouteResolution
+        106     STORE_NAME                      18: RouteResolution
+        108     IMPORT_FROM                     19: resolve_event_route
+        110     STORE_NAME                      19: resolve_event_route
+        112     POP_TOP                         
+        114     LOAD_CONST                      8: 8
+        116     STORE_NAME                      20: XOR_POSITION_LENGTH
+        118     LOAD_CONST                      9: 9
+        120     STORE_NAME                      21: MOVE_POSITION_OFFSET
+        122     LOAD_CONST                      10: 16
+        124     STORE_NAME                      22: NEW_CHARACTER_POSITION_PARAMETER
+        126     PUSH_NULL                       
+        128     LOAD_BUILD_CLASS                
+        130     LOAD_CONST                      11: <CODE> DecryptedRadarEventBridge
+        132     MAKE_FUNCTION                   0
+        134     LOAD_CONST                      12: 'DecryptedRadarEventBridge'
+        136     PRECALL                         2
+        140     CALL                            2
+        150     STORE_NAME                      23: DecryptedRadarEventBridge
+        152     LOAD_CONST                      48: ('event', 'dict[str, Any]', 'return', 'bytes')
+        154     LOAD_CONST                      17: <CODE> build_radar_event_export_payload
+        156     MAKE_FUNCTION                   4
+        158     STORE_NAME                      24: build_radar_event_export_payload
+        160     LOAD_CONST                      49: ('payload', 'bytes', 'return', 'list[tuple[str, EventData]]')
+        162     LOAD_CONST                      20: <CODE> _iter_event_candidates
+        164     MAKE_FUNCTION                   4
+        166     STORE_NAME                      25: _iter_event_candidates
+        168     LOAD_CONST                      50: ('payload', 'bytes', 'return', 'EventData | None')
+        170     LOAD_CONST                      22: <CODE> _deserialize_event_or_none
+        172     MAKE_FUNCTION                   4
+        174     STORE_NAME                      26: _deserialize_event_or_none
+        176     LOAD_CONST                      2: None
+        178     LOAD_CONST                      23: ('spawn_position',)
+        180     BUILD_CONST_KEY_MAP             1
+        182     LOAD_CONST                      51: ('event', 'EventData', 'routed_code', 'int', 'parameters', 'dict[str, Any]', 'position_source', 'str', 'outer_message_type', 'int', 'direction', 'str', 'shape', 'str', 'spawn_position', 'tuple[float, float] | None', 'return', 'dict[str, Any]')
+        184     LOAD_CONST                      35: <CODE> _radar_event_payload
+        186     MAKE_FUNCTION                   6
+        188     STORE_NAME                      27: _radar_event_payload
+        190     LOAD_CONST                      52: ('parameters', 'dict[int, Any]', 'routed_code', 'int', 'return', 'dict[int, Any]')
+        192     LOAD_CONST                      37: <CODE> _with_routed_code
+        194     MAKE_FUNCTION                   4
+        196     STORE_NAME                      28: _with_routed_code
+        198     LOAD_CONST                      53: ('value', 'Any', 'return', 'bytes')
+        200     LOAD_CONST                      40: <CODE> _raw_bytes
+        202     MAKE_FUNCTION                   4
+        204     STORE_NAME                      29: _raw_bytes
+        206     LOAD_CONST                      54: ('value', 'Any', 'return', 'bytes | None')
+        208     LOAD_CONST                      42: <CODE> _strict_spawn_position_bytes
+        210     MAKE_FUNCTION                   4
+        212     STORE_NAME                      30: _strict_spawn_position_bytes
+        214     LOAD_CONST                      55: ('value', 'Any', 'return', 'int | None')
+        216     LOAD_CONST                      44: <CODE> _int_or_none
+        218     MAKE_FUNCTION                   4
+        220     STORE_NAME                      31: _int_or_none
+        222     LOAD_CONST                      56: ('encrypted_position', 'bytes', 'xor_code', 'bytes', 'return', 'tuple[float, float] | None')
+        224     LOAD_CONST                      47: <CODE> _decode_xor_position
+        226     MAKE_FUNCTION                   4
+        228     STORE_NAME                      32: _decode_xor_position
+        230     LOAD_CONST                      2: None
+        232     RETURN_VALUE                    
+    [Exception Table]

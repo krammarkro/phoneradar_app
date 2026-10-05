@@ -1,0 +1,721 @@
+dh.pyc (Python 3.11)
+[Code]
+    File Name: dh.py
+    Object Name: <module>
+    Qualified Name: <module>
+    Arg Count: 0
+    Pos Only Arg Count: 0
+    KW Only Arg Count: 0
+    Stack Size: 5
+    Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+    [Names]
+        '__future__'
+        'annotations'
+        'hashlib'
+        'dataclasses'
+        'dataclass'
+        'MODP_768_PRIME_HEX'
+        'int'
+        'MODP_768_PRIME'
+        'MODP_768_BYTE_LENGTH'
+        'ALBION_DH_GENERATOR'
+        'PublicValueValidation'
+        'SplitHandshakeSimulation'
+        'public_from_private'
+        'shared_secret_from_public'
+        'derive_aes_key'
+        'validate_public_value'
+        'simulate_split_handshake'
+        '_valid_private'
+        '_int_to_fixed'
+    [Locals+Names]
+    [Constants]
+        0
+        (
+            'annotations'
+        )
+        None
+        (
+            'dataclass'
+        )
+        'FFFFFFFFFFFFFFFFC90FDAA22168C234C4C6628B80DC1CD129024E088A67CC74020BBEA63B139B22514A08798E3404DDEF9519B3CD3A431B302B0A6DF25F14374FE1356D6D51C245E485B576625E7EC6F44C42E9A63A3620FFFFFFFFFFFFFFFF'
+        16
+        96
+        22
+        True
+        (
+            'frozen'
+        )
+        [Code]
+            File Name: dh.py
+            Object Name: PublicValueValidation
+            Qualified Name: PublicValueValidation
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+            [Locals+Names]
+            [Constants]
+                'PublicValueValidation'
+                'bool'
+                'valid'
+                'str'
+                'reason'
+                'int'
+                'bit_length'
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'PublicValueValidation'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'bool'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'valid'
+                18      STORE_SUBSCR                    
+                22      LOAD_CONST                      3: 'str'
+                24      LOAD_NAME                       3: __annotations__
+                26      LOAD_CONST                      4: 'reason'
+                28      STORE_SUBSCR                    
+                32      LOAD_CONST                      5: 'int'
+                34      LOAD_NAME                       3: __annotations__
+                36      LOAD_CONST                      6: 'bit_length'
+                38      STORE_SUBSCR                    
+                42      LOAD_CONST                      7: None
+                44      RETURN_VALUE                    
+            [Exception Table]
+        'PublicValueValidation'
+        [Code]
+            File Name: dh.py
+            Object Name: SplitHandshakeSimulation
+            Qualified Name: SplitHandshakeSimulation
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000000 (CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__annotations__'
+            [Locals+Names]
+            [Constants]
+                'SplitHandshakeSimulation'
+                'bytes'
+                'public_for_client'
+                'public_for_server'
+                'client_side_secret'
+                'server_side_secret'
+                'client_side_aes_key'
+                'server_side_aes_key'
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_NAME                       0: __name__
+                4       STORE_NAME                      1: __module__
+                6       LOAD_CONST                      0: 'SplitHandshakeSimulation'
+                8       STORE_NAME                      2: __qualname__
+                10      SETUP_ANNOTATIONS               
+                12      LOAD_CONST                      1: 'bytes'
+                14      LOAD_NAME                       3: __annotations__
+                16      LOAD_CONST                      2: 'public_for_client'
+                18      STORE_SUBSCR                    
+                22      LOAD_CONST                      1: 'bytes'
+                24      LOAD_NAME                       3: __annotations__
+                26      LOAD_CONST                      3: 'public_for_server'
+                28      STORE_SUBSCR                    
+                32      LOAD_CONST                      1: 'bytes'
+                34      LOAD_NAME                       3: __annotations__
+                36      LOAD_CONST                      4: 'client_side_secret'
+                38      STORE_SUBSCR                    
+                42      LOAD_CONST                      1: 'bytes'
+                44      LOAD_NAME                       3: __annotations__
+                46      LOAD_CONST                      5: 'server_side_secret'
+                48      STORE_SUBSCR                    
+                52      LOAD_CONST                      1: 'bytes'
+                54      LOAD_NAME                       3: __annotations__
+                56      LOAD_CONST                      6: 'client_side_aes_key'
+                58      STORE_SUBSCR                    
+                62      LOAD_CONST                      1: 'bytes'
+                64      LOAD_NAME                       3: __annotations__
+                66      LOAD_CONST                      7: 'server_side_aes_key'
+                68      STORE_SUBSCR                    
+                72      LOAD_CONST                      8: None
+                74      RETURN_VALUE                    
+            [Exception Table]
+        'SplitHandshakeSimulation'
+        (
+            'generator'
+        )
+        'private_value'
+        'int'
+        'generator'
+        'return'
+        'bytes'
+        [Code]
+            File Name: dh.py
+            Object Name: public_from_private
+            Qualified Name: public_from_private
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 1
+            Stack Size: 5
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                '_valid_private'
+                'pow'
+                'int'
+                'MODP_768_PRIME'
+                '_int_to_fixed'
+            [Locals+Names]
+                'private_value'
+                'generator'
+                'private_int'
+                'public_int'
+            [Constants]
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + _valid_private
+                14      LOAD_FAST                       0: private_value
+                16      PRECALL                         1
+                20      CALL                            1
+                30      STORE_FAST                      2: private_int
+                32      LOAD_GLOBAL                     3: NULL + pow
+                44      LOAD_GLOBAL                     5: NULL + int
+                56      LOAD_FAST                       1: generator
+                58      PRECALL                         1
+                62      CALL                            1
+                72      LOAD_FAST                       2: private_int
+                74      LOAD_GLOBAL                     6: MODP_768_PRIME
+                86      PRECALL                         3
+                90      CALL                            3
+                100     STORE_FAST                      3: public_int
+                102     LOAD_GLOBAL                     9: NULL + _int_to_fixed
+                114     LOAD_FAST                       3: public_int
+                116     PRECALL                         1
+                120     CALL                            1
+                130     RETURN_VALUE                    
+            [Exception Table]
+        'public_value'
+        [Code]
+            File Name: dh.py
+            Object Name: shared_secret_from_public
+            Qualified Name: shared_secret_from_public
+            Arg Count: 2
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 7
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'validate_public_value'
+                'valid'
+                'ValueError'
+                'reason'
+                '_valid_private'
+                'int'
+                'from_bytes'
+                '_int_to_fixed'
+                'pow'
+                'MODP_768_PRIME'
+            [Locals+Names]
+                'public_value'
+                'private_value'
+                'validation'
+                'private_int'
+                'public_int'
+            [Constants]
+                None
+                'Invalid DH public value: '
+                'big'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + validate_public_value
+                14      LOAD_FAST                       0: public_value
+                16      PRECALL                         1
+                20      CALL                            1
+                30      STORE_FAST                      2: validation
+                32      LOAD_FAST                       2: validation
+                34      LOAD_ATTR                       1: valid
+                44      POP_JUMP_FORWARD_IF_TRUE        23 (to 92)
+                46      LOAD_GLOBAL                     5: NULL + ValueError
+                58      LOAD_CONST                      1: 'Invalid DH public value: '
+                60      LOAD_FAST                       2: validation
+                62      LOAD_ATTR                       3: reason
+                72      FORMAT_VALUE                    0 (FVC_NONE)
+                74      BUILD_STRING                    2
+                76      PRECALL                         1
+                80      CALL                            1
+                90      RAISE_VARARGS                   1
+                92      LOAD_GLOBAL                     9: NULL + _valid_private
+                104     LOAD_FAST                       1: private_value
+                106     PRECALL                         1
+                110     CALL                            1
+                120     STORE_FAST                      3: private_int
+                122     LOAD_GLOBAL                     10: int
+                134     LOAD_METHOD                     6: from_bytes
+                156     LOAD_FAST                       0: public_value
+                158     LOAD_CONST                      2: 'big'
+                160     PRECALL                         2
+                164     CALL                            2
+                174     STORE_FAST                      4: public_int
+                176     LOAD_GLOBAL                     15: NULL + _int_to_fixed
+                188     LOAD_GLOBAL                     17: NULL + pow
+                200     LOAD_FAST                       4: public_int
+                202     LOAD_FAST                       3: private_int
+                204     LOAD_GLOBAL                     18: MODP_768_PRIME
+                216     PRECALL                         3
+                220     CALL                            3
+                230     PRECALL                         1
+                234     CALL                            1
+                244     RETURN_VALUE                    
+            [Exception Table]
+        'shared_secret'
+        [Code]
+            File Name: dh.py
+            Object Name: derive_aes_key
+            Qualified Name: derive_aes_key
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'hashlib'
+                'sha256'
+                'digest'
+            [Locals+Names]
+                'shared_secret'
+            [Constants]
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + hashlib
+                14      LOAD_ATTR                       1: sha256
+                24      LOAD_FAST                       0: shared_secret
+                26      PRECALL                         1
+                30      CALL                            1
+                40      LOAD_METHOD                     2: digest
+                62      PRECALL                         0
+                66      CALL                            0
+                76      RETURN_VALUE                    
+            [Exception Table]
+        [Code]
+            File Name: dh.py
+            Object Name: validate_public_value
+            Qualified Name: validate_public_value
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 7
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'len'
+                'MODP_768_BYTE_LENGTH'
+                'PublicValueValidation'
+                'int'
+                'from_bytes'
+                'bit_length'
+                'MODP_768_PRIME'
+            [Locals+Names]
+                'public_value'
+                'value'
+                'bit_length'
+            [Constants]
+                None
+                False
+                'expected '
+                ' bytes'
+                8
+                (
+                    'valid'
+                    'reason'
+                    'bit_length'
+                )
+                'big'
+                1
+                'value must be greater than 1'
+                'value must be less than p - 1'
+                True
+                'ok'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + len
+                14      LOAD_FAST                       0: public_value
+                16      PRECALL                         1
+                20      CALL                            1
+                30      LOAD_GLOBAL                     2: MODP_768_BYTE_LENGTH
+                42      COMPARE_OP                      3 (!=)
+                48      POP_JUMP_FORWARD_IF_FALSE       43 (to 136)
+                50      LOAD_GLOBAL                     5: NULL + PublicValueValidation
+                62      LOAD_CONST                      1: False
+                64      LOAD_CONST                      2: 'expected '
+                66      LOAD_GLOBAL                     2: MODP_768_BYTE_LENGTH
+                78      FORMAT_VALUE                    0 (FVC_NONE)
+                80      LOAD_CONST                      3: ' bytes'
+                82      BUILD_STRING                    3
+                84      LOAD_GLOBAL                     1: NULL + len
+                96      LOAD_FAST                       0: public_value
+                98      PRECALL                         1
+                102     CALL                            1
+                112     LOAD_CONST                      4: 8
+                114     BINARY_OP                       5 (*)
+                118     KW_NAMES                        5: ('valid', 'reason', 'bit_length')
+                120     PRECALL                         3
+                124     CALL                            3
+                134     RETURN_VALUE                    
+                136     LOAD_GLOBAL                     6: int
+                148     LOAD_METHOD                     4: from_bytes
+                170     LOAD_FAST                       0: public_value
+                172     LOAD_CONST                      6: 'big'
+                174     PRECALL                         2
+                178     CALL                            2
+                188     STORE_FAST                      1: value
+                190     LOAD_FAST                       1: value
+                192     LOAD_METHOD                     5: bit_length
+                214     PRECALL                         0
+                218     CALL                            0
+                228     STORE_FAST                      2: bit_length
+                230     LOAD_FAST                       1: value
+                232     LOAD_CONST                      7: 1
+                234     COMPARE_OP                      1 (<=)
+                240     POP_JUMP_FORWARD_IF_FALSE       18 (to 278)
+                242     LOAD_GLOBAL                     5: NULL + PublicValueValidation
+                254     LOAD_CONST                      1: False
+                256     LOAD_CONST                      8: 'value must be greater than 1'
+                258     LOAD_FAST                       2: bit_length
+                260     KW_NAMES                        5: ('valid', 'reason', 'bit_length')
+                262     PRECALL                         3
+                266     CALL                            3
+                276     RETURN_VALUE                    
+                278     LOAD_FAST                       1: value
+                280     LOAD_GLOBAL                     12: MODP_768_PRIME
+                292     LOAD_CONST                      7: 1
+                294     BINARY_OP                       10 (-)
+                298     COMPARE_OP                      5 (>=)
+                304     POP_JUMP_FORWARD_IF_FALSE       18 (to 342)
+                306     LOAD_GLOBAL                     5: NULL + PublicValueValidation
+                318     LOAD_CONST                      1: False
+                320     LOAD_CONST                      9: 'value must be less than p - 1'
+                322     LOAD_FAST                       2: bit_length
+                324     KW_NAMES                        5: ('valid', 'reason', 'bit_length')
+                326     PRECALL                         3
+                330     CALL                            3
+                340     RETURN_VALUE                    
+                342     LOAD_GLOBAL                     5: NULL + PublicValueValidation
+                354     LOAD_CONST                      10: True
+                356     LOAD_CONST                      11: 'ok'
+                358     LOAD_FAST                       2: bit_length
+                360     KW_NAMES                        5: ('valid', 'reason', 'bit_length')
+                362     PRECALL                         3
+                366     CALL                            3
+                376     RETURN_VALUE                    
+            [Exception Table]
+        'observed_client_public'
+        'observed_server_public'
+        'proxy_client_side_private'
+        'proxy_server_side_private'
+        [Code]
+            File Name: dh.py
+            Object Name: simulate_split_handshake
+            Qualified Name: simulate_split_handshake
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 4
+            Stack Size: 10
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'shared_secret_from_public'
+                'SplitHandshakeSimulation'
+                'public_from_private'
+                'derive_aes_key'
+            [Locals+Names]
+                'observed_client_public'
+                'observed_server_public'
+                'proxy_client_side_private'
+                'proxy_server_side_private'
+                'client_side_secret'
+                'server_side_secret'
+            [Constants]
+                None
+                (
+                    'public_for_client'
+                    'public_for_server'
+                    'client_side_secret'
+                    'server_side_secret'
+                    'client_side_aes_key'
+                    'server_side_aes_key'
+                )
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + shared_secret_from_public
+                14      LOAD_FAST                       0: observed_client_public
+                16      LOAD_FAST                       2: proxy_client_side_private
+                18      PRECALL                         2
+                22      CALL                            2
+                32      STORE_FAST                      4: client_side_secret
+                34      LOAD_GLOBAL                     1: NULL + shared_secret_from_public
+                46      LOAD_FAST                       1: observed_server_public
+                48      LOAD_FAST                       3: proxy_server_side_private
+                50      PRECALL                         2
+                54      CALL                            2
+                64      STORE_FAST                      5: server_side_secret
+                66      LOAD_GLOBAL                     3: NULL + SplitHandshakeSimulation
+                78      LOAD_GLOBAL                     5: NULL + public_from_private
+                90      LOAD_FAST                       2: proxy_client_side_private
+                92      PRECALL                         1
+                96      CALL                            1
+                106     LOAD_GLOBAL                     5: NULL + public_from_private
+                118     LOAD_FAST                       3: proxy_server_side_private
+                120     PRECALL                         1
+                124     CALL                            1
+                134     LOAD_FAST                       4: client_side_secret
+                136     LOAD_FAST                       5: server_side_secret
+                138     LOAD_GLOBAL                     7: NULL + derive_aes_key
+                150     LOAD_FAST                       4: client_side_secret
+                152     PRECALL                         1
+                156     CALL                            1
+                166     LOAD_GLOBAL                     7: NULL + derive_aes_key
+                178     LOAD_FAST                       5: server_side_secret
+                180     PRECALL                         1
+                184     CALL                            1
+                194     KW_NAMES                        1: ('public_for_client', 'public_for_server', 'client_side_secret', 'server_side_secret', 'client_side_aes_key', 'server_side_aes_key')
+                196     PRECALL                         6
+                200     CALL                            6
+                210     RETURN_VALUE                    
+            [Exception Table]
+        [Code]
+            File Name: dh.py
+            Object Name: _valid_private
+            Qualified Name: _valid_private
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'int'
+                'MODP_768_PRIME'
+                'ValueError'
+            [Locals+Names]
+                'private_value'
+                'value'
+            [Constants]
+                None
+                1
+                'DH private value must be between 2 and p - 2.'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + int
+                14      LOAD_FAST                       0: private_value
+                16      PRECALL                         1
+                20      CALL                            1
+                30      STORE_FAST                      1: value
+                32      LOAD_FAST                       1: value
+                34      LOAD_CONST                      1: 1
+                36      COMPARE_OP                      1 (<=)
+                42      POP_JUMP_FORWARD_IF_TRUE        14 (to 72)
+                44      LOAD_FAST                       1: value
+                46      LOAD_GLOBAL                     2: MODP_768_PRIME
+                58      LOAD_CONST                      1: 1
+                60      BINARY_OP                       10 (-)
+                64      COMPARE_OP                      5 (>=)
+                70      POP_JUMP_FORWARD_IF_FALSE       15 (to 102)
+                72      LOAD_GLOBAL                     5: NULL + ValueError
+                84      LOAD_CONST                      2: 'DH private value must be between 2 and p - 2.'
+                86      PRECALL                         1
+                90      CALL                            1
+                100     RAISE_VARARGS                   1
+                102     LOAD_FAST                       1: value
+                104     RETURN_VALUE                    
+            [Exception Table]
+        'value'
+        [Code]
+            File Name: dh.py
+            Object Name: _int_to_fixed
+            Qualified Name: _int_to_fixed
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x01000003 (CO_OPTIMIZED | CO_NEWLOCALS | CO_FUTURE_ANNOTATIONS)
+            [Names]
+                'int'
+                'to_bytes'
+                'MODP_768_BYTE_LENGTH'
+            [Locals+Names]
+                'value'
+            [Constants]
+                None
+                'big'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + int
+                14      LOAD_FAST                       0: value
+                16      PRECALL                         1
+                20      CALL                            1
+                30      LOAD_METHOD                     1: to_bytes
+                52      LOAD_GLOBAL                     4: MODP_768_BYTE_LENGTH
+                64      LOAD_CONST                      1: 'big'
+                66      PRECALL                         2
+                70      CALL                            2
+                80      RETURN_VALUE                    
+            [Exception Table]
+        (
+            'private_value'
+            'int'
+            'generator'
+            'int'
+            'return'
+            'bytes'
+        )
+        (
+            'public_value'
+            'bytes'
+            'private_value'
+            'int'
+            'return'
+            'bytes'
+        )
+        (
+            'shared_secret'
+            'bytes'
+            'return'
+            'bytes'
+        )
+        (
+            'public_value'
+            'bytes'
+            'return'
+            'PublicValueValidation'
+        )
+        (
+            'observed_client_public'
+            'bytes'
+            'observed_server_public'
+            'bytes'
+            'proxy_client_side_private'
+            'int'
+            'proxy_server_side_private'
+            'int'
+            'return'
+            'SplitHandshakeSimulation'
+        )
+        (
+            'private_value'
+            'int'
+            'return'
+            'int'
+        )
+        (
+            'value'
+            'int'
+            'return'
+            'bytes'
+        )
+    [Disassembly]
+        0       RESUME                          0
+        2       LOAD_CONST                      0: 0
+        4       LOAD_CONST                      1: ('annotations',)
+        6       IMPORT_NAME                     0: __future__
+        8       IMPORT_FROM                     1: annotations
+        10      STORE_NAME                      1: annotations
+        12      POP_TOP                         
+        14      LOAD_CONST                      0: 0
+        16      LOAD_CONST                      2: None
+        18      IMPORT_NAME                     2: hashlib
+        20      STORE_NAME                      2: hashlib
+        22      LOAD_CONST                      0: 0
+        24      LOAD_CONST                      3: ('dataclass',)
+        26      IMPORT_NAME                     3: dataclasses
+        28      IMPORT_FROM                     4: dataclass
+        30      STORE_NAME                      4: dataclass
+        32      POP_TOP                         
+        34      LOAD_CONST                      4: 'FFFFFFFFFFFFFFFFC90FDAA22168C234C4C6628B80DC1CD129024E088A67CC74020BBEA63B139B22514A08798E3404DDEF9519B3CD3A431B302B0A6DF25F14374FE1356D6D51C245E485B576625E7EC6F44C42E9A63A3620FFFFFFFFFFFFFFFF'
+        36      STORE_NAME                      5: MODP_768_PRIME_HEX
+        38      PUSH_NULL                       
+        40      LOAD_NAME                       6: int
+        42      LOAD_NAME                       5: MODP_768_PRIME_HEX
+        44      LOAD_CONST                      5: 16
+        46      PRECALL                         2
+        50      CALL                            2
+        60      STORE_NAME                      7: MODP_768_PRIME
+        62      LOAD_CONST                      6: 96
+        64      STORE_NAME                      8: MODP_768_BYTE_LENGTH
+        66      LOAD_CONST                      7: 22
+        68      STORE_NAME                      9: ALBION_DH_GENERATOR
+        70      PUSH_NULL                       
+        72      LOAD_NAME                       4: dataclass
+        74      LOAD_CONST                      8: True
+        76      KW_NAMES                        9: ('frozen',)
+        78      PRECALL                         1
+        82      CALL                            1
+        92      PUSH_NULL                       
+        94      LOAD_BUILD_CLASS                
+        96      LOAD_CONST                      10: <CODE> PublicValueValidation
+        98      MAKE_FUNCTION                   0
+        100     LOAD_CONST                      11: 'PublicValueValidation'
+        102     PRECALL                         2
+        106     CALL                            2
+        116     PRECALL                         0
+        120     CALL                            0
+        130     STORE_NAME                      10: PublicValueValidation
+        132     PUSH_NULL                       
+        134     LOAD_NAME                       4: dataclass
+        136     LOAD_CONST                      8: True
+        138     KW_NAMES                        9: ('frozen',)
+        140     PRECALL                         1
+        144     CALL                            1
+        154     PUSH_NULL                       
+        156     LOAD_BUILD_CLASS                
+        158     LOAD_CONST                      12: <CODE> SplitHandshakeSimulation
+        160     MAKE_FUNCTION                   0
+        162     LOAD_CONST                      13: 'SplitHandshakeSimulation'
+        164     PRECALL                         2
+        168     CALL                            2
+        178     PRECALL                         0
+        182     CALL                            0
+        192     STORE_NAME                      11: SplitHandshakeSimulation
+        194     LOAD_NAME                       9: ALBION_DH_GENERATOR
+        196     LOAD_CONST                      14: ('generator',)
+        198     BUILD_CONST_KEY_MAP             1
+        200     LOAD_CONST                      34: ('private_value', 'int', 'generator', 'int', 'return', 'bytes')
+        202     LOAD_CONST                      20: <CODE> public_from_private
+        204     MAKE_FUNCTION                   6
+        206     STORE_NAME                      12: public_from_private
+        208     LOAD_CONST                      35: ('public_value', 'bytes', 'private_value', 'int', 'return', 'bytes')
+        210     LOAD_CONST                      22: <CODE> shared_secret_from_public
+        212     MAKE_FUNCTION                   4
+        214     STORE_NAME                      13: shared_secret_from_public
+        216     LOAD_CONST                      36: ('shared_secret', 'bytes', 'return', 'bytes')
+        218     LOAD_CONST                      24: <CODE> derive_aes_key
+        220     MAKE_FUNCTION                   4
+        222     STORE_NAME                      14: derive_aes_key
+        224     LOAD_CONST                      37: ('public_value', 'bytes', 'return', 'PublicValueValidation')
+        226     LOAD_CONST                      25: <CODE> validate_public_value
+        228     MAKE_FUNCTION                   4
+        230     STORE_NAME                      15: validate_public_value
+        232     LOAD_CONST                      38: ('observed_client_public', 'bytes', 'observed_server_public', 'bytes', 'proxy_client_side_private', 'int', 'proxy_server_side_private', 'int', 'return', 'SplitHandshakeSimulation')
+        234     LOAD_CONST                      30: <CODE> simulate_split_handshake
+        236     MAKE_FUNCTION                   4
+        238     STORE_NAME                      16: simulate_split_handshake
+        240     LOAD_CONST                      39: ('private_value', 'int', 'return', 'int')
+        242     LOAD_CONST                      31: <CODE> _valid_private
+        244     MAKE_FUNCTION                   4
+        246     STORE_NAME                      17: _valid_private
+        248     LOAD_CONST                      40: ('value', 'int', 'return', 'bytes')
+        250     LOAD_CONST                      33: <CODE> _int_to_fixed
+        252     MAKE_FUNCTION                   4
+        254     STORE_NAME                      18: _int_to_fixed
+        256     LOAD_CONST                      2: None
+        258     RETURN_VALUE                    
+    [Exception Table]
